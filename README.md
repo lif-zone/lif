@@ -27,10 +27,8 @@ The main principlas behind the LIP protocol are simple:
 - There is a HUGE incentives to all the peers to know the most accurate status of the data
 
 LIF is a **protocol**:
--
 
 LIF is a **distributed document based database**:
--
 
 LIF is **modular**:
 
