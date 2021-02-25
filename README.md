@@ -10,14 +10,14 @@ LIF is an experimental open-source, decentralized, censorship-resistant protocol
 
 (For the technically minded, LIF is a keys/value distribued MongoDB-like database on top of IPFS-like file system, leveraging Bitcoin/Ethernium-like blockchain technology).
 
-The cutting-edge browser-first blockchain approach, means that user can connect and user the network with just a browser. Making it native to the web. Anyone with a modren browser can connect and access the nework, without any need to install special appplication. LIF is designed a blockchain technology used by the masses.
+The cutting-edge browser-first blockchain approach, means that user can connect and use the network with just a browser. Making it native to the web. Anyone with a modren browser can connect and access the nework, without any need to install special appplication. LIF is blockchain technology for the masses.
 
 LIF combines [IPFS](https://raw.githubusercontent.com/ipfs/ipfs/) with [Mongo](https://github.com/mongodb/mongo), [Namecoin](https://www.namecoin.org/) and other blockchain design ideas, and enales you to create any distribueted database application:
-- Easy to use by non tech-savy users
+- Easy to use by anyone. Even your parents :-)
 - Data is never lost
 - Data can always be found (and quickly)
 - Data cannot be altered, changed or faked
-- You know who is the creator of the data - undipituable!
+- Date is owned and signed. Undipituable!
 
 LIF is a **protocol**:
 - Defines distributed database
@@ -48,13 +48,13 @@ LIF enables **SSI**
 - Generat your own SSI (Self-sovereign identity)
 
 LIF has **DNS**
-- namecoin-like DNS
-- global name space that is not controlled by any root server
+- Namecoin-like DNS
+- Global name space that is not controlled by any root server
 
 ## LIF's Mission & Vission
 Liberty, Independence, Freedom!
-This project came to life following the operssion all over the word during the Corona, and the facists measures used by almost all governments to "fight" it.
-LIF is saying no more! We are fighting back, with technology!
+This project came to life following the operssion all over the word during the Corona, and the facists measures used by almost all governments. All with the excuse to "protect" us...
+LIF is our way to fight back! Taking back the rights that belong to us, by creating a network that no government or big cooperation can control, shut down or censore.
 
 ## Design principles
 As soon as there was digital data, there was a need to store it. File systems was the first bug jump in handlig big perstient data. Once you had data, you needed to a way to access itefficiently and remotly. SQL-based databases was another big jump forward.
@@ -66,6 +66,7 @@ For each data-type used in LIF, there is a verfiy function, that is agreed by al
 
 The key principlas:
 - Designed for the masses (ease of use & fast)
+- Accessible with a browser
 - Anyone can push any data to the network
 - Data is never lost
 - Data is verifyed when used (not at inseretion point)
@@ -96,7 +97,9 @@ We are just starting up, and you are invited to join!
 
 ##Related technologies:
 LIF is based on **AMAZING*** ideas from many open source projects. To name a few:
-- IPFS
+- [IPFS](https://raw.githubusercontent.com/ipfs/ipfs/)
+- [MongoDB](https://github.com/mongodb/)
+- [Namecoin](https://www.namecoin.org/)
 - Ethernium
 - BitCoin
 - MongoDB
