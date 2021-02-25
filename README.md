@@ -95,7 +95,7 @@ If you want to modify - no problem!
 
 We are just starting up, and you are invited to join!
 
-##Related technologies:
+## Related technologies:
 LIF is based on **AMAZING*** ideas from many open source projects. To name a few:
 - [IPFS](https://raw.githubusercontent.com/ipfs/ipfs/)
 - [MongoDB](https://github.com/mongodb/)
