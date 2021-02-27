@@ -6,7 +6,9 @@ https://lif.zone
 
 A p2p Crypto Network For Creating Trust Between People. Yep, now it's all clear ;-)
 
-LIF is an experimental open-source, decentralized, censorship-resistant protocol, that runs a p2p network, with mongo-like interface for accessing data stored in blockchains.
+LIF is an experimental open-source, decentralized, censorship-resistant protocol, that runs a p2p network, with mongo-like interface for accessing data stored in blockchains. We are trying to build a trusted stroage and publusing system.
+
+This project will be evolutionary. We will follow [Hola's DNA](https://hola.org/dna). LIF eveolution will be incremental. Unlike other projects, which first developed the technology, and later on implemented the use cases (eg. bitcoin), we will first implement the API with a simple node/mongodb solution. Then move to mutiple servers with replications, and eventually we will implement it over p2p. This approach will let us create the best p2p protocol, one the fits the real usage (and not vice versa where you try to force technology to real life application). A protocol that will be for the masses.
 
 (For the technically minded, LIF is a keys/value distribued MongoDB-like database on top of IPFS-like file system, leveraging Bitcoin/Ethernium-like blockchain technology).
 
@@ -43,11 +45,11 @@ LIF is a **CDN**:
 - Smart caching via hasing
 - Torrent-like system
 
-LIF enables **SSI**
+LIF enables **SSI**;
 - You can prove that your are you!
 - Generat your own SSI (Self-sovereign identity)
 
-LIF has **DNS**
+LIF has **DNS**:
 - Namecoin-like DNS
 - Global name space that is not controlled by any root server
 
@@ -55,6 +57,7 @@ LIF has **DNS**
 Liberty, Independence, Freedom!
 This project came to life following the operssion all over the word during the Corona, and the facists measures used by almost all governments. All with the excuse to "protect" us...
 LIF is our way to fight back! Taking back the rights that belong to us, by creating a network that no government or big cooperation can control, shut down or censore.
+
 
 ## Design principles
 As soon as there was digital data, there was a need to store it. File systems was the first bug jump in handlig big perstient data. Once you had data, you needed to a way to access itefficiently and remotly. SQL-based databases was another big jump forward.
