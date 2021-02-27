@@ -12,7 +12,7 @@ This project will be evolutionary. We will follow [Hola's DNA](https://hola.org/
 
 (For the technically minded, LIF is a keys/value distribued MongoDB-like database on top of IPFS-like file system, leveraging Bitcoin/Ethernium-like blockchain technology).
 
-The cutting-edge browser-first blockchain approach, means that user can connect and use the network with just a browser. Making it native to the web. Anyone with a modren browser can connect and access the nework, without any need to install special appplication. LIF is blockchain technology for the masses.
+The cutting-edge browser-first blockchain approach, means that user can connect and use the network with just a browser. Making it native to the web. Anyone with a modren browser can connect and access the nework, without any need to install special appplication. LIF is blockchain technology for the masses. And we will first develop the applications around it, letting the UI, define the underline protocol (instead of vice versa...)
 
 LIF combines [IPFS](https://raw.githubusercontent.com/ipfs/ipfs/) with [Mongo](https://github.com/mongodb/mongo), [Namecoin](https://www.namecoin.org/) and other blockchain design ideas, and enales you to create any distribueted database application:
 - Easy to use by anyone. Even your parents :-)
@@ -58,7 +58,6 @@ Liberty, Independence, Freedom!
 This project came to life following the operssion all over the word during the Corona, and the facists measures used by almost all governments. All with the excuse to "protect" us...
 LIF is our way to fight back! Taking back the rights that belong to us, by creating a network that no government or big cooperation can control, shut down or censore.
 
-
 ## Design principles
 As soon as there was digital data, there was a need to store it. File systems was the first bug jump in handlig big perstient data. Once you had data, you needed to a way to access itefficiently and remotly. SQL-based databases was another big jump forward.
 But SQL truned out to be slow and limitting. When your schema is hard coded in the table, it makes the system slow, complex and unfexible. It's very hard to fix stuff over time and you are stuck with obsolete system. 
@@ -78,12 +77,12 @@ The key principlas:
 
 ## Use cases
 
-- **Social Apps:** If you ever used Facebook, you know how annoying, misleading and wrong are the Fact-checkers (Ugh!). Imagine that Facebook data was saved on LIF and anyone could have developed a Facebook-reader application to show the data. A few users would like to have today's censored (fact-checkers) kind of application. Parents may decide to have an app to hide adult content, while free peopole will choose one that doesn't censoer. Up to you. Remeber Parler that was brought down and all data was erased - It coud never happen with LIF!
+- **Social Apps:** If you ever used Facebook, you know how annoying, misleading and wrong are the Fact-checkers (Ugh!). Imagine that Facebook data was saved on LIF and anyone could have developed a Facebook-reader application to show the data. A few users would like to have today's censored (fact-checkers) kind of application. Parents may decide to have an app to hide adult content, while free pepole will choose one that doesn't censoer. Up to you. Remeber Parler that was brought down and all data was erased - It coud never happen with LIF!
 - **Crypto currency:** Today, your money is not realy yours (if you could really call FIAT money "money"...). What if you could use a currency which is not fake (like all government money). What if you could issue your own money? What if no one could "steal" your money. With LIF, it is possible!
 - **Voting system:** Do you trust "Big Brother" votings? Have you ever waching a TV show where the audience votes, and you were sure the the production faked the votes? Are you sure your country voting is legit? Some in the US aren't.... A voting system leverging on the LIF protocaol CAN be trusted by all!
-- **Online Passport:** Idenity and Declaration, XXX
-- **DNS:** XXX
-- Any any application that rely on data...
+- **DNS:** Today, it's very easy to block and censore any site. In fact, all the countries in the world are doing it all the time. With LIF, you can create a site that can never be taken down.
+- **Online Passport:**
+- Any any application that rely on trust between 2 pepole or more
 
 ## Current state of LIF
 
