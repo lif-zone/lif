@@ -103,11 +103,10 @@ LIF is based on **AMAZING*** ideas from many open source projects. To name a few
 - [IPFS](https://raw.githubusercontent.com/ipfs/ipfs/)
 - [MongoDB](https://github.com/mongodb/)
 - [Namecoin](https://www.namecoin.org/)
-- Ethernium
-- BitCoin
-- MongoDB
-- GIT
-- XXX: add more relevant projets and links
+- [Ethernium](https://github.com/ethereum)
+- [BitCoin](https://github.com/bitcoin)
+- [MongoDB](https://github.com/mongodb/)
+- [GIT](https://github.com/git)
 
 ## Development Process
 
