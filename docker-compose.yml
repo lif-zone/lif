@@ -1,0 +1,21 @@
+services:
+  server:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile.server
+    depends_on:
+      - mongo
+    ports:
+      - 3101:80
+    volumes:
+      - ./:/usr/src/server/
+      - /usr/src/server/node_modules
+  mongo:
+    image: mongo
+    volumes:
+      - "db-data:/data/db"
+    environment:
+      MONGO_INITDB_DATABASE: db
+
+volumes:
+  db-data:

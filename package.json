@@ -1,0 +1,13 @@
+{
+  "name": "lif_peer",
+  "version": "0.1.0",
+  "scripts": {
+    "start:server": "pm2 start pkg/server/server.js --no-daemon"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "morgan": "^1.10.0"
+  }
+}

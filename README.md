@@ -108,9 +108,42 @@ LIF is based on **AMAZING*** ideas from many open source projects. To name a few
 - [MongoDB](https://github.com/mongodb/)
 - [GIT](https://github.com/git)
 
+## Installation
+
+
+
+
 ## Development Process
 
-Starting soon! 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+[Install Docker Compose](https://docs.docker.com/compose/install/)
+
+### Running DB server
+
+Run in this directory:
+
+```
+$ docker-compose up
+```
+
+The DB server will be running at [http://localhost:3101](http://localhost:3101).
+
+Verify it works via a simple client script:
+
+```
+$ node pkg/example_client.js
+```
+
+You should see output like:
+
+
+```
+NOTICE: publish_passport: success
+NOTICE: validate_passport: success
+```
 
 ## Learn how LIF works
 
