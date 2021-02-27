@@ -8,7 +8,7 @@ A p2p Crypto Network For Creating Trust Between People. Yep, now it's all clear 
 
 LIF is an experimental open-source, decentralized, censorship-resistant protocol, that runs a p2p network, with mongo-like interface for accessing data stored in blockchains. We are trying to build a trusted stroage and publusing system.
 
-This project will be evolutionary. We will follow [Hola's DNA](https://hola.org/dna). LIF eveolution will be incremental. Unlike other projects, which first developed the technology, and later on implemented the use cases (eg. bitcoin), we will first implement the API with a simple node/mongodb solution. Then move to mutiple servers with replications, and eventually we will implement it over p2p. This approach will let us create the best p2p protocol, one that fits the real usage (and not vice versa where you try to force technology to real life application). A protocol that will be for the masses.
+This project will be evolutionary. We will follow [Hola's DNA](https://hola.org/dna). LIF eveolution will be incremental. Unlike other projects, which first developed the technology, and later on implemented the use cases (eg. bitcoin), we will first implement the API with a simple node/mongodb solution. Then move to mutiple servers with replications, and eventually we will implement it over p2p. This approach will let us create the best p2p protocol, one that fits real usage (and not vice versa where you try to force technology to real life application). A protocol that will be for the masses.
 
 (For the technically minded, LIF is a keys/value distribued MongoDB-like database on top of IPFS-like file system, leveraging Bitcoin/Ethernium-like blockchain technology).
 
@@ -68,6 +68,7 @@ In LIF, anyone can throw any data to the network, no validation is done at the i
 For each data-type used in LIF, there is a verfiy function, that is agreed by all, on the way to check if data si legit. Each application in LIF, can define any type of verify function. This flexibiity enables using LIF for almost any application and the protocol can evolve over time.
 
 The key principlas:
+- Evolution (follow [Hola's DNA](https://hola.org/dna)
 - Designed for the masses (ease of use & fast)
 - Accessible with a browser
 - Anyone can push any data to the network
