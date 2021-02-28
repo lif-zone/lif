@@ -110,23 +110,30 @@ LIF is based on **AMAZING*** ideas from many open source projects. To name a few
 
 ## Installation
 
-
-
-
-## Development Process
-
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-[Install Docker Compose](https://docs.docker.com/compose/install/)
+Install docker-compose and docker:
+
+```
+// install docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+
+// re-login to your user and verify you can run docker command without sudo
+docker run hello-world
+
+// install docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
 ### Running DB server
 
-Run in this directory:
-
 ```
-$ docker-compose up
+$ docker-compose up -d server_dev
 ```
 
 The DB server will be running at [http://localhost:3101](http://localhost:3101).
@@ -144,6 +151,18 @@ You should see output like:
 NOTICE: publish_passport: success
 NOTICE: validate_passport: success
 ```
+
+### Running website
+
+```
+$ docker-compose up -d www_dev
+```
+
+The site will be running at [http://localhost:3100](http://localhost:3100).
+
+## Development Process
+
+SOON...
 
 ## Learn how LIF works
 
