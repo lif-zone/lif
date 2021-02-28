@@ -137,8 +137,7 @@ $ docker-compose up -d server_dev
 ```
 
 The DB server will be running at [http://localhost:3101](http://localhost:3101).
-
-Verify it works via a simple client script:
+And will use local mongo container. Verify it works via a simple client script:
 
 ```
 $ node pkg/example_client.js
@@ -150,6 +149,12 @@ You should see output like:
 ```
 NOTICE: publish_passport: success
 NOTICE: validate_passport: success
+```
+
+For production mode add ".server.env" file with "MONGO_URI" variable defined.
+To start production server on 80 port run:
+```
+$ docker-compose up -d server
 ```
 
 ### Running website

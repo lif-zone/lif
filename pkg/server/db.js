@@ -12,7 +12,8 @@ let init_client = ()=>etask(function*(){
         return yield etask.wait_ext(init_et);
     init_et = this;
     this.finally(()=>init_et = null);
-    client = new MongoClient('mongodb://mongo');
+    client = new MongoClient(process.env.MONGO_URI||'mongodb://mongo',
+        {useNewUrlParser: true, useUnifiedTopology: true});
     yield client.connect();
     return client;
 });

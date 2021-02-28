@@ -3,6 +3,17 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile.server
+    env_file:
+      - .server.env
+    ports:
+      - 80:80
+    volumes:
+      - ./:/usr/src/server/
+      - /usr/src/server/node_modules
+  server_dev:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.server
     depends_on:
       - mongo
     ports:
