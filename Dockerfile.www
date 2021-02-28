@@ -1,0 +1,17 @@
+FROM node:14
+
+EXPOSE 80
+
+# Create www directory
+RUN mkdir -p /usr/src/www
+WORKDIR /usr/src/www
+# Installing dependencies
+COPY ./package*.json /usr/src/www/
+
+RUN npm install --no-progress
+
+# Copying source files
+COPY . /usr/src/www
+
+# Running the app
+CMD "npm" "run" "start:www"

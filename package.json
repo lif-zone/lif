@@ -2,12 +2,18 @@
   "name": "lif_peer",
   "version": "0.1.0",
   "scripts": {
-    "start:server": "pm2 start pkg/server/server.js --no-daemon"
+    "start:server": "pm2 start pkg/server/server.js --no-daemon",
+    "start:www_dev": "next dev pkg/www/ --port=80",
+    "start:www_build": "next build pkg/www/",
+    "start:www": "next build pkg/www/ && next start pkg/www/ --port=80"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
     "mongodb": "^3.6.4",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "next": "10.0.7",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   }
 }

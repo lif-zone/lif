@@ -16,6 +16,28 @@ services:
       - "db-data:/data/db"
     environment:
       MONGO_INITDB_DATABASE: db
+  www:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.www
+    command: npm run start:www
+    ports:
+      - 80:80
+    volumes:
+      - ./:/usr/src/www/
+      - /usr/src/www/node_modules
+      - /usr/src/www/.next
+  www_dev:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.www
+    command: npm run start:www_dev
+    ports:
+      - 3100:80
+    volumes:
+      - ./:/usr/src/www/
+      - /usr/src/www/node_modules
+      - /usr/src/www/.next
 
 volumes:
   db-data:
