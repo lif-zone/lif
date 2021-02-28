@@ -4,6 +4,8 @@ const axios = require('axios');
 const etask = require('./util/etask.js');
 const zerr = require('./util/zerr.js');
 
+let host = 'http://localhost:3101';
+
 let verify_signature = (public_key, input, signature)=>{
     const verifier = crypto.createVerify('SHA256');
     verifier.update(input, 'ascii');
@@ -14,7 +16,7 @@ let verify_signature = (public_key, input, signature)=>{
 
 class LifDB {
     connect(){
-        this.host = 'http://localhost:3101';
+        this.host = process.argv[2]||'http://localhost:3101';
     }
     insert(item){
         let _this = this;
@@ -86,10 +88,12 @@ const validate_passport = (uid, public_key)=>etask(function*(){
 });
 
 const run = ()=>etask(function*(){
+    if (process.argv[2])
+        host = process.argv[2];
+    zerr.notice('server host: %s', host);
     const {private_key, public_key} = generate_keys();
     yield publish_passport('josh', {private_key, public_key});
     const is_valid = yield validate_passport('josh', public_key);
     zerr.notice('validate_passport: %s', is_valid ? 'success' : 'fail');
 });
-
 run();
