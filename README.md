@@ -136,6 +136,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 $ docker-compose up -d server_dev
 ```
+### Instal dependencies
+```
+$ npm install
+```
 
 The DB server will be running at [http://localhost:3101](http://localhost:3101).
 And will use local mongo container. Verify it works via a simple client script:
