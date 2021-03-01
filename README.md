@@ -123,6 +123,7 @@ sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 
 // re-login to your user and verify you can run docker command without sudo
+sudo systemctl restart docker
 docker run hello-world
 
 // install docker-compose
