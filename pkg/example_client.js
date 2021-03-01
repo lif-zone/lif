@@ -5,13 +5,14 @@ const etask = require('./util/etask.js');
 const zerr = require('./util/zerr.js');
 const lcrypto = require('./util/crypto.js');
 
-let host = 'http://localhost:3101';
+let ldb, host = 'http://localhost:3101';
 
 class LifDB {
     init(opt){
 	this.public_key = opt.public_key;
 	this.private_key = opt.private_key;
     }
+    uninit(opt){} // XXX antonp: need disconnect mongo connection
     connect(){
         this.host = process.argv[2]||'http://localhost:3101';
     }
@@ -53,9 +54,6 @@ const sign = (input, private_key)=>{
 
 const publish_passport = (uid, {public_key, private_key})=>etask(function*(){
     this.on('uncaught', e=>zerr('Error: '+e));
-    const ldb = new LifDB();
-    yield ldb.init({public_key, private_key});
-    yield ldb.connect();
     const data = {type: 'passport', public_key: ldb.public_key, uid,
 	first_name: 'John', last_name: 'Doe'};
     let res = yield ldb.insert(data);
@@ -64,8 +62,6 @@ const publish_passport = (uid, {public_key, private_key})=>etask(function*(){
 
 const validate_passport = (uid, public_key)=>etask(function*(){
     this.on('uncaught', e=>zerr('Error: '+e));
-    const ldb = new LifDB();
-    yield ldb.connect();
     let items = yield ldb.find_all({'data.type': 'passport', 'data.uid': uid});
     let curr;
     for (let item of items)
@@ -89,10 +85,13 @@ const validate_passport = (uid, public_key)=>etask(function*(){
 });
 
 const run = ()=>etask(function*(){
+    ldb = new LifDB();
     if (process.argv[2])
         host = process.argv[2];
     zerr.notice('server host: %s', host);
     const {private_key, public_key} = generate_keys();
+    yield ldb.init({public_key, private_key});
+    yield ldb.connect();
     yield publish_passport('josh', {private_key, public_key});
     const is_valid = yield validate_passport('josh', public_key);
     zerr.notice('validate_passport: %s', is_valid ? 'success' : 'fail');
