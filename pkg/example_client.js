@@ -8,14 +8,22 @@ const lcrypto = require('./util/crypto.js');
 let host = 'http://localhost:3101';
 
 class LifDB {
+    init(opt){
+	this.public_key = opt.public_key;
+	this.private_key = opt.private_key;
+    }
     connect(){
         this.host = process.argv[2]||'http://localhost:3101';
     }
-    insert(item){
+    insert_raw(item){
         let _this = this;
         return etask(function*(){
             return yield axios.post(`${_this.host}/api/insert`, item);
         });
+    }
+    insert(data){
+	const signature = sign(JSON.stringify(data), this.private_key);
+	return this.insert_raw({data, signature});
     }
     find_all(selector, opt){
         let _this = this;
@@ -46,11 +54,11 @@ const sign = (input, private_key)=>{
 const publish_passport = (uid, {public_key, private_key})=>etask(function*(){
     this.on('uncaught', e=>zerr('Error: '+e));
     const ldb = new LifDB();
+    yield ldb.init({public_key, private_key});
     yield ldb.connect();
-    const data = {type: 'passport', public_key, uid, first_name: 'John',
-        last_name: 'Doe'};
-    const signature = sign(JSON.stringify(data), private_key);
-    let res = yield ldb.insert({data, signature});
+    const data = {type: 'passport', public_key: ldb.public_key, uid,
+	first_name: 'John', last_name: 'Doe'};
+    let res = yield ldb.insert(data);
     zerr.notice('publish_passport: %s', res.data.success ? 'success' : 'fail');
 });
 
