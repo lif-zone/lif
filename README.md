@@ -156,6 +156,13 @@ NOTICE: publish_passport: success
 NOTICE: validate_passport: success
 ```
 
+Useful docker commands:
+
+```
+docker-compose restart server_dev
+docker-compose logs --tail=100 --follow server_dev
+```
+
 For production mode add ".server.env" file with "MONGO_URI" variable defined.
 To start production server on 80 port run:
 ```

@@ -3,16 +3,9 @@ const crypto = require('crypto');
 const axios = require('axios');
 const etask = require('./util/etask.js');
 const zerr = require('./util/zerr.js');
+const lcrypto = require('./util/crypto.js');
 
 let host = 'http://localhost:3101';
-
-let verify_signature = (public_key, input, signature)=>{
-    const verifier = crypto.createVerify('SHA256');
-    verifier.update(input, 'ascii');
-    const public_key_buf = Buffer.from(public_key, 'ascii');
-    const signature_buf = Buffer.from(signature, 'hex');
-    return verifier.verify(public_key_buf, signature_buf);
-};
 
 class LifDB {
     connect(){
@@ -72,7 +65,7 @@ const validate_passport = (uid, public_key)=>etask(function*(){
         let {data, signature, ts} = item;
         if (!data.public_key || !signature)
             continue;
-        if (!verify_signature(data.public_key, JSON.stringify(data),
+        if (!lcrypto.verify_signature(data.public_key, JSON.stringify(data),
             signature))
         {
             continue;
@@ -83,7 +76,7 @@ const validate_passport = (uid, public_key)=>etask(function*(){
     }
     if (!curr)
         return false;
-    return verify_signature(public_key, JSON.stringify(curr.data),
+    return lcrypto.verify_signature(public_key, JSON.stringify(curr.data),
         curr.signature);
 });
 

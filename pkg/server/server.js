@@ -5,15 +5,8 @@ const crypto = require('crypto');
 const zerr = require('../util/zerr.js');
 const etask = require('../util/etask.js');
 const util = require('../util/util.js');
+const lcrypto = require('../util/crypto.js');
 const db = require('./db.js');
-
-const verify_signature = (public_key, input, signature)=>{
-    const verifier = crypto.createVerify('SHA256');
-    verifier.update(input, 'ascii');
-    const public_buf = Buffer.from(public_key, 'ascii');
-    const sign_buf = Buffer.from(signature, 'hex');
-    return verifier.verify(public_buf, sign_buf);
-};
 
 const insert = (req, res)=>etask(function*(){
     this.on('uncaught', e=>{
@@ -30,7 +23,7 @@ const insert = (req, res)=>etask(function*(){
     let {type, public_key} = data;
     if (!type || !/^[a-z_]+$/.test(type) || typeof public_key!='string')
         return res.status(400).send('valid type and public_key required');
-    if (!verify_signature(public_key, JSON.stringify(data), signature))
+    if (!lcrypto.verify_signature(public_key, JSON.stringify(data), signature))
         return res.status(400).send('invalid signature');
     yield db.insert(coll_name, {data, ts: Date.now(), signature});
     res.json({success: 1});
