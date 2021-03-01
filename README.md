@@ -120,7 +120,7 @@ Install docker-compose and docker:
 // install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-sudo usermod -aG docker ubuntu
+sudo usermod -aG docker $USER
 
 // re-login to your user and verify you can run docker command without sudo
 docker run hello-world
