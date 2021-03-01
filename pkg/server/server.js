@@ -10,9 +10,9 @@ const db = require('./db.js');
 const verify_signature = (public_key, input, signature)=>{
     const verifier = crypto.createVerify('SHA256');
     verifier.update(input, 'ascii');
-    const publicKeyBuf = Buffer.from(public_key, 'ascii');
-    const signatureBuf = Buffer.from(signature, 'hex');
-    return verifier.verify(publicKeyBuf, signatureBuf);
+    const public_buf = Buffer.from(public_key, 'ascii');
+    const sign_buf = Buffer.from(signature, 'hex');
+    return verifier.verify(public_buf, sign_buf);
 };
 
 const insert = (req, res)=>etask(function*(){
