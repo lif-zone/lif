@@ -1,7 +1,6 @@
 'use strict';
 const express = require('express');
 const morgan = require('morgan');
-const crypto = require('crypto');
 const zerr = require('../util/zerr.js');
 const etask = require('../util/etask.js');
 const util = require('../util/util.js');
