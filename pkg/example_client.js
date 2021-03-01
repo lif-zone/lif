@@ -4,37 +4,9 @@ const axios = require('axios');
 const etask = require('./util/etask.js');
 const zerr = require('./util/zerr.js');
 const lcrypto = require('./util/crypto.js');
+const {LifDB} = require('./client/client.js');
 
 let ldb, host = 'http://localhost:3101';
-
-class LifDB {
-    init(opt){
-	this.public_key = opt.public_key;
-	this.private_key = opt.private_key;
-    }
-    uninit(opt){} // XXX antonp: need disconnect mongo connection
-    connect(){
-        this.host = process.argv[2]||'http://localhost:3101';
-    }
-    insert_raw(item){
-        let _this = this;
-        return etask(function*(){
-            return yield axios.post(`${_this.host}/api/insert`, item);
-        });
-    }
-    insert(data){
-	const signature = sign(JSON.stringify(data), this.private_key);
-	return this.insert_raw({data, signature});
-    }
-    find_all(selector, opt){
-        let _this = this;
-        return etask(function*(){
-            let res = yield axios(`${_this.host}/api/find_all`,
-                {params: {selector: JSON.stringify(selector)}});
-            return res.data;
-        });
-    }
-}
 
 const generate_keys = ()=>{
     const {privateKey, publicKey} = crypto.generateKeyPairSync('rsa', {
@@ -43,13 +15,6 @@ const generate_keys = ()=>{
         privateKeyEncoding: {type: 'pkcs1', format: 'pem'},
     });
     return {private_key: privateKey, public_key: publicKey};
-};
-
-const sign = (input, private_key)=>{
-    const _sign = crypto.createSign('SHA256');
-    _sign.update(input);
-    _sign.end();
-    return _sign.sign(private_key, 'hex');
 };
 
 const publish_passport = (uid, {public_key, private_key})=>etask(function*(){
