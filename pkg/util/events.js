@@ -1,15 +1,6 @@
 /*jslint skip_file:true*/
-(function(){
-var define;
-var is_node = typeof module=='object' && module.exports && module.children;
-var is_rn = (typeof global=='object' && !!global.nativeRequire) ||
-    (typeof navigator=='object' && navigator.product=='ReactNative');
-if (!is_node && !is_rn)
-    define = self.define;
-else
-    define = require('./require_node.js').define(module, '../');
-define([], function(){
 
+module.exports = EventEmitter;
 /**
  * Minimal EventEmitter interface that is molded against the Node.js
  * EventEmitter interface.
@@ -214,5 +205,3 @@ EventEmitter.EventEmitter = EventEmitter;
 // external usages and remove
 EventEmitter.EventEmitter2 = EventEmitter;
 EventEmitter.EventEmitter3 = EventEmitter;
-
-return EventEmitter; }); })();

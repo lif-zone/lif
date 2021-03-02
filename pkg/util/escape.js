@@ -1,14 +1,6 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*jslint node:true, browser:true*/
-(function(){
-var define;
-var is_node_ff = typeof module=='object' && module.exports;
-if (!is_node_ff)
-    define = self.define;
-else
-    define = require('./require_node.js').define(module, '../');
-define([], function(){
-var E = {};
+var E = module.exports;
 E.un = {};
 
 var html_escape_table = {
@@ -270,5 +262,3 @@ E.markdown2 = function(val, type){
     }
     return (''+val).replace(re, '\\$&');
 };
-
-return E; }); }());

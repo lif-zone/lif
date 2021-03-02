@@ -1,14 +1,6 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, br*/
-(function(){
-var define;
-var is_node_ff = typeof module=='object' && module.exports;
-if (!is_node_ff)
-    define = self.define;
-else
-    define = require('./require_node.js').define(module, '../');
-define([], function(){
-var E = sprintf;
+var E = module.exports = sprintf;
 E.sprintf = sprintf;
 var has = Object.prototype.hasOwnProperty;
 function sprintf(fmt /* args... */){
@@ -403,5 +395,3 @@ E.vsprintf = function(fmt, argv, opt){
     }
     return E.sprintf.apply(null, [fmt].concat(argv));
 };
-
-return E; }); }());

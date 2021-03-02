@@ -1,15 +1,7 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*jslint node:true, browser:true*/
-(function(){
-var define;
 var is_node = typeof module=='object' && module.exports && module.children;
-var is_node_ff = typeof module=='object' && module.exports;
-if (!is_node_ff)
-    define = self.define;
-else
-    define = require('./require_node.js').define(module, '../');
-define([], function(){
-var E = date_get;
+var E = module.exports = date_get;
 
 E.sec = {
     NANO: 1e-9,
@@ -690,5 +682,3 @@ E.timezone_offset = function(tz, dt){
     var offset = Date.parse(dt_str+' '+tz)-Date.parse(dt_str+' UTC');
     return offset/ms.MIN;
 };
-
-return E; }); }());

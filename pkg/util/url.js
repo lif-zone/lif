@@ -1,30 +1,10 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, br*/
-(function(){
-var define;
 var is_node = typeof module=='object' && module.exports && module.children;
-var is_rn = (typeof global=='object' && !!global.nativeRequire) ||
-    (typeof navigator=='object' && navigator.product=='ReactNative');
-var is_ff_addon = typeof module=='object' && module.uri
-    && !module.uri.indexOf('resource://');
-var qs;
+var qs = is_node && require('querystring');
 
-if (is_rn)
-    define = require('./require_node.js').define(module, '../');
-else if (!is_node)
-    define = self.define;
-else
-{
-    define = require('./require_node.js').define(module, '../');
-    // XXX arik HACK: react-native bundler will try to require querystring
-    // even thoguh it never reaches this if (it is done in pre-processing)
-    // so we fool him
-    var _require = require;
-    qs = _require('querystring');
-}
-define([], function(){
 var assign = Object.assign;
-var E = {};
+var E = module.exports;
 
 function replace_slashes(url){ return url.replace(/\\/g, '/'); }
 
@@ -492,5 +472,3 @@ E.qs_remove = function(url, qs){
 E.qs_parse_url = function(url){
     return E.qs_parse(url.replace(/(^.*\?)|(^[^?]*$)/, ''));
 };
-
-return E; }); }());

@@ -1,16 +1,6 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, br*/
-(function(){
-var define;
-var is_node = typeof module=='object' && module.exports && module.children;
-var is_rn = typeof global=='object' && !!global.nativeRequire ||
-    typeof navigator=='object' && navigator.product=='ReactNative';
-if (!is_node && !is_rn)
-    define = self.define;
-else
-    define = require('./require_node.js').define(module, '../');
-define([], function(){
-var E = rate_limit;
+var E = module.exports = rate_limit;
 
 function rate_limit(rl, ms, n){
     var now = Date.now();
@@ -71,5 +61,3 @@ E.leaky_bucket.prototype.inc_size = function(inc){
     this.size = new_size;
     this.rate *= factor;
 };
-
-return E; }); }());

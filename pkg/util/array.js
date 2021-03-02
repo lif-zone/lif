@@ -1,14 +1,7 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*jslint node:true, browser:true*/
 (function(){
-var define;
-var is_node_ff = typeof module=='object' && module.exports;
-if (!is_node_ff)
-    define = self.define;
-else
-    define = require('./require_node.js').define(module, '../');
-define([], function(){
-var E = {};
+var E = module.exports;
 
 var proto_slice = Array.prototype.slice;
 E.copy = function(a){
@@ -208,4 +201,4 @@ E.prototype_uninstall = function(){
     for (var i in proto)
         delete Array.prototype[i];
 };
-return E; }); }());
+return E; }());

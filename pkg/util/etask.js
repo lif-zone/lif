@@ -1,27 +1,13 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*jslint node:true, browser:true, es6: true*/
 (function(){
-var define, process, zerr, assert;
+var zerr, assert;
 var is_node = typeof module=='object' && module.exports && module.children;
-var is_rn = typeof global=='object' && !!global.nativeRequire ||
-    typeof navigator=='object' && navigator.product=='ReactNative';
 if (!is_node)
 {
-    if (is_rn)
-    {
-        define = require('./require_node.js').define(module, '../',
-            require('/util/events.js'), require('/util/array.js'),
-            require('/util/util.js'));
-    }
-    else
-        define = self.define;
-    process = {
-        nextTick: function(fn){ setTimeout(fn, 0); },
-        env: {},
-    };
     // XXX romank: use zerr.js
     // XXX bahaa: require bext/pub/zerr.js for extensions
-    if (!is_rn && self.hola && self.hola.zerr)
+    if (self.hola && self.hola.zerr)
         zerr = self.hola.zerr;
     else
     {
@@ -37,10 +23,8 @@ if (!is_node)
 else
 {
     require('./config.js');
-    process = global.process||require('_process');
     zerr = require('./zerr.js');
     assert = require('assert');
-    define = require('./require_node.js').define(module, '../');
 }
 // XXX odin: normally this would only be run for !is_node, but 'who' unittests
 // loads a stubbed assert
@@ -48,9 +32,10 @@ if (typeof assert!='function')
     assert = function(){}; // XXX romank: add proper assert
 // XXX yuval: /util/events.js -> events when node 6 (support prependListener)
 // is here
-define(['/util/events.js', '/util/array.js', '/util/util.js'],
-    function(events, array, zutil){
-var E = Etask;
+var events = require('./events.js');
+var array = require('./array.js');
+var zutil = require('./util.js');
+var E = module.exports = Etask;
 var etask = Etask;
 var env = process.env, assign = Object.assign;
 E.use_bt = +env.ETASK_BT;
@@ -62,9 +47,6 @@ E.set_zerr = function(_zerr){ zerr = _zerr; };
 E.events = new events();
 var cb_pre, cb_post, cb_ctx, longcb_ms, perf_enable;
 E.perf_stat = {};
-// XXX romang: hack to import in react native
-if (is_rn)
-    E.etask = E;
 function _cb_pre(et){ return {start: Date.now()}; }
 function _cb_post(et, ctx){
     ctx = ctx||cb_ctx;
@@ -1565,4 +1547,4 @@ E.shutdown = function(){
     }
 };
 
-return Etask; }); }());
+return Etask; }());

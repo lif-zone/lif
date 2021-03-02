@@ -1,24 +1,12 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, br*/
 (function(){
-var define, node_util;
+var node_util;
 var is_node = typeof module=='object' && module.exports && module.children;
-var is_rn = typeof global=='object' && !!global.nativeRequire
-    || typeof navigator=='object' && navigator.product=='ReactNative';
-if (is_rn)
-{
-    define = require('./require_node.js').define(module, '../',
-        require('/util/array.js'));
-}
-else if (!is_node)
-    define = self.define;
-else
-{
+if (is_node)
     node_util = require('util');
-    define = require('./require_node.js').define(module, '../');
-}
-define(['/util/array.js'], function(array){
-var E = {};
+var array = require('./array.js');
+var E = module.exports;
 
 E._is_mocha = undefined;
 E.is_mocha = function(){
@@ -552,4 +540,4 @@ E.flatten_obj = function(obj){
     return res;
 };
 
-return E; }); }());
+return E; }());

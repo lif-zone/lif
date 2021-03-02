@@ -1,48 +1,18 @@
 // LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, br*/
-(function(){
-var define, process;
 var is_node = typeof module=='object' && module.exports && module.children;
-var is_rn = (typeof global=='object' && !!global.nativeRequire) ||
-    (typeof navigator=='object' && navigator.product=='ReactNative');
-if (is_rn)
-{
-    define = require('./require_node.js').define(module, '../',
-        require('/util/array.js'), require('/util/date.js'),
-        require('/util/util.js'), require('/util/sprintf.js'),
-        require('/util/rate_limit.js'), require('/util/escape.js'));
-    process = {
-        nextTick: function(fn){ setTimeout(fn, 0); },
-        env: {},
-    };
-}
-else if (!is_node)
-{
-    define = self.define;
-    process = {env: {}};
-}
-else
-{
-    define = require('./require_node.js').define(module, '../');
-    if (is_node)
-    {
-        process = global.process||require('_process');
-        require('./config.js');
-        var cluster = require('cluster');
-        // XXX stanislav/sergeyp: remove try/catch wrap after node on
-        // app_win64_jse is updated
-        var worker_threads = {isMainThread: true};
-        try { worker_threads = require('worker_threads'); }
-        catch(e){}
-        var version = require('./version.js').version;
-    }
-}
-define(['/util/array.js', '/util/date.js', '/util/util.js',
-    '/util/sprintf.js', '/util/rate_limit.js', '/util/escape.js'],
-    function(array, date, zutil, sprintf, rate_limit, zescape){
-var E, _zerr;
+if (!is_node)
+    require('./config.js');
+var array = require('./array.js');
+var date = require('./date.js');
+var zutil = require('./util.js');
+var sprintf = require('./sprintf.js');
+var rate_limit = require('./rate_limit.js');
+var zescape = require('./escape.js');
+var _zerr;
 var env = process.env;
 var zerr = function(msg){ _zerr(L.ERR, arguments); };
+var E = module.exports = zerr;
 E = zerr;
 // XXX amir: why do we need both E and E.zerr to point to the same function?
 E.zerr = zerr;
@@ -224,29 +194,13 @@ E.prefix = '';
 
 E.level = L.NOTICE;
 E.flush = function(){};
-E.set_log_buffer = function(on){
-    if (!on)
-    {
-        if (E.log_buffer)
-        {
-            E.flush();
-            E.log_buffer(0);
-        }
-        return;
-    }
-    E.log_buffer = require('log-buffer');
-    E.log_buffer(32*1024);
-    E.flush = function(){ E.log_buffer.flush(); };
-    setInterval(E.flush, 1000).unref();
-};
 var node_init = function(){
     if (zutil.is_mocha())
     {
         E.level = L.WARN;
         return;
     }
-    E.prefix = (!cluster.isMaster ? 'C'+cluster.worker.id+' ' : '')
-    +(!worker_threads.isMainThread ? 'T'+worker_threads.threadId+' ': '');
+    E.prefix = '';
 };
 
 var init = function(){
@@ -311,29 +265,12 @@ E.zexit = function(args){
         process.exit(1);
     }
     if (env.NODE_ENV=='production')
-    {
-        var conf = require('./conf.js');
-        var zcounter_file = require('./zcounter_file.js');
-        zcounter_file.inc('server_zexit');
-        args = zerr_format(arguments);
-        write_zexit_log({id: 'lerr_server_zexit', info: ''+args,
-            ts: date.to_sql(), backtrace: stack, version: version,
-            app: conf.app});
         E.flush();
-    }
     /*jslint -W087*/
     debugger;
     process.exit(1);
 };
 
-var write_zexit_log = function(json){
-    try {
-        var file = require('./file.js');
-        file.mkdirp(E.ZEXIT_LOG_DIR);
-        file.write_atomic_e(E.ZEXIT_LOG_DIR+'/'+date.to_log_file()+'_zexit_'+
-            process.pid+'.log', E.json(json));
-    } catch(e){ E.zerr(E.e2s(e)); }
-};
 }
 else
 { // browser-zerr
@@ -431,6 +368,4 @@ var perr = function(perr_orig, pending){
 };
 E.perr_install(perr);
 
-} // end of browser-zerr}
-
-return E; }); }());
+} // end of browser-zerr
