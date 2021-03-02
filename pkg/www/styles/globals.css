@@ -1,16 +1,123 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+
+@layer base {
+    a { @apply underline text-blue-600 hover:no-underline; }
+    h1 { @apply py-4 text-4xl; }
+    h1 { @apply py-4 text-4xl; }
+  * {
+        @apply leading-normal;
+    }
+
+    h1 {
+    @apply my-3 text-4xl font-bold;
+    }
+
+    h2 {
+    @apply my-4 text-3xl font-semibold;
+    }
+
+    h3 {
+    @apply my-5 text-2xl font-semibold;
+    }
+
+    h4 {
+    @apply my-6 text-xl font-semibold;
+    }
+
+    h5 {
+    @apply my-8 text-lg font-medium;
+    }
+
+    h6 {
+    @apply my-10 text-base font-medium;
+    }
+
+    p {
+    @apply my-3;
+    }
+
+    blockquote {
+    @apply my-4 px-8 border-l-4 border-gray-200;
+    }
+
+    hr {
+    @apply my-6 border-t;
+    }
+
+    dl, ol, ul {
+    @apply my-4 pl-3 list-inside;
+    }
+
+    dl {
+        dt {
+        @apply font-semibold;
+        }
+
+        dd {
+        @apply ml-6;
+        }
+    }
+
+    ol {
+    @apply list-decimal;
+    }
+
+    ul {
+    @apply list-disc;
+    }
+
+    a {
+    @apply underline;
+    }
+
+    table {
+    @apply table border-separate border-gray-200 align-middle text-left bg-gray-200 rounded;
+
+        caption {
+        @apply p-3;
+        }
+
+        thead tr th {
+        @apply py-2 px-4;
+        }
+
+        tbody tr td {
+        @apply py-2 px-4;
+        }
+
+        tfoot tr th {
+        @apply py-2 px-4;
+        }
+    }
+
+    input, textarea {
+    @apply block px-3 py-2 border rounded text-sm;
+    }
+
+    input:focus, textarea:focus {
+    @apply outline-none;
+    }
+
+    label {
+    @apply block mb-2 text-sm font-semibold;
+    }
+
+    input[type="submit"], input[type="button"], input[type="reset"] {
+    @apply inline-block px-4 py-2 bg-gray-200 font-semibold;
+    }
+
+    figure {
+    @apply inline-block;
+
+        img {
+        @apply block w-full;
+        }
+
+        figcaption {
+        @apply block p-3 text-center text-sm;
+        }
+    }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
+@tailwind components;
+@tailwind utilities;
