@@ -5,7 +5,7 @@ import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
 
 const ALGORITHM = 'RSA-PSS', HASH = 'SHA-256';
-const HOST = 'http://client.lif.zone';
+let HOST = 'http://client.lif.zone';
 
 const db_insert = item=>etask(function*(){
     const res = yield axios.post(`${HOST}/api/insert`, item);
@@ -354,11 +354,33 @@ const Verify_user = ({public_key})=>{
           </div>;
 };
 
+const Server = ({host, set_host})=>{
+    return <div className="max-w-md">
+            <form className="grid grid-cols-1 gap-2">
+              <label className="block">
+                <input type="text"
+                  className="block w-full rounded-md border-gray-300
+                    shadow-sm focus:border-indigo-300 focus:ring
+                    focus:ring-indigo-200 focus:ring-opacity-50"
+                  placeholder="http://client.lif.zone" value={host}
+                  onChange={e=>set_host(e.target.value)}/>
+              </label>
+            </form>
+          </div>;
+};
+
 export default function Home(){
     let [keypair, set_keypair] = useState();
+    let [host, set_host] = useState('http://client-b.lif.zone');
+    // tmp hack
+    useEffect(()=>{ HOST = host; }, [host]);
     return (
       <Layout>
           <h1>LIF Wallet</h1>
+          <div className="container mb-4">
+            <h3>Server</h3>
+            <Server host={host} set_host={set_host}/>
+          </div>
           <div className="container mb-4">
             <h3>Your keypair</h3>
             <Keypair keypair={keypair} set_keypair={set_keypair}/>
