@@ -1,0 +1,110 @@
+module.exports = {
+    parser: "babel-eslint",
+    "globals": {
+        "localStorage": true,
+        "fetch": true,
+        "window": true,
+        "Uint8Array": true,
+    },
+    parserOptions: {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    plugins: ["react"],
+    rules: {
+        "comma-dangle": 0,
+        "react/jsx-uses-vars": 1,
+        "react/display-name": 1,
+        "no-unused-vars": "warn",
+        "no-console": 1,
+        "no-unexpected-multiline": "warn",
+        "react/react-in-jsx-scope": "off",
+        indent: 'off',
+        'no-cond-assign': 'off',
+        'no-constant-condition': 'off',
+        'no-console': 'off',
+        'no-control-regex': 'warn',
+        'no-extra-parens': 'error',
+        'no-func-assign': 'warn',
+        'no-inner-declarations': 'off',
+        'no-negated-in-lhs': 'warn',
+        'no-sparse-arrays': 'warn',
+        'no-unexpected-multiline': 'warn',
+        'use-isnan': 'warn',
+        'valid-typeof': 'warn',
+        'no-shadow': 'warn',
+        'no-restricted-globals': ['error', 'event'],
+        // Best practices
+        'block-scoped-var': 'warn',
+        'no-case-declarations': 'warn',
+        'no-else-return': 'warn',
+        'no-empty': 'off',
+        'no-empty-pattern': 'warn',
+        'no-extra-bind': 'error',
+        'no-extra-label': 'error',
+        'no-fallthrough': 'off',
+        'no-iterator': 'error',
+        'no-lone-blocks': 'warn',
+        'no-multi-spaces': 'error',
+        'no-multi-str': 'error',
+        'no-proto': 'error',
+        'no-self-compare': 'warn',
+        'no-unmodified-loop-condition': 'warn',
+        'no-useless-call': 'error',
+        'no-useless-concat': 'error',
+        // Variables
+        'no-label-var': 'error',
+        'no-undef': 'off',
+        'no-unused-vars': ['error', {args: 'none'}],
+        // Stylistic issues
+        'array-bracket-spacing': 'error',
+        'block-spacing': 'error',
+        // XXX yuval vadiml: last element ',' for objs and arrays.
+        // 'comma-dangle': ['error', 'always-multiline'],
+        'comma-spacing': 'error',
+        'eol-last': 'error',
+        'key-spacing': 'error',
+        'keyword-spacing': ['error', {
+            overrides: {'catch': {after: false}, 'this': {before: false}},
+        }],
+        'linebreak-style': 'error',
+        'max-len': ['error', 79, 8, {
+            ignoreUrls: true,
+            ignorePattern: '/.+/',
+        }],
+        'no-mixed-spaces-and-tabs': 'off',
+        'no-multiple-empty-lines': ['error', {max: 2}],
+        'no-spaced-func': 'error',
+        'no-trailing-spaces': 'error',
+        'space-before-blocks': ['error', {functions: 'never',
+            keywords: 'never', classes: 'always'}],
+        'no-whitespace-before-property': 'error',
+        quotes: ['error', 'single', {
+            avoidEscape: true,
+            allowTemplateLiterals: true,
+        }],
+        semi: ['error', 'always'],
+        'space-before-function-paren': ['error', 'never'],
+        'space-in-parens': 'error',
+        'spaced-comment': ['error', 'always', {
+            markers: ['jslint', 'zlint', 'global'],
+        }],
+        'object-curly-spacing': 'warn',
+        // ECMAScript 6
+        'generator-star-spacing': ['error', {before: false, after: false}],
+        'require-yield': 'warn',
+        'arrow-parens': ['warn', 'as-needed'],
+        'no-template-curly-in-string': 'warn',
+    },
+    settings: {
+        react: {
+            "pragma": "React",
+            "version": "15.6.1"
+        }
+    },
+}
