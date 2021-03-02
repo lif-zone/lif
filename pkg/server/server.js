@@ -22,6 +22,7 @@ const insert = (req, res)=>etask(function*(){
     let {type, public_key} = data;
     if (!type || !/^[a-z_]+$/.test(type) || typeof public_key!='string')
         return res.status(400).send('valid type and public_key required');
+    if (0) // implement web crypto
     if (!lcrypto.verify_signature(public_key, JSON.stringify(data), signature))
         return res.status(400).send('invalid signature');
     yield db.insert(coll_name, {data, ts: Date.now(), signature});
@@ -71,6 +72,12 @@ let init = ()=>{
     const port = 80;
     app.listen(port, ()=>{
         zerr.notice(`App listening at :${port}`);
+    });
+    app.use((req, res, next)=>{
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers',
+            'Origin, X-Requested-With, Content-Type, Accept');
+        next();
     });
     app.use(morgan('tiny'));
     app.use(express.json());
