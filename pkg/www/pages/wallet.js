@@ -371,7 +371,7 @@ const Server = ({host, set_host})=>{
 
 export default function Home(){
     let [keypair, set_keypair] = useState();
-    let [host, set_host] = useState('http://client-b.lif.zone');
+    let [host, set_host] = useState('https://client.lif.zone');
     // tmp hack
     useEffect(()=>{ HOST = host; }, [host]);
     return (
