@@ -1,6 +1,7 @@
 @tailwind base;
 
 @layer base {
+    body { @apply bg-lif-gray; }
     a { @apply underline text-blue-600 hover:no-underline cursor-pointer; }
     h1 { @apply py-4 text-4xl; }
     h1 { @apply py-4 text-4xl; }
