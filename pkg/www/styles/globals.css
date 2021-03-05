@@ -2,7 +2,8 @@
 
 @layer base {
     body { @apply bg-lif-gray; }
-    a { @apply underline text-blue-600 hover:no-underline cursor-pointer; }
+    header { @apply flex justify-between; }
+    a { @apply font-bold text-base text-lif-blue opacity-50 cursor-pointer no-underline ml-10; }
     h1 { @apply py-4 text-4xl; }
     h1 { @apply py-4 text-4xl; }
   * {
@@ -37,10 +38,6 @@
     @apply my-3;
     }
 
-    blockquote {
-    @apply my-4 px-8 border-l-4 border-gray-200;
-    }
-
     hr {
     @apply my-6 border-t;
     }
@@ -65,10 +62,6 @@
 
     ul {
     @apply list-disc;
-    }
-
-    a {
-    @apply underline;
     }
 
     table {

@@ -3,11 +3,15 @@ module.exports = {
         './pkg/www/components/**/*.{js,ts,jsx,tsx}'],
     darkMode: false, // or 'media' or 'class'
     theme: {
-      extend: {},
-      backgroundColor: theme => ({
+      extend: {
+        colors: {
+         'lif-gray': '#f3f3f3',
+         'lif-blue': '#1f2348'
+        },
+      },
+      /* backgroundColor: theme => ({
        ...theme('colors'),
-       'lif-gray': '#f3f3f3',
-      })
+      }) */
     },
     variants: {
       extend: {},
