@@ -12,7 +12,7 @@ This project will be evolutionary. We will follow [Hola's DNA](https://hola.org/
 
 (For the technically minded, LIF is a keys/value distribued MongoDB-like database on top of IPFS-like file system, leveraging Bitcoin/Ethernium-like blockchain technology).
 
-The cutting-edge browser-first blockchain approach, means that user can connect and use the network with just a browser. Making it native to the web. Anyone with a modren browser can connect and access the nework, without any need to install special appplication. LIF is blockchain technology for the masses. And we will first develop the applications around it, letting the UI, define the underline protocol (instead of vice versa...)
+The cutting-edge browser-first blockchain approach, means that user can connect and use the network with just a browser. Making it native to the web. Anyone with a modren browser can connect and access the network, without any need to install special appplication. LIF is blockchain technology for the masses. And we will first develop the applications around it, letting the UI, define the underline protocol (instead of vice versa...)
 
 LIF combines [IPFS](https://raw.githubusercontent.com/ipfs/ipfs/) with [Mongo](https://github.com/mongodb/mongo), [Namecoin](https://www.namecoin.org/) and other blockchain design ideas, and enales you to create any distribueted database application:
 - Easy to use by anyone. Even your parents :-)
