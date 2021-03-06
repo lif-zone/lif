@@ -4,34 +4,33 @@
     body { @apply bg-lif-gray font-body text-lif-main subpixel-antialiased; }
     header { @apply flex justify-between; }
     a { @apply font-bold cursor-pointer no-underline text-lif-blue; }
-    h1 { @apply py-4 text-4xl; }
-    h1 { @apply py-4 text-4xl; }
-   * {
-        @apply leading-normal;
-    }
+    * { @apply leading-normal; }
+
+    .rtl { direction: 'rtl'; }
 
     h1 {
-    @apply my-3 text-4xl font-bold;
+    @apply text-5xl font-bold;
     }
 
+
     h2 {
-    @apply my-4 text-3xl font-semibold;
+    @apply text-3xl font-semibold;
     }
 
     h3 {
-    @apply my-5 text-2xl font-semibold;
+    @apply text-2xl font-semibold;
     }
 
     h4 {
-    @apply my-6 text-xl font-semibold;
+    @apply text-xl font-semibold;
     }
 
     h5 {
-    @apply mb-8 text-lg font-medium;
+    @apply text-lg font-medium;
     }
 
     h6 {
-    @apply my-10 text-base font-medium;
+    @apply text-base font-medium;
     }
 
     p {

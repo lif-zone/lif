@@ -36,7 +36,7 @@ const classes = {
 };
 
 const Mobile_menu_overlay = ()=>{
-    return <div className="shadow-md px-2">
+    return <div className="px-2">
           <div className="flex items-center px-4 py-6 border-b">
             <Link href="/">
               <Nav_button_sec>Login</Nav_button_sec>
@@ -109,7 +109,7 @@ const Mobile_menu = ()=>{
               style={{height: '2px'}}/>
           </button>
           <div className={cn(opened ? 'flex' : 'hidden', `absolute
-              right-0 bg-white mt-2 origin-top-right`)}>
+              right-0 bg-white mt-2 origin-top-right shadow-2xl rounded-lg`)}>
             <Mobile_menu_overlay/>
           </div>
         </div>;
@@ -137,11 +137,11 @@ const Header = ()=>{
       </header>;
 };
 
-export default function Layout({children}) {
+export default function Layout({children}){
   return (
     <>
       <Head>
-        <meta charSet="UTF-8" />
+        <meta charSet="UTF-8"/>
         <title>LIF - Liberty, Independence, Freedom - חירות, עצמאות, חופש
         </title>
         <link rel="icon" href="/img/favicon.svg"/>
@@ -153,7 +153,7 @@ export default function Layout({children}) {
         />
       </Head>
       <Header/>
-      <div className="container mx-auto py-6">{children}</div>
+      <div className="py-14 pl-10 pr-14">{children}</div>
       <footer className="container mx-auto text-right pb-6">
 	<p>
           <a href='https://github.com/lif-zone/lif' target='_blank'>
