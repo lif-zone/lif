@@ -109,7 +109,7 @@ export default function Home(){
                 Integrate it via API or shop plugins.</p>
               <Arrow_link>Learn More</Arrow_link>
             </div>
-            <div className="px-10 py-6 hidden md:block border-r">
+            <div className="px-10 py-6 hidden md:block">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/get_donations.png" className="max-w-xs"/>
               </div>
@@ -124,8 +124,8 @@ export default function Home(){
       <div className="text-center py-12">
         <Inline_button>See all Use Cases</Inline_button>
       </div>
-      <div className="px-6">
-        <div className="max-w-6xl lif-blue-bg rounded-lg p-8 text-white
+      <div className="px-12 max-w-6xl mx-auto">
+        <div className="lif-blue-bg rounded-lg p-8 text-white
           grid grid-cols-1 sm:grid-cols-2">
           <div>
             <h2>Build on it</h2>
@@ -133,6 +133,7 @@ export default function Home(){
               need.<br/>A great community is happy to help you.</p>
           </div>
           <div className="mt-4 flex sm:flex-col justify-between sm:items-end">
+            <div></div>
             <Primary_button arrow>GO TO DEV CENTER</Primary_button>
           </div>
         </div>
