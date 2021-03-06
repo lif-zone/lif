@@ -114,6 +114,11 @@
 .lif-blue-bg {
     background: radial-gradient(ellipse at bottom right, #260133, #1f2348);
 }
+.lif-hexagon-bg {
+    background-image: url('/img/hexagon-ribbon-white-desktop.svg');
+    background-size: auto 544px;
+    background-position: center 0;
+}
 
 @tailwind components;
 @tailwind utilities;

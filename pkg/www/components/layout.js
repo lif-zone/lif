@@ -3,6 +3,7 @@ import {useRef, useState, forwardRef} from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Icon_arrow from '../public/img/icon_arrow.svg';
+import Github from '../public/img/github.svg';
 import {use_outside_alerter} from '../utils/react.js';
 
 const Nav_link = forwardRef(({children}, ref)=>{
@@ -137,6 +138,25 @@ const Header = ()=>{
       </header>;
 };
 
+const Header_small = ()=>{
+    return <header className="p-4 mx-4 relative top-4 flex justify-between
+          items-center text-sm lg:text-base">
+        <div className="left">
+          <Link href="/">
+            <a><img src="/img/lif.svg" alt="LIF - Trusted data network"
+              className="h-8"/></a>
+          </Link>
+        </div>
+	<div className="flex items-center">
+	  <a href="https://github.com/lif-zone/lif"
+            className="text-black flex items-center text-lg opacity-70
+              transition-opacity hover:opacity-100">
+            <Github className="w-8"/> Github
+          </a>
+	</div>
+      </header>;
+};
+
 export default function Layout({children}){
   return (
     <>
@@ -152,15 +172,8 @@ export default function Layout({children}){
           content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
         />
       </Head>
-      <Header/>
+      <Header_small/>
       <div>{children}</div>
-      <footer className="container mx-auto text-right pb-6">
-	<p>
-          <a href='https://github.com/lif-zone/lif' target='_blank'>
-            GitHub</a>
-        </p>
-	<p><a href='mailto:lif@lif.zone'>lif@lif.zone</a></p>
-      </footer>
     </>
   );
 }

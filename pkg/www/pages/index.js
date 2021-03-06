@@ -91,27 +91,27 @@ export default function Home(){
         <div className="max-w-6xl mx-auto pb-6">
           <h2 className="sm:text-center px-10 pb-6">What can I do with it?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            <div className="px-10 py-6 sm:border-r">
+            <div className="px-12 py-6 sm:border-r">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/pay_online.png" className="max-w-xs"/>
+                <img src="/img/pay_online.png" className="w-60"/>
               </div>
               <h3>Pay Online</h3>
               <p>LIF is the easiest way to pay with decentralized money.
                 Integrate it via API or shop plugins.</p>
               <Arrow_link>Learn More</Arrow_link>
             </div>
-            <div className="px-10 py-6 hidden sm:block border-r">
+            <div className="px-12 py-6 hidden sm:block border-r">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/digital_money.png" className="max-w-xs"/>
+                <img src="/img/digital_money.png" className="w-60"/>
               </div>
               <h3>Pay Online</h3>
               <p>LIF is the easiest way to pay with decentralized money.
                 Integrate it via API or shop plugins.</p>
               <Arrow_link>Learn More</Arrow_link>
             </div>
-            <div className="px-10 py-6 hidden md:block">
+            <div className="px-12 py-6 hidden md:block">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/get_donations.png" className="max-w-xs"/>
+                <img src="/img/get_donations.png" className="w-60"/>
               </div>
               <h3>Pay Online</h3>
               <p>LIF is the easiest way to pay with decentralized money.
@@ -129,12 +129,24 @@ export default function Home(){
           grid grid-cols-1 sm:grid-cols-2">
           <div>
             <h2>Build on it</h2>
-            <p>JavaScript and a basic understanding of Blockchain is all you
-              need.<br/>A great community is happy to help you.</p>
+            <p className="text-xl">JavaScript and a basic understanding of
+              Blockchain is all you need.<br/>A great community is happy to
+              help you.</p>
           </div>
           <div className="mt-4 flex sm:flex-col justify-between sm:items-end">
             <div></div>
             <Primary_button arrow>GO TO DEV CENTER</Primary_button>
+          </div>
+        </div>
+      </div>
+      <div className="lif-blue-bg mt-12">
+        <div className="lif-hexagon-bg">
+          <div className="p-12 max-w-6xl mx-auto text-white">
+            <h2>Support the Network by mining</h2>
+            <p className="my-10 text-xl">Connecting to the blockchain only
+              requires opening a web browser. See how mining works on
+              lif.zone/mining</p>
+            <Primary_button arrow>SEE IT IN ACTION</Primary_button>
           </div>
         </div>
       </div>
