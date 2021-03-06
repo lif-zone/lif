@@ -5,19 +5,22 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-         'lif-gray': '#f3f3f3',
-         'lif-blue': '#1f2348'
+          'lif-gray': '#f3f3f3',
+          'lif-main': '#1f2348',
+          'lif-blue': '#0582ca',
+          'lif-blue-darkened': '#0071c3',
+          'lif-gray-bg': '#e4e4e7',
+          'lif-gray-bg-darkened': '#d9d9de',
         },
       },
       fontFamily: {
         body: ['Muli', 'sans-serif'],
       },
-      /* backgroundColor: theme => ({
-       ...theme('colors'),
-      }) */
     },
     variants: {
-      extend: {},
+      extend: {
+        translate: ['responsive', 'group-hover'],
+      },
     },
     plugins: [
         require('@tailwindcss/forms'),

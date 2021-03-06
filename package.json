@@ -8,6 +8,7 @@
     "start:www": "next build pkg/www/ && next start pkg/www/ --port=80"
   },
   "dependencies": {
+    "@svgr/webpack": "^5.5.0",
     "@tailwindcss/forms": "^0.2.1",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",

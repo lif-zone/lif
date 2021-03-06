@@ -7,15 +7,6 @@ const video_url = 'https://drive.google.com/file/d/1haTxF4aocS6V9FVej21ghdy3ZFet
 export default function Home(){
   return (
     <Layout>
-      <header>
-        <div>LIF - Trusted data network</div>
-	<div className='nav'>
-	  <a className='nav-links'>Developers</a>
-	  <a className='nav-links'>Apps</a>
-	  <a className='nav-links'>About</a>
-	  <a className='nav-links'>Create Account</a>
-	</div>
-      </header>
       <h1 className="text-right">
         LIF - Liberty, Independence, Freedom - חירות, עצמאות, חופש
       </h1>

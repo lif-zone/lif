@@ -1,12 +1,12 @@
 @tailwind base;
 
 @layer base {
-    body { @apply bg-lif-gray font-body; }
+    body { @apply bg-lif-gray font-body text-lif-main subpixel-antialiased; }
     header { @apply flex justify-between; }
-    a { @apply font-bold text-base text-lif-blue opacity-50 cursor-pointer no-underline ml-10; }
+    a { @apply font-bold cursor-pointer no-underline text-lif-blue; }
     h1 { @apply py-4 text-4xl; }
     h1 { @apply py-4 text-4xl; }
-  * {
+   * {
         @apply leading-normal;
     }
 
@@ -27,7 +27,7 @@
     }
 
     h5 {
-    @apply my-8 text-lg font-medium;
+    @apply mb-8 text-lg font-medium;
     }
 
     h6 {
@@ -88,7 +88,7 @@
     @apply block px-3 py-2 border rounded text-sm;
     }
 
-    input:focus, textarea:focus {
+    input:focus, textarea:focus, button:focus {
     @apply outline-none;
     }
 
