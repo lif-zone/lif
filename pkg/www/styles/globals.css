@@ -6,12 +6,9 @@
     a { @apply font-bold cursor-pointer no-underline text-lif-blue; }
     * { @apply leading-normal; }
 
-    .rtl { direction: 'rtl'; }
-
     h1 {
     @apply text-5xl font-bold;
     }
-
 
     h2 {
     @apply text-3xl font-semibold;
@@ -110,6 +107,12 @@
         @apply block p-3 text-center text-sm;
         }
     }
+}
+
+
+.rtl { direction: 'rtl'; }
+.lif-blue-bg {
+    background: radial-gradient(ellipse at bottom right, #260133, #1f2348);
 }
 
 @tailwind components;

@@ -21,9 +21,9 @@ const Nav_button_sec = forwardRef(({children}, ref)=>{
 });
 
 const Nav_button = forwardRef(({children, arrow}, ref)=>{
-    return <a ref={ref} className="group flex font-bold transition-opacity
-        cursor-pointer no-underline bg-lif-blue text-white px-4 py-2 leading-4
-        rounded-2xl items-center hover:bg-lif-blue-darkened">
+    return <a ref={ref} className="group flex font-bold cursor-pointer
+        no-underline bg-lif-blue text-white px-4 py-2 leading-4 rounded-2xl
+        items-center hover:bg-lif-blue-darkened">
         {children}
         {arrow && <Icon_arrow className="ml-2 transition-transform
             duration-300 transform group-hover:translate-x-0.5"/>}
@@ -108,7 +108,7 @@ const Mobile_menu = ()=>{
             <span className={cn(line_class, 'w-10/12')}
               style={{height: '2px'}}/>
           </button>
-          <div className={cn(opened ? 'flex' : 'hidden', `absolute
+          <div className={cn(opened ? 'flex' : 'hidden', `absolute z-10
               right-0 bg-white mt-2 origin-top-right shadow-2xl rounded-lg`)}>
             <Mobile_menu_overlay/>
           </div>
@@ -153,7 +153,7 @@ export default function Layout({children}){
         />
       </Head>
       <Header/>
-      <div className="py-14 pl-10 pr-14">{children}</div>
+      <div>{children}</div>
       <footer className="container mx-auto text-right pb-6">
 	<p>
           <a href='https://github.com/lif-zone/lif' target='_blank'>
