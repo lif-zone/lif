@@ -8,6 +8,8 @@ export default function Layout({children}) {
         <title>LIF - Liberty, Independence, Freedom - חירות, עצמאות, חופש
         </title>
         <link rel="icon" href="/favicon.ico"/>
+        <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800"/>
         <meta
           name="viewport"
           content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"

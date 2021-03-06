@@ -9,6 +9,9 @@ module.exports = {
          'lif-blue': '#1f2348'
         },
       },
+      fontFamily: {
+        body: ['Muli', 'sans-serif'],
+      },
       /* backgroundColor: theme => ({
        ...theme('colors'),
       }) */

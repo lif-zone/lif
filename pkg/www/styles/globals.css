@@ -1,7 +1,7 @@
 @tailwind base;
 
 @layer base {
-    body { @apply bg-lif-gray; }
+    body { @apply bg-lif-gray font-body; }
     header { @apply flex justify-between; }
     a { @apply font-bold text-base text-lif-blue opacity-50 cursor-pointer no-underline ml-10; }
     h1 { @apply py-4 text-4xl; }
