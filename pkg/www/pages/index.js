@@ -138,7 +138,7 @@ export default function Home(){
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
               <Link href="/about" passHref>
-                <Arrow_link>Learn More</Arrow_link>
+                <Arrow_link>{t('more_info')}</Arrow_link>
               </Link>
             </div>
             <div className="px-12 py-6 hidden sm:block border-e">
@@ -148,7 +148,7 @@ export default function Home(){
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
               <Link href="/about" passHref>
-                <Arrow_link>Learn More</Arrow_link>
+                <Arrow_link>{t('more_info')}</Arrow_link>
               </Link>
             </div>
             <div className="px-12 py-6 hidden md:block">
@@ -164,9 +164,11 @@ export default function Home(){
           </div>
         </div>
       </div>
+      {false && // XXX decide if needed
       <div className="text-center py-12">
         <Inline_button>See all Use Cases</Inline_button>
       </div>
+      }
       {false && // XXX decide if needed
       <div className="px-12 max-w-6xl mx-auto">
         <div className="lif-blue-bg rounded-lg p-8 text-white
