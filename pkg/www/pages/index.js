@@ -84,7 +84,7 @@ export default function Home(){
             <p className="mt-4 mb-8 text-xl leading-7">
 	      {t('lif_is')}<br/>{t('lif_is2')}
 	    </p>
-            <Primary_button arrow>{t('more_info')}</Primary_button>
+            <Primary_button arrow href="/about">{t('more_info')}</Primary_button>
           </div>
           <div className="">
             <div className="mb-14">
