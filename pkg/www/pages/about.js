@@ -2,7 +2,7 @@ import cn from 'classnames';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
-import {useTranslation} from 'next-i18next';
+import {Trans, useTranslation} from 'next-i18next';
 
 export const getStaticProps = ({locale})=>etask(function*(){
     const props = yield serverSideTranslations(locale, ['common', 'about']);
@@ -17,7 +17,9 @@ export default function Home(){
           <h1>{t('title')}</h1>
           <p className="mt-8 text-2xl">{t('p1')}</p>
           <p className="mt-8 text-xl text-gray-400">{t('p2')}</p>
-          <p className="mt-8 text-xl text-gray-400">{t('p3')}</p>
+          <p className="mt-8 text-xl text-gray-400">
+            <Trans t={t} i18nKey="p3"/>
+          </p>
         </div>
       </Layout>
     );
