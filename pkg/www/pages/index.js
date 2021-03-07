@@ -122,34 +122,31 @@ export default function Home(){
       </div>
       <div className="bg-white">
         <div className="max-w-6xl mx-auto pb-6">
-          <h2 className="sm:text-center px-10 pb-6">What can I do with it?</h2>
+          <h2 className="sm:text-center px-10 pb-6">{t('usage_examples')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <div className="px-12 py-6 sm:border-e">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/pay_online.png" className="w-60"/>
               </div>
-              <h3>Pay Online</h3>
-              <p>LIF is the easiest way to pay with decentralized money.
-                Integrate it via API or shop plugins.</p>
+              <h3>{t('usage1')}</h3>
+              <p>{t('usage1_desc')}</p>
               <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
             </div>
             <div className="px-12 py-6 hidden sm:block border-e">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/digital_money.png" className="w-60"/>
               </div>
-              <h3>Pay Online</h3>
-              <p>LIF is the easiest way to pay with decentralized money.
-                Integrate it via API or shop plugins.</p>
+              <h3>{t('usage2')}</h3>
+              <p>{t('usage2_desc')}</p>
               <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
             </div>
             <div className="px-12 py-6 hidden md:block">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/get_donations.png" className="w-60"/>
               </div>
-              <h3>Pay Online</h3>
-              <p>LIF is the easiest way to pay with decentralized money.
-                Integrate it via API or shop plugins.</p>
-              <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
+              <h3>{t('usage3')}</h3>
+              <p>{t('usage3_desc')}</p>
+              <Link href="/about"><Arrow_link>{t('more_info')}</Arrow_link></Link>
             </div>
           </div>
         </div>
