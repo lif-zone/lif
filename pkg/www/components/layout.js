@@ -3,6 +3,7 @@ import {useRef, useState, forwardRef} from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Icon_arrow from '../public/img/icon_arrow.svg';
+import Icon_lang from '../public/img/icon_lang.svg';
 import Github from '../public/img/github.svg';
 import {use_app_context} from '../utils/context.js';
 import {use_outside_alerter} from '../utils/react.js';
@@ -140,6 +141,45 @@ const Header = ()=>{
       </header>;
 };
 
+const full_lang = {en: 'English', he: 'עִברִית'};
+
+const Lang_selector = ()=>{
+    const {locale, locales} = useRouter();
+    const [opened, set_opened] = useState();
+    const toggle = ()=>set_opened(!opened);
+    const wrapper_ref = useRef(null);
+    use_outside_alerter(wrapper_ref, ()=>set_opened(false));
+    const button_class = cn(`flex flex-row items-center transition-colors
+        cursor-pointer hover:text-gray-700`,
+        opened ? 'text-gray-500' : 'text-gray-400');
+    const router = useRouter();
+    const select_lang = l=>{
+        router.push(router.route, router.route, {locale: l});
+    };
+    return <div ref={wrapper_ref}>
+          <span className={button_class} onClick={toggle}>
+            <Icon_lang className="me-1"/> {locale.toUpperCase()}
+          </span>
+          <div className={cn(opened ? 'flex' : 'hidden', `absolute z-10
+              end-0 bg-white mt-2 shadow-2xl rounded-lg`)}>
+            <div className="px-2 text-gray-400 text-base">
+              <div className="px-4 pt-4 pb-3">
+                <div className="text-xs mb-3 tracking-widest">Language</div>
+                {locales.map(l=>(
+                    <div className="my-2" key={l}>
+                      <a onClick={()=>select_lang(l)}
+                        className={cn(classes.popup_link,
+                          locale==l && 'font-bold')}>
+                        {full_lang[l]||l.toUpperCase()}
+                      </a>
+                    </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>;
+};
+
 const Header_small = ()=>{
     return <header className="p-4 mx-4 relative top-4 flex justify-between
           items-center text-sm lg:text-base">
@@ -152,9 +192,10 @@ const Header_small = ()=>{
 	<div className="flex items-center">
 	  <a href="https://github.com/lif-zone/lif"
             className="text-black flex items-center text-lg opacity-70
-              transition-opacity hover:opacity-100">
+              transition-opacity hover:opacity-100 me-5">
             <Github className="w-8"/> Github
           </a>
+          <Lang_selector/>
 	</div>
       </header>;
 };
