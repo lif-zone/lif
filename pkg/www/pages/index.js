@@ -7,6 +7,7 @@ import Icon_wht1 from '../public/img/wht-icon1.svg';
 import Icon_wht2 from '../public/img/wht-icon2.svg';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {use_app_context} from '../utils/context.js';
+import Link from 'next/link';
 import {useTranslation} from 'next-i18next';
 
 const video_url = 'https://drive.google.com/file/d/1haTxF4aocS6V9FVej21ghdy3ZFetOzba/preview';
@@ -92,7 +93,7 @@ export default function Home(){
                 and censorship-resistance. Your funds are accessible to no one
                 but you.
               </p>
-              <Arrow_link>Learn More</Arrow_link>
+              <Arrow_link><Link href="/about">Learn More</Link></Arrow_link>
             </div>
             <div className="mb-14">
               <h3 className="flex items-start">
@@ -103,7 +104,7 @@ export default function Home(){
                 user and developer interaction and makes complicated Blockchain
                 universally accessible. Think library vs. Wikipedia.
               </p>
-              <Arrow_link>Learn More</Arrow_link>
+              <Arrow_link><Link href="/about">Learn More</Link></Arrow_link>
             </div>
           </div>
         </div>
@@ -119,7 +120,7 @@ export default function Home(){
               <h3>Pay Online</h3>
               <p>LIF is the easiest way to pay with decentralized money.
                 Integrate it via API or shop plugins.</p>
-              <Arrow_link>Learn More</Arrow_link>
+              <Arrow_link><Link href="/about">Learn More</Link></Arrow_link>
             </div>
             <div className="px-12 py-6 hidden sm:block border-r">
               <div className="flex flex-col items-center mb-4">
@@ -128,7 +129,7 @@ export default function Home(){
               <h3>Pay Online</h3>
               <p>LIF is the easiest way to pay with decentralized money.
                 Integrate it via API or shop plugins.</p>
-              <Arrow_link>Learn More</Arrow_link>
+              <Arrow_link><Link href="/about">Learn More</Link></Arrow_link>
             </div>
             <div className="px-12 py-6 hidden md:block">
               <div className="flex flex-col items-center mb-4">
@@ -137,7 +138,7 @@ export default function Home(){
               <h3>Pay Online</h3>
               <p>LIF is the easiest way to pay with decentralized money.
                 Integrate it via API or shop plugins.</p>
-              <Arrow_link>Learn More</Arrow_link>
+              <Arrow_link><Link href="/about">Learn More</Link></Arrow_link>
             </div>
           </div>
         </div>
