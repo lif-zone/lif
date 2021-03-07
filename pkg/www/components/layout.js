@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import Github from '../public/img/github.svg';
+import {use_app_context} from '../utils/context.js';
 import {use_outside_alerter} from '../utils/react.js';
 
 const Nav_link = forwardRef(({children}, ref)=>{
@@ -158,6 +159,8 @@ const Header_small = ()=>{
 };
 
 export default function Layout({children}){
+  const {direction} = use_app_context();
+  const style = direction ? {direction} : {};
   return (
     <>
       <Head>
@@ -173,7 +176,7 @@ export default function Layout({children}){
         />
       </Head>
       <Header_small/>
-      <div>{children}</div>
+      <div style={style}>{children}</div>
     </>
   );
 }

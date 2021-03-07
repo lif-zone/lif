@@ -1,8 +1,13 @@
+import cn from 'classnames';
 import {forwardRef} from 'react';
+import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import Icon_wht1 from '../public/img/wht-icon1.svg';
 import Icon_wht2 from '../public/img/wht-icon2.svg';
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
+import {use_app_context} from '../utils/context.js';
+import {useTranslation} from 'next-i18next';
 
 const video_url = 'https://drive.google.com/file/d/1haTxF4aocS6V9FVej21ghdy3ZFetOzba/preview';
 
@@ -34,15 +39,17 @@ const Arrow_link = forwardRef(({children}, ref)=>{
       </a>;
 });
 
-export default function Home(){
-  return (
-    <Layout>
+const Home_first = ()=>{
+    const {direction} = use_app_context();
+    const {t} = useTranslation('homepage');
+    const title_c = cn('text-center mb-8 sm:text-right md:pt-4',
+        direction=='rtl' ? 'sm:pl-10' : 'sm:pr-10');
+    return (
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-14
         pl-10 pr-14">
-        <div className="text-center mb-8 sm:text-right sm:pr-10 md:pt-4">
+        <div className={title_c}>
           <h1>LIF</h1>
-          <p className="mt-8 text-2xl">Liberty, Independence, Freedom
-            - חירות, עצמאות, חופש</p>
+          <p className="mt-8 text-2xl">{t('title')}</p>
         </div>
         <div>
           <div className="aspect-w-16 aspect-h-9">
@@ -50,6 +57,18 @@ export default function Home(){
           </div>
         </div>
       </div>
+    );
+};
+
+export const getStaticProps = ({locale})=>etask(function*(){
+    const props = yield serverSideTranslations(locale, ['common', 'homepage']);
+    return {props};
+});
+
+export default function Home(){
+  return (
+    <Layout>
+      <Home_first/>
       <div className="bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 p-14 pb-0">
