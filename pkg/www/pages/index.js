@@ -130,7 +130,7 @@ export default function Home(){
               </div>
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
-              <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
+              <Link href="/about"><Arrow_link>{t('more_info')}</Arrow_link></Link>
             </div>
             <div className="px-12 py-6 hidden sm:block border-e">
               <div className="flex flex-col items-center mb-4">
@@ -138,7 +138,7 @@ export default function Home(){
               </div>
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
-              <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
+              <Link href="/about"><Arrow_link>{t('more_info')}</Arrow_link></Link>
             </div>
             <div className="px-12 py-6 hidden md:block">
               <div className="flex flex-col items-center mb-4">
