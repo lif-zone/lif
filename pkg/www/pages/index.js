@@ -12,13 +12,14 @@ import {useTranslation} from 'next-i18next';
 const video_url = 'https://drive.google.com/file/d/1haTxF4aocS6V9FVej21ghdy3ZFetOzba/preview';
 
 const Primary_button = forwardRef(({children, arrow}, ref)=>{
+    /* XXX TODO: add arrow LTR/RTL
+      {arrow && <Icon_arrow className="ml-3 transition-transform
+      duration-300 transform group-hover:translate-x-1"/>} */
     return <a ref={ref} className="group inline-flex font-bold cursor-pointer
         no-underline bg-lif-blue text-white px-6 py-2 leading-4 rounded-full
         items-center hover:bg-lif-blue-darkened h-12 transform
         hover:-translate-y-0.5 transition-transform shadow-md">
         {children}
-        {arrow && <Icon_arrow className="ml-3 transition-transform
-            duration-300 transform group-hover:translate-x-1"/>}
       </a>;
 });
 
@@ -66,6 +67,7 @@ export const getStaticProps = ({locale})=>etask(function*(){
 });
 
 export default function Home(){
+  const {t} = useTranslation('homepage');
   return (
     <Layout>
       <Home_first/>
@@ -73,11 +75,11 @@ export default function Home(){
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 p-14 pb-0">
           <div className="mb-16">
-            <h2>What is LIF?</h2>
-            <p className="mt-4 mb-8 text-xl leading-7">A blockchain technology
-              inspired by Bitcoin but designed to run in your browser.
-              It is money by nature but capable to do much more.</p>
-            <Primary_button arrow>READ WHITEPAPER</Primary_button>
+            <h2>{t('what_is_lif')}</h2>
+            <p className="mt-4 mb-8 text-xl leading-7">
+	      {t('lif_is')}<br/>{t('lif_is2')}
+	    </p>
+            <Primary_button arrow>{t('more_info')}</Primary_button>
           </div>
           <div className="">
             <div className="mb-14">
