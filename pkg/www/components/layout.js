@@ -6,6 +6,7 @@ import Icon_arrow from '../public/img/icon_arrow.svg';
 import Github from '../public/img/github.svg';
 import {use_app_context} from '../utils/context.js';
 import {use_outside_alerter} from '../utils/react.js';
+import {useRouter} from 'next/router';
 
 const Nav_link = forwardRef(({children}, ref)=>{
     return <a ref={ref} className="font-bold opacity-50
@@ -160,9 +161,8 @@ const Header_small = ()=>{
 
 export default function Layout({children}){
   const {direction} = use_app_context();
-  const style = direction ? {direction} : {};
   return (
-    <>
+    <div dir={direction||'ltr'}>
       <Head>
         <meta charSet="UTF-8"/>
         <title>LIF - Liberty, Independence, Freedom - חירות, עצמאות, חופש
@@ -176,7 +176,7 @@ export default function Layout({children}){
         />
       </Head>
       <Header_small/>
-      <div style={style}>{children}</div>
-    </>
+      <div>{children}</div>
+    </div>
   );
 }
