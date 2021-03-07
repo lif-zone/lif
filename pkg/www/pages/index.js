@@ -87,13 +87,9 @@ export default function Home(){
             <div className="mb-14">
               <h3 className="flex items-start">
                 <Icon_wht1 className="h-8 inline me-2"/>
-                What makes it secure?
+   	        {t('what_can_i_do_with_lif')}
               </h3>
-              <p className="mt-4 mb-3">LIF uses cutting-edge
-                encryption technology and never compromises on decentralization
-                and censorship-resistance. Your funds are accessible to no one
-                but you.
-              </p>
+              <p className="mt-4 mb-3">{t('what_can_i_do_with_lif_desc')}</p>
               <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
             </div>
             <div className="mb-14">
