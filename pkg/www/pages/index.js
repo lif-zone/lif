@@ -12,34 +12,34 @@ import {useTranslation} from 'next-i18next';
 
 const video_url = 'https://drive.google.com/file/d/1haTxF4aocS6V9FVej21ghdy3ZFetOzba/preview';
 
-const Primary_button = forwardRef(({children, arrow}, ref)=>{
+const Primary_button = forwardRef(({children, href, arrow}, ref)=>{
     const {direction} = use_app_context();
     const arr_c = cn(`ms-3 transition-transform duration-300 transform
         group-hover:translate-x-1`, direction=='rtl' && 'rotate-180');
-    return <a ref={ref} className="group inline-flex font-bold cursor-pointer
-        no-underline bg-lif-blue text-white px-6 py-2 leading-4 rounded-full
-        items-center hover:bg-lif-blue-darkened h-12 transform
+    return <a ref={ref} href={href} className="group inline-flex font-bold
+        cursor-pointer no-underline bg-lif-blue text-white px-6 py-2 leading-4
+        rounded-full items-center hover:bg-lif-blue-darkened h-12 transform
         hover:-translate-y-0.5 transition-transform shadow-md">
         {children}
         {arrow && <Icon_arrow className={arr_c}/>}
       </a>;
 });
 
-const Inline_button = forwardRef(({children}, ref)=>{
-    return <a ref={ref} className="group flex-inline font-bold cursor-pointer
-        no-underline bg-lif-blue text-white px-3 py-1 leading-4 rounded-2xl
-        items-center hover:bg-lif-blue-darkened">
+const Inline_button = forwardRef(({children, href}, ref)=>{
+    return <a ref={ref} href={href} className="group flex-inline font-bold
+        cursor-pointer no-underline bg-lif-blue text-white px-3 py-1 leading-4
+        rounded-2xl items-center hover:bg-lif-blue-darkened">
         {children}
       </a>;
 });
 
-const Arrow_link = forwardRef(({children}, ref)=>{
+const Arrow_link = forwardRef(({children, href}, ref)=>{
     const {direction} = use_app_context();
     const arr_c = cn(`ms-1 transition-transform relative top-0.5
         duration-300 transform group-hover:translate-x-1`,
         direction=='rtl' && 'rotate-180');
-    return <a ref={ref} className="group inline-flex font-bold cursor-pointer
-        no-underline text-lif-blue items-center">
+    return <a ref={ref} href={href} className="group inline-flex font-bold
+        cursor-pointer no-underline text-lif-blue items-center">
         {children}
         <Icon_arrow className={arr_c}/>
       </a>;
@@ -99,7 +99,9 @@ export default function Home(){
 	          <li>{t('what_can_i_do_with_lif_desc6')}</li>
 	        </ul>
 	      </div>
-              <Link href="/about"><Arrow_link>{t('more_info')}</Arrow_link></Link>
+              <Link href="/about" passHref>
+                <Arrow_link>{t('more_info')}</Arrow_link>
+              </Link>
             </div>
             <div className="mb-14">
               <h3 className="flex items-start">
@@ -115,7 +117,9 @@ export default function Home(){
 	          <li>{t('lif_advantages_desc5')}</li>
 	        </ul>
               </div>
-              <Link href="/about"><Arrow_link>{t('more_info')}</Arrow_link></Link>
+              <Link href="/about" passHref>
+                <Arrow_link>{t('more_info')}</Arrow_link>
+              </Link>
             </div>
           </div>
         </div>
@@ -130,7 +134,9 @@ export default function Home(){
               </div>
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
-              <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
+              <Link href="/about" passHref>
+                <Arrow_link>Learn More</Arrow_link>
+              </Link>
             </div>
             <div className="px-12 py-6 hidden sm:block border-e">
               <div className="flex flex-col items-center mb-4">
@@ -138,7 +144,9 @@ export default function Home(){
               </div>
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
-              <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
+              <Link href="/about" passHref>
+                <Arrow_link>Learn More</Arrow_link>
+              </Link>
             </div>
             <div className="px-12 py-6 hidden md:block">
               <div className="flex flex-col items-center mb-4">
@@ -146,7 +154,9 @@ export default function Home(){
               </div>
               <h3>{t('usage3')}</h3>
               <p>{t('usage3_desc')}</p>
-              <Link href="/about"><Arrow_link>{t('more_info')}</Arrow_link></Link>
+              <Link href="/about" passHref>
+                <Arrow_link>{t('more_info')}</Arrow_link>
+              </Link>
             </div>
           </div>
         </div>
