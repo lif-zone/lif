@@ -89,19 +89,33 @@ export default function Home(){
                 <Icon_wht1 className="h-8 inline me-2"/>
    	        {t('what_can_i_do_with_lif')}
               </h3>
-              <p className="mt-4 mb-3">{t('what_can_i_do_with_lif_desc')}</p>
-              <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
+              <div className="mt-4 mb-3">
+	        <ul>
+	          <li>{t('what_can_i_do_with_lif_desc1')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc2')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc3')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc4')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc5')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc6')}</li>
+	        </ul>
+	      </div>
+              <Link href="/about"><Arrow_link>{t('more_info')}</Arrow_link></Link>
             </div>
             <div className="mb-14">
               <h3 className="flex items-start">
                 <Icon_wht2 className="h-8 inline me-2"/>
-                What makes it special?
+    	        {t('lif_advantages')}
               </h3>
-              <p className="mt-4 mb-3">Being browser-first. It allows for easy
-                user and developer interaction and makes complicated Blockchain
-                universally accessible. Think library vs. Wikipedia.
-              </p>
-              <Link href="/about"><Arrow_link>Learn More</Arrow_link></Link>
+              <div className="mt-4 mb-3">
+	        <ul>
+	          <li>{t('lif_advantages_desc1')}</li>
+	          <li>{t('lif_advantages_desc2')}</li>
+	          <li>{t('lif_advantages_desc3')}</li>
+	          <li>{t('lif_advantages_desc4')}</li>
+	          <li>{t('lif_advantages_desc5')}</li>
+	        </ul>
+              </div>
+              <Link href="/about"><Arrow_link>{t('more_info')}</Arrow_link></Link>
             </div>
           </div>
         </div>
