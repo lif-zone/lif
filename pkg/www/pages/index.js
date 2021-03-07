@@ -69,6 +69,7 @@ export const getStaticProps = ({locale})=>etask(function*(){
 });
 
 export default function Home(){
+  const {t} = useTranslation('homepage');
   return (
     <Layout>
       <Home_first/>
@@ -76,11 +77,11 @@ export default function Home(){
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 p-14 pb-0">
           <div className="mb-16">
-            <h2>What is LIF?</h2>
-            <p className="mt-4 mb-8 text-xl leading-7">A blockchain technology
-              inspired by Bitcoin but designed to run in your browser.
-              It is money by nature but capable to do much more.</p>
-            <Primary_button arrow>READ WHITEPAPER</Primary_button>
+            <h2>{t('what_is_lif')}</h2>
+            <p className="mt-4 mb-8 text-xl leading-7">
+	      {t('lif_is')}<br/>{t('lif_is2')}
+	    </p>
+            <Primary_button arrow>{t('more_info')}</Primary_button>
           </div>
           <div className="">
             <div className="mb-14">
