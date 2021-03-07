@@ -12,34 +12,37 @@ import {useTranslation} from 'next-i18next';
 
 const video_url = 'https://drive.google.com/file/d/1haTxF4aocS6V9FVej21ghdy3ZFetOzba/preview';
 
-const Primary_button = forwardRef(({children, href, arrow}, ref)=>{
+const Primary_button = forwardRef(({children, href, arrow, onClick}, ref)=>{
     const {direction} = use_app_context();
     const arr_c = cn(`ms-3 transition-transform duration-300 transform
         group-hover:translate-x-1`, direction=='rtl' && 'rotate-180');
-    return <a ref={ref} href={href} className="group inline-flex font-bold
-        cursor-pointer no-underline bg-lif-blue text-white px-6 py-2 leading-4
-        rounded-full items-center hover:bg-lif-blue-darkened h-12 transform
-        hover:-translate-y-0.5 transition-transform shadow-md">
+    return <a ref={ref} href={href} onClick={onClick}
+        className="group inline-flex font-bold cursor-pointer no-underline
+        bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
+        hover:bg-lif-blue-darkened h-12 transform hover:-translate-y-0.5
+        transition-transform shadow-md">
         {children}
         {arrow && <Icon_arrow className={arr_c}/>}
       </a>;
 });
 
-const Inline_button = forwardRef(({children, href}, ref)=>{
-    return <a ref={ref} href={href} className="group flex-inline font-bold
-        cursor-pointer no-underline bg-lif-blue text-white px-3 py-1 leading-4
-        rounded-2xl items-center hover:bg-lif-blue-darkened">
+const Inline_button = forwardRef(({children, href, onClick}, ref)=>{
+    return <a ref={ref} href={href} onClick={onClick} className="group
+        flex-inline font-bold cursor-pointer no-underline bg-lif-blue
+        text-white px-3 py-1 leading-4 rounded-2xl items-center
+        hover:bg-lif-blue-darkened">
         {children}
       </a>;
 });
 
-const Arrow_link = forwardRef(({children, href}, ref)=>{
+const Arrow_link = forwardRef(({children, href, onClick}, ref)=>{
     const {direction} = use_app_context();
     const arr_c = cn(`ms-1 transition-transform relative top-0.5
         duration-300 transform group-hover:translate-x-1`,
         direction=='rtl' && 'rotate-180');
-    return <a ref={ref} href={href} className="group inline-flex font-bold
-        cursor-pointer no-underline text-lif-blue items-center">
+    return <a ref={ref} href={href} onClick={onClick} className="group
+        inline-flex font-bold cursor-pointer no-underline text-lif-blue
+        items-center">
         {children}
         <Icon_arrow className={arr_c}/>
       </a>;
