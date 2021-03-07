@@ -193,7 +193,7 @@ const Header_small = ()=>{
 	  <a href="https://github.com/lif-zone/lif"
             className="text-black flex items-center text-lg opacity-70
               transition-opacity hover:opacity-100 me-5">
-            <Github className="w-8"/> Github
+            <Github className="w-8"/> GitHub
           </a>
           <Lang_selector/>
 	</div>

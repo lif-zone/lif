@@ -168,7 +168,7 @@ export default function Home(){
           </div>
           <div className="mt-4 flex sm:flex-col justify-between sm:items-end">
             <div></div>
-            <Primary_button arrow>GO TO DEV CENTER</Primary_button>
+            <Primary_button arrow>GitHub</Primary_button>
           </div>
         </div>
       </div>
@@ -181,7 +181,7 @@ export default function Home(){
               <p>{t('want_to_help_desc2')}</p>
               <p>{t('want_to_help_desc3')}</p>
 	    </div>
-            <Primary_button arrow>SEE IT IN ACTION</Primary_button>
+            <Primary_button arrow>{t('contact_us')}</Primary_button>
           </div>
         </div>
       </div>
