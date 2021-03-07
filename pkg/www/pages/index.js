@@ -175,10 +175,12 @@ export default function Home(){
       <div className="lif-blue-bg mt-12">
         <div className="lif-hexagon-bg">
           <div className="p-12 max-w-6xl mx-auto text-white">
-            <h2>Support the Network by mining</h2>
-            <p className="my-10 text-xl">Connecting to the blockchain only
-              requires opening a web browser. See how mining works on
-              lif.zone/mining</p>
+            <h2>{t('want_to_help')}</h2>
+            <div className="my-10 text-xl">
+              <p>{t('want_to_help_desc1')}</p>
+              <p>{t('want_to_help_desc2')}</p>
+              <p>{t('want_to_help_desc3')}</p>
+	    </div>
             <Primary_button arrow>SEE IT IN ACTION</Primary_button>
           </div>
         </div>
