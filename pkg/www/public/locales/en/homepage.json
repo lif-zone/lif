@@ -1,7 +1,9 @@
 {
-  "title": "Liberty, Independence, Freedom"
+  "title": "Liberty, Independence, Freedom",
    "what_is_lif": "What is LIF?",
-   "lif_is": "XXX lif_is"
-   "lif_is2": "XXX lif_is2"
-   "more_info": "More info..."
+   "lif_is": "XXX lif_is",
+   "lif_is2": "XXX lif_is2",
+   "more_info": "More info...",
+   "what_can_id_with_lif": "XXX what_can_id_with_lif",
+   "what_can_id_with_lif_desc": "XXX what_can_id_with_lif_desc"
 }
