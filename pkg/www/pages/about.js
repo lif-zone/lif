@@ -16,7 +16,9 @@ export default function Home(){
         <div className="max-w-6xl mx-auto py-14 px-8">
           <h1>{t('title')}</h1>
           <p className="mt-8 text-2xl">{t('p1')}</p>
-          <p className="mt-8 text-xl text-gray-400">{t('p2')}</p>
+          <p className="mt-8 text-xl text-gray-800">
+            <Trans t={t} i18nKey="p2"/>
+          </p>
           <p className="mt-8 text-xl text-gray-400">
             <Trans t={t} i18nKey="p3"/>
           </p>
