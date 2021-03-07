@@ -151,9 +151,11 @@ export default function Home(){
           </div>
         </div>
       </div>
+      {false && // XXX decide if needed
       <div className="text-center py-12">
         <Inline_button>See all Use Cases</Inline_button>
       </div>
+      }
       {false && // XXX decide if needed
       <div className="px-12 max-w-6xl mx-auto">
         <div className="lif-blue-bg rounded-lg p-8 text-white
