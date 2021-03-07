@@ -157,6 +157,7 @@ export default function Home(){
       <div className="text-center py-12">
         <Inline_button>See all Use Cases</Inline_button>
       </div>
+      {false && // XXX decide if needed
       <div className="px-12 max-w-6xl mx-auto">
         <div className="lif-blue-bg rounded-lg p-8 text-white
           grid grid-cols-1 sm:grid-cols-2">
@@ -172,6 +173,7 @@ export default function Home(){
           </div>
         </div>
       </div>
+      }
       <div className="lif-blue-bg mt-12">
         <div className="lif-hexagon-bg">
           <div className="p-12 max-w-6xl mx-auto text-white">
