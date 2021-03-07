@@ -88,7 +88,16 @@ export default function Home(){
                 <Icon_wht1 className="h-8 inline mr-2"/>
    	        {t('what_can_i_do_with_lif')}
               </h3>
-              <p className="mt-4 mb-3">{t('what_can_i_do_with_lif_desc')}</p>
+              <p className="mt-4 mb-3">
+	        <ul>
+	          <li>{t('what_can_i_do_with_lif_desc1')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc2')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc3')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc4')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc5')}</li>
+	          <li>{t('what_can_i_do_with_lif_desc6')}</li>
+	        </ul>
+	      </p>
               <Arrow_link><Link href="/about">Learn More</Link></Arrow_link>
             </div>
             <div className="mb-14">
