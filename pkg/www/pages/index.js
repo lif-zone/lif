@@ -231,7 +231,7 @@ export default function Home(){
               <p>{t('want_to_help_desc1')}</p>
               <p>{t('want_to_help_desc2')}</p>
               <p>{t('want_to_help_desc3')}</p>
-              <p><a href="mailto:help@lif.zone">help@lif.zone</a></p>
+              <p><a href="mailto:join@lif.zone">join@lif.zone</a></p>
 	    </div>
 	    <Contact_us t={t}/>
           </div>
