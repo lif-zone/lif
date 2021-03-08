@@ -1,5 +1,6 @@
 {
-  "title": "Liberty, Independence, Freedom",
+   "title": "Liberty, Independence, Freedom",
+   "title2": "The trusted data network!",
    "what_is_lif": "What is LIF?",
    "lif_is": "XXX lif_is",
    "lif_is2": "XXX lif_is2",
@@ -28,5 +29,11 @@
    "want_to_help_desc1": "XXX want_to_help_desc1",
    "want_to_help_desc2": "XXX want_to_help_desc2",
    "want_to_help_desc3": "XXX want_to_help_desc3",
-   "contact_us": "Contact us!"
+   "contact_us": "Contact us!",
+   "name": "Name",
+   "email": "Email",
+   "phone": "Phone",
+   "send": "Send",
+   "what_i_can_do": "Free text",
+   "thank_you_will_get_back_to_you_soon": "Thank you. We will get back to you soon :-)"
 }

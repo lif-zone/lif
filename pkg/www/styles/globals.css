@@ -118,6 +118,29 @@
     background-image: url('/img/hexagon-ribbon-white-desktop.svg');
     background-size: auto 544px;
     background-position: center 0;
+    padding-bottom: 60px;
+}
+
+.lif-input {
+  color: black;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.lif-textarea {
+  color: black;
+  display: block;
+  width: 100%;
+  height: 150px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.contact_us_form {
+  width: 100%;
+  max-width: 500px;
 }
 
 @tailwind components;
