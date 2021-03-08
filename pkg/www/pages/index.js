@@ -85,8 +85,8 @@ class Contact_us extends Component{
       {mode=='enter' ?
 	(<div ref={this.on_ref}>
 	  <input className="lif-input" placeholder={t('name')}/>
-	  <input className="lif-input" placeholder={t('email')}/>
-	  <input className="lif-input" placeholder={t('phone')}/>
+	  <input inputMode="email" className="lif-input" placeholder={t('email')}/>
+	  <input inputMode="tel" className="lif-input" placeholder={t('phone')}/>
 	  <textarea className="lif-textarea" placeholder={t('what_i_can_do')}/>
 	  <Primary_button arrow onClick={this.on_send}>{t('send')}</Primary_button>
 	</div>)
