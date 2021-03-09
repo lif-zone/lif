@@ -143,5 +143,37 @@
   max-width: 500px;
 }
 
+.video_image {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+}
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 100001;
+}
+
+.video-thumbnail:before {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  content: "\f01d";
+  font-family: FontAwesome;
+  font-size: 75px;
+  color: #fff;
+  opacity: .8;
+  text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+.video-thumbnail:hover:before {
+  color: #ddd;
+}
+
 @tailwind components;
 @tailwind utilities;

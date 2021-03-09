@@ -211,6 +211,8 @@ export default function Layout({children}){
         <link rel="icon" href="/img/favicon.svg"/>
         <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800"/>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"/>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
         <meta
           name="viewport"
           content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
