@@ -141,7 +141,7 @@ const Header = ()=>{
       </header>;
 };
 
-const full_lang = {en: 'English', he: 'עִברִית'};
+const full_lang = {en: 'English', he: 'עברית'};
 
 const Lang_selector = ()=>{
     const {locale, locales} = useRouter();
