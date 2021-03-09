@@ -15,6 +15,7 @@ import Player from '@vimeo/player';
 
 const video_url = 'https://player.vimeo.com/video/520902331?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
 
+// XXX: mv to components
 const Primary_button = forwardRef(({children, href, arrow, onClick}, ref)=>{
     const {direction} = use_app_context();
     const arr_c = cn(`ms-3 transition-transform duration-300 transform
@@ -22,8 +23,8 @@ const Primary_button = forwardRef(({children, href, arrow, onClick}, ref)=>{
     return <a ref={ref} href={href} onClick={onClick}
         className="group inline-flex font-bold cursor-pointer no-underline
         bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
-        hover:bg-lif-blue-darkened h-12 transform hover:-translate-y-0.5
-        transition-transform shadow-md">
+        hover:bg-lif-blue-darkened h-12 transform
+        transition-transform shadow-md hover:text-white hover:no-underline">
         {children}
         {arrow && <Icon_arrow className={arr_c}/>}
       </a>;
