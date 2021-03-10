@@ -6,6 +6,7 @@ import Layout from '../components/layout.js';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import Icon_wht1 from '../public/img/wht-icon1.svg';
 import Icon_wht2 from '../public/img/wht-icon2.svg';
+import Github2 from '../public/img/github2.svg';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {use_app_context} from '../utils/context.js';
 import Link from 'next/link';
@@ -234,7 +235,15 @@ export default function Home(){
               <p>{t('want_to_help_desc1')}</p>
               <p>{t('want_to_help_desc2')}</p>
               <p>{t('want_to_help_desc3')}</p>
-              <p><a href="mailto:join@lif.zone">join@lif.zone</a></p>
+              <div>
+	        <a href="mailto:join@lif.zone">join@lif.zone</a>
+	      </div>
+              <div className="text-right">
+		<a href="https://github.com/lif-zone/lif"
+		  className="text-white hover:text-white items-center text-lg opacity-70
+		    transition-opacity hover:opacity-100 me-5">
+		  <Github2 className="inline-block fill-current"/>GitHub</a>
+	      </div>
 	    </div>
 	    <Contact_us t={t}/>
           </div>
