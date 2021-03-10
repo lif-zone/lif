@@ -32,6 +32,8 @@ services:
       context: .
       dockerfile: ./Dockerfile.www
     command: npm run start:www
+    env_file:
+      - .www.env
     ports:
       - 80:80
     volumes:
@@ -42,6 +44,9 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.www
+    depends_on:
+      - mongo
+      - mongoku
     command: npm run start:www_dev
     ports:
       - 3100:80
@@ -49,6 +54,14 @@ services:
       - ./:/usr/src/www/
       - /usr/src/www/node_modules
       - /usr/src/www/.next
+  mongoku:
+    image: huggingface/mongoku
+    depends_on:
+      - mongo
+    ports:
+      - 3200:3100
+    environment:
+      MONGOKU_DEFAULT_HOST: mongo
 
 volumes:
   db-data:

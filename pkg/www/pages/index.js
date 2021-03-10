@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import axios from 'axios';
 import {forwardRef, Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
@@ -122,12 +123,8 @@ class Contact_us extends Component{
     let o = {};
     for (let i=0, f=this.form; i<f.length; i++)
       o[f[i].id] = f[i].value;
-    // XXX antonp: fix better api for ajax
-    const res = await fetch('/api/register_contact_us', {
-      body: JSON.stringify(o),
-      headers: {'Content-Type': 'application/json'},
-      method: 'POST'});
-    const ret = await res.json();
+    const res = await axios.post('/api/register_contact_us', o);
+    // response json is res.data
     this.setState({mode: 'sent'});
   };
   on_ref = ref=>{
