@@ -171,7 +171,7 @@ export default function Home(){
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <div className="px-12 py-6 sm:border-e">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/pay_online.png" className="w-60"/>
+                <img src="/img/digital_money.png" className="w-60"/>
               </div>
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
@@ -181,7 +181,7 @@ export default function Home(){
             </div>
             <div className="px-12 py-6 sm:block border-e">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/digital_money.png" className="w-60"/>
+                <img src="/img/get_donations.png" className="w-60"/>
               </div>
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
@@ -191,7 +191,7 @@ export default function Home(){
             </div>
             <div className="px-12 py-6 md:block">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/get_donations.png" className="w-60"/>
+                <img src="/img/pay_online.png" className="w-60"/>
               </div>
               <h3>{t('usage3')}</h3>
               <p>{t('usage3_desc')}</p>
