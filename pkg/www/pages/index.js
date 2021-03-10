@@ -164,7 +164,7 @@ export default function Home(){
           </div>
         </div>
       </div>
-      <div className="bg-white">
+      <div className="bg-white text-lg">
         <div className="max-w-6xl mx-auto pb-6">
           <h2 className="sm:text-center px-10 pb-6">{t('usage_examples')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
