@@ -1,6 +1,5 @@
 import cn from 'classnames';
 import {forwardRef, Component} from 'react';
-
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
 import Icon_arrow from '../public/img/icon_arrow.svg';
@@ -11,7 +10,6 @@ import {use_app_context} from '../utils/context.js';
 import Link from 'next/link';
 import {useTranslation} from 'next-i18next';
 import Player from '@vimeo/player';
-
 
 const video_url = 'https://player.vimeo.com/video/520902331?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
 
@@ -78,15 +76,14 @@ class Video extends Component{
 const Home_first = ()=>{
     const {t} = useTranslation('homepage');
     return (
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-14
-        pl-10 pr-14">
-        <div className="text-center mb-8 sm:text-right md:pt-4 sm:pe-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-14">
+        <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
           <h1>{t('title')}</h1>
           <p className="mt-8 text-2xl">{t('title2')}</p>
         </div>
-        <div>
-	  <Video className="aspect-w-16 aspect-h-9"/>
-        </div>
+	<div>
+          <Video className="aspect-w-16 aspect-h-9"/>
+	</div>
       </div>
     );
 };

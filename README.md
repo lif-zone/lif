@@ -6,7 +6,7 @@ https://lif.zone
 This is an abstract description of LIF and vision. It is not necessarily how it will be implemented. It's an attempt to logically visualize the LIF evolution, or how to conceptually look at LIF network.
 And it will change. LIF is just in the early stages and we keep improving the idea all the time. The main principle is that it is the responsibility of the one who is using the data, to verify and trust it. Anyone can submit to LIF without verification (besides trivial ones, eg check that JSON is properly signed)
 
-## LIF's Mission & Vission
+## LIF's Mission & Vision
 Liberty, Independence, Freedom!
 This project came to life following the operssion all over the word during the Corona, and the facists measures used by almost all governments. All with the excuse to "protect" us...
 LIF is our way to fight back! Taking back the rights that belong to us, by creating a network that no government or big cooperation can control, shut down or censore.
