@@ -199,6 +199,9 @@ export default function Home(){
               </Link>
             </div>
           </div>
+	  <div className="text-center pt-10">
+	    <Primary_button arrow href="/use_case">{t('see_all_use_cases')}</Primary_button>
+	  </div>
         </div>
       </div>
       {false && // XXX decide if needed
