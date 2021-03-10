@@ -1,4 +1,3 @@
-const {MongoClient} = require('mongodb');
 import mongo from '../../../util/mongo.js';
 
 export default async (req, res)=>{
