@@ -6,6 +6,7 @@ import Layout from '../components/layout.js';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import Icon_wht1 from '../public/img/wht-icon1.svg';
 import Icon_wht2 from '../public/img/wht-icon2.svg';
+import Github2 from '../public/img/github2.svg';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {use_app_context} from '../utils/context.js';
 import Link from 'next/link';
@@ -57,7 +58,7 @@ class Video extends Component{
     const {play} = this.state;
     return <div className={className}>
       {!play ? <img src="/img/video.jpg" className="video_image"/> : undefined}
-      {!play ? 
+      {!play ?
 	<div className="video-thumbnail" onClick={this.play_video}></div> : undefined}
       <iframe src={video_url} allowFullScreen className="shadow-xl"
 	frameBorder="0" title="LIF - Liberty, Independence, Freedom"
@@ -142,7 +143,7 @@ export default function Home(){
           <div className="mb-16">
             <h2>{t('what_is_lif')}</h2>
             <p className="mt-4 mb-8 text-2xl leading-9">
-	      {t('lif_is')}<br/>{t('lif_is2')}
+            {t('lif_is')}
 	    </p>
             <Link href="/about">
               <a><Primary_button arrow>
@@ -153,36 +154,11 @@ export default function Home(){
           <div className="">
             <div className="mb-14">
               <h3 className="flex items-start">
-                <Icon_wht1 className="h-8 inline me-2"/>
-   	        {t('what_can_i_do_with_lif')}
-              </h3>
-              <div className="mt-4 mb-3 text-xl">
-	        <ul>
-	          <li>{t('what_can_i_do_with_lif_desc1')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc2')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc3')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc4')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc5')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc6')}</li>
-	        </ul>
-	      </div>
-              <Link href="/use_case">
-                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
-              </Link>
-            </div>
-            <div className="mb-14">
-              <h3 className="flex items-start">
                 <Icon_wht2 className="h-8 inline me-2"/>
     	        {t('lif_advantages')}
               </h3>
               <div className="mt-4 mb-3 text-xl">
-	        <ul>
-	          <li>{t('lif_advantages_desc1')}</li>
-	          <li>{t('lif_advantages_desc2')}</li>
-	          <li>{t('lif_advantages_desc3')}</li>
-	          <li>{t('lif_advantages_desc4')}</li>
-	          <li>{t('lif_advantages_desc5')}</li>
-	        </ul>
+	        {t('lif_advantages_desc')}
               </div>
               <Link href="//github.com/lif-zone/lif">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
@@ -191,13 +167,13 @@ export default function Home(){
           </div>
         </div>
       </div>
-      <div className="bg-white">
+      <div className="bg-white text-lg">
         <div className="max-w-6xl mx-auto pb-6">
           <h2 className="sm:text-center px-10 pb-6">{t('usage_examples')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <div className="px-12 py-6 sm:border-e">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/pay_online.png" className="w-60"/>
+                <img src="/img/digital_money.png" className="w-60"/>
               </div>
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
@@ -207,7 +183,7 @@ export default function Home(){
             </div>
             <div className="px-12 py-6 sm:block border-e">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/digital_money.png" className="w-60"/>
+                <img src="/img/get_donations.png" className="w-60"/>
               </div>
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
@@ -217,7 +193,7 @@ export default function Home(){
             </div>
             <div className="px-12 py-6 md:block">
               <div className="flex flex-col items-center mb-4">
-                <img src="/img/get_donations.png" className="w-60"/>
+                <img src="/img/pay_online.png" className="w-60"/>
               </div>
               <h3>{t('usage3')}</h3>
               <p>{t('usage3_desc')}</p>
@@ -226,6 +202,9 @@ export default function Home(){
               </Link>
             </div>
           </div>
+	  <div className="text-center pt-10">
+	    <Primary_button arrow href="/use_case">{t('see_all_use_cases')}</Primary_button>
+	  </div>
         </div>
       </div>
       {false && // XXX decide if needed
@@ -258,7 +237,15 @@ export default function Home(){
               <p>{t('want_to_help_desc1')}</p>
               <p>{t('want_to_help_desc2')}</p>
               <p>{t('want_to_help_desc3')}</p>
-              <p><a href="mailto:join@lif.zone">join@lif.zone</a></p>
+              <div>
+	        <a href="mailto:join@lif.zone">join@lif.zone</a>
+	      </div>
+              <div className="text-right">
+		<a href="https://github.com/lif-zone/lif"
+		  className="text-white hover:text-white items-center text-lg opacity-70
+		    transition-opacity hover:opacity-100 me-5">
+		  <Github2 className="inline-block fill-current"/>GitHub</a>
+	      </div>
 	    </div>
 	    <Contact_us t={t}/>
           </div>
