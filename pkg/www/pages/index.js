@@ -144,43 +144,18 @@ export default function Home(){
           <div className="mb-16">
             <h2>{t('what_is_lif')}</h2>
             <p className="mt-4 mb-8 text-2xl leading-9">
-	      {t('lif_is')}<br/>{t('lif_is2')}
+	      {t('lif_is')}
 	    </p>
             <Primary_button arrow href="/about">{t('more_info')}</Primary_button>
           </div>
           <div className="">
             <div className="mb-14">
               <h3 className="flex items-start">
-                <Icon_wht1 className="h-8 inline me-2"/>
-   	        {t('what_can_i_do_with_lif')}
-              </h3>
-              <div className="mt-4 mb-3 text-xl">
-	        <ul>
-	          <li>{t('what_can_i_do_with_lif_desc1')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc2')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc3')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc4')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc5')}</li>
-	          <li>{t('what_can_i_do_with_lif_desc6')}</li>
-	        </ul>
-	      </div>
-              <Link href="/use_case" passHref>
-                <Arrow_link>{t('more_info')}</Arrow_link>
-              </Link>
-            </div>
-            <div className="mb-14">
-              <h3 className="flex items-start">
                 <Icon_wht2 className="h-8 inline me-2"/>
     	        {t('lif_advantages')}
               </h3>
               <div className="mt-4 mb-3 text-xl">
-	        <ul>
-	          <li>{t('lif_advantages_desc1')}</li>
-	          <li>{t('lif_advantages_desc2')}</li>
-	          <li>{t('lif_advantages_desc3')}</li>
-	          <li>{t('lif_advantages_desc4')}</li>
-	          <li>{t('lif_advantages_desc5')}</li>
-	        </ul>
+	        {t('lif_advantages_desc')}
               </div>
               <Link href="//github.com/lif-zone/lif" passHref>
                 <Arrow_link>{t('more_info')}</Arrow_link>
