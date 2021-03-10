@@ -22,7 +22,7 @@ const Primary_button = forwardRef(({children, href, arrow, onClick}, ref)=>{
     return <a ref={ref} href={href} onClick={onClick}
         className="group inline-flex font-bold cursor-pointer no-underline
         bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
-        hover:bg-lif-blue-darkened h-12 transform
+        hover:bg-lif-blue-darkened h-12 transform text-xl
         transition-transform shadow-md hover:text-white hover:no-underline">
         {children}
         {arrow && <Icon_arrow className={arr_c}/>}
@@ -45,7 +45,7 @@ const Arrow_link = forwardRef(({children, href, onClick}, ref)=>{
         direction=='rtl' && 'rotate-180');
     return <a ref={ref} href={href} onClick={onClick} className="group
         inline-flex font-bold cursor-pointer no-underline text-lif-blue
-        items-center">
+	text-lg items-center">
         {children}
         <Icon_arrow className={arr_c}/>
       </a>;
@@ -143,7 +143,7 @@ export default function Home(){
           sm:grid-cols-2 p-14 pb-0">
           <div className="mb-16">
             <h2>{t('what_is_lif')}</h2>
-            <p className="mt-4 mb-8 text-xl leading-7">
+            <p className="mt-4 mb-8 text-2xl leading-9">
 	      {t('lif_is')}<br/>{t('lif_is2')}
 	    </p>
             <Primary_button arrow href="/about">{t('more_info')}</Primary_button>
@@ -154,7 +154,7 @@ export default function Home(){
                 <Icon_wht1 className="h-8 inline me-2"/>
    	        {t('what_can_i_do_with_lif')}
               </h3>
-              <div className="mt-4 mb-3">
+              <div className="mt-4 mb-3 text-xl">
 	        <ul>
 	          <li>{t('what_can_i_do_with_lif_desc1')}</li>
 	          <li>{t('what_can_i_do_with_lif_desc2')}</li>
@@ -173,7 +173,7 @@ export default function Home(){
                 <Icon_wht2 className="h-8 inline me-2"/>
     	        {t('lif_advantages')}
               </h3>
-              <div className="mt-4 mb-3">
+              <div className="mt-4 mb-3 text-xl">
 	        <ul>
 	          <li>{t('lif_advantages_desc1')}</li>
 	          <li>{t('lif_advantages_desc2')}</li>

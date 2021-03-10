@@ -42,6 +42,8 @@
     @apply my-4 pl-3 list-inside;
     }
 
+    li { @apply leading-7; }
+
     dl {
         dt {
         @apply font-semibold;
