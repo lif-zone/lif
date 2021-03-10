@@ -15,42 +15,40 @@ import Player from '@vimeo/player';
 const video_url = 'https://player.vimeo.com/video/520902331?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
 
 // XXX: mv to components
-const Primary_button = forwardRef(({children, href, arrow, onClick}, ref)=>{
+const Primary_button = ({children, arrow, onClick})=>{
     const {direction} = use_app_context();
     const arr_c = cn(`ms-3 transition-transform duration-300 transform
         group-hover:translate-x-1`, direction=='rtl' && 'rotate-180');
-    return <a ref={ref} href={href} onClick={onClick}
+    return <span onClick={onClick}
         className="group inline-flex font-bold cursor-pointer no-underline
         bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
         hover:bg-lif-blue-darkened h-12 transform text-xl
-        transition-transform shadow-md hover:text-white hover:no-underline">
+        transition-transform shadow-md">
         {children}
         {arrow && <Icon_arrow className={arr_c}/>}
-      </a>;
-});
+      </span>;
+};
 
-const Inline_button = forwardRef(({children, href, onClick}, ref)=>{
-    return <a ref={ref} href={href} onClick={onClick} className="group
+const Inline_button = ({children, onClick})=>{
+    return <span ref={ref} onClick={onClick} className="group
         flex-inline font-bold cursor-pointer no-underline bg-lif-blue
         text-white px-3 py-1 leading-4 rounded-2xl items-center
         hover:bg-lif-blue-darkened">
         {children}
-      </a>;
-});
+      </span>;
+};
 
-const Arrow_link = forwardRef(({children, href, onClick}, ref)=>{
+const Arrow_link = ({children, href, onClick})=>{
     const {direction} = use_app_context();
     const arr_c = cn(`ms-1 transition-transform relative top-0.5
         duration-300 transform group-hover:translate-x-1`,
         direction=='rtl' && 'rotate-180');
-    return <a ref={ref} href={href} onClick={onClick} className="group
-        inline-flex font-bold cursor-pointer no-underline text-lif-blue
-	text-lg items-center">
+    return <span onClick={onClick} className="group inline-flex font-bold
+        cursor-pointer no-underline text-lif-blue text-lg items-center">
         {children}
         <Icon_arrow className={arr_c}/>
-      </a>;
-});
-
+      </span>;
+};
 
 class Video extends Component{
   state = {};
@@ -146,7 +144,11 @@ export default function Home(){
             <p className="mt-4 mb-8 text-2xl leading-9">
 	      {t('lif_is')}<br/>{t('lif_is2')}
 	    </p>
-            <Primary_button arrow href="/about">{t('more_info')}</Primary_button>
+            <Link href="/about">
+              <a><Primary_button arrow>
+                {t('more_info')}
+              </Primary_button></a>
+            </Link>
           </div>
           <div className="">
             <div className="mb-14">
@@ -164,8 +166,8 @@ export default function Home(){
 	          <li>{t('what_can_i_do_with_lif_desc6')}</li>
 	        </ul>
 	      </div>
-              <Link href="/use_case" passHref>
-                <Arrow_link>{t('more_info')}</Arrow_link>
+              <Link href="/use_case">
+                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
             <div className="mb-14">
@@ -182,8 +184,8 @@ export default function Home(){
 	          <li>{t('lif_advantages_desc5')}</li>
 	        </ul>
               </div>
-              <Link href="//github.com/lif-zone/lif" passHref>
-                <Arrow_link>{t('more_info')}</Arrow_link>
+              <Link href="//github.com/lif-zone/lif">
+                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
           </div>
@@ -199,8 +201,8 @@ export default function Home(){
               </div>
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
-              <Link href="/use_case" passHref>
-                <Arrow_link>{t('more_info')}</Arrow_link>
+              <Link href="/use_case">
+                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
             <div className="px-12 py-6 sm:block border-e">
@@ -209,8 +211,8 @@ export default function Home(){
               </div>
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
-              <Link href="/use_case" passHref>
-                <Arrow_link>{t('more_info')}</Arrow_link>
+              <Link href="/use_case">
+                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
             <div className="px-12 py-6 md:block">
@@ -219,8 +221,8 @@ export default function Home(){
               </div>
               <h3>{t('usage3')}</h3>
               <p>{t('usage3_desc')}</p>
-              <Link href="/use_case" passHref>
-                <Arrow_link>{t('more_info')}</Arrow_link>
+              <Link href="/use_case">
+                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
           </div>
