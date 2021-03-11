@@ -137,9 +137,7 @@ export default function Home(){
             {t('lif_is')}
 	    </p>
             <Link href="/about">
-              <a><Primary_button arrow>
-                {t('more_info')}
-              </Primary_button></a>
+              <a><Primary_button arrow>{t('more_info')}</Primary_button></a>
             </Link>
           </div>
           <div className="">
@@ -194,7 +192,11 @@ export default function Home(){
             </div>
           </div>
 	  <div className="text-center pt-10">
-	    <Primary_button arrow href="/use_case">{t('see_all_use_cases')}</Primary_button>
+            <Link href="/use_case">
+	      <a>
+	        <Primary_button arrow>{t('see_all_use_cases')}</Primary_button>
+	     </a>
+            </Link>
 	  </div>
         </div>
       </div>
@@ -207,7 +209,9 @@ export default function Home(){
           </div>
           <div className="mt-6 flex sm:flex-col justify-between sm:items-end">
             <div></div>
-            <Primary_button arrow>GitHub</Primary_button>
+  	      <a href="https://github.com/lif-zone/lif">
+                <Primary_button arrow>GitHub</Primary_button>
+	      </a>
           </div>
         </div>
       </div>
