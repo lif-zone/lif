@@ -213,7 +213,7 @@ export default function Home(){
       </div>
       <div className="lif-blue-bg mt-12">
         <div className="lif-hexagon-bg">
-          <div className="p-12 max-w-6xl mx-auto text-white">
+          <div className="p-6 max-w-6xl mx-auto text-white">
             <h2>{t('want_to_help')}</h2>
             <div className="my-10 text-xl">
               <p>{t('want_to_help_desc1')}</p>

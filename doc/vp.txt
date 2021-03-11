@@ -3,3 +3,5 @@ www:
 - fix all colors to match design
 - use flag icons for en/he (show selected in color, other in gray)
 - fix layout resize bugs (resize slowly and verify it)
+- fix player full screen eaten click
+- replace vimeo with a better video player
