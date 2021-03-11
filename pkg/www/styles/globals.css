@@ -153,10 +153,11 @@
 }
 
 .video {
-  border-radius: 6px;
-  border-width: 6px;
+  border-radius: 10px;
+  border-width: 5px;
   border-color: white;
   overflow: hidden;
+  box-shadow: 0 0 6px 1px #ddd;
 }
 
 .video-thumbnail {
