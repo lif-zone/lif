@@ -152,6 +152,13 @@
   z-index: 1;
 }
 
+.video {
+  border-radius: 6px;
+  border-width: 6px;
+  border-color: white;
+  overflow: hidden;
+}
+
 .video-thumbnail {
   position: relative;
   display: inline-block;

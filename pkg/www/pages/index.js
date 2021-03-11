@@ -30,15 +30,6 @@ const Primary_button = ({children, arrow, onClick})=>{
       </span>;
 };
 
-const Inline_button = ({children, onClick})=>{
-    return <span ref={ref} onClick={onClick} className="group
-        flex-inline font-bold cursor-pointer no-underline bg-lif-blue
-        text-white px-3 py-1 leading-4 rounded-2xl items-center
-        hover:bg-lif-blue-darkened">
-        {children}
-      </span>;
-};
-
 const Arrow_link = ({children, href, onClick})=>{
     const {direction} = use_app_context();
     const arr_c = cn(`ms-1 transition-transform relative top-0.5
@@ -56,7 +47,7 @@ class Video extends Component{
   render(){
     const {className} = this.props;
     const {play} = this.state;
-    return <div className={className}>
+    return <div className="aspect-w-16 aspect-h-9 video">
       {!play ? <img src="/img/video.jpg" className="video_image"/> : undefined}
       {!play ?
 	<div className="video-thumbnail" onClick={this.play_video}></div> : undefined}
@@ -78,11 +69,11 @@ const Home_first = ()=>{
     return (
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-14">
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
-          <h1>{t('title')}</h1>
-          <p className="mt-8 text-2xl">{t('title2')}</p>
+          <h1 className="px-6">{t('title')}</h1>
+          <p className="mt-8 text-2xl pl-6 pr-6">{t('title2')}</p>
         </div>
-	<div>
-          <Video className="aspect-w-16 aspect-h-9"/>
+        <div className="px-6">
+          <Video/>
 	</div>
       </div>
     );
@@ -139,7 +130,7 @@ export default function Home(){
       <Home_first/>
       <div className="bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
-          sm:grid-cols-2 p-14 pb-0">
+          sm:grid-cols-2 p-6 pb-0">
           <div className="mb-16">
             <h2>{t('what_is_lif')}</h2>
             <p className="mt-4 mb-8 text-2xl leading-9">
@@ -169,9 +160,9 @@ export default function Home(){
       </div>
       <div className="bg-white text-lg">
         <div className="max-w-6xl mx-auto pb-6">
-          <h2 className="sm:text-center px-10 pb-6">{t('usage_examples')}</h2>
+          <h2 className="text-center px-10 pb-6">{t('usage_examples')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            <div className="px-12 py-6 sm:border-e">
+            <div className="px-6 py-6 sm:border-e">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/digital_money.png" className="w-60"/>
               </div>
@@ -181,7 +172,7 @@ export default function Home(){
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
-            <div className="px-12 py-6 sm:block border-e">
+            <div className="px-6 py-6 sm:block border-e">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/get_donations.png" className="w-60"/>
               </div>
@@ -191,7 +182,7 @@ export default function Home(){
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
-            <div className="px-12 py-6 md:block">
+            <div className="px-6 py-6 md:block">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/pay_online.png" className="w-60"/>
               </div>
@@ -207,28 +198,19 @@ export default function Home(){
 	  </div>
         </div>
       </div>
-      {false && // XXX decide if needed
-      <div className="text-center py-12">
-        <Inline_button>See all Use Cases</Inline_button>
-      </div>
-      }
-      {false && // XXX decide if needed
-      <div className="px-12 max-w-6xl mx-auto">
-        <div className="lif-blue-bg rounded-lg p-8 text-white
-          grid grid-cols-1 sm:grid-cols-2">
+      <div className="px-6 mt-12 max-w-6xl mx-auto">
+        <div className="lif-blue-bg rounded-lg p-8 text-white">
           <div>
-            <h2>Build on it</h2>
+            <h2>Build it!</h2>
             <p className="text-xl">JavaScript and a basic understanding of
-              Blockchain is all you need.<br/>A great community is happy to
-              help you.</p>
+              Node is all you need. A great community is happy to help you.</p>
           </div>
-          <div className="mt-4 flex sm:flex-col justify-between sm:items-end">
+          <div className="mt-6 flex sm:flex-col justify-between sm:items-end">
             <div></div>
             <Primary_button arrow>GitHub</Primary_button>
           </div>
         </div>
       </div>
-      }
       <div className="lif-blue-bg mt-12">
         <div className="lif-hexagon-bg">
           <div className="p-12 max-w-6xl mx-auto text-white">
