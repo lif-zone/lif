@@ -23,7 +23,7 @@ const Primary_button = ({children, arrow, onClick})=>{
     return <span onClick={onClick}
         className="group inline-flex font-bold cursor-pointer no-underline
         bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
-        hover:bg-lif-blue-darkened h-12 transform text-xl
+        hover:bg-lif-blue-darkened h-12 transform text-xl btn-effect
         transition-transform shadow-md">
         {children}
         {arrow && <Icon_arrow className={arr_c}/>}

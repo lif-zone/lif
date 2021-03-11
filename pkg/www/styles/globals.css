@@ -185,5 +185,12 @@
   color: #ddd;
 }
 
+.btn-effect {
+  background-image: radial-gradient(ellipse at bottom right,#265dd7,#0582ca);
+}
+.btn-effect:hover {
+  transform: translate3D(0,-2px,0);
+}
+
 @tailwind components;
 @tailwind utilities;
