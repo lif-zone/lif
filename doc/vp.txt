@@ -2,3 +2,4 @@ www:
 * use rounded corner + fix border + shadow to main video
 - fix all colors to match design
 - use flag icons for en/he (show selected in color, other in gray)
+- fix layout resize bugs (resize slowly and verify it)
