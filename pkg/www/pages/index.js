@@ -166,21 +166,16 @@ export default function Home(){
           <div>
             <h2>What’s the difference between LIF and Blockchain?</h2>
             <p className="text-lg">
-Blockchain was the first time to create a trustable database network. It works, but it has huge problems. It’s super slow because you need to reach network consensus. All the network members must agree for any transaction. The bigger the network, the slower it is. It consumes tons of energy. Very inefficient. Effectively rendering it useless to almost any application but currency. Blockchain currency cannot be used by the masses. Just imagine how much energy is wasted when trying to wire $5.
+Blockchain was the first time to create a trustable database network. It works, but it has huge problems. It’s super slow because you need to reach network consensus. All the network members must agree for any transaction. The bigger the network, the slower it is. It consumes tons of energy, rendering it useless for almost any application. Just imagine how much energy is wasted when trying to wire $5.
             </p>
             <p className="text-lg">
-LIF is taking a different approach, reusing Moses's woven declaration scrolls. Blockchain is a totalitarian democracy, where the majority enforce its beliefs on the minority. Any >50% majority can block you from inserting data, or even change the rules. LIF is about freedom. Anyone can insert any data. LIF only garuanettes, that no one can change your data, and that you are the owner of the data (with public/key signature). That’s all. No judgement if your data is valid or not.
+LIF reuses Moses's woven declaration scrolls. Blockchain is a totalitarian democracy, where the majority enforce its beliefs on the minority. Any >50% majority can block you from inserting data, or even change the rules. LIF is about freedom. Anyone can insert any data. LIF only garuanettes, that no one can change your data, and that you are the owner of the data. That’s all. No judgement.
             </p>
             <p className="text-lg">
-The decision on the validity of the data is postponed and decided in retrospective by the one using the data. It’s his responsibility to decide if to believe you or not. LIF lets you declare what you believe, and whoever looks at the data will decide according to his beliefs. LIF doesn’t waste energy to decide who is the real block, because the network has no judgment.
+The decision on the validity of the data is postponed and decided in retrospective by the one using the data. It’s his responsibility to decide if to believe you or not. LIF lets you declare what you believe, and whoever looks at the data will decide according to his beliefs. LIF doesn’t waste energy to decide consensus.
             </p>
-
-          </div>
-          <div className="mt-6 flex sm:flex-col justify-between sm:items-end">
-            <div></div>
-  	      <a href="https://github.com/lif-zone/lif">
-                <Primary_button arrow>GitHub</Primary_button>
-	      </a>
+            <p className="text-lg">Want to learn more? <a href="https://github.com/lif-zone/lif">GitHub</a>
+            </p>
           </div>
         </div>
       </div>
