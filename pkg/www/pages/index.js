@@ -164,7 +164,7 @@ export default function Home(){
       <div className="px-6 pb-20 bg-white">
         <div className="lif-blue-bg rounded-lg p-8 text-white max-w-6xl mx-auto ">
           <div>
-            <h2>What’s the difference between LIF and Blockchain?</h2>
+            <h3>What’s the difference between LIF and Blockchain?</h3>
             <p className="text-lg">
 Blockchain was the first time to create a trustable database network. It works, but it has huge problems. It’s super slow because you need to reach network consensus. All the network members must agree for any transaction. The bigger the network, the slower it is. It consumes tons of energy, rendering it useless for almost any application. Just imagine how much energy is wasted when trying to wire $5.
             </p>
