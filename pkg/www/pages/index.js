@@ -174,7 +174,12 @@ LIF reuses Moses's woven declaration scrolls. Blockchain is a totalitarian democ
             <p className="text-lg">
 The decision on the validity of the data is postponed and decided in retrospective by the one using the data. It’s his responsibility to decide if to believe you or not. LIF lets you declare what you believe, and whoever looks at the data will decide according to his beliefs. LIF doesn’t waste energy to decide consensus.
             </p>
-            <p className="text-lg">Want to learn more? <a href="https://github.com/lif-zone/lif">GitHub</a>
+            <p className="text-lg">Want to learn more?
+	      <a href="https://github.com/lif-zone/lif"
+		className="text-white hover:text-white items-center text-lg opacity-70
+		  transition-opacity hover:opacity-100 ms-2 me-5">
+		<Github2 className="mt-1 inline-block fill-current"/>GitHub
+	      </a>
             </p>
           </div>
         </div>
@@ -254,7 +259,7 @@ The decision on the validity of the data is postponed and decided in retrospecti
 		<a href="https://github.com/lif-zone/lif"
 		  className="text-white hover:text-white items-center text-lg opacity-70
 		    transition-opacity hover:opacity-100 me-5">
-		  <Github2 className="inline-block fill-current"/>GitHub</a>
+		  <Github2 className="mt-1 inline-block fill-current"/>GitHub</a>
 	      </div>
 	    </div>
 	    <Contact_us t={t}/>
