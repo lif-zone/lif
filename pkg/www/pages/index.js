@@ -179,7 +179,7 @@ The decision on the validity of the data is postponed and decided in retrospecti
           </div>
         </div>
       </div>
-      <div className="bg-white text-lg">
+      <div className="bg-white text-lg pb-12">
         <div className="max-w-6xl mx-auto pb-6">
           <h2 className="text-center px-10 pb-6">{t('usage_examples')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
@@ -223,7 +223,7 @@ The decision on the validity of the data is postponed and decided in retrospecti
 	  </div>
         </div>
       </div>
-      <div className="px-6 mt-12 max-w-6xl mx-auto">
+    {false && <div className="px-6 mt-12 max-w-6xl mx-auto">
         <div className="lif-blue-bg rounded-lg p-8 text-white">
           <div>
             <h2>Build it!</h2>
@@ -238,7 +238,8 @@ The decision on the validity of the data is postponed and decided in retrospecti
           </div>
         </div>
       </div>
-      <div className="lif-blue-bg mt-12">
+      }
+      <div className="lif-blue-bg">
         <div className="lif-hexagon-bg">
           <div className="p-6 max-w-6xl mx-auto text-white">
             <h2>{t('want_to_help')}</h2>
