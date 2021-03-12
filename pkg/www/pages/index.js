@@ -125,10 +125,7 @@ class Contact_us extends Component{
       this.setState({mode: 'error'});
     }
   };
-  on_ref = ref=>{
-    this.form = ref;
-    ref?.scrollIntoView();
-  };
+  on_ref = (ref=>this.form=ref);
 }
 
 export default function Home(){
