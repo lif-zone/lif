@@ -90,32 +90,40 @@ class Contact_us extends Component{
     const {t} = this.props;
     const {mode} = this.state;
     return <div className="contact_us_form">
-      {mode=='enter' ?
+      {mode=='error' ? <p>{t('thank_you_error')}</p> : undefined}
+      {mode=='sent' ? (
+	<div>
+	  <p>{t('thank_you_will_get_back_to_you_soon')}</p>
+           <Primary_button arrow onClick={this.on_click}>{t('contact_us')}</Primary_button>
+	</div> 
+	): undefined
+      }
+      {mode!='sent' ?
 	(<form ref={this.on_ref}>
 	  <input className="lif-input" id='name' placeholder={t('name')}/>
 	  <input inputMode="email" id='email' className="lif-input" placeholder={t('email')}/>
 	  <input inputMode="tel" id='phone' className="lif-input" placeholder={t('phone')}/>
 	  <textarea className="lif-textarea" id='freetext' placeholder={t('what_i_can_do')}/>
-	  <Primary_button arrow onClick={this.on_send}>{t('send')}</Primary_button>
-	</form>)
-      : mode=='sent' ?
-	(<div>
-	  <p>{t('thank_you_will_get_back_to_you_soon')}</p>
-          <Primary_button arrow onClick={this.on_click}>{t('contact_us')}</Primary_button>
-        </div>)
-      :
-      <Primary_button arrow onClick={this.on_click}>{t('contact_us')}</Primary_button>
+	  <div className="text-end">
+	    <Primary_button arrow onClick={this.on_send}>{t('send')}</Primary_button>
+	  </div>
+	</form>) : undefined
       }
-    </div>;
+    </div>
   }
   on_click = ()=>this.setState({mode: 'enter'});
   on_send = async ()=>{
     let o = {};
     for (let i=0, f=this.form; i<f.length; i++)
       o[f[i].id] = f[i].value;
-    const res = await axios.post('/api/register_contact_us', o);
-    // response json is res.data
-    this.setState({mode: 'sent'});
+    try {
+      this.setState({mode: 'sent'});
+      const res = await axios.post('/api/register_contact_us', o, {timeout: 7000});
+      console.log('register_contact_us success');
+    } catch(err){
+      console.log('register_contact_us error %o', err);
+      this.setState({mode: 'error'});
+    }
   };
   on_ref = ref=>{
     this.form = ref;
@@ -153,6 +161,29 @@ export default function Home(){
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="px-6 pb-20 bg-white">
+        <div className="lif-blue-bg rounded-lg p-8 text-white max-w-6xl mx-auto ">
+          <div>
+            <h2>What’s the difference between LIF and Blockchain?</h2>
+            <p className="text-lg">
+Blockchain was the first time to create a trustable database network. It works, but it has huge problems. It’s super slow because you need to reach network consensus. All the network members must agree for any transaction. The bigger the network, the slower it is. It consumes tons of energy. Very inefficient. Effectively rendering it useless to almost any application but currency. Blockchain currency cannot be used by the masses. Just imagine how much energy is wasted when trying to wire $5.
+            </p>
+            <p className="text-lg">
+LIF is taking a totally different approach. The one paved by Moses: woven declaration scrolls. Blockchain is a totalitarian democracy, where the majority enforce its belief on the minority. Any >50% majority can block you from inserting data, or even change the rules. LIF is about freedom. Anyone can insert any data. LIF only garuanettes, that no one can change your data, and that you are the owner of the data (with public/key signature). That’s all. No judgement if your data is valid or not.
+            </p>
+            <p className="text-lg">
+The decision on the validity of the data is postponed and decided in retrospective by the one using the data. It’s his responsibility to decide if  to believe you or not. LIF lets you declare what you believe, and whoever looks at the data will decide according to his beliefs. LIF doesn’t waste energy to decide who is the real block, because the network has no judgment, it just makes sure that was declared cannot be changed or deleted.
+            </p>
+
+          </div>
+          <div className="mt-6 flex sm:flex-col justify-between sm:items-end">
+            <div></div>
+  	      <a href="https://github.com/lif-zone/lif">
+                <Primary_button arrow>GitHub</Primary_button>
+	      </a>
           </div>
         </div>
       </div>

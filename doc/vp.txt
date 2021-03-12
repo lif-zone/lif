@@ -1,7 +1,17 @@
 www:
+- move http -> https
++ contact us form need to be open by default
+- fix multi-locale bugs
+- save local to local storage
+- add github icon to all github buttons
+- contact us - if user sent request and then try again, remeber and auto-fill previous values
+  (also on error)
 * use rounded corner + fix border + shadow to main video
 - fix all colors to match design
 - use flag icons for en/he (show selected in color, other in gray)
 - fix layout resize bugs (resize slowly and verify it)
 - fix player full screen eaten click
 - replace vimeo with a better video player
+- change LIF logo color to match style
+- fix video LIF logo
+- add english version video (or caption)

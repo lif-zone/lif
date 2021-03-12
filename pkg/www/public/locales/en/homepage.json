@@ -2,7 +2,7 @@
    "title": "Liberty, Independence, Freedom",
    "title2": "The trusted data network!",
    "what_is_lif": "What is LIF?",
-   "lif_is": "An eternal declaration store. LIF is a p2p crypto data network that is open, fast and trustable. Owned by no one. Free to all. Today's Internet is controlled by the government and big corporations. LIF aims to stop this dominance.",
+   "lif_is": "An eternal declaration store. LIF is a p2p crypto data network that is open, fast and trustable. Owned by no one. Free to all. Today's Internet is controlled by the government and big corporations. LIF aims to liberate us from this dominance.",
    "more_info": "Learn more...",
    "what_can_i_do_with_lif": "What can I do with LIF?",
    "what_can_i_do_with_lif_desc": "LIF let you build any application on top of it, such as crypto currency, social apps, online passport, and many more.",
@@ -20,7 +20,7 @@
    "usage3": "Web Sites",
    "usage3_desc": "Create your indestructible web site.Today, it's very easy to block and censor any site. Countries around the world do it all the time. No more with LIF.",
    "lif_advantages": "What makes it special?",
-   "lif_advantages_desc": "LIF is based on proven 3000 years old technology. When Moses wrote the Torah, he needed a way to ensure the data is never lost or compromised. He used woven declaration scrolls. LIF is using the same principles, together with cutting-edge encryption, p2p and web technologies. Revolutionary fixing the limitations of today’s Internet and blockchain technologies (eg. Bitcoin).",
+   "lif_advantages_desc": "LIF is based on proven 3000 years old technology. When Moses wrote the Torah, he needed a way to ensure the data is indestructible or mutated - not by any person, group king or power. He came up with first of a kind technology: woven declaration scrolls. Combining some existing scroll into a “mega scroll, and this technique was used again and again to add “mega scrolls” into his first block. The result was the Jewish Bible that survived over 3000 years intact. Any attempt to modify the data, failed. No other ancient data survived so flawlessly - It worked! Moses succeeded! LIF just reuse the same method, wrapped with cutting-edge encryption, p2p and web technologies. Revolutionary fixing the limitation of today’s Internet and blockchain technologies (eg. Bitcoin).",
    "see_all_use_cases": "See all Use Cases",
    "want_to_help": "How to join?",
    "want_to_help_desc1": "LIF is just starting. We are still defining the main parts of the system, how it will work and API. Our plan is to have a POC (proof of concept) within a few weeks You are welcome to join us!",
@@ -31,6 +31,7 @@
    "email": "Email",
    "phone": "Phone",
    "send": "Send",
-   "what_i_can_do": "Free text",
-   "thank_you_will_get_back_to_you_soon": "Thank you. We will get back to you soon :-)"
+   "what_i_can_do": "Describe how you can help us",
+   "thank_you_will_get_back_to_you_soon": "Thank you. We will get back to you soon :-)",
+   "thank_you_error": "There was an error. Please contact us at join@lif.zone"
 }
