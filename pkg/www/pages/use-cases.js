@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import Link from 'next/link';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
@@ -16,16 +17,34 @@ export default function Home(){
         <div className="max-w-6xl mx-auto py-14 px-8">
           <h1>{t('title')}</h1>
           <h2 className="pt-10 font-normal">{t('title2')}</h2>
-          <p className="mt-8 text-2xl text-gray-800">{t('p1')}</p>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p2"/>
-          </div>
-          <div className="mt-8 text-xl text-gray-600 font-bold">
-            <Trans t={t} i18nKey="p3"/>
-          </div>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p4"/>
-          </div>
+          <div className="mt-8">
+	    <div className="mb-4">
+	      <img src="/img/digital_money.png" className="w-60"/>
+	      <h2>{t('usage1')}</h2>
+	    </div>
+	    <p className="text-lg">{t('usage1_desc')}</p>
+	  </div>
+          <div className="mt-8">
+	    <div className="mb-4">
+	      <img src="/img/get_donations.png" className="w-60"/>
+	      <h2>{t('usage2')}</h2>
+	    </div>
+	    <p className="text-lg">{t('usage2_desc')}</p>
+	  </div>
+          <div className="mt-8">
+	    <div className="mb-4">
+	      <img src="/img/pay_online.png" className="w-60"/>
+	      <h2>{t('usage3')}</h2>
+	    </div>
+	    <p className="text-lg">{t('usage3_desc')}</p>
+	  </div>
+          <div className="mt-8">
+	    <div className="mb-4">
+	      <img src="/img/voting.png" className="w-60"/>
+	      <h2>{t('usage4')}</h2>
+	    </div>
+	    <p className="text-lg">{t('usage4_desc')}</p>
+	  </div>
         </div>
       </Layout>
     );
