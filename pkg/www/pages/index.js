@@ -193,7 +193,7 @@ export default function Home(){
               </div>
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
-              <Link href="/use_case">
+              <Link href="/use-cases">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
@@ -203,7 +203,7 @@ export default function Home(){
               </div>
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
-              <Link href="/use_case">
+              <Link href="/use-cases">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
@@ -213,13 +213,13 @@ export default function Home(){
               </div>
               <h3>{t('usage3')}</h3>
               <p>{t('usage3_desc')}</p>
-              <Link href="/use_case">
+              <Link href="/use-cases">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
           </div>
 	  <div className="text-center pt-10">
-            <Link href="/use_case">
+            <Link href="/use-cases">
 	      <a>
 	        <Primary_button arrow>{t('see_all_use_cases')}</Primary_button>
 	     </a>
