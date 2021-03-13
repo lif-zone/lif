@@ -169,7 +169,7 @@ export default function Home(){
 Blockchain was the first time to create a trustable database network. It works, but it has huge problems. It’s super slow because you need to reach network consensus. All the network members must agree for any transaction. The bigger the network, the slower it is. It consumes tons of energy, rendering it useless for almost any application. Just imagine how much energy is wasted when trying to wire $5.
             </p>
             <p className="text-lg">
-LIF reuses Moses's woven declaration scrolls. Blockchain is a totalitarian democracy, where the majority enforce its beliefs on the minority. Any >50% majority can block you from inserting data, or even change the rules. LIF is about freedom. Anyone can insert any data. LIF only garuanettes, that no one can change your data, and that you are the owner of the data. That’s all. No judgement.
+LIF reuses Moses's woven declaration scrolls. Blockchain is a totalitarian democracy, where the majority enforce its beliefs on the minority. Any >50% majority can block you from inserting data, or even change the rules. LIF is about freedom. Anyone can insert any data. LIF only guarantees that no one can change your data, and that you are the owner of the data. That’s all. No judgement.
             </p>
             <p className="text-lg">
 The decision on the validity of the data is postponed and decided in retrospective by the one using the data. It’s his responsibility to decide if to believe you or not. LIF lets you declare what you believe, and whoever looks at the data will decide according to his beliefs. LIF doesn’t waste energy to decide consensus.
