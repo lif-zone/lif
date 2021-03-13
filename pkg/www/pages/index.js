@@ -71,6 +71,7 @@ const Home_first = ()=>{
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
           <h1 className="px-6">{t('title')}</h1>
           <p className="mt-8 text-2xl pl-6 pr-6">{t('title2')}</p>
+          <p className="mt-8 text-2xl pl-6 pr-6">{t('title3')}</p>
         </div>
         <div className="px-6">
           <Video/>
