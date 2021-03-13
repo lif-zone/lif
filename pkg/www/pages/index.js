@@ -164,17 +164,12 @@ export default function Home(){
       <div className="px-6 pb-20 bg-white">
         <div className="lif-blue-bg rounded-lg p-8 text-white max-w-6xl mx-auto ">
           <div>
-            <h3>What’s the difference between LIF and Blockchain?</h3>
+            <h3>{t('lif_vs_block')}</h3>
+            <p className="text-lg">{t('lif_vs_block_p1')}</p>
+            <p className="text-lg">{t('lif_vs_block_p2')}</p>
+            <p className="text-lg">{t('lif_vs_block_p3')}</p>
             <p className="text-lg">
-Blockchain was the first time to create a trustable database network. It works, but it has huge problems. It’s super slow because you need to reach network consensus. All the network members must agree for any transaction. The bigger the network, the slower it is. It consumes tons of energy, rendering it useless for almost any application. Just imagine how much energy is wasted when trying to wire $5.
-            </p>
-            <p className="text-lg">
-LIF reuses Moses's woven declaration scrolls. Blockchain is a totalitarian democracy, where the majority enforce its beliefs on the minority. Any >50% majority can block you from inserting data, or even change the rules. LIF is about freedom. Anyone can insert any data. LIF only guarantees that no one can change your data, and that you are the owner of the data. That’s all. No judgement.
-            </p>
-            <p className="text-lg">
-The decision on the validity of the data is postponed and decided in retrospective by the one using the data. It’s his responsibility to decide if to believe you or not. LIF lets you declare what you believe, and whoever looks at the data will decide according to his beliefs. LIF doesn’t waste energy to decide consensus.
-            </p>
-            <p className="text-lg">Want to learn more?
+              {t('lif_vs_block_more')}
 	      <a href="https://github.com/lif-zone/lif"
 		className="text-white hover:text-white items-center text-lg opacity-70
 		  transition-opacity hover:opacity-100 ms-2 me-5">
