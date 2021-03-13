@@ -163,7 +163,7 @@ export default function Home(){
         </div>
       </div>
       <div className="px-6 pb-20 bg-white">
-        <div className="lif-blue-bg rounded-lg p-5 text-white max-w-6xl mx-auto ">
+        <div className="lif-blue-bg rounded-lg p-4 text-white max-w-6xl mx-auto ">
           <div>
             <h3>
               <Icon_wht1 className="h-8 inline me-2"/>
