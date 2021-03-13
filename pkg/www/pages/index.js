@@ -164,7 +164,10 @@ export default function Home(){
       <div className="px-6 pb-20 bg-white">
         <div className="lif-blue-bg rounded-lg p-5 text-white max-w-6xl mx-auto ">
           <div>
-            <h3>{t('lif_vs_block')}</h3>
+            <h3>
+              <Icon_wht1 className="h-8 inline me-2"/>
+	      {t('lif_vs_block')}
+            </h3>
             <p className="text-lg">{t('lif_vs_block_p1')}</p>
             <p className="text-lg">{t('lif_vs_block_p2')}</p>
             <p className="text-lg">{t('lif_vs_block_p3')}</p>
