@@ -253,10 +253,10 @@ export default function Home(){
               <div>
 	        <a href="mailto:join@lif.zone">join@lif.zone</a>
 	      </div>
-              <div className="text-right">
+              <div className="text-right" style={{direction: 'ltr'}}>
 		<a href="https://github.com/lif-zone/lif"
 		  className="text-white hover:text-white items-center text-lg opacity-70
-		    transition-opacity hover:opacity-100 me-5">
+		    transition-opacity hover:opacity-100 me-3">
 		  <Github2 className="mt-1 inline-block fill-current"/>GitHub</a>
 	      </div>
 	    </div>
