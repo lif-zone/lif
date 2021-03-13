@@ -151,9 +151,9 @@ export default function Home(){
                 <Icon_wht2 className="h-8 inline me-2"/>
     	        {t('lif_advantages')}
               </h3>
-              <div className="mt-4 mb-3 text-xl">
-	        {t('lif_advantages_desc')}
-              </div>
+              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p1')}</p>
+              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p2')}</p>
+              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p3')}</p>
               <Link href="//github.com/lif-zone/lif">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
@@ -162,7 +162,7 @@ export default function Home(){
         </div>
       </div>
       <div className="px-6 pb-20 bg-white">
-        <div className="lif-blue-bg rounded-lg p-8 text-white max-w-6xl mx-auto ">
+        <div className="lif-blue-bg rounded-lg p-5 text-white max-w-6xl mx-auto ">
           <div>
             <h3>{t('lif_vs_block')}</h3>
             <p className="text-lg">{t('lif_vs_block_p1')}</p>
