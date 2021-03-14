@@ -112,15 +112,16 @@
 }
 
 
-.rtl { direction: 'rtl'; }
+.rtl { direction: rtl; }
+.ltr { direction: ltr; }
 .lif-blue-bg {
     background: radial-gradient(ellipse at bottom right, #260133, #1f2348);
 }
 .lif-hexagon-bg {
     background-image: url('/img/hexagon-ribbon-white-desktop.svg');
     background-size: auto 544px;
-    background-position: center 0;
-    padding-bottom: 60px;
+    background-position: center 100%;
+    background-repeat: no-repeat;
 }
 
 .lif-input {

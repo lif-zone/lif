@@ -18,8 +18,9 @@ const video_url = 'https://player.vimeo.com/video/520902331?title=0&amp;byline=0
 // XXX: mv to components
 const Primary_button = ({children, arrow, onClick})=>{
     const {direction} = use_app_context();
-    const arr_c = cn(`ms-3 transition-transform duration-300 transform
-        group-hover:translate-x-1`, direction=='rtl' && 'rotate-180');
+    const arr_c = cn(`ms-3 transition-transform duration-300 transform`,
+        direction=='rtl' ? 'rotate-180 group-hover:-translate-x-1' :
+        'group-hover:translate-x-1');
     return <span onClick={onClick}
         className="group inline-flex font-bold cursor-pointer no-underline
         bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
@@ -69,7 +70,7 @@ const Home_first = ()=>{
     return (
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-14">
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
-          <h1 className="px-6">{t('title')}</h1>
+          <h1 className="px-6 sm:text-4xl md:text-5xl">{t('title')}</h1>
           <p className="mt-8 text-2xl pl-6 pr-6">{t('title2')}</p>
           <p className="mt-8 text-2xl pl-6 pr-6">{t('title3')}</p>
         </div>
@@ -163,24 +164,26 @@ export default function Home(){
         </div>
       </div>
       <div className="px-6 pb-20 bg-white">
-        <div className="lif-blue-bg rounded-lg p-4 text-white max-w-6xl mx-auto ">
-          <div>
-            <h3>
-              <Icon_wht1 className="h-8 inline me-2"/>
-	      {t('lif_vs_block')}
-            </h3>
-            <p className="text-lg">{t('lif_vs_block_p1')}</p>
-            <p className="text-lg">{t('lif_vs_block_p2')}</p>
-            <p className="text-lg">{t('lif_vs_block_p3')}</p>
-            <p className="text-lg">
-              {t('lif_vs_block_more')}
+        <div className="lif-blue-bg rounded-lg p-7 text-white max-w-6xl
+          mx-auto">
+          <h3 className="mb-6">
+            <Icon_wht1 className="h-8 inline me-2"/>
+	    {t('lif_vs_block')}
+          </h3>
+          <p className="text-lg">{t('lif_vs_block_p1')}</p>
+          <p className="text-lg">{t('lif_vs_block_p2')}</p>
+          <p className="text-lg">{t('lif_vs_block_p3')}</p>
+          <p className="text-lg">
+            {t('lif_vs_block_more')}
+            <bdo dir="ltr">
 	      <a href="https://github.com/lif-zone/lif"
-		className="text-white hover:text-white items-center text-lg opacity-70
-		  transition-opacity hover:opacity-100 ms-2 me-5">
-		<Github2 className="mt-1 inline-block fill-current"/>GitHub
+	        className="text-white hover:text-white items-center text-lg
+                  opacity-70 transition-opacity hover:opacity-100 ms-2 me-5">
+	        <Github2 className="mt-1 inline-block fill-current"/>
+                GitHub
 	      </a>
-            </p>
-          </div>
+            </bdo>
+          </p>
         </div>
       </div>
       <div className="bg-white text-lg pb-12">
@@ -273,25 +276,28 @@ During his public career, Feiglin worked to reduce state control over different 
       </div>
       }
       <div className="lif-blue-bg">
-        <div className="lif-hexagon-bg">
-          <div className="p-6 max-w-6xl mx-auto text-white">
-            <h2>{t('want_to_help')}</h2>
-            <div className="my-10 text-xl">
-              <p>{t('want_to_help_desc1')}</p>
-              <p>{t('want_to_help_desc2')}</p>
-              <p>{t('want_to_help_desc3')}</p>
-              <div>
-	        <a href="mailto:join@lif.zone">join@lif.zone</a>
-	      </div>
-              <div className="text-right" style={{direction: 'ltr'}}>
-		<a href="https://github.com/lif-zone/lif"
-		  className="text-white hover:text-white items-center text-lg opacity-70
-		    transition-opacity hover:opacity-100 me-3">
-		  <Github2 className="mt-1 inline-block fill-current"/>GitHub</a>
-	      </div>
+        <div className="p-12 lif-hexagon-bg max-w-6xl mx-auto text-white">
+          <h2>{t('want_to_help')}</h2>
+          <div className="my-10 text-xl">
+            <p>{t('want_to_help_desc1')}</p>
+            <p>{t('want_to_help_desc2')}</p>
+            <p>{t('want_to_help_desc3')}</p>
+            <div className="float-right">
+              <bdo dir="ltr">
+                <a href="https://github.com/lif-zone/lif"
+                  className="text-white hover:text-white items-center text-lg
+                    opacity-70 transition-opacity hover:opacity-100 ms-2
+                    me-5">
+                  <Github2 className="mt-1 inline-block fill-current"/>
+                  GitHub
+                </a>
+              </bdo>
 	    </div>
-	    <Contact_us t={t}/>
-          </div>
+            <div>
+	      <a href="mailto:join@lif.zone">join@lif.zone</a>
+	    </div>
+	  </div>
+	  <Contact_us t={t}/>
         </div>
       </div>
     </Layout>
