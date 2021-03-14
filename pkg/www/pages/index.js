@@ -18,8 +18,9 @@ const video_url = 'https://player.vimeo.com/video/520902331?title=0&amp;byline=0
 // XXX: mv to components
 const Primary_button = ({children, arrow, onClick})=>{
     const {direction} = use_app_context();
-    const arr_c = cn(`ms-3 transition-transform duration-300 transform
-        group-hover:translate-x-1`, direction=='rtl' && 'rotate-180');
+    const arr_c = cn(`ms-3 transition-transform duration-300 transform`,
+        direction=='rtl' ? 'rotate-180 group-hover:-translate-x-1' :
+        'group-hover:translate-x-1');
     return <span onClick={onClick}
         className="group inline-flex font-bold cursor-pointer no-underline
         bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
