@@ -112,7 +112,8 @@
 }
 
 
-.rtl { direction: 'rtl'; }
+.rtl { direction: rtl; }
+.ltr { direction: ltr; }
 .lif-blue-bg {
     background: radial-gradient(ellipse at bottom right, #260133, #1f2348);
 }

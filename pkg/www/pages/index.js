@@ -175,11 +175,14 @@ export default function Home(){
             <p className="text-lg">{t('lif_vs_block_p3')}</p>
             <p className="text-lg">
               {t('lif_vs_block_more')}
-	      <a href="https://github.com/lif-zone/lif"
-		className="text-white hover:text-white items-center text-lg opacity-70
-		  transition-opacity hover:opacity-100 ms-2 me-5">
-		<Github2 className="mt-1 inline-block fill-current"/>GitHub
-	      </a>
+              <bdo dir="ltr">
+	        <a href="https://github.com/lif-zone/lif"
+		  className="text-white hover:text-white items-center text-lg
+                    opacity-70 transition-opacity hover:opacity-100 ms-2 me-5">
+		  <Github2 className="mt-1 inline-block fill-current"/>
+                  GitHub
+	        </a>
+              </bdo>
             </p>
           </div>
         </div>
@@ -252,14 +255,19 @@ export default function Home(){
               <p>{t('want_to_help_desc1')}</p>
               <p>{t('want_to_help_desc2')}</p>
               <p>{t('want_to_help_desc3')}</p>
+              <div className="float-right">
+                <bdo dir="ltr">
+                  <a href="https://github.com/lif-zone/lif"
+                    className="text-white hover:text-white items-center text-lg
+                      opacity-70 transition-opacity hover:opacity-100 ms-2
+                      me-5">
+                    <Github2 className="mt-1 inline-block fill-current"/>
+                    GitHub
+                  </a>
+                </bdo>
+	      </div>
               <div>
 	        <a href="mailto:join@lif.zone">join@lif.zone</a>
-	      </div>
-              <div className="text-right" style={{direction: 'ltr'}}>
-		<a href="https://github.com/lif-zone/lif"
-		  className="text-white hover:text-white items-center text-lg opacity-70
-		    transition-opacity hover:opacity-100 me-3">
-		  <Github2 className="mt-1 inline-block fill-current"/>GitHub</a>
 	      </div>
 	    </div>
 	    <Contact_us t={t}/>
