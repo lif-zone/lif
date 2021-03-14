@@ -227,6 +227,35 @@ export default function Home(){
 	  </div>
         </div>
       </div>
+      <div className="bg-white text-lg pb-12">
+        <div className="max-w-6xl mx-auto pb-6">
+          <h2 className="text-center px-10 pb-6">Who is behind it?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
+            <div className="px-6 py-6 sm:border-e">
+              <div className="flex flex-col items-center mb-6">
+                <img src="/img/moshe.jpg" className="w-60"/>
+              </div>
+              <h3>Moshe Zalman Feiglin</h3>
+<p>
+Moshe Zalman Feiglin an Israeli politician and activist for freedom of expression and individual rights, and the leader of libertarian Jewish party Zehut (Identity). A former member of Likud, he headed the Manhigut Yehudit (Jewish Leadership) faction within the party, and represented Likud in the Knesset between 2013 and 2015.
+</p>
+<p>
+During his public career, Feiglin worked to reduce state control over different aspects of citizens' lives, abolish some government ministries, remove religion from politics, dismantle mandatory regulatory bodies, to free the economy and lower prices through competition, autonomy in education and more - all to promote freedom and reduce the states grip on the lives of citizens. Feiglin believes that the state belongs to the citizens and not that the citizens belong to the state.
+</p>
+            </div>
+            <div className="px-6 py-6 sm:block">
+              <div className="flex flex-col items-center mb-6">
+                <img src="/img/derry.jpg" className="w-60"/>
+              </div>
+              <h3>Derry Shribman</h3>
+              <p>XXX</p>
+              <p>XXX</p>
+            </div>
+	  </div>
+	</div>
+      </div>
+ 
+
     {false && <div className="px-6 mt-12 max-w-6xl mx-auto">
         <div className="lif-blue-bg rounded-lg p-8 text-white">
           <div>
