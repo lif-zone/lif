@@ -23,19 +23,10 @@ const Primary_button = ({children, arrow, onClick})=>{
     return <span onClick={onClick}
         className="group inline-flex font-bold cursor-pointer no-underline
         bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
-        hover:bg-lif-blue-darkened h-12 transform text-xl
+        hover:bg-lif-blue-darkened h-12 transform text-xl btn-effect
         transition-transform shadow-md">
         {children}
         {arrow && <Icon_arrow className={arr_c}/>}
-      </span>;
-};
-
-const Inline_button = ({children, onClick})=>{
-    return <span ref={ref} onClick={onClick} className="group
-        flex-inline font-bold cursor-pointer no-underline bg-lif-blue
-        text-white px-3 py-1 leading-4 rounded-2xl items-center
-        hover:bg-lif-blue-darkened">
-        {children}
       </span>;
 };
 
@@ -56,7 +47,7 @@ class Video extends Component{
   render(){
     const {className} = this.props;
     const {play} = this.state;
-    return <div className={className}>
+    return <div className="aspect-w-16 aspect-h-9 video">
       {!play ? <img src="/img/video.jpg" className="video_image"/> : undefined}
       {!play ?
 	<div className="video-thumbnail" onClick={this.play_video}></div> : undefined}
@@ -78,11 +69,12 @@ const Home_first = ()=>{
     return (
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-14">
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
-          <h1>{t('title')}</h1>
-          <p className="mt-8 text-2xl">{t('title2')}</p>
+          <h1 className="px-6">{t('title')}</h1>
+          <p className="mt-8 text-2xl pl-6 pr-6">{t('title2')}</p>
+          <p className="mt-8 text-2xl pl-6 pr-6">{t('title3')}</p>
         </div>
-	<div>
-          <Video className="aspect-w-16 aspect-h-9"/>
+        <div className="px-6">
+          <Video/>
 	</div>
       </div>
     );
@@ -99,37 +91,42 @@ class Contact_us extends Component{
     const {t} = this.props;
     const {mode} = this.state;
     return <div className="contact_us_form">
-      {mode=='enter' ?
+      {mode=='error' ? <p>{t('thank_you_error')}</p> : undefined}
+      {mode=='sent' ? (
+	<div>
+	  <p>{t('thank_you_will_get_back_to_you_soon')}</p>
+           <Primary_button arrow onClick={this.on_click}>{t('contact_us')}</Primary_button>
+	</div> 
+	): undefined
+      }
+      {mode!='sent' ?
 	(<form ref={this.on_ref}>
 	  <input className="lif-input" id='name' placeholder={t('name')}/>
 	  <input inputMode="email" id='email' className="lif-input" placeholder={t('email')}/>
 	  <input inputMode="tel" id='phone' className="lif-input" placeholder={t('phone')}/>
 	  <textarea className="lif-textarea" id='freetext' placeholder={t('what_i_can_do')}/>
-	  <Primary_button arrow onClick={this.on_send}>{t('send')}</Primary_button>
-	</form>)
-      : mode=='sent' ?
-	(<div>
-	  <p>{t('thank_you_will_get_back_to_you_soon')}</p>
-          <Primary_button arrow onClick={this.on_click}>{t('contact_us')}</Primary_button>
-        </div>)
-      :
-      <Primary_button arrow onClick={this.on_click}>{t('contact_us')}</Primary_button>
+	  <div className="text-end">
+	    <Primary_button arrow onClick={this.on_send}>{t('send')}</Primary_button>
+	  </div>
+	</form>) : undefined
       }
-    </div>;
+    </div>
   }
   on_click = ()=>this.setState({mode: 'enter'});
   on_send = async ()=>{
     let o = {};
     for (let i=0, f=this.form; i<f.length; i++)
       o[f[i].id] = f[i].value;
-    const res = await axios.post('/api/register_contact_us', o);
-    // response json is res.data
-    this.setState({mode: 'sent'});
+    try {
+      this.setState({mode: 'sent'});
+      const res = await axios.post('/api/register_contact_us', o, {timeout: 7000});
+      console.log('register_contact_us success');
+    } catch(err){
+      console.log('register_contact_us error %o', err);
+      this.setState({mode: 'error'});
+    }
   };
-  on_ref = ref=>{
-    this.form = ref;
-    ref?.scrollIntoView();
-  };
+  on_ref = (ref=>this.form=ref);
 }
 
 export default function Home(){
@@ -139,16 +136,14 @@ export default function Home(){
       <Home_first/>
       <div className="bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
-          sm:grid-cols-2 p-14 pb-0">
+          sm:grid-cols-2 p-6 pb-0">
           <div className="mb-16">
             <h2>{t('what_is_lif')}</h2>
             <p className="mt-4 mb-8 text-2xl leading-9">
             {t('lif_is')}
 	    </p>
             <Link href="/about">
-              <a><Primary_button arrow>
-                {t('more_info')}
-              </Primary_button></a>
+              <a><Primary_button arrow>{t('more_info')}</Primary_button></a>
             </Link>
           </div>
           <div className="">
@@ -157,9 +152,9 @@ export default function Home(){
                 <Icon_wht2 className="h-8 inline me-2"/>
     	        {t('lif_advantages')}
               </h3>
-              <div className="mt-4 mb-3 text-xl">
-	        {t('lif_advantages_desc')}
-              </div>
+              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p1')}</p>
+              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p2')}</p>
+              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p3')}</p>
               <Link href="//github.com/lif-zone/lif">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
@@ -167,71 +162,90 @@ export default function Home(){
           </div>
         </div>
       </div>
-      <div className="bg-white text-lg">
+      <div className="px-6 pb-20 bg-white">
+        <div className="lif-blue-bg rounded-lg p-4 text-white max-w-6xl mx-auto ">
+          <div>
+            <h3>
+              <Icon_wht1 className="h-8 inline me-2"/>
+	      {t('lif_vs_block')}
+            </h3>
+            <p className="text-lg">{t('lif_vs_block_p1')}</p>
+            <p className="text-lg">{t('lif_vs_block_p2')}</p>
+            <p className="text-lg">{t('lif_vs_block_p3')}</p>
+            <p className="text-lg">
+              {t('lif_vs_block_more')}
+	      <a href="https://github.com/lif-zone/lif"
+		className="text-white hover:text-white items-center text-lg opacity-70
+		  transition-opacity hover:opacity-100 ms-2 me-5">
+		<Github2 className="mt-1 inline-block fill-current"/>GitHub
+	      </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white text-lg pb-12">
         <div className="max-w-6xl mx-auto pb-6">
-          <h2 className="sm:text-center px-10 pb-6">{t('usage_examples')}</h2>
+          <h2 className="text-center px-10 pb-6">{t('usage_examples')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            <div className="px-12 py-6 sm:border-e">
+            <div className="px-6 py-6 sm:border-e">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/digital_money.png" className="w-60"/>
               </div>
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
-              <Link href="/use_case">
+              <Link href="/use-cases">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
-            <div className="px-12 py-6 sm:block border-e">
+            <div className="px-6 py-6 sm:block border-e">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/get_donations.png" className="w-60"/>
               </div>
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
-              <Link href="/use_case">
+              <Link href="/use-cases">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
-            <div className="px-12 py-6 md:block">
+            <div className="px-6 py-6 md:block">
               <div className="flex flex-col items-center mb-4">
                 <img src="/img/pay_online.png" className="w-60"/>
               </div>
               <h3>{t('usage3')}</h3>
               <p>{t('usage3_desc')}</p>
-              <Link href="/use_case">
+              <Link href="/use-cases">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
             </div>
           </div>
 	  <div className="text-center pt-10">
-	    <Primary_button arrow href="/use_case">{t('see_all_use_cases')}</Primary_button>
+            <Link href="/use-cases">
+	      <a>
+	        <Primary_button arrow>{t('see_all_use_cases')}</Primary_button>
+	     </a>
+            </Link>
 	  </div>
         </div>
       </div>
-      {false && // XXX decide if needed
-      <div className="text-center py-12">
-        <Inline_button>See all Use Cases</Inline_button>
-      </div>
-      }
-      {false && // XXX decide if needed
-      <div className="px-12 max-w-6xl mx-auto">
-        <div className="lif-blue-bg rounded-lg p-8 text-white
-          grid grid-cols-1 sm:grid-cols-2">
+    {false && <div className="px-6 mt-12 max-w-6xl mx-auto">
+        <div className="lif-blue-bg rounded-lg p-8 text-white">
           <div>
-            <h2>Build on it</h2>
+            <h2>Build it!</h2>
             <p className="text-xl">JavaScript and a basic understanding of
-              Blockchain is all you need.<br/>A great community is happy to
-              help you.</p>
+              Node is all you need. A great community is happy to help you.</p>
           </div>
-          <div className="mt-4 flex sm:flex-col justify-between sm:items-end">
+          <div className="mt-6 flex sm:flex-col justify-between sm:items-end">
             <div></div>
-            <Primary_button arrow>GitHub</Primary_button>
+  	      <a href="https://github.com/lif-zone/lif">
+                <Primary_button arrow>GitHub</Primary_button>
+	      </a>
           </div>
         </div>
       </div>
       }
-      <div className="lif-blue-bg mt-12">
+      <div className="lif-blue-bg">
         <div className="lif-hexagon-bg">
-          <div className="p-12 max-w-6xl mx-auto text-white">
+          <div className="p-6 max-w-6xl mx-auto text-white">
             <h2>{t('want_to_help')}</h2>
             <div className="my-10 text-xl">
               <p>{t('want_to_help_desc1')}</p>
@@ -240,11 +254,11 @@ export default function Home(){
               <div>
 	        <a href="mailto:join@lif.zone">join@lif.zone</a>
 	      </div>
-              <div className="text-right">
+              <div className="text-right" style={{direction: 'ltr'}}>
 		<a href="https://github.com/lif-zone/lif"
 		  className="text-white hover:text-white items-center text-lg opacity-70
-		    transition-opacity hover:opacity-100 me-5">
-		  <Github2 className="inline-block fill-current"/>GitHub</a>
+		    transition-opacity hover:opacity-100 me-3">
+		  <Github2 className="mt-1 inline-block fill-current"/>GitHub</a>
 	      </div>
 	    </div>
 	    <Contact_us t={t}/>
