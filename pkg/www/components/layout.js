@@ -7,6 +7,7 @@ import Icon_lang from '../public/img/icon_lang.svg';
 import Github from '../public/img/github.svg';
 import {use_app_context} from '../utils/context.js';
 import {use_outside_alerter} from '../utils/react.js';
+import {useCookies} from 'react-cookie';
 import {useRouter} from 'next/router';
 
 const Nav_link = forwardRef(({children}, ref)=>{
@@ -144,6 +145,7 @@ const Header = ()=>{
 const full_lang = {en: 'English', he: 'עברית'};
 
 const Lang_selector = ()=>{
+    const [cookies, setCookie] = useCookies([]);
     const {locale, locales} = useRouter();
     const [opened, set_opened] = useState();
     const toggle = ()=>set_opened(!opened);
@@ -154,6 +156,7 @@ const Lang_selector = ()=>{
         opened ? 'text-gray-500' : 'text-gray-400');
     const router = useRouter();
     const select_lang = l=>{
+        setCookie('NEXT_LOCALE', l);
         router.push(router.route, router.route, {locale: l});
     };
     return <div ref={wrapper_ref}>
