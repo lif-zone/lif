@@ -10,7 +10,7 @@ import Github2 from '../public/img/github2.svg';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {use_app_context} from '../utils/context.js';
 import Link from 'next/link';
-import {useTranslation} from 'next-i18next';
+import {Trans, useTranslation} from 'next-i18next';
 import Player from '@vimeo/player';
 
 const video_url = 'https://player.vimeo.com/video/520902331?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
@@ -140,8 +140,8 @@ export default function Home(){
           sm:grid-cols-2 p-6 pb-0">
           <div className="mb-16">
             <h2>{t('what_is_lif')}</h2>
-            <p className="mt-4 mb-8 text-2xl leading-9">
-            {t('lif_is')}
+            <p className="mt-4 mb-8 text-lg leading-9">
+              <Trans t={t} i18nKey="lif_is"/>
 	    </p>
             <Link href="/about">
               <a><Primary_button arrow>{t('more_info')}</Primary_button></a>
@@ -153,9 +153,9 @@ export default function Home(){
                 <Icon_wht2 className="h-8 inline me-2"/>
     	        {t('lif_advantages')}
               </h3>
-              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p1')}</p>
-              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p2')}</p>
-              <p className="mt-4 mb-3 text-lg">{t('lif_advantages_p3')}</p>
+              <p className="mt-4 mb-3 text-lg">
+                <Trans t={t} i18nKey="lif_advantages_p"/>
+              </p>
               <Link href="//github.com/lif-zone/lif">
                 <a><Arrow_link>{t('more_info')}</Arrow_link></a>
               </Link>
@@ -170,19 +170,20 @@ export default function Home(){
             <Icon_wht1 className="h-8 inline me-2"/>
 	    {t('lif_vs_block')}
           </h3>
-          <p className="text-lg">{t('lif_vs_block_p1')}</p>
-          <p className="text-lg">{t('lif_vs_block_p2')}</p>
-          <p className="text-lg">{t('lif_vs_block_p3')}</p>
           <p className="text-lg">
-            {t('lif_vs_block_more')}
-            <bdo dir="ltr">
-	      <a href="https://github.com/lif-zone/lif"
-	        className="text-white hover:text-white items-center text-lg
-                  opacity-70 transition-opacity hover:opacity-100 ms-2 me-5">
-	        <Github2 className="mt-1 inline-block fill-current"/>
-                GitHub
-	      </a>
-            </bdo>
+            <Trans t={t} i18nKey="lif_vs_block_p"/>
+          </p>
+          <p className="text-lg">
+            <p>{t('lif_vs_block_more')}
+	      <bdo dir="ltr">
+		<a href="https://github.com/lif-zone/lif"
+		  className="text-white hover:text-white items-center text-lg
+		    opacity-70 transition-opacity hover:opacity-100 ms-2 me-5">
+		  <Github2 className="mt-1 inline-block fill-current"/>
+		  GitHub
+		</a>
+	      </bdo>
+            </p>
           </p>
         </div>
       </div>
