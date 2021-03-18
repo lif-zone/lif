@@ -13,7 +13,8 @@ import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
 import Player from '@vimeo/player';
 
-const video_url = 'https://player.vimeo.com/video/520902331?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
+const video_url = 'https://player.vimeo.com/video/525625726?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
+const video_url2 = 'https://player.vimeo.com/video/525624995?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
 
 // XXX: mv to components
 const Primary_button = ({children, arrow, onClick})=>{
