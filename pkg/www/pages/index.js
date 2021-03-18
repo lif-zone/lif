@@ -13,8 +13,8 @@ import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
 import Player from '@vimeo/player';
 
-const video_url = 'https://player.vimeo.com/video/525625726?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
-const video_url2 = 'https://player.vimeo.com/video/525624995?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
+const video_url = ['https://player.vimeo.com/video/525625726?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/525624995?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'];
 
 // XXX: mv to components
 const Primary_button = ({children, arrow, onClick})=>{
@@ -47,19 +47,20 @@ const Arrow_link = ({children, href, onClick})=>{
 class Video extends Component{
   state = {};
   render(){
-    const {className} = this.props;
     const {play} = this.state;
+    const num = this.props.num||0;
     return <div className="aspect-w-16 aspect-h-9 video">
-      {!play ? <img src="/img/video.jpg" className="video_image"/> : undefined}
+      {!play ? <img src={'/img/video'+num+'.jpg'} className="video_image"/> : undefined}
       {!play ?
 	<div className="video-thumbnail" onClick={this.play_video}></div> : undefined}
-      <iframe src={video_url} allowFullScreen className="shadow-xl"
+      <iframe id={'video_frame'+num} src={video_url[num]} allowFullScreen className="shadow-xl"
 	frameBorder="0" title="LIF - Liberty, Independence, Freedom"
 	allow="autoplay; fullscreen; picture-in-picture"/>
     </div>
   }
   play_video = ()=>{
-    var iframe = document.querySelector('iframe');
+    const num = this.props.num||0;
+    var iframe = document.querySelector('#video_frame'+num);
     var player = new Player(iframe);
     player.play();
     this.setState({play: true});
@@ -76,7 +77,7 @@ const Home_first = ()=>{
           <p className="mt-8 text-2xl pl-6 pr-6">{t('title3')}</p>
         </div>
         <div className="px-6">
-          <Video/>
+          <Video num={0}/>
 	</div>
       </div>
     );
@@ -140,6 +141,7 @@ export default function Home(){
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 p-6 pb-0">
           <div className="mb-16">
+	    <Video num={1}/>
             <h2>{t('what_is_lif')}</h2>
             <p className="mt-4 mb-8 text-lg leading-9">
               <Trans t={t} i18nKey="lif_is"/>
