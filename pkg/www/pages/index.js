@@ -44,6 +44,7 @@ const Arrow_link = ({children, href, onClick})=>{
       </span>;
 };
 
+const players = {};
 class Video extends Component{
   state = {};
   render(){
@@ -60,8 +61,14 @@ class Video extends Component{
   }
   play_video = ()=>{
     const num = this.props.num||0;
-    var iframe = document.querySelector('#video_frame'+num);
-    var player = new Player(iframe);
+    var iframe, player;
+    for (let p in players)
+      players[p].pause();
+    if (!players[num])
+    {
+      iframe = document.querySelector('#video_frame'+num);
+      players[num] = player = new Player(iframe);
+    }
     player.play();
     this.setState({play: true});
   };
