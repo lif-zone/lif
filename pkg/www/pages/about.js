@@ -19,11 +19,14 @@ export default function Home(){
           <div className="mt-8 text-xl text-gray-600">
             <Trans t={t} i18nKey="p2"/>
           </div>
-          <div className="mt-8 text-xl text-gray-600 font-bold">
+          <div className="mt-8 text-xl text-gray-600">
             <Trans t={t} i18nKey="p3"/>
           </div>
           <div className="mt-8 text-xl text-gray-600">
             <Trans t={t} i18nKey="p4"/>
+          </div>
+          <div className="mt-8 text-xl text-gray-600">
+            <Trans t={t} i18nKey="p5"/>
           </div>
         </div>
       </Layout>
