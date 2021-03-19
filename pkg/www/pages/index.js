@@ -262,13 +262,11 @@ export default function Home(){
 	  </div>
         </div>
       </div>
-      <div className="lif-blue-bg">
-        <div className="p-12 lif-hexagon-bg max-w-6xl mx-auto text-white">
-          <h2>{t('want_to_help')}</h2>
-          <div className="my-10 text-xl">
-            <p>{t('want_to_help_desc1')}</p>
-            <p>{t('want_to_help_desc2')}</p>
-            <p>{t('want_to_help_desc3')}</p>
+      <div className="lif-blue-bg pb-10">
+        <div className="p-6 lif-hexagon-bg max-w-6xl mx-auto text-white">
+          <h3>{t('help_h')}</h3>
+          <div className="text-xl">
+            <Trans t={t} i18nKey='help_p'/>
             <div className="float-right">
               <bdo dir="ltr">
                 <a href="https://github.com/lif-zone/lif"
