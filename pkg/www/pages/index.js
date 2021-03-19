@@ -164,7 +164,9 @@ export default function Home(){
 	<div className="max-w-6xl mx-auto px-6 pt-6 pb-10">
 	  <p><Trans t={t} i18nKey='about_p4'/></p>
           <br/>
-	  <Video num={1}/>
+          <div className="max-w-3xl mx-auto">
+	    <Video num={1}/>
+          </div>
 	</div>
       </div>
       <div className="bg-white">
