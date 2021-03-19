@@ -77,11 +77,14 @@ class Video extends Component{
 const Home_first = ()=>{
     const {t} = useTranslation('homepage');
     return (
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-14">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-10">
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
           <h1 className="px-6 sm:text-4xl md:text-5xl">{t('title')}</h1>
-          <p className="mt-8 text-2xl pl-6 pr-6">{t('title2')}</p>
-          <p className="mt-8 text-2xl pl-6 pr-6">{t('title3')}</p>
+          <p className="mt-8 text-2xl px-6">
+            {t('title2')}
+            <br/>
+            {t('title3')}
+          </p>
         </div>
         <div className="px-6">
           <Video num={0}/>
@@ -145,61 +148,79 @@ export default function Home(){
     <Layout>
       <Home_first/>
       <div className="bg-white">
+	<div className="max-w-6xl mx-auto p-6">
+	  <h3>{t('about_h')}</h3>
+	  <p>{t('about_p')}</p>
+	  <p><Trans t={t} i18nKey='about_p2'/></p>
+          <div className="lif-blue-bg rounded-lg py-1 px-3 mb-6 text-white">
+  	    <p><strong>{t('about_p3')}</strong></p>
+          </div>
+          <Link href="/about">
+	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
+          </Link>
+	</div>
+      </div>
+      <div>
+	<div className="max-w-6xl mx-auto px-6 pt-6 pb-10">
+	  <p><Trans t={t} i18nKey='about_p4'/></p>
+          <br/>
+	  <Video num={1}/>
+	</div>
+      </div>
+      <div className="bg-white">
+	<div className="max-w-6xl mx-auto p-6">
+	  <h3>{t('tech_h')}</h3>
+	  <p>{t('tech_p')}</p>
+	  <p>{t('tech_p2')}</p>
+          <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
+  	    <p><Trans t={t} i18nKey='tech_p3'/></p>
+          </div>
+          <Link href="/about">
+	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
+          </Link>
+	  <h3>{t('special_h')}</h3>
+	  <p><Trans t={t} i18nKey='special_p'/></p>
+          <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
+  	    <p><Trans t={t} i18nKey='special_p2'/></p>
+          </div>
+	  <p>{t('special_p3')}</p>
+          <Link href="/about">
+	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
+          </Link>
+	  <h3>{t('diff_h')}</h3>
+	  <p><Trans t={t} i18nKey='diff_p'/></p>
+          <Link href="/about">
+	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
+          </Link>
+	</div>
+      </div>
+      <div className="pb-6">
+	<div className="max-w-6xl mx-auto p-6">
+	  <h2 className="pb-6">{t('team_h')}</h2>
+        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 p-6 pb-0">
-          <div className="mb-16">
-	    <Video num={1}/>
-            <h2>{t('what_is_lif')}</h2>
-            <p className="mt-4 mb-8 text-lg leading-9">
-              <Trans t={t} i18nKey="lif_is"/>
-	    </p>
-            <Link href="/about">
-              <a><Primary_button arrow>{t('more_info')}</Primary_button></a>
-            </Link>
+          <div>
+            <p><img src="/img/derry.jpg" className="w-60"/></p>
+            <h3>{t('team_derry_h')}</h3>
+	    <p><Trans t={t} i18nKey='team_derry_p'/></p>
+	    <Link href="/team">
+	      <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
+	    </Link>
           </div>
-          <div className="">
-            <div className="mb-14">
-              <h3 className="flex items-start">
-                <Icon_wht2 className="h-8 inline me-2"/>
-    	        {t('lif_advantages')}
-              </h3>
-              <p className="mt-4 mb-3 text-lg">
-                <Trans t={t} i18nKey="lif_advantages_p"/>
-              </p>
-              <Link href="//github.com/lif-zone/lif">
-                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
-              </Link>
-            </div>
+          <div>
+	    <p><img src="/img/moshe.jpg" className="w-60"/></p>
+	    <h3>{t('team_moshe_h')}</h3>
+	    <p><Trans t={t} i18nKey='team_moshe_p'/></p>
+	    <Link href="/team">
+	      <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
+	    </Link>
           </div>
         </div>
       </div>
-      <div className="px-6 pb-20 bg-white">
-        <div className="lif-blue-bg rounded-lg p-7 text-white max-w-6xl
-          mx-auto">
-          <h3 className="mb-6">
-            <Icon_wht1 className="h-8 inline me-2"/>
-	    {t('lif_vs_block')}
-          </h3>
-          <p className="text-lg">
-            <Trans t={t} i18nKey="lif_vs_block_p"/>
-          </p>
-          <p className="text-lg">
-            <p>{t('lif_vs_block_more')}
-	      <bdo dir="ltr">
-		<a href="https://github.com/lif-zone/lif"
-		  className="text-white hover:text-white items-center text-lg
-		    opacity-70 transition-opacity hover:opacity-100 ms-2 me-5">
-		  <Github2 className="mt-1 inline-block fill-current"/>
-		  GitHub
-		</a>
-	      </bdo>
-            </p>
-          </p>
-        </div>
-      </div>
-      <div className="bg-white text-lg pb-12">
-        <div className="max-w-6xl mx-auto pb-6">
-          <h2 className="text-center px-10 pb-6">{t('usage_examples')}</h2>
+      <div className="bg-white text-lg py-6">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-center px-6">{t('usage_examples')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <div className="px-6 py-6 sm:border-e">
               <div className="flex flex-col items-center mb-4">
@@ -241,51 +262,6 @@ export default function Home(){
 	  </div>
         </div>
       </div>
-      <div className="bg-white text-lg pb-12">
-        <div className="max-w-6xl mx-auto pb-6">
-          <h2 className="text-center px-10 pb-6">Who is behind it?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
-            <div className="px-6 py-6 sm:border-e">
-              <div className="flex flex-col items-center mb-6">
-                <img src="/img/moshe.jpg" className="w-60"/>
-              </div>
-              <h3>Moshe Zalman Feiglin</h3>
-<p>
-Moshe Zalman Feiglin an Israeli politician and activist for freedom of expression and individual rights, and the leader of libertarian Jewish party Zehut (Identity). A former member of Likud, he headed the Manhigut Yehudit (Jewish Leadership) faction within the party, and represented Likud in the Knesset between 2013 and 2015.
-</p>
-<p>
-During his public career, Feiglin worked to reduce state control over different aspects of citizens' lives, abolish some government ministries, remove religion from politics, dismantle mandatory regulatory bodies, to free the economy and lower prices through competition, autonomy in education and more - all to promote freedom and reduce the states grip on the lives of citizens. Feiglin believes that the state belongs to the citizens and not that the citizens belong to the state.
-</p>
-            </div>
-            <div className="px-6 py-6 sm:block">
-              <div className="flex flex-col items-center mb-6">
-                <img src="/img/derry.jpg" className="w-60"/>
-              </div>
-              <h3>Derry Shribman</h3>
-              <p>XXX</p>
-              <p>XXX</p>
-            </div>
-	  </div>
-	</div>
-      </div>
- 
-
-    {false && <div className="px-6 mt-12 max-w-6xl mx-auto">
-        <div className="lif-blue-bg rounded-lg p-8 text-white">
-          <div>
-            <h2>Build it!</h2>
-            <p className="text-xl">JavaScript and a basic understanding of
-              Node is all you need. A great community is happy to help you.</p>
-          </div>
-          <div className="mt-6 flex sm:flex-col justify-between sm:items-end">
-            <div></div>
-  	      <a href="https://github.com/lif-zone/lif">
-                <Primary_button arrow>GitHub</Primary_button>
-	      </a>
-          </div>
-        </div>
-      </div>
-      }
       <div className="lif-blue-bg">
         <div className="p-12 lif-hexagon-bg max-w-6xl mx-auto text-white">
           <h2>{t('want_to_help')}</h2>
