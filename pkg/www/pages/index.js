@@ -198,12 +198,12 @@ export default function Home(){
       </div>
       <div className="pb-6">
 	<div className="max-w-6xl mx-auto p-6">
-	  <h2 className="pb-6">{t('team_h')}</h2>
+	  <h2>{t('team_h')}</h2>
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
-          sm:grid-cols-2 p-6 pb-0">
+          sm:grid-cols-2 p-6 pt-0 pb-0">
           <div>
-            <p><img src="/img/derry.jpg" className="w-60"/></p>
+            <p><img src="/img/derry.jpg" className="w-100"/></p>
             <h3>{t('team_derry_h')}</h3>
 	    <p><Trans t={t} i18nKey='team_derry_p'/></p>
 	    <Link href="/team">
@@ -211,7 +211,7 @@ export default function Home(){
 	    </Link>
           </div>
           <div>
-	    <p><img src="/img/moshe.jpg" className="w-60"/></p>
+	    <p><img src="/img/moshe.jpg" className="w-100 pt-10"/></p>
 	    <h3>{t('team_moshe_h')}</h3>
 	    <p><Trans t={t} i18nKey='team_moshe_p'/></p>
 	    <Link href="/team">
