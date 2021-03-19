@@ -211,7 +211,7 @@ export default function Home(){
 	    </Link>
           </div>
           <div>
-	    <p><img src="/img/moshe.jpg" className="w-100 pt-10"/></p>
+	    <p><img src="/img/moshe.jpg" className="w-100"/></p>
 	    <h3>{t('team_moshe_h')}</h3>
 	    <p><Trans t={t} i18nKey='team_moshe_p'/></p>
 	    <Link href="/team">
