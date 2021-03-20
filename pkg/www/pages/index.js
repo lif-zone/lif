@@ -104,7 +104,10 @@ export default function Home(){
 	  <p>{t('tech_p')}</p>
 	  <p>{t('tech_p2')}</p>
           <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
-  	    <div><Trans t={t} i18nKey='tech_p3'/></div>
+  	    <div>
+              <span><Trans t={t} i18nKey='tech_p3'/> </span>
+              <span className="font-bold"><nobr>{t('tech_p3b')}</nobr></span>
+            </div>
           </div>
           <Link href="/about"><a>{t('learn_more')}</a></Link>
 	  <div><Link href="#contact_us"><a>{t('common:want_to_help')}</a></Link></div>
