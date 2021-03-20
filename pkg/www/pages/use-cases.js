@@ -4,6 +4,7 @@ import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {Trans, useTranslation} from 'next-i18next';
+import {Footer} from '../components/common.js';
 
 const url_hd = 'https://www.ivory.co.il/catalog.php?id=26411';
 const url_etherium = 'https://ethereum.stackexchange.com/questions/872/what-is-the-cost-to-store-1kb-10kb-100kb-worth-of-data-into-the-ethereum-block/896#896';
@@ -65,6 +66,7 @@ export default function Home(){
 	    <div><Trans t={t} i18nKey="usage6_desc"/></div>
 	  </div>
         </div>
+        <Footer t={t}/>
       </Layout>
     );
 }

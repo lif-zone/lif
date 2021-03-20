@@ -39,22 +39,22 @@ export class Contact_us extends Component{
     const {t} = this.props;
     const {mode} = this.state;
     return <div className="contact_us_form">
-      {mode=='error' ? <p>{t('thank_you_error')}</p> : undefined}
+      {mode=='error' ? <p>{t('common:thank_you_error')}</p> : undefined}
       {mode=='sent' ? (
 	<div>
-	  <p>{t('thank_you_will_get_back_to_you_soon')}</p>
-           <Primary_button arrow onClick={this.on_click}>{t('contact_us')}</Primary_button>
+	  <p>{t('common:thank_you_will_get_back_to_you_soon')}</p>
+           <Primary_button arrow onClick={this.on_click}>{t('common:contact_us')}</Primary_button>
 	</div> 
 	): undefined
       }
       {mode!='sent' ?
 	(<form ref={this.on_ref}>
-	  <input className="lif-input" id='name' placeholder={t('name')}/>
-	  <input inputMode="email" id='email' className="lif-input" placeholder={t('email')}/>
-	  <input inputMode="tel" id='phone' className="lif-input" placeholder={t('phone')}/>
-	  <textarea className="lif-textarea" id='freetext' placeholder={t('what_i_can_do')}/>
+	  <input className="lif-input" id='name' placeholder={t('common:name')}/>
+	  <input inputMode="email" id='email' className="lif-input" placeholder={t('common:email')}/>
+	  <input inputMode="tel" id='phone' className="lif-input" placeholder={t('common:phone')}/>
+	  <textarea className="lif-textarea" id='freetext' placeholder={t('common:what_i_can_do')}/>
 	  <div className="text-end">
-	    <Primary_button arrow onClick={this.on_send}>{t('send')}</Primary_button>
+	    <Primary_button arrow onClick={this.on_send}>{t('common:send')}</Primary_button>
 	  </div>
 	</form>) : undefined
       }
@@ -82,9 +82,9 @@ export class Footer extends Component{
     const {t} = this.props;
     return <div className="lif-blue-bg pb-10">
         <div className="p-6 lif-hexagon-bg max-w-6xl mx-auto text-white">
-          <h3>{t('help_h')}</h3>
+          <h3>{t('common:help_h')}</h3>
           <div className="text-xl">
-            <Trans t={t} i18nKey='help_p'/>
+            <Trans t={t} i18nKey='common:help_p'/>
             <div className="float-right">
               <bdo dir="ltr">
                 <a href="https://github.com/lif-zone/lif"

@@ -3,6 +3,7 @@ import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {Trans, useTranslation} from 'next-i18next';
+import {Footer} from '../components/common.js';
 
 export const getStaticProps = ({locale})=>etask(function*(){
     const props = yield serverSideTranslations(locale, ['common', 'about']);
@@ -10,7 +11,7 @@ export const getStaticProps = ({locale})=>etask(function*(){
 });
 
 export default function Home(){
-    const {t} = useTranslation('about');
+    const {t} = useTranslation('about', 'common');
     return (
       <Layout>
         <div className="max-w-6xl mx-auto py-14 px-8">
@@ -38,6 +39,7 @@ export default function Home(){
             <Trans t={t} i18nKey="p8"/>
           </div>
         </div>
+        <Footer t={t}/>
       </Layout>
     );
 }
