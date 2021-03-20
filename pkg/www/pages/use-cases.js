@@ -53,7 +53,7 @@ export default function Home(){
 	      <img src="/img/storage.png" className="w-60"/>
 	      <h2>{t('usage5')}</h2>
 	    </div>
-	    <p><Trans t={t} i18nKey="usage5_desc"/></p>
+	    <div><Trans t={t} i18nKey="usage5_desc"/></div>
             <p><a href={url_hd}>{t('usage5_link1')}</a></p>
             <p><a href={url_etherium}>{t('usage5_link2')}</a></p>
 	  </div>

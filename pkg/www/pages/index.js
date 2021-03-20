@@ -124,7 +124,7 @@ export default function Home(){
 	<div className="max-w-6xl mx-auto p-6">
 	  <h3>{t('about_h')}</h3>
 	  <p>{t('about_p')}</p>
-	  <p><Trans t={t} i18nKey='about_p2'/></p>
+	  <div><Trans t={t} i18nKey='about_p2'/></div>
           <div className="lif-blue-bg rounded-lg py-1 px-3 mb-6 text-white">
   	    <p><strong>{t('about_p3')}</strong></p>
           </div>
@@ -135,7 +135,7 @@ export default function Home(){
       </div>
       <div>
 	<div className="max-w-6xl mx-auto px-6 pt-6 pb-10">
-	  <p><Trans t={t} i18nKey='about_p4'/></p>
+	  <div><Trans t={t} i18nKey='about_p4'/></div>
           <br/>
           <div className="max-w-3xl mx-auto">
 	    <Video num={1}/>
@@ -148,22 +148,22 @@ export default function Home(){
 	  <p>{t('tech_p')}</p>
 	  <p>{t('tech_p2')}</p>
           <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
-  	    <p><Trans t={t} i18nKey='tech_p3'/></p>
+  	    <div><Trans t={t} i18nKey='tech_p3'/></div>
           </div>
           <Link href="/about">
 	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
           </Link>
 	  <h3>{t('special_h')}</h3>
-	  <p><Trans t={t} i18nKey='special_p'/></p>
+	  <div><Trans t={t} i18nKey='special_p'/></div>
           <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
-  	    <p><Trans t={t} i18nKey='special_p2'/></p>
+  	    <div><Trans t={t} i18nKey='special_p2'/></div>
           </div>
 	  <p>{t('special_p3')}</p>
           <Link href="/about">
 	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
           </Link>
 	  <h3>{t('diff_h')}</h3>
-	  <p><Trans t={t} i18nKey='diff_p'/></p>
+	  <div><Trans t={t} i18nKey='diff_p'/></div>
           <Link href="/about">
 	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
           </Link>
@@ -178,7 +178,7 @@ export default function Home(){
           <div>
             <p><img src="/img/derry.jpg" className="w-100"/></p>
             <h3>{t('team_derry_h')}</h3>
-	    <p><Trans t={t} i18nKey='team_derry_p'/></p>
+	    <div><Trans t={t} i18nKey='team_derry_p'/></div>
 	    <Link href="/team">
 	      <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
 	    </Link>
@@ -186,7 +186,7 @@ export default function Home(){
           <div>
 	    <p><img src="/img/moshe.jpg" className="w-100"/></p>
 	    <h3>{t('team_moshe_h')}</h3>
-	    <p><Trans t={t} i18nKey='team_moshe_p'/></p>
+	    <div><Trans t={t} i18nKey='team_moshe_p'/></div>
 	    <Link href="/team">
 	      <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
 	    </Link>
