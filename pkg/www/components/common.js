@@ -39,7 +39,7 @@ export class Contact_us extends Component{
   render(){
     const {t} = this.props;
     const {mode} = this.state;
-    return <div className="contact_us_form">
+    return <div id="contact_us" className="contact_us_form">
       {mode=='error' ? <p>{t('common:thank_you_error')}</p> : undefined}
       {mode=='sent' ? (
 	<div>

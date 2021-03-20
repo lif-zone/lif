@@ -3,7 +3,7 @@ import axios from 'axios';
 import {forwardRef, Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
-import {Footer, Contact_us, Primary_button, Arrow_link} from '../components/common.js';
+import {Footer, Contact_us, Primary_button} from '../components/common.js';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import Icon_wht1 from '../public/img/wht-icon1.svg';
 import Icon_wht2 from '../public/img/wht-icon2.svg';
@@ -15,6 +15,8 @@ import Player from '@vimeo/player';
 
 const video_url = ['https://player.vimeo.com/video/525625726?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     'https://player.vimeo.com/video/525624995?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'];
+
+function scroll_dn(){ document.getElementById("contact_us").scrollIntoView(); }
 
 const players = {};
 class Video extends Component{
@@ -71,7 +73,7 @@ export const getStaticProps = ({locale})=>etask(function*(){
 });
 
 export default function Home(){
-  const {t} = useTranslation('homepage');
+  const {t} = useTranslation('homepage', 'common');
   return (
     <Layout>
       <Home_first/>
@@ -83,9 +85,9 @@ export default function Home(){
           <div className="lif-blue-bg rounded-lg py-1 px-3 mb-6 text-white">
   	    <p><strong>{t('about_p3')}</strong></p>
           </div>
-          <Link href="/about">
-	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
-          </Link>
+          <Link href="/about"><a>{t('learn_more')}</a></Link>
+	  <div><a onClick={scroll_dn}>{t('common:want_to_help')}</a></div>
+	  <div><a onClick={scroll_dn}>{t('common:want_to_reg')}</a></div>
 	</div>
       </div>
       <div>
@@ -105,27 +107,27 @@ export default function Home(){
           <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
   	    <div><Trans t={t} i18nKey='tech_p3'/></div>
           </div>
-          <Link href="/about">
-	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
-          </Link>
+          <Link href="/about"><a>{t('learn_more')}</a></Link>
+	  <div><a onClick={scroll_dn}>{t('common:want_to_help')}</a></div>
+	  <div><a onClick={scroll_dn}>{t('common:want_to_reg')}</a></div>
 	  <h3>{t('special_h')}</h3>
 	  <div><Trans t={t} i18nKey='special_p'/></div>
           <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
   	    <div><Trans t={t} i18nKey='special_p2'/></div>
           </div>
 	  <p>{t('special_p3')}</p>
-          <Link href="/about">
-	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
-          </Link>
+          <Link href="/about"><a>{t('learn_more')}</a></Link>
+	  <div><a onClick={scroll_dn}>{t('common:want_to_help')}</a></div>
+	  <div><a onClick={scroll_dn}>{t('common:want_to_reg')}</a></div>
 	  <h3>{t('diff_h')}</h3>
 	  <div><Trans t={t} i18nKey='diff_p'/></div>
           <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
   	    <div><Trans t={t} i18nKey='diff_p2'/></div>
           </div>
 	  <div><Trans t={t} i18nKey='diff_p3'/></div>
-          <Link href="/about">
-	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
-          </Link>
+          <Link href="/about"><a>{t('learn_more')}</a></Link>
+	  <div><a onClick={scroll_dn}>{t('common:want_to_help')}</a></div>
+	  <div><a onClick={scroll_dn}>{t('common:want_to_reg')}</a></div>
 	</div>
       </div>
       <div className="pb-6">
@@ -139,7 +141,7 @@ export default function Home(){
             <h3>{t('team_derry_h')}</h3>
 	    <div><Trans t={t} i18nKey='team_derry_p'/></div>
 	    <Link href="/team">
-	      <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
+	      <a>{t('learn_more')}</a>
 	    </Link>
           </div>
           <div>
@@ -147,7 +149,7 @@ export default function Home(){
 	    <h3>{t('team_moshe_h')}</h3>
 	    <div><Trans t={t} i18nKey='team_moshe_p'/></div>
 	    <Link href="/team">
-	      <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
+	      <a>{t('learn_more')}</a>
 	    </Link>
           </div>
         </div>
@@ -163,7 +165,7 @@ export default function Home(){
               <h3>{t('usage1')}</h3>
               <p>{t('usage1_desc')}</p>
               <Link href="/use-cases">
-                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
+                <a>{t('more_info')}</a>
               </Link>
             </div>
             <div className="px-6 py-6 sm:block border-e">
@@ -173,7 +175,7 @@ export default function Home(){
               <h3>{t('usage2')}</h3>
               <p>{t('usage2_desc')}</p>
               <Link href="/use-cases">
-                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
+                <a>{t('more_info')}</a>
               </Link>
             </div>
             <div className="px-6 py-6 md:block">
@@ -183,7 +185,7 @@ export default function Home(){
               <h3>{t('usage3')}</h3>
               <p>{t('usage3_desc')}</p>
               <Link href="/use-cases">
-                <a><Arrow_link>{t('more_info')}</Arrow_link></a>
+                <a>{t('more_info')}</a>
               </Link>
             </div>
           </div>
