@@ -25,7 +25,7 @@ export default function Home(){
 	      <img src="/img/digital_money.png" className="w-60"/>
 	      <h2>{t('usage1')}</h2>
 	    </div>
-	    <p>{t('usage1_desc')}</p>
+	    <div><Trans t={t} i18nKey="usage1_desc"/></div>
 	  </div>
           <div className="mt-8">
 	    <div className="mb-4">
