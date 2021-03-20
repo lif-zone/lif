@@ -3,6 +3,8 @@ import {Component} from 'react';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import {use_app_context} from '../utils/context.js';
 import axios from 'axios';
+import {Trans} from 'next-i18next';
+import Github2 from '../public/img/github2.svg';
 
 export const Primary_button = ({children, arrow, onClick})=>{
     const {direction} = use_app_context();
@@ -73,5 +75,34 @@ export class Contact_us extends Component{
     }
   };
   on_ref = (ref=>this.form=ref);
+}
+
+export class Footer extends Component{
+  render(){
+    const {t} = this.props;
+    return <div className="lif-blue-bg pb-10">
+        <div className="p-6 lif-hexagon-bg max-w-6xl mx-auto text-white">
+          <h3>{t('help_h')}</h3>
+          <div className="text-xl">
+            <Trans t={t} i18nKey='help_p'/>
+            <div className="float-right">
+              <bdo dir="ltr">
+                <a href="https://github.com/lif-zone/lif"
+                  className="text-white hover:text-white items-center text-lg
+                    opacity-70 transition-opacity hover:opacity-100 ms-2
+                    me-5">
+                  <Github2 className="mt-1 inline-block fill-current"/>
+                  GitHub
+                </a>
+              </bdo>
+	    </div>
+            <div>
+	      <a href="mailto:join@lif.zone">join@lif.zone</a>
+	    </div>
+	  </div>
+	  <Contact_us t={t}/>
+        </div>
+      </div>;
+  }
 }
 

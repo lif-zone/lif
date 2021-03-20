@@ -3,11 +3,10 @@ import axios from 'axios';
 import {forwardRef, Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
-import {Contact_us, Primary_button, Arrow_link} from '../components/common.js';
+import {Footer, Contact_us, Primary_button, Arrow_link} from '../components/common.js';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import Icon_wht1 from '../public/img/wht-icon1.svg';
 import Icon_wht2 from '../public/img/wht-icon2.svg';
-import Github2 from '../public/img/github2.svg';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {use_app_context} from '../utils/context.js';
 import Link from 'next/link';
@@ -197,29 +196,7 @@ export default function Home(){
 	  </div>
         </div>
       </div>
-      <div className="lif-blue-bg pb-10">
-        <div className="p-6 lif-hexagon-bg max-w-6xl mx-auto text-white">
-          <h3>{t('help_h')}</h3>
-          <div className="text-xl">
-            <Trans t={t} i18nKey='help_p'/>
-            <div className="float-right">
-              <bdo dir="ltr">
-                <a href="https://github.com/lif-zone/lif"
-                  className="text-white hover:text-white items-center text-lg
-                    opacity-70 transition-opacity hover:opacity-100 ms-2
-                    me-5">
-                  <Github2 className="mt-1 inline-block fill-current"/>
-                  GitHub
-                </a>
-              </bdo>
-	    </div>
-            <div>
-	      <a href="mailto:join@lif.zone">join@lif.zone</a>
-	    </div>
-	  </div>
-	  <Contact_us t={t}/>
-        </div>
-      </div>
+      <Footer t={t}/>
     </Layout>
   );
 }
