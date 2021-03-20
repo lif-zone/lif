@@ -164,6 +164,10 @@ export default function Home(){
           </Link>
 	  <h3>{t('diff_h')}</h3>
 	  <div><Trans t={t} i18nKey='diff_p'/></div>
+          <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
+  	    <div><Trans t={t} i18nKey='diff_p2'/></div>
+          </div>
+	  <div><Trans t={t} i18nKey='diff_p3'/></div>
           <Link href="/about">
 	    <a><Arrow_link>{t('learn_more')}</Arrow_link></a>
           </Link>
