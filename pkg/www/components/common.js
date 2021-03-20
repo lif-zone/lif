@@ -5,6 +5,7 @@ import {use_app_context} from '../utils/context.js';
 import axios from 'axios';
 import {Trans} from 'next-i18next';
 import Github2 from '../public/img/github2.svg';
+import Link from 'next/link';
 
 export const Primary_button = ({children, arrow, onClick})=>{
     const {direction} = use_app_context();
@@ -80,7 +81,7 @@ export class Contact_us extends Component{
 export class Footer extends Component{
   render(){
     const {t} = this.props;
-    return <div className="lif-blue-bg pb-10">
+    return <div className="lif-blue-bg pb-1">
         <div className="p-6 lif-hexagon-bg max-w-6xl mx-auto text-white">
           <h3>{t('common:help_h')}</h3>
           <div className="text-xl">
@@ -101,6 +102,31 @@ export class Footer extends Component{
 	    </div>
 	  </div>
 	  <Contact_us t={t}/>
+	  <bdo dir="ltr">
+	    <div className="max-w-6xl mx-auto text-white grid grid-cols-1 sm:grid-cols-3 mt-20">
+	      <div>
+		<Link href="/">
+		  <a className="text-white">
+                    <img src="/img/lif.svg" className="h-6"
+                      style={{filter: 'saturate(0%) brightness(350%) contrast(200%'}}/>
+		    <p>Liberty, Independence, Freedom</p>
+                  </a>
+		</Link>
+		<a href="https://github.com/lif-zone/lif"
+		  className="text-white hover:text-white items-center text-lg">
+		  <Github2 className="mt-1 inline-block fill-current"/>
+		  GitHub
+		</a>
+	      </div>
+	      <div className="flex">
+                <div className="self-end">
+		  <Link href="/about"><a className="text-white">About</a></Link><br/>
+		  <Link href="/team"><a className="text-white">Team</a></Link><br/>
+		  <Link href="/use-cases"><a className="text-white">Use cases</a></Link>
+		</div>
+	      </div>
+	    </div>
+	  </bdo>
         </div>
       </div>;
   }
