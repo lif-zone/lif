@@ -28,6 +28,15 @@ export default function Home(){
           <div className="mt-8 text-xl text-gray-600">
             <Trans t={t} i18nKey="p5"/>
           </div>
+          <div className="mt-8 text-xl text-gray-600">
+            <Trans t={t} i18nKey="p6"/>
+          </div>
+          <div className="mt-8 text-xl text-gray-600">
+            <Trans t={t} i18nKey="p7"/>
+          </div>
+          <div className="mt-8 text-xl text-gray-600">
+            <Trans t={t} i18nKey="p8"/>
+          </div>
         </div>
       </Layout>
     );
