@@ -57,6 +57,13 @@ export default function Home(){
             <p><a href={url_hd}>{t('usage5_link1')}</a></p>
             <p><a href={url_etherium}>{t('usage5_link2')}</a></p>
 	  </div>
+          <div className="mt-8">
+	    <div className="mb-4">
+	      <img src="/img/passport.png" className="w-60"/>
+	      <h2>{t('usage6')}</h2>
+	    </div>
+	    <div><Trans t={t} i18nKey="usage6_desc"/></div>
+	  </div>
         </div>
       </Layout>
     );
