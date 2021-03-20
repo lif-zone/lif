@@ -52,11 +52,12 @@ const Home_first = ()=>{
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-10">
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
           <h1 className="px-6 sm:text-4xl md:text-5xl">{t('title')}</h1>
-          <p className="mt-8 text-2xl px-6">
-            {t('title2')}
-            <br/>
+          <div className="mt-6 text-2xl px-6 text-left">
+	  {t('title2')}
+          </div>
+          <div className="mt-6 text-2xl px-6">
             {t('title3')}
-          </p>
+          </div>
         </div>
         <div className="px-6">
           <Video num={0}/>
