@@ -3,7 +3,7 @@ import axios from 'axios';
 import {forwardRef, Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
-import {Primary_button, Arrow_link} from '../components/common.js';
+import {Contact_us, Primary_button, Arrow_link} from '../components/common.js';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import Icon_wht1 from '../public/img/wht-icon1.svg';
 import Icon_wht2 from '../public/img/wht-icon2.svg';
@@ -70,50 +70,6 @@ export const getStaticProps = ({locale})=>etask(function*(){
     const props = yield serverSideTranslations(locale, ['common', 'homepage']);
     return {props};
 });
-
-class Contact_us extends Component{
-  state = {};
-  render(){
-    const {t} = this.props;
-    const {mode} = this.state;
-    return <div className="contact_us_form">
-      {mode=='error' ? <p>{t('thank_you_error')}</p> : undefined}
-      {mode=='sent' ? (
-	<div>
-	  <p>{t('thank_you_will_get_back_to_you_soon')}</p>
-           <Primary_button arrow onClick={this.on_click}>{t('contact_us')}</Primary_button>
-	</div> 
-	): undefined
-      }
-      {mode!='sent' ?
-	(<form ref={this.on_ref}>
-	  <input className="lif-input" id='name' placeholder={t('name')}/>
-	  <input inputMode="email" id='email' className="lif-input" placeholder={t('email')}/>
-	  <input inputMode="tel" id='phone' className="lif-input" placeholder={t('phone')}/>
-	  <textarea className="lif-textarea" id='freetext' placeholder={t('what_i_can_do')}/>
-	  <div className="text-end">
-	    <Primary_button arrow onClick={this.on_send}>{t('send')}</Primary_button>
-	  </div>
-	</form>) : undefined
-      }
-    </div>
-  }
-  on_click = ()=>this.setState({mode: 'enter'});
-  on_send = async ()=>{
-    let o = {};
-    for (let i=0, f=this.form; i<f.length; i++)
-      o[f[i].id] = f[i].value;
-    try {
-      this.setState({mode: 'sent'});
-      const res = await axios.post('/api/register_contact_us', o, {timeout: 7000});
-      console.log('register_contact_us success');
-    } catch(err){
-      console.log('register_contact_us error %o', err);
-      this.setState({mode: 'error'});
-    }
-  };
-  on_ref = (ref=>this.form=ref);
-}
 
 export default function Home(){
   const {t} = useTranslation('homepage');
