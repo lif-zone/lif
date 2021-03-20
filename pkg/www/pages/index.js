@@ -3,6 +3,7 @@ import axios from 'axios';
 import {forwardRef, Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
+import {Primary_button, Arrow_link} from '../components/common.js';
 import Icon_arrow from '../public/img/icon_arrow.svg';
 import Icon_wht1 from '../public/img/wht-icon1.svg';
 import Icon_wht2 from '../public/img/wht-icon2.svg';
@@ -15,34 +16,6 @@ import Player from '@vimeo/player';
 
 const video_url = ['https://player.vimeo.com/video/525625726?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     'https://player.vimeo.com/video/525624995?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'];
-
-// XXX: mv to components
-const Primary_button = ({children, arrow, onClick})=>{
-    const {direction} = use_app_context();
-    const arr_c = cn(`ms-3 transition-transform duration-300 transform`,
-        direction=='rtl' ? 'rotate-180 group-hover:-translate-x-1' :
-        'group-hover:translate-x-1');
-    return <span onClick={onClick}
-        className="group inline-flex font-bold cursor-pointer no-underline
-        bg-lif-blue text-white px-6 py-2 leading-4 rounded-full items-center
-        hover:bg-lif-blue-darkened h-12 transform text-xl btn-effect
-        transition-transform shadow-md">
-        {children}
-        {arrow && <Icon_arrow className={arr_c}/>}
-      </span>;
-};
-
-const Arrow_link = ({children, href, onClick})=>{
-    const {direction} = use_app_context();
-    const arr_c = cn(`ms-1 transition-transform relative top-0.5
-        duration-300 transform group-hover:translate-x-1`,
-        direction=='rtl' && 'rotate-180');
-    return <span onClick={onClick} className="group inline-flex font-bold
-        cursor-pointer no-underline text-lif-blue text-lg items-center">
-        {children}
-        <Icon_arrow className={arr_c}/>
-      </span>;
-};
 
 const players = {};
 class Video extends Component{
