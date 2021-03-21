@@ -33,6 +33,10 @@
     p {
     @apply my-3 text-lg;
     }
+    
+    div {
+    @apply text-lg;
+    }
 
     hr {
     @apply my-6 border-t;

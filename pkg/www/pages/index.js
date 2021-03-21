@@ -84,6 +84,78 @@ export default function Home(){
     <Layout>
       <Home_first/>
       <div className="bg-white">
+	<div className="max-w-6xl mx-auto px-6">
+	  <h3>{t('sec1_h')}</h3>
+	  <Trans t={t} i18nKey='sec1_p'/>
+	</div>
+	<div className="max-w-6xl mx-auto px-6">
+	  <h3>{t('sec2_h')}</h3>
+	  <Trans t={t} i18nKey='sec2_p'/>
+	</div>
+	<div className="max-w-6xl mx-auto px-6">
+          <div className="lif-blue-bg rounded-lg mt-6 py-1 px-3 text-white">
+	    <Trans t={t} i18nKey='sec2_p2'/>
+          </div>
+	</div>
+	<div className="max-w-6xl mx-auto px-6">
+	  <div className="mt-6">
+	    <div><Link href="#contact_us"><a>{t('common:want_to_help')}</a></Link></div>
+	    <div><Link href="#contact_us"><a>{t('common:want_to_reg')}</a></Link></div>
+	  </div>
+	</div>
+	<div className="max-w-6xl mx-auto mt-6 px-6 pb-10">
+	  <h3>{t('sec3_h')}</h3>
+	  <Trans t={t} i18nKey='sec3_p'/>
+	  <div className="max-w-3xl mx-auto">
+	    <Video num={1}/>
+	  </div>
+	</div>
+	<div className="max-w-6xl mx-auto px-6">
+	  <bdo dir='ltr'><h3>{t('sec4_h')}</h3></bdo>
+	  <Trans t={t} i18nKey='sec4_p'/>
+	</div>
+	<div className="max-w-6xl mx-auto px-6">
+	  <h3>{t('sec5_h')}</h3>
+	  <Trans t={t} i18nKey='sec5_p'/>
+	</div>
+	<div className="max-w-6xl mx-auto px-6">
+	  <h3>{t('sec6_h')}</h3>
+	  <Trans t={t} i18nKey='sec6_p'/>
+	  <Trans t={t} i18nKey='sec6_p2'/>
+	  <Trans t={t} i18nKey='sec6_p3'/>
+	</div>
+      </div>
+      <div className="pb-6 bg-white">
+	<div className="max-w-6xl mx-auto p-6">
+	  <h3>{t('team_h')}</h3>
+        </div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
+          sm:grid-cols-2 p-6 pt-0 pb-0">
+          <div>
+            <p><img src="/img/derry.jpg" className="w-100"/></p>
+            <h3>{t('team_derry_h')}</h3>
+	    <div><Trans t={t} i18nKey='team_derry_p'/></div>
+	    <Link href="/team">
+	      <a>{t('learn_more')}</a>
+	    </Link>
+          </div>
+          <div>
+	    <p><img src="/img/moshe.jpg" className="w-100"/></p>
+	    <h3>{t('team_moshe_h')}</h3>
+	    <div><Trans t={t} i18nKey='team_moshe_p'/></div>
+	    <Link href="/team">
+	      <a>{t('learn_more')}</a>
+	    </Link>
+          </div>
+        </div>
+      </div>
+ 
+
+
+      <div className="bg-white pt-20">
+	<div>XXXXXXXXXXXXXXXXXXX</div>
+      </div>
+      <div className="bg-white">
 	<div className="max-w-6xl mx-auto p-6">
 	  <h3>{t('about_h')}</h3>
 	  <p>{t('about_p')}</p>
