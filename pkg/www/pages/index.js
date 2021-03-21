@@ -185,9 +185,52 @@ export default function Home(){
           </div>
         </div>
       </div>
-      <div className="bg-white pt-20">
-	<div>XXXXXXXXXXXXXXXXXXX</div>
+      <div className="bg-white text-lg py-6">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-center px-6">{t('usage_examples')}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            <div className="px-6 py-6 sm:border-e">
+              <div className="flex flex-col items-center mb-4">
+                <img src="/img/digital_money.png" className="w-60"/>
+              </div>
+              <h3>{t('usage1')}</h3>
+              <p>{t('usage1_desc')}</p>
+              <Link href="/use-cases">
+                <a>{t('more_info')}</a>
+              </Link>
+            </div>
+            <div className="px-6 py-6 sm:block border-e">
+              <div className="flex flex-col items-center mb-4">
+                <img src="/img/get_donations.png" className="w-60"/>
+              </div>
+              <h3>{t('usage2')}</h3>
+              <p>{t('usage2_desc')}</p>
+              <Link href="/use-cases">
+                <a>{t('more_info')}</a>
+              </Link>
+            </div>
+            <div className="px-6 py-6 md:block">
+              <div className="flex flex-col items-center mb-4">
+                <img src="/img/pay_online.png" className="w-60"/>
+              </div>
+              <h3>{t('usage3')}</h3>
+              <p>{t('usage3_desc')}</p>
+              <Link href="/use-cases">
+                <a>{t('more_info')}</a>
+              </Link>
+            </div>
+          </div>
+	  <div className="text-center pt-10">
+            <Link href="/use-cases">
+	      <a>
+	        <Primary_button arrow>{t('see_all_use_cases')}</Primary_button>
+	     </a>
+            </Link>
+	  </div>
+        </div>
       </div>
+      <Footer t={t}/>
+      <div className="bg-white pt-20"> <div>XXXXXXXXXXXXXXXXXXX</div> </div>
       <div className="bg-white">
 	<div className="max-w-6xl mx-auto p-6">
 	  <h3>{t('about_h')}</h3>
@@ -268,51 +311,6 @@ export default function Home(){
           </div>
         </div>
       </div>
-      <div className="bg-white text-lg py-6">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-center px-6">{t('usage_examples')}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            <div className="px-6 py-6 sm:border-e">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/img/digital_money.png" className="w-60"/>
-              </div>
-              <h3>{t('usage1')}</h3>
-              <p>{t('usage1_desc')}</p>
-              <Link href="/use-cases">
-                <a>{t('more_info')}</a>
-              </Link>
-            </div>
-            <div className="px-6 py-6 sm:block border-e">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/img/get_donations.png" className="w-60"/>
-              </div>
-              <h3>{t('usage2')}</h3>
-              <p>{t('usage2_desc')}</p>
-              <Link href="/use-cases">
-                <a>{t('more_info')}</a>
-              </Link>
-            </div>
-            <div className="px-6 py-6 md:block">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/img/pay_online.png" className="w-60"/>
-              </div>
-              <h3>{t('usage3')}</h3>
-              <p>{t('usage3_desc')}</p>
-              <Link href="/use-cases">
-                <a>{t('more_info')}</a>
-              </Link>
-            </div>
-          </div>
-	  <div className="text-center pt-10">
-            <Link href="/use-cases">
-	      <a>
-	        <Primary_button arrow>{t('see_all_use_cases')}</Primary_button>
-	     </a>
-            </Link>
-	  </div>
-        </div>
-      </div>
-      <Footer t={t}/>
     </Layout>
   );
 }
