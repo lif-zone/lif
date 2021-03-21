@@ -18,9 +18,9 @@ export default function Home(){
     const {t} = useTranslation('use-cases');
     return (
       <Layout>
-        <div className="max-w-6xl mx-auto py-14 px-8">
+        <div className="max-w-6xl mx-auto py-14 px-6">
           <h1>{t('title')}</h1>
-          <h2 className="pt-10 font-normal">{t('title2')}</h2>
+          <p className="pt-10">{t('title2')}</p>
           <div className="mt-8">
 	    <div className="mb-4">
 	      <img src="/img/digital_money.png" className="w-60"/>
