@@ -58,6 +58,10 @@
         }
     }
 
+    .no-link {
+    @apply text-lif-main font-normal;
+    }
+
     ol {
     @apply list-decimal;
     }

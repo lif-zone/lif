@@ -190,43 +190,33 @@ export default function Home(){
           <h3 className="px-6">{t('usage_examples')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <div className="px-6 py-6 sm:border-e">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/img/digital_money.png" className="w-60"/>
-              </div>
-              <h3>{t('usage1')}</h3>
-              <p>{t('usage1_desc')}</p>
-              <Link href="/use-cases">
-                <a>{t('more_info')}</a>
-              </Link>
+	      <Link href="/use-cases"><a className="no-link">
+		<div className="flex flex-col items-center mb-4">
+		  <img src="/img/digital_money.png" className="w-60"/>
+		</div>
+		<h3>{t('usage1')}</h3>
+		<p>{t('usage1_desc')}</p>
+	      </a></Link>
             </div>
             <div className="px-6 py-6 sm:block border-e">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/img/get_donations.png" className="w-60"/>
-              </div>
-              <h3>{t('usage2')}</h3>
-              <p>{t('usage2_desc')}</p>
-              <Link href="/use-cases">
-                <a>{t('more_info')}</a>
-              </Link>
+	      <Link href="/use-cases"><a className="no-link">
+		<div className="flex flex-col items-center mb-4">
+		  <img src="/img/get_donations.png" className="w-60"/>
+		</div>
+		<h3>{t('usage2')}</h3>
+		<p>{t('usage2_desc')}</p>
+	      </a></Link>
             </div>
             <div className="px-6 py-6 md:block">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/img/pay_online.png" className="w-60"/>
-              </div>
-              <h3>{t('usage3')}</h3>
-              <p>{t('usage3_desc')}</p>
-              <Link href="/use-cases">
-                <a>{t('more_info')}</a>
-              </Link>
+	      <Link href="/use-cases"><a className="no-link">
+		<div className="flex flex-col items-center mb-4">
+		  <img src="/img/pay_online.png" className="w-60"/>
+		</div>
+		<h3>{t('usage3')}</h3>
+		<p>{t('usage3_desc')}</p>
+	      </a></Link>
             </div>
           </div>
-	  <div className="pt-10">
-            <Link href="/use-cases">
-	      <a>
-	        <Primary_button arrow>{t('see_all_use_cases')}</Primary_button>
-	     </a>
-            </Link>
-	  </div>
         </div>
       </div>
       <Footer t={t}/>
