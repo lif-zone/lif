@@ -51,7 +51,14 @@ const Home_first = ()=>{
     return (
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 py-10">
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
-          <h1 className="px-6 sm:text-4xl md:text-5xl">{t('title')}</h1>
+          <h1 className="px-6 text-3xl">
+	    <nobr><span className="text-4xl">{t('title_w1a')}</span>
+	    <span>{t('title_w1b')} </span></nobr>
+	    <nobr><span className="text-4xl">{t('title_w2a')}</span>
+	    <span>{t('title_w2b')} </span></nobr>
+	    <nobr><span className="text-4xl">{t('title_w3a')}</span>
+	    <span>{t('title_w3b')}</span></nobr>
+	  </h1>
           <div className="mt-6 text-2xl px-6 text-left">
 	  {t('title2')}
           </div>
