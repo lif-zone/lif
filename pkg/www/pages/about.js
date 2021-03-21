@@ -16,28 +16,12 @@ export default function Home(){
       <Layout>
         <div className="max-w-6xl mx-auto py-14 px-8">
           <h1>{t('title')}</h1>
-          <p className="mt-8 text-2xl text-gray-800">{t('p1')}</p>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p2"/>
-          </div>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p3"/>
-          </div>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p4"/>
-          </div>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p5"/>
-          </div>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p6"/>
-          </div>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p7"/>
-          </div>
-          <div className="mt-8 text-xl text-gray-600">
-            <Trans t={t} i18nKey="p8"/>
-          </div>
+	  <Trans t={t} i18nKey="p1"/>
+	  <Trans t={t} i18nKey="p2"/>
+	  <Trans t={t} i18nKey="p3"/>
+	  <Trans t={t} i18nKey="p4"/>
+	  <Trans t={t} i18nKey="p5"/>
+	  <Trans t={t} i18nKey="p6"/>
         </div>
         <Footer t={t}/>
       </Layout>

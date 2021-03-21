@@ -7,7 +7,7 @@
     * { @apply leading-normal; }
 
     h1 {
-    @apply text-4xl font-bold;
+    @apply text-4xl font-bold pt-6 pb-6;
     }
 
     h2 {
