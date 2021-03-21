@@ -187,7 +187,7 @@ export default function Home(){
       </div>
       <div className="bg-white text-lg py-6">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-center px-6">{t('usage_examples')}</h3>
+          <h3 className="px-6">{t('usage_examples')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <div className="px-6 py-6 sm:border-e">
               <div className="flex flex-col items-center mb-4">
@@ -220,7 +220,7 @@ export default function Home(){
               </Link>
             </div>
           </div>
-	  <div className="text-center pt-10">
+	  <div className="pt-10">
             <Link href="/use-cases">
 	      <a>
 	        <Primary_button arrow>{t('see_all_use_cases')}</Primary_button>
@@ -230,87 +230,6 @@ export default function Home(){
         </div>
       </div>
       <Footer t={t}/>
-      <div className="bg-white pt-20"> <div>XXXXXXXXXXXXXXXXXXX</div> </div>
-      <div className="bg-white">
-	<div className="max-w-6xl mx-auto p-6">
-	  <h3>{t('about_h')}</h3>
-	  <p>{t('about_p')}</p>
-	  <div><Trans t={t} i18nKey='about_p2'/></div>
-          <div className="lif-blue-bg rounded-lg py-1 px-3 mb-6 text-white">
-  	    <p><strong>{t('about_p3')}</strong></p>
-          </div>
-          <Link href="/about"><a>{t('learn_more')}</a></Link>
-	  <div><Link href="#contact_us"><a>{t('common:want_to_help')}</a></Link></div>
-	  <div><Link href="#contact_us"><a>{t('common:want_to_reg')}</a></Link></div>
-	</div>
-      </div>
-      <div>
-	<div className="max-w-6xl mx-auto px-6 pt-6 pb-10">
-	  <div><Trans t={t} i18nKey='about_p4'/></div>
-          <br/>
-          <div className="max-w-3xl mx-auto">
-	    <Video num={1}/>
-          </div>
-	</div>
-      </div>
-      <div className="bg-white">
-	<div className="max-w-6xl mx-auto p-6">
-	  <h3>{t('tech_h')}</h3>
-	  <p>{t('tech_p')}</p>
-	  <p>{t('tech_p2')}</p>
-          <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
-  	    <div>
-              <span><Trans t={t} i18nKey='tech_p3'/> </span>
-              <span className="font-bold"><nobr>{t('tech_p3b')}</nobr></span>
-            </div>
-          </div>
-          <Link href="/about"><a>{t('learn_more')}</a></Link>
-	  <div><Link href="#contact_us"><a>{t('common:want_to_help')}</a></Link></div>
-	  <div><Link href="#contact_us"><a>{t('common:want_to_reg')}</a></Link></div>
-	  <h3>{t('special_h')}</h3>
-	  <div><Trans t={t} i18nKey='special_p'/></div>
-          <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
-  	    <div><Trans t={t} i18nKey='special_p2'/></div>
-          </div>
-	  <p>{t('special_p3')}</p>
-          <Link href="/about"><a>{t('learn_more')}</a></Link>
-	  <div><Link href="#contact_us"><a>{t('common:want_to_help')}</a></Link></div>
-	  <div><Link href="#contact_us"><a>{t('common:want_to_reg')}</a></Link></div>
-	  <h3>{t('diff_h')}</h3>
-	  <div><Trans t={t} i18nKey='diff_p'/></div>
-          <div className="lif-blue-bg rounded-lg my-6 py-1 px-3 text-white">
-  	    <div><Trans t={t} i18nKey='diff_p2'/></div>
-          </div>
-	  <div><Trans t={t} i18nKey='diff_p3'/></div>
-          <Link href="/about"><a>{t('learn_more')}</a></Link>
-	  <div><Link href="#contact_us"><a>{t('common:want_to_help')}</a></Link></div>
-	  <div><Link href="#contact_us"><a>{t('common:want_to_reg')}</a></Link></div>
-	</div>
-      </div>
-      <div className="pb-6">
-	<div className="max-w-6xl mx-auto p-6">
-	  <h2>{t('team_h')}</h2>
-        </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
-          sm:grid-cols-2 p-6 pt-0 pb-0">
-          <div>
-            <p><img src="/img/derry.jpg" className="w-100"/></p>
-            <h3>{t('team_derry_h')}</h3>
-	    <div><Trans t={t} i18nKey='team_derry_p'/></div>
-	    <Link href="/team">
-	      <a>{t('learn_more')}</a>
-	    </Link>
-          </div>
-          <div>
-	    <p><img src="/img/moshe.jpg" className="w-100"/></p>
-	    <h3>{t('team_moshe_h')}</h3>
-	    <div><Trans t={t} i18nKey='team_moshe_p'/></div>
-	    <Link href="/team">
-	      <a>{t('learn_more')}</a>
-	    </Link>
-          </div>
-        </div>
-      </div>
     </Layout>
   );
 }

@@ -103,23 +103,30 @@ export class Footer extends Component{
 	  </div>
 	  <Contact_us t={t}/>
 	  <bdo dir="ltr">
-	    <div className="max-w-6xl mx-auto text-white grid grid-cols-1 sm:grid-cols-3 mt-20">
+	    <div className="max-w-6xl mx-auto text-white grid grid-cols-1 sm:grid-cols-2 mt-20">
 	      <div>
-		<Link href="/">
-		  <a className="text-white">
-                    <img src="/img/lif.svg" className="h-6"
-                      style={{filter: 'saturate(0%) brightness(350%) contrast(200%'}}/>
-		    <p>Liberty, Independence, Freedom</p>
-                  </a>
-		</Link>
-		<a href="https://github.com/lif-zone/lif"
-		  className="text-white hover:text-white items-center text-lg">
-		  <Github2 className="mt-1 inline-block fill-current"/>
-		  GitHub
-		</a>
+		<div className="flex">
+		  <Link href="/"><a className="text-white">
+		    <img src="/img/lif.svg" className="h-6" style={{
+		      display: 'inline', filter:
+		      'saturate(0%) brightness(350%) contrast(200%'}}/>
+		    </a></Link>
+		    <span style={{display: 'inline'}} className="self-end pl-1 pt-1">
+		      <Link href="/"><a className="text-white">
+			<nobr>Liberty Independence Freedom</nobr>
+		      </a></Link>
+		    </span>
+                </div>
+                <div className="mt-2">
+		  <a href="https://github.com/lif-zone/lif"
+		    className="text-white hover:text-white items-center text-lg">
+		    <Github2 className="mt-1 inline-block fill-current"/>
+		    GitHub
+		  </a>
+		</div>
 	      </div>
 	      <div className="flex">
-                <div className="self-end">
+                <div className="self-start">
 		  <Link href="/about"><a className="text-white">About</a></Link><br/>
 		  <Link href="/team"><a className="text-white">Team</a></Link><br/>
 		  <Link href="/use-cases"><a className="text-white">Use cases</a></Link>
