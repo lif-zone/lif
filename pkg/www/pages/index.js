@@ -111,7 +111,9 @@ export default function Home(){
 	  </div>
 	</div>
 	<div className="max-w-6xl mx-auto px-6">
-	  <bdo dir='ltr'><h3>{t('sec4_h')}</h3></bdo>
+	  <bdo dir='ltr'>
+            <h3>{t('sec4_h')}<nobr>{t('sec4_h2')}</nobr></h3>
+          </bdo>
 	  <Trans t={t} i18nKey='sec4_p'/>
 	</div>
 	<div className="max-w-6xl mx-auto px-6">
