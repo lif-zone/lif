@@ -15,7 +15,7 @@
     }
 
     h3 {
-    @apply text-2xl mt-6 font-semibold;
+    @apply text-2xl pt-6 font-semibold;
     }
 
     h4 {
@@ -31,7 +31,7 @@
     }
 
     p {
-    @apply my-3 text-lg;
+    @apply py-1 text-lg;
     }
     
     div {

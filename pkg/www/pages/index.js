@@ -126,32 +126,35 @@ export default function Home(){
 	</div>
       </div>
       <div className="pb-6 bg-white">
-	<div className="max-w-6xl mx-auto p-6">
+	<div className="max-w-6xl mx-auto px-6">
 	  <h3>{t('team_h')}</h3>
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 p-6 pt-0 pb-0">
           <div>
-            <p><img src="/img/derry.jpg" className="w-100"/></p>
-            <h3>{t('team_derry_h')}</h3>
-	    <div><Trans t={t} i18nKey='team_derry_p'/></div>
-	    <Link href="/team">
-	      <a>{t('learn_more')}</a>
-	    </Link>
+	    <p>
+  	      <Link href="/team"><a>
+		<img src="/img/derry.jpg" className="w-100 pt-6"/>
+	      </a></Link>
+	    </p>
+	    <h3><Link href="/team"><a className="text-lif-main">{t('team_derry_h')}</a></Link></h3>
+	    <div><Link href="/team"><a className="text-lif-main font-normal">
+              <Trans t={t} i18nKey='team_derry_p'/>
+            </a></Link></div>
           </div>
           <div>
-	    <p><img src="/img/moshe.jpg" className="w-100"/></p>
-	    <h3>{t('team_moshe_h')}</h3>
-	    <div><Trans t={t} i18nKey='team_moshe_p'/></div>
-	    <Link href="/team">
-	      <a>{t('learn_more')}</a>
-	    </Link>
+	    <p>
+  	      <Link href="/team"><a>
+		<img src="/img/moshe.jpg" className="w-100 pt-6"/>
+	      </a></Link>
+	    </p>
+	    <h3><Link href="/team"><a className="text-lif-main">{t('team_moshe_h')}</a></Link></h3>
+	    <div><Link href="/team"><a className="text-lif-main font-normal">
+              <Trans t={t} i18nKey='team_moshe_p'/>
+            </a></Link></div>
           </div>
         </div>
       </div>
- 
-
-
       <div className="bg-white pt-20">
 	<div>XXXXXXXXXXXXXXXXXXX</div>
       </div>
