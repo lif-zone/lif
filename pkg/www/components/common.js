@@ -111,7 +111,7 @@ export class Footer extends Component{
 		      display: 'inline', filter:
 		      'saturate(0%) brightness(350%) contrast(200%'}}/>
 		    </a></Link>
-		    <span style={{display: 'inline'}} className="self-end pl-1 pt-1">
+		    <span style={{display: 'inline'}} className="self-end pl-1 pt-2">
 		      <Link href="/"><a className="text-white">
 			<nobr>Liberty Independence Freedom</nobr>
 		      </a></Link>
