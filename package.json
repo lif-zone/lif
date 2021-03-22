@@ -24,10 +24,13 @@
     "react-dom": "17.0.1"
   },
   "devDependencies": {
+    "eslint-plugin-react": "7.22.0",
     "autoprefixer": "^10.2.4",
     "postcss": "^8.2.6",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^2.0.3",
-    "tailwindcss-rtl": "^0.7.3"
+    "tailwindcss-rtl": "^0.7.3",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.22.0"
   }
 }

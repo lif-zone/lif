@@ -1,14 +1,8 @@
-import cn from 'classnames';
-import axios from 'axios';
-import {forwardRef, Component} from 'react';
+import {Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
-import {Footer, Contact_us, Primary_button} from '../components/common.js';
-import Icon_arrow from '../public/img/icon_arrow.svg';
-import Icon_wht1 from '../public/img/wht-icon1.svg';
-import Icon_wht2 from '../public/img/wht-icon2.svg';
+import {Footer} from '../components/common.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
-import {use_app_context} from '../utils/context.js';
 import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
 import Player from '@vimeo/player';
@@ -17,7 +11,7 @@ const video_url = ['https://player.vimeo.com/video/525625726?title=0&amp;byline=
     'https://player.vimeo.com/video/525624995?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'];
 
 const players = {};
-class Video extends Component{
+class Video extends Component {
   state = {};
   render(){
     const {play} = this.state;
@@ -25,11 +19,13 @@ class Video extends Component{
     return <div className="aspect-w-16 aspect-h-9 video">
       {!play ? <img src={'/img/video'+num+'.jpg'} className="video_image"/> : undefined}
       {!play ?
-	<div className="video-thumbnail" onClick={this.play_video}></div> : undefined}
-      <iframe id={'video_frame'+num} src={video_url[num]} allowFullScreen className="shadow-xl"
+	<div className="video-thumbnail" onClick={this.play_video}></div>
+        : undefined}
+      <iframe id={'video_frame'+num} src={video_url[num]} allowFullScreen
+	className="shadow-xl"
 	frameBorder="0" title="LIF - Liberty, Independence, Freedom"
 	allow="autoplay; fullscreen; picture-in-picture"/>
-    </div>
+    </div>;
   }
   play_video = ()=>{
     const num = this.props.num||0;
@@ -106,7 +102,7 @@ export default function Home(){
 	<div className="max-w-6xl mx-auto mt-6 px-6 pb-10">
 	  <h3>{t('sec3_h')}</h3>
 	  <Trans t={t} i18nKey='sec3_p'/>
-	  <div className="max-w-3xl mx-auto">
+	  <div className="max-w-3xl">
 	    <Video num={1}/>
 	  </div>
 	</div>
@@ -127,7 +123,7 @@ export default function Home(){
 	  <Trans t={t} i18nKey='sec6_p3'/>
 	</div>
       </div>
-      <div className="pb-6 bg-white">
+      <div className="bg-white">
 	<div className="max-w-6xl mx-auto px-6">
 	  <h3>{t('founder_h')}</h3>
         </div>
@@ -157,7 +153,7 @@ export default function Home(){
           </div>
         </div>
       </div>
-      <div className="pb-6 bg-white">
+      <div className="bg-white">
 	<div className="max-w-6xl mx-auto px-6">
 	  <h3>{t('team_h')}</h3>
         </div>

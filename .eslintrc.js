@@ -1,29 +1,21 @@
 module.exports = {
+    root: true,
+    plugins: ['react'],
+    env: {
+        browser: true,
+        es6: true,
+        node: true,
+    },
+    'extends': [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
     parser: "babel-eslint",
-    "globals": {
-        "localStorage": true,
-        "fetch": true,
-        "window": true,
-        "Uint8Array": true,
-    },
     parserOptions: {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true,
-            "modules": true,
-            "experimentalObjectRestSpread": true
-        }
+        sourceType: 'module',
     },
-    plugins: ["react"],
     rules: {
-        "comma-dangle": 0,
-        "react/jsx-uses-vars": 1,
-        "react/display-name": 1,
-        "no-unused-vars": "warn",
-        "no-console": 1,
-        "no-unexpected-multiline": "warn",
-        "react/react-in-jsx-scope": "off",
+        'strict': 0,
         indent: 'off',
         'no-cond-assign': 'off',
         'no-constant-condition': 'off',
@@ -89,22 +81,18 @@ module.exports = {
             allowTemplateLiterals: true,
         }],
         semi: ['error', 'always'],
-        'space-before-function-paren': ['error', 'never'],
+        'space-before-function-paren': 'off',
         'space-in-parens': 'error',
         'spaced-comment': ['error', 'always', {
             markers: ['jslint', 'zlint', 'global'],
         }],
         'object-curly-spacing': 'warn',
-        // ECMAScript 6
         'generator-star-spacing': ['error', {before: false, after: false}],
         'require-yield': 'warn',
         'arrow-parens': ['warn', 'as-needed'],
         'no-template-curly-in-string': 'warn',
+	'react/react-in-jsx-scope': 'off',
+	'react/display-name': 'off',
+        'react/prop-types': 'off'
     },
-    settings: {
-        react: {
-            "pragma": "React",
-            "version": "15.6.1"
-        }
-    },
-}
+};
