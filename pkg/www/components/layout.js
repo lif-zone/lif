@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import {useRef, useState} from 'react';
+import {useRef, useState, useEffect} from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Icon_lang from '../public/img/icon_lang.svg';
@@ -8,6 +8,10 @@ import {use_app_context} from '../utils/context.js';
 import {use_outside_alerter} from '../utils/react.js';
 import {useCookies} from 'react-cookie';
 import {useRouter} from 'next/router';
+import ReactGA from 'react-ga';
+
+// XXX: move to proper init section
+ReactGA.initialize('G-94G7HR3TVG');
 
 const classes = {
     popup_link: `font-semibold text-gray-500 text-opacity-75
@@ -75,6 +79,10 @@ const Header_small = ()=>{
 };
 
 export default function Layout({children}){
+  useEffect(function mount(){
+    // XXX: mv to right place to track page navigation
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  });
   const {direction} = use_app_context();
   return (
     <div dir={direction||'ltr'}>
