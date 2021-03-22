@@ -17,7 +17,7 @@ const classes = {
 const full_lang = {en: 'English', he: 'עברית'};
 
 const Lang_selector = ()=>{
-    const [setCookie] = useCookies([]);
+    const setCookie = useCookies([])[1];
     const {locale, locales} = useRouter();
     const [opened, set_opened] = useState();
     const toggle = ()=>set_opened(!opened);
