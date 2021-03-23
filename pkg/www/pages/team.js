@@ -18,13 +18,13 @@ export default function Home(){
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 p-6 pt-0 pb-0">
-          <div>
+          <div id="derry">
             <p><img src="/img/derry.jpg" className="w-100"/></p>
             <h3>{t('founder_derry_h')}</h3>
 	    <Trans t={t} i18nKey='founder_derry_p'/>
 	    <Trans t={t} i18nKey='founder_derry_p2'/>
           </div>
-          <div>
+          <div id="moshe">
 	    <p><img src="/img/moshe.jpg" className="w-100 pt-6"/></p>
 	    <h3>{t('founder_moshe_h')}</h3>
 	    <Trans t={t} i18nKey='founder_moshe_p'/>
@@ -36,12 +36,12 @@ export default function Home(){
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 p-6 pt-0 pb-0">
-          <div>
+          <div id="lior">
             <p><img src="/img/lior.jpg" className="w-100"/></p>
             <h3>{t('team_lior_h')}</h3>
 	    <Trans t={t} i18nKey='team_lior_p'/>
           </div>
-          <div>
+          <div id="shay">
 	    <p><img src="/img/shay.jpg" className="w-100 pt-6"/></p>
 	    <h3>{t('team_shay_h')}</h3>
 	    <Trans t={t} i18nKey='team_shay_p'/>

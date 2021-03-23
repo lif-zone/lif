@@ -131,23 +131,29 @@ export default function Home(){
           sm:grid-cols-2 p-6 pt-0 pb-0">
           <div>
 	    <p>
-  	      <Link href="/team"><a>
+  	      <Link href="/team#derry"><a>
 		<img src="/img/derry.jpg" className="w-100 pt-6"/>
 	      </a></Link>
 	    </p>
-	    <h3><Link href="/team"><a className="text-lif-main">{t('founder_derry_h')}</a></Link></h3>
-	    <div><Link href="/team"><a className="text-lif-main font-normal">
+	    <h3><Link href="/team#derry"><a className="text-lif-main">
+	      {t('founder_derry_h')}
+	    </a></Link></h3>
+	    <div><Link href="/team#derry"><a
+              className="text-lif-main font-normal">
               <Trans t={t} i18nKey='founder_derry_p'/>
             </a></Link></div>
           </div>
           <div>
 	    <p>
-  	      <Link href="/team"><a>
+  	      <Link href="/team#moshe"><a>
 		<img src="/img/moshe.jpg" className="w-100 pt-6"/>
 	      </a></Link>
 	    </p>
-	    <h3><Link href="/team"><a className="text-lif-main">{t('founder_moshe_h')}</a></Link></h3>
-	    <div><Link href="/team"><a className="text-lif-main font-normal">
+	    <h3><Link href="/team#moshe"><a className="text-lif-main">
+             {t('founder_moshe_h')}
+	    </a></Link></h3>
+	    <div><Link href="/team#moshe"><a
+              className="text-lif-main font-normal">
               <Trans t={t} i18nKey='founder_moshe_p'/>
             </a></Link></div>
           </div>
@@ -161,23 +167,29 @@ export default function Home(){
           sm:grid-cols-2 p-6 pt-0 pb-0">
           <div>
 	    <p>
-  	      <Link href="/team"><a>
+  	      <Link href="/team#lior"><a>
 		<img src="/img/lior.jpg" className="w-100 pt-6"/>
 	      </a></Link>
 	    </p>
-	    <h3><Link href="/team"><a className="text-lif-main">{t('team_lior_h')}</a></Link></h3>
-	    <div><Link href="/team"><a className="text-lif-main font-normal">
+	    <h3><Link href="/team#lior"r><a className="text-lif-main">
+              {t('team_lior_h')}
+            </a></Link></h3>
+	    <div><Link href="/team#lior"r><a
+              className="text-lif-main font-normal">
               <Trans t={t} i18nKey='team_lior_p'/>
             </a></Link></div>
           </div>
           <div>
 	    <p>
-  	      <Link href="/team"><a>
+  	      <Link href="/team#shay"><a>
 		<img src="/img/shay.jpg" className="w-100 pt-6"/>
 	      </a></Link>
 	    </p>
-	    <h3><Link href="/team"><a className="text-lif-main">{t('team_shay_h')}</a></Link></h3>
-	    <div><Link href="/team"><a className="text-lif-main font-normal">
+	    <h3><Link href="/team#shay"><a className="text-lif-main">
+              {t('team_shay_h')}
+            </a></Link></h3>
+	    <div><Link href="/team#shay"><a
+              className="text-lif-main font-normal">
               <Trans t={t} i18nKey='team_shay_p'/>
             </a></Link></div>
           </div>
