@@ -49,9 +49,11 @@ const Home_first = ()=>{
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
           <h1 className="px-6 text-3xl">
 	    <nobr><span className="text-4xl">{t('title_w1a')}</span>
-	    <span>{t('title_w1b')} </span></nobr>
+	    <span>{t('title_w1b')}</span></nobr>
+            <span> </span>
 	    <nobr><span className="text-4xl">{t('title_w2a')}</span>
 	    <span>{t('title_w2b')} </span></nobr>
+            <span> </span>
 	    <nobr><span className="text-4xl">{t('title_w3a')}</span>
 	    <span>{t('title_w3b')}</span></nobr>
 	  </h1>
