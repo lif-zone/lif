@@ -8,5 +8,11 @@
    "usage3": "Web Sites",
    "usage3_desc": "Create your indestructible web site.Today, it's very easy to block and censor any site. Countries around the world do it all the time. No more with LIF.",
    "usage4": "Online Voting",
-   "usage4_desc": "Do you trust \"Big Brother\" votings? Have you ever waching a TV show where the audience votes, and you were sure the the production faked the votes? Are you sure your country voting is legit? Some in the US aren't.... A voting system leverging on the LIF protocaol CAN be trusted by all!"
+   "usage4_desc": "Do you trust \"Big Brother\" votings? Have you ever waching a TV show where the audience votes, and you were sure the the production faked the votes? Are you sure your country voting is legit? Some in the US aren't.... A voting system leverging on the LIF protocaol CAN be trusted by all!",
+   "usage5": "Storage forever!",
+   "usage5_desc": "<p>Storing a 40-minute cat video that weighs 1GB at Ethereum will cost you $ 13,820,000 (two years ago the price was lower - about $76,000), while in LIF the storage price for that video online and distributing the video to keep it forever will cost about NIS 1.1!</p><p>how? On a 4T hard disk that costs NIS 439, you can also store 11GB (1GB of cat video storage on your computer, and another 10GB of storage that you assign to LIF users in exchange for storing your video on ten more computers around the world - also, as more users watch the video , it will become indelible and eternal!).</p>",
+   "usage5_link1": "Link to 4T hard disk",
+   "usage5_link2": "Link to calculate the price in the atrium",
+   "usage6": "Online passport",
+   "usage6_desc": "<p>Personal statement of my identity - each one and his personal identity, under his own self-definition</p><p>Through LIF you can run any trust-based application between two or more people.</p>"
 }
