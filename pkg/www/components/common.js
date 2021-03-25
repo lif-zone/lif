@@ -122,7 +122,7 @@ export class Footer extends Component {
 		  <a href="/en" className="text-white">
 		    <img src="/img/lif.svg" className="h-6" style={{
 		      display: 'inline', filter:
-		      'saturate(0%) brightness(350%) contrast(200%'}}/>
+		      'saturate(0%) brightness(500%) contrast(200%'}}/>
 		    </a>
                 </div>
                 <div className="flex-grow"></div>
@@ -130,7 +130,7 @@ export class Footer extends Component {
 		  <a href="/he" className="text-white">
 		    <img src="/img/hah.svg" className="h-6" style={{
 		      display: 'inline', filter:
-		      'saturate(0%) brightness(350%) contrast(200%'}}/>
+		      'saturate(0%) brightness(500%) contrast(200%'}}/>
 		    </a>
                 </div>
 	      </div>
