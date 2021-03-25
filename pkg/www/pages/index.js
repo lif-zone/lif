@@ -12,10 +12,10 @@ const Home_first = ()=>{
     return (
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2">
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
-          {lang=='en' &&
-	  <div className="px-6 text-right">
-	    <a href="/he">{t('en_he_link')}</a>
-	  </div>}
+	  <div className={'px-6 '+
+            (lang=='en' ? ' text-right' : 'text-left')}>
+	    <a href={lang=='he' ? '/en' : '/he'}>{t('en_he_link')}</a>
+	  </div>
           <h1 className="px-6 pb-3 text-2xl">
 	    <nobr><span className="text-4xl">{t('title_w1a')}</span>
 	    <span>{t('title_w1b')}</span></nobr>
