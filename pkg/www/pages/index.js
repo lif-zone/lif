@@ -80,13 +80,12 @@ export default function Home(){
 	  <p><Trans t={t} i18nKey='sec2_p7'/></p>
 	  <p><Trans t={t} i18nKey='sec2_p8'/></p>
 	  <p><Trans t={t} i18nKey='sec2_p9'/></p>
-	  <p>
-            <Trans t={t} i18nKey='sec2_p10'/>
-	    <ul className="list-outside">
-              <Trans t={t} i18nKey='sec2_p11' components={[<li>, </li>]}/>
-            </ul>
-	  </p>
-	  <p><Trans t={t} i18nKey='sec2_p12'/></p>
+          {t('sec2_p10')!='' &&
+	  <p><Trans t={t} i18nKey='sec2_p10'/>}</p>}
+	  {t('sec2_p11')!='' &&
+	  <p><Trans t={t} i18nKey='sec2_p11'/></p>}
+	  {t('sec2_p12')!='' &&
+	  <p><Trans t={t} i18nKey='sec2_p12'/></p>}
 	</div>
 	<div className="max-w-6xl mx-auto px-6">
           <div className="lif-blue-bg rounded-lg mt-6 py-1 px-3 text-white">
