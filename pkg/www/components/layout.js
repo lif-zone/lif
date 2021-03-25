@@ -40,7 +40,7 @@ const Lang_selector = ()=>{
             <Icon_lang className="me-1"/> {locale.toUpperCase()}
           </span>
           <div className={cn(opened ? 'flex' : 'hidden', `absolute z-10
-              end-0 bg-white mt-2 shadow-2xl rounded-lg`)}>
+              bg-white mt-2 shadow-2xl rounded-lg`)}>
             <div className="px-2 text-gray-400 text-base">
               <div className="px-4 pt-4 pb-3">
                 <div className="text-xs mb-3 tracking-widest">Language</div>
