@@ -95,7 +95,7 @@ export default function Layout({children}){
     <div dir={direction||'ltr'}>
       <Head>
         <meta charSet="UTF-8"/>
-        <title>LIF - Liberty, Independence, Freedom - חירות, עצמאות, חופש
+        <title>LIF - Liberty Independence Freedom - חירות עצמאות חופש
         </title>
         <link rel="icon" href="/img/favicon.svg"/>
         <link rel="stylesheet" type="text/css"
