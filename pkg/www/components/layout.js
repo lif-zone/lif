@@ -59,23 +59,30 @@ const Lang_selector = ()=>{
 };
 
 const Header_small = ()=>{
-    return <header className="p-4 mx-4 relative top-4 flex justify-between
-          items-center text-sm lg:text-base">
-        <div className="left">
-          <Link href="/">
-            <a><img src="/img/lif.svg" alt="LIF - Trusted data network"
-              className="h-8"/></a>
-          </Link>
+    const {direction} = use_app_context();
+    const rtl = direction=='rtl'
+    return <bdo dir="ltr">
+      <header className="p-6 text-sm lg:text-base">
+        <div>
+          <a href="/en"><img src="/img/lif.svg" className="h-8"/></a>
         </div>
-	<div className="flex items-center">
-	  <a href="https://github.com/lif-zone/lif"
-            className="text-black flex items-center text-lg opacity-70
-              transition-opacity hover:opacity-100 me-5">
-            <Github className="w-auto me-2"/> GitHub
-          </a>
-          <Lang_selector/>
-	</div>
-      </header>;
+        {!rtl && <div className="flex-grow"></div>}
+        <bdo dir={rtl ? 'rtl' : 'ltr'}>
+	  <div className="flex items-center">
+	    <a href="https://github.com/lif-zone/lif"
+	      className="text-black flex items-center text-lg opacity-70
+	      transition-opacity hover:opacity-100">
+	      <Github className="w-auto"/>
+	    </a>
+	    <div className="px-4"><Lang_selector/></div>
+	  </div>
+        </bdo>
+        {rtl && <div className="flex-grow"></div>}
+        <div>
+          <a href="/he"><img src="/img/hah.svg" className="h-8"/></a>
+        </div>
+      </header>
+      </bdo>;
 };
 
 export default function Layout({children}){

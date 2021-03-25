@@ -1,9 +1,9 @@
 @tailwind base;
 
 @layer base {
-    body { @apply bg-lif-gray font-body text-lif-main subpixel-antialiased; }
+    body { @apply font-body text-lif-main subpixel-antialiased; }
     header { @apply flex justify-between; }
-    a { @apply font-bold cursor-pointer no-underline text-lif-blue; }
+    a { @apply cursor-pointer no-underline text-lif-blue-darkened; }
     * { @apply leading-normal; }
 
     h1 {

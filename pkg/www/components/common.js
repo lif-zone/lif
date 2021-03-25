@@ -6,6 +6,7 @@ import axios from 'axios';
 import {Trans} from 'next-i18next';
 import Github2 from '../public/img/github2.svg';
 import Link from 'next/link';
+import Player from '@vimeo/player';
 
 export const Primary_button = ({children, arrow, onClick})=>{
     const {direction} = use_app_context();
@@ -43,8 +44,8 @@ export class Contact_us extends Component {
       {mode=='error' ? <p>{t('common:thank_you_error')}</p> : undefined}
       {mode=='sent' ?
 	<div>
-	  <p>{t('common:thank_you_will_get_back_to_you_soon')}</p>
-            <Primary_button arrow onClick={this.on_click}>
+	  <p className="py-8">{t('common:thank_you_will_get_back_to_you_soon')}</p>
+            <Primary_button onClick={this.on_click}>
 	      {t('common:contact_us')}
 	    </Primary_button>
 	</div>
@@ -61,7 +62,7 @@ export class Contact_us extends Component {
 	  <textarea className="lif-textarea" id='freetext'
 	    placeholder={t('common:what_i_can_do')}/>
 	  <div className="text-end">
-	    <Primary_button arrow onClick={this.on_send}>
+	    <Primary_button onClick={this.on_send}>
 	      {t('common:send')}
 	    </Primary_button>
 	  </div>
@@ -88,59 +89,50 @@ export class Contact_us extends Component {
 
 export class Footer extends Component {
   render(){
-    const {t} = this.props;
-    return <div className="lif-blue-bg pb-1">
-        <div className="p-6 lif-hexagon-bg max-w-6xl mx-auto text-white">
-          <h3>{t('common:help_h')}</h3>
-          <div className="text-xl">
-            <Trans t={t} i18nKey='common:help_p'/>
-            <div className="float-right">
-              <bdo dir="ltr">
-                <a href="https://github.com/lif-zone/lif"
-                  className="text-white hover:text-white items-center text-lg
-                    opacity-70 transition-opacity hover:opacity-100 ms-2
-                    me-5">
-                  <Github2 className="mt-1 inline-block fill-current"/>
-                  GitHub
-                </a>
-              </bdo>
-	    </div>
-            <div>
-	      <a href="mailto:join@lif.zone">join@lif.zone</a>
-	    </div>
-	  </div>
-	  <Contact_us t={t}/>
-	  <bdo dir="ltr">
-	    <div className={'max-w-6xl mx-auto text-white grid grid-cols-1 '+
-	      'sm:grid-cols-2 mt-20'}>
-	      <div>
-		<div className="flex">
-		  <Link href="/"><a className="text-white">
-		    <img src="/img/lif.svg" className="h-6" style={{
-		      display: 'inline', filter:
-		      'saturate(0%) brightness(350%) contrast(200%'}}/>
-		    </a></Link>
-		    <span style={{display: 'inline'}}
-                      className="self-end pl-1 pt-2">
-		      <Link href="/"><a className="text-white">
-			<nobr>Liberty Independence Freedom</nobr>
-		      </a></Link>
-		    </span>
-                </div>
-                <div className="mt-2">
-		  <a href="https://github.com/lif-zone/lif" className=
-                    "text-white hover:text-white items-center text-lg">
+    const {t, contact_us} = this.props;
+    return <div className="lif-blue-bg pb-1 mt-10">
+        <div className="px-6 lif-hexagon-bg max-w-6xl mx-auto text-white">
+          {contact_us && <div>
+	    <h3>{t('common:help_h')}</h3>
+	    <div className="text-xl">
+	      <Trans t={t} i18nKey='common:help_p'/>
+	      <div className="float-right">
+		<bdo dir="ltr">
+		  <a href="https://github.com/lif-zone/lif"
+		    className="text-white hover:text-white items-center text-lg
+		      opacity-70 transition-opacity hover:opacity-100 ms-2
+		      me-5">
 		    <Github2 className="mt-1 inline-block fill-current"/>
 		    GitHub
 		  </a>
-		</div>
+		</bdo>
 	      </div>
-	      <div className="flex">
-                <div className="self-start">
-		  <Link href="/about"><a className="text-white">About</a></Link><br/>
-		  <Link href="/team"><a className="text-white">Team</a></Link><br/>
-		  <Link href="/use-cases"><a className="text-white">Use cases</a></Link>
-		</div>
+	      <div>
+		<a href="mailto:join@lif.zone">join@lif.zone</a>
+	      </div>
+	    </div>
+	    <Contact_us t={t}/>
+	    <div className="pb-6"></div>
+          </div>
+          }
+	  <bdo dir="ltr">
+	    <div className={'max-w-6xl mx-auto text-white grid grid-cols-1 '+
+	      'sm:grid-cols-2 py-4'}>
+	      <div>
+		<div className="float-left">
+		  <a href="/en" className="text-white">
+		    <img src="/img/lif.svg" className="h-6" style={{
+		      display: 'inline', filter:
+		      'saturate(0%) brightness(350%) contrast(200%'}}/>
+		    </a>
+                </div>
+		<div className="float-right">
+		  <a href="/he" className="text-white">
+		    <img src="/img/hah.svg" className="h-6" style={{
+		      display: 'inline', filter:
+		      'saturate(0%) brightness(350%) contrast(200%'}}/>
+		    </a>
+                </div>
 	      </div>
 	    </div>
 	  </bdo>
@@ -148,4 +140,40 @@ export class Footer extends Component {
       </div>;
   }
 }
+
+const video_url = ['https://player.vimeo.com/video/525625726?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    'https://player.vimeo.com/video/525624995?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'];
+
+const players = {};
+export class Video extends Component {
+  state = {};
+  render(){
+    const {play} = this.state;
+    const num = this.props.num||0;
+    return <div className="aspect-w-16 aspect-h-9 video">
+      {!play ? <img src={'/img/video'+num+'.jpg'} className="video_image"/> : undefined}
+      {!play ?
+	<div className="video-thumbnail" onClick={this.play_video}></div>
+        : undefined}
+      <iframe id={'video_frame'+num} src={video_url[num]} allowFullScreen
+	className="shadow-xl"
+	frameBorder="0" title="LIF - Liberty, Independence, Freedom"
+	allow="autoplay; fullscreen; picture-in-picture"/>
+    </div>;
+  }
+  play_video = ()=>{
+    const num = this.props.num||0;
+    var iframe, player;
+    for (let p in players)
+      players[p].pause();
+    if (!players[num])
+    {
+      iframe = document.querySelector('#video_frame'+num);
+      players[num] = player = new Player(iframe);
+    }
+    player.play();
+    this.setState({play: true});
+  };
+}
+
 
