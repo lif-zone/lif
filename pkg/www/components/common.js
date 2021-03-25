@@ -116,17 +116,17 @@ export class Footer extends Component {
           </div>
           }
 	  <bdo dir="ltr">
-	    <div className={'max-w-6xl mx-auto text-white grid grid-cols-1 '+
-	      'sm:grid-cols-2 py-4'}>
-	      <div>
-		<div className="float-left">
+	    <div className={'py-4'}>
+	      <div className="flex">
+		<div>
 		  <a href="/en" className="text-white">
 		    <img src="/img/lif.svg" className="h-6" style={{
 		      display: 'inline', filter:
 		      'saturate(0%) brightness(350%) contrast(200%'}}/>
 		    </a>
                 </div>
-		<div className="float-right">
+                <div className="flex-grow"></div>
+		<div>
 		  <a href="/he" className="text-white">
 		    <img src="/img/hah.svg" className="h-6" style={{
 		      display: 'inline', filter:
