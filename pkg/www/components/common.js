@@ -120,17 +120,15 @@ export class Footer extends Component {
 	      <div className="flex">
 		<div>
 		  <a href="/en" className="text-white">
-		    <img src="/img/lif.svg" className="h-6" style={{
-		      display: 'inline', filter:
-		      'saturate(0%) brightness(500%) contrast(200%'}}/>
+		    <img src="/img/lif_white.svg" className="h-6"
+                      style={{display: 'inline'}}/>
 		    </a>
                 </div>
                 <div className="flex-grow"></div>
 		<div>
 		  <a href="/he" className="text-white">
-		    <img src="/img/hah.svg" className="h-6" style={{
-		      display: 'inline', filter:
-		      'saturate(0%) brightness(500%) contrast(200%'}}/>
+		    <img src="/img/hah_white.svg" className="h-6"
+                      style={{display: 'inline'}}/>
 		    </a>
                 </div>
 	      </div>
