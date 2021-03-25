@@ -19,7 +19,9 @@ export default function Home(){
 	    <Video num={1}/>
 	  </div>
           <div>
-	    <h3><Trans t={t} i18nKey="sec_h"/></h3>
+            <bdo dir="ltr">
+  	      <h3><Trans t={t} i18nKey="sec_h"/></h3>
+            </bdo>
 	    <p><Trans t={t} i18nKey="sec_p"/></p>
 	    <p><Trans t={t} i18nKey="sec_p2"/></p>
 	  </div>
@@ -41,7 +43,8 @@ export default function Home(){
 	    <p><Trans t={t} i18nKey="sec3_p6"/></p>
 	    <p><Trans t={t} i18nKey="sec3_p7"/></p>
 	    <p><Trans t={t} i18nKey="sec3_p8"/></p>
-	    <p><Trans t={t} i18nKey="sec3_p9"/></p>
+            {t('sec3_p9') &&
+	    <p><Trans t={t} i18nKey="sec3_p9"/></p>}
 	  </div>
           <div id="sec4">
 	    <h3><Trans t={t} i18nKey="sec4_h"/></h3>
@@ -54,6 +57,10 @@ export default function Home(){
 	    <p><Trans t={t} i18nKey="sec4_p3"/></p>
 	    <p><Trans t={t} i18nKey="sec4_p4"/></p>
 	    <p><Trans t={t} i18nKey="sec4_p5"/></p>
+            {t('sec4_p6') &&
+	    <p><Trans t={t} i18nKey="sec4_p6"/></p>}
+            {t('sec4_p7') &&
+	    <p><Trans t={t} i18nKey="sec4_p7"/></p>}
 	  </div>
         </div>
         <Footer t={t}/>

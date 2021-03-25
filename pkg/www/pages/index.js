@@ -93,7 +93,9 @@ export default function Home(){
           </div>
 	</div>
 	<div className="max-w-6xl mx-auto px-6 mt-6">
-	  <p><Link href="/about"><a>{t('link')}</a></Link></p>
+          <bdo dir="ltr">
+	    <p><Link href="/about"><a>{t('link')}</a></Link></p>
+          </bdo>
 	  <p><Link href="/about#sec2"><a>{t('link2')}</a></Link></p>
 	  <p><Link href="/about#sec3"><a>{t('link3')}</a></Link></p>
 	  <p><Link href="/about#sec4"><a>{t('link4')}</a></Link></p>
