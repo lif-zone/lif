@@ -14,9 +14,9 @@ export default function Home(){
     return (
       <Layout>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
-          sm:grid-cols-2 p-6 pt-3 pb-0">
+          sm:grid-cols-2 p-6 pb-0">
           <div id="derry">
-            <p><img src="/img/derry.jpg" className="w-100"/></p>
+            <p><img src="/img/derry.jpg" className="w-100 pt-10"/></p>
             <h3>{t('derry_h')}</h3>
 	    <p>{t('derry_p')}</p>
 	    <p>{t('derry_p2')}</p>
