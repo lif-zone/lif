@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
-import {Footer, Video} from '../components/common.js';
+import {Footer, Video, Contact_us} from '../components/common.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
@@ -47,6 +47,23 @@ export const getStaticProps = ({locale})=>etask(function*(){
     const props = yield serverSideTranslations(locale, ['common', 'homepage']);
     return {props};
 });
+
+class Modal extends Component {
+  state = {closed: true};
+  render(){
+    const {t} = this.props;
+    const {closed} = this.state;
+    if (closed)
+      return <span/>;
+    return <div className="bg-red-200 fixed w-full h-full z-10i">
+      <p>XXX</p>
+        <Contact_us t={t}/>
+      <p onClick={this.close}>YYY</p>
+    </div>;
+  }
+  close = ()=>this.setState({closed: true});
+  show = ()=>this.setState({closed: false});
+}
 
 export default function Home(){
   const {t} = useTranslation('homepage', 'common');
