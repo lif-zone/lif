@@ -9,6 +9,7 @@ import {use_outside_alerter} from '../utils/react.js';
 import {useCookies} from 'react-cookie';
 import {useRouter} from 'next/router';
 import ReactGA from 'react-ga';
+import {useTranslation} from 'next-i18next';
 
 // XXX: move to proper init section
 ReactGA.initialize('G-94G7HR3TVG');
@@ -59,6 +60,7 @@ const Lang_selector = ()=>{
 };
 
 const Header_small = ()=>{
+    const {t} = useTranslation('common');
     const {direction} = use_app_context();
     const rtl = direction=='rtl'
     return <bdo dir="ltr">
@@ -68,13 +70,17 @@ const Header_small = ()=>{
         </div>
         {!rtl && <div className="flex-grow"></div>}
         <bdo dir={rtl ? 'rtl' : 'ltr'}>
-	  <div className="flex items-center">
+	  <div className="flex items-top">
 	    <a href="https://github.com/lif-zone/lif"
-	      className="text-black flex items-center text-lg opacity-70
+	      className="text-lif-main flex items-top text-lg opacity-70
 	      transition-opacity hover:opacity-100">
 	      <Github className="w-auto"/>
 	    </a>
-	    <div className="px-4"><Lang_selector/></div>
+	    <div className="px-4">
+	     <a href={rtl ? '/en' : '/he'} className="text-lif-main">
+	       {t('en_he_link')}
+              </a>
+            </div>
 	  </div>
         </bdo>
         {rtl && <div className="flex-grow"></div>}
