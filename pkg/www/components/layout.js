@@ -21,6 +21,11 @@ const classes = {
 
 const full_lang = {en: 'English', he: 'עברית'};
 
+const select_lang = (l, router, setCookie)=>{
+  setCookie('NEXT_LOCALE', l);
+  router.push(router.route, router.route, {locale: l});
+};
+ 
 const Lang_selector = ()=>{
     const setCookie = useCookies([])[1];
     const {locale, locales} = useRouter();
@@ -32,10 +37,6 @@ const Lang_selector = ()=>{
         cursor-pointer hover:text-gray-700`,
         opened ? 'text-gray-500' : 'text-gray-400');
     const router = useRouter();
-    const select_lang = l=>{
-        setCookie('NEXT_LOCALE', l);
-        router.push(router.route, router.route, {locale: l});
-    };
     return <div ref={wrapper_ref}>
           <span className={button_class} onClick={toggle}>
             <Icon_lang className="me-1"/> {locale.toUpperCase()}
@@ -46,7 +47,7 @@ const Lang_selector = ()=>{
               <div className="px-4 pt-4 pb-3">
                 <div className="text-xs mb-3 tracking-widest">Language</div>
                 {locales.map(l=><div className="my-2" key={l}>
-                      <a onClick={()=>select_lang(l)}
+                      <a onClick={()=>select_lang(l, router, setCookie)}
                         className={cn(classes.popup_link,
                           locale==l && 'font-bold')}>
                         {full_lang[l]||l.toUpperCase()}
@@ -60,6 +61,8 @@ const Lang_selector = ()=>{
 };
 
 const Header_small = ()=>{
+    const setCookie = useCookies([])[1];
+    const router = useRouter();
     const {t} = useTranslation('common');
     const {direction} = use_app_context();
     const rtl = direction=='rtl'
@@ -77,7 +80,8 @@ const Header_small = ()=>{
 	      <Github className="w-auto"/>
 	    </a>
 	    <div className="px-4">
-	     <a href={rtl ? '/en' : '/he'} className="text-lif-main">
+             <a onClick={()=>select_lang(rtl ? 'en' : 'he', router, setCookie)}
+	       className="text-lif-main">
 	       {t('en_he_link')}
               </a>
             </div>
