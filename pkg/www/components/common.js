@@ -96,18 +96,18 @@ export class Footer extends Component {
 	    <h3>{t('common:help_h')}</h3>
 	    <div className="text-xl">
 	      <Trans t={t} i18nKey='common:help_p'/>
-	      <div>
-		<a href="mailto:join@lif.zone">join@lif.zone</a>
-		<bdo dir="ltr">
-		  <a href="https://github.com/lif-zone/lif"
-		    className="text-white hover:text-white items-center text-lg
-		      opacity-70 transition-opacity hover:opacity-100 ms-2
-		      me-5">
-		    <Github2 className="mt-1 inline-block fill-current"/>
-		    GitHub
-		  </a>
-		</bdo>
-	      </div>
+              <bdo dir="ltr">
+		<div>
+		  <a href="mailto:join@lif.zone">join@lif.zone</a>
+		    <a href="https://github.com/lif-zone/lif"
+		      className="text-white hover:text-white items-center text-lg
+			opacity-70 transition-opacity hover:opacity-100 ms-2
+			me-5">
+		      <Github2 className="mt-1 inline-block fill-current"/>
+		      GitHub
+		    </a>
+	        </div>
+	      </bdo>
 	    </div>
 	    <Contact_us t={t}/>
 	    <div className="pb-6"></div>
