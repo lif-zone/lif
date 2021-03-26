@@ -102,7 +102,7 @@ export default function Home(){
           {t('sec2_p10')!='' &&
 	  <p><Trans t={t} i18nKey='sec2_p10'/>}</p>}
 	  {t('sec2_p11')!='' &&
-	  <p><Trans t={t} i18nKey='sec2_p11'/></p>}
+	  <Trans t={t} i18nKey='sec2_p11'/>}
 	  {t('sec2_p12')!='' &&
 	  <p><Trans t={t} i18nKey='sec2_p12'/></p>}
 	</div>
@@ -111,10 +111,12 @@ export default function Home(){
 	    <p><Trans t={t} i18nKey='sec2_box'/></p>
           </div>
 	</div>
-	<div className="max-w-6xl mx-auto px-6 mt-6 grid sm:grid-cols-2 mt-10">
-	  <div>
+	<div className="max-w-6xl mx-auto px-6 mt-6 grid sm:grid-cols-2 mt-6">
+	  <div className="pb-6">
             <p>{t('scroll_desc')}</p>
-	    <img src="/img/scroll.jpg" style={{width: '30rem'}}/>
+	    <Link href="/about"><a>
+              <img src="/img/scroll.jpg" style={{width: '30rem'}}/>
+            </a></Link>
 	  </div>
 	  <div className="max-w-6xl mx-auto px-6">
 	    <bdo dir="ltr">
