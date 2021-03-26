@@ -90,7 +90,7 @@ export class Contact_us extends Component {
 export class Footer extends Component {
   render(){
     const {t, contact_us} = this.props;
-    return <div className="lif-blue-bg pb-1 mt-10">
+    return <div className="lif-blue-bg pb-1 mt-6">
         <div className="px-6 lif-hexagon-bg max-w-6xl mx-auto text-white">
           {contact_us && <div>
 	    <h3>{t('common:help_h')}</h3>
