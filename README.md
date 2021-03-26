@@ -1,218 +1,100 @@
 LIF - Liberty, Independence, Freedom
 ====================================
 https://lif.zone
-
-## About this document
-This is an abstract description of LIF and vision. It is not necessarily how it will be implemented. It's an attempt to logically visualize the LIF evolution, or how to conceptually look at LIF network.
-And it will change. LIF is just in the early stages and we keep improving the idea all the time. The main principle is that it is the responsibility of the one who is using the data, to verify and trust it. Anyone can submit to LIF without verification (besides trivial ones, eg check that JSON is properly signed)
-
-## LIF's Mission & Vision
-Liberty, Independence, Freedom!
-This project came to life following the operssion all over the word during the Corona, and the facists measures used by almost all governments. All with the excuse to "protect" us...
-LIF is our way to fight back! Taking back the rights that belong to us, by creating a network that no government or big cooperation can control, shut down or censore.
+join@lif.zone
 
 ## What is LIF?
-A p2p Crypto Network For Creating Trust Between People. Yep, now it's all clear ;-)
+LIF - a technology that provides eternal life to users' declarations, while encouraging trust in the declarations. This in turn creates a Public Read Write Internet, which in turn creates the Public Computer. The network will be implemented by P2P and cryptography technology. The code will be developed by the LIF community in an open source project.
 
-LIF is an experimental open-source, decentralized, censorship-resistant protocol, that runs a p2p network, with mongo-like interface for accessing data stored in blockchains. We are trying to build a trusted stroage and publusing system.
+LIF is a declaration storage system that guarantees them eternal life, and contains technologies that prevent disruption, censorship, or retrospective addition. No collective will be able to control, strike or censor it. LIF declarations are time stamped and signed on the scroll, right under the signature of the previous decoration on that scroll.
 
-(For the technically minded, LIF is a keys/value distribued MongoDB-like database on top of IPFS-like file system, leveraging Bitcoin/Ethernium-like blockchain technology).
+Everything in LIF is public and visible to all - in contrast to the Internet which is private and hidden by default. LIF creates public memory and public communication, which ensures that your information is stored forever, and enables you to communicate with any man. Thus providing power to man to stand up against the collective, providing man with liberty, enabling man to live his life by his beliefs. The declarant declares his declarations on a scroll in his computer. What is a declaration? a declaration is information (data) with a timestamp and a cryptographic signature of the declarant's personal wallet. And what is a Scroll? a scroll is a file created by the declarant, where declarations are appended and stored sequentially, in a similar way that declarations are written one after the other on a scroll. Scrolls are created by an "opening declaration", then the declarations are appended sequentially, and optionally its closed by a "closing declaration", to prevent declarations appended after scroll closing. Every declaration includes in its signature calculation the signature on the previous declaration in the scroll, to prevent new declarations inserted mid scroll.
 
-This project will be evolutionary. We will follow [Hola's DNA](https://hola.org/dna). LIF eveolution will be incremental. Unlike other projects, which first developed the technology, and later on implemented the use cases (eg. bitcoin), we will first implement the API with a simple node/mongodb solution. Then move to mutiple servers with replications, and eventually we will implement it over p2p. This approach will let us create the best p2p protocol, one that fits real usage (and not vice versa where you try to force technology to real life application). A protocol that will be for the masses.
+Storage, duplication, and distribution of the copies is incentivized by "Save mine and I will save yours". For every GB of scroll storage, the user allocates 10GB storage for saving copies and distributing scrolls of other LIF users. Each user allocates part of his storage to help other users preserve, duplicate and distribute their scrolls. Trust in scrolls is created by notarizing: declaring witnessing a signed declaration in another scroll, providing provable order between two declarations in different scrolls. Timestamping helps further pinpoint the order. B notarizing a declaration from scroll A, proves declarations before the A's declaration notarized, were declared before B's notarization declaration.
 
-The cutting-edge browser-first approach, means that user can connect and use the network with just a browser. Making it native to the web. Anyone with a modren browser can connect and access the network, without any need to install special appplication. LIF is blockchain technology for the masses. And we will first develop the applications around it, letting the UI, define the underline protocol (instead of vice versa...)
+This creates a Public Read Internet, where anyone can read anything his fellow man declared. But what about the Write capabilities? Allowing any user to modify declarations of any other user? How is that even possible? "Faith" is the magic that creates the Write capabilities: Eve modifies Adam's homepage by appending her declaration to her own scroll: "Here's Adam's new homepage!". Whoever wants to believe Eve - is free to do so! Whoever chooses not to believe Eve, will ignore Eve's declaration, and will view Adam's homepage unmodified as in his original declaration. What is a Public Computer? a machine capable of performing computational work, input and output (reading and writing to the Public Internet), while enabling the user to trust the output.
 
-Main principles:
-- Easy to use by anyone. Even your parents :-)
-- Data is never lost
-- Data can always be found (and quickly)
-- Data cannot be altered, changed or faked
-- Date is owned and signed. Undipituable!
+How is it possible to build a Public Computer? faith again is the answer: Faith creates the Public Computer. Any man can declare a request to execute a compute job on the Public Computer. An app developer (such as a social media) can declare code that produces an index to data (such as posts of friends of friends). Every computer owner who wishes - can choose to run this requested indexing job, and declare its results. The user side application (written by the app developer, who is also the index requestor) requests all the declarations of the job output, compares them, and if output is identical - it can give some level of trust in the index. The user can increase the amount of trust by increasing the number of output declarations it compares.
 
-LIF is a **protocol**:
-- Defines distributed database
-- Cooridnates content delivery
-- Provides blockchain network
+## When there is no truth there is no trust
+We live in an age of silence. Any declaration that is not considered politically correct and that does not reconcile with the progressive worldview that manages the public discourse at a high level, is silenced and shelved. There is no longer room for a variety of opinions. There is no room for discourse and if the truth does not fit the general melody - there is also no room for the truth.
 
-LIF uses **crypto**:
-- Private/public key signing
-- Cryptographic-hash content indexing
+Today more than ever, collectives have means to crush the individual's freedom of expression by a campaign that presents a lie as absolute truth and truth as a conspiratorial lie. Even if the campaign fails making the public believe the lie, suffice the campaign just hampers man's ability to distinguish between truth and false - to create devastating results. Reducing the ability to separate truth from false, reduces in turn the amount of trust a man can give in his friend and the declarations of his friend. Trust in fellow man is damaged. Thus trust reduced in the community, and in the people. All over in the world trust decreases.
 
-LIF is **modular**:
-- Works over any network protocol
-- Torrent-like block excahnge
-- Any application over the netwrok agree on it owns validity verification function
+Technology has become a tool of control instead a tool for freedom. But the technology that created the problem is also the one from which salvation will come.
 
-LIF is **p2p**:
-- decentralized architecture
-- peer to peer database
-- no centeral server or point of failure
+Meet LIF - a technological-political start-up, to promote trust and human freedom.
 
-LIF is a **CDN**:
-- Publish any data to the network
-- Smart caching via hasing
-- Torrent-like system
+LIF is a new, decentralized network of declarations - and completely independent, without centralized management like Facebook or Twitter, and without the tyranny of the majority and the complicated judicial mechanism of Blockchain.
 
-LIF enables **SSI**;
-- You can prove that your are you!
-- Generat your own SSI (Self-sovereign identity)
+The network is based on building trust between users. Any declaration is admissible, but it will be trusted, as long as it is interwoven with additional declarations that have already been trusted and as long as the content of the declaration is true.
 
-LIF has **DNS**:
-- Namecoin-like DNS
-- Global name space that is not controlled by any root server
+LIF is not judgmental and does not try to determine what the truth is, like Fact Checkers and does not try to reach a consensus, or a decision between its users. It simply places people's declarations on top of each other and interweaves them so that they cannot be falsified or altered. What is the truth? This is what each user will use his wisdom and decide for himself. As a result LIF is independent and unopinionated.
 
-## Trust in real life:
-- you go to the store and want to buy a shirt for $20. You pay the owner with a $20 US bill.
-- it's the store responsibility to trust the bill. He may say, I don't trust it and refuse to get paid. But in that case, he lost a customer and the sale
-  So HE has a BIG incentive to verify and trust the bill - this is exactly the situation in LIF.
-- So if you pay with $20, most likely he will just quickly look at the bill. But if you pay with $100, there is more chance he will use a special device to verify the bill legit. 
-- In fact, most faked bills are detected by business or banks. It is very rare for individuals to look for fake bills (at most they will look at it in the light or touch it). And if a business gets bills from an ATM, he will probably not verify them (he trust the bank). 
--  LIF is similar. For a small transaction, you will just do some minimal validation. For important transactions, you will put more effort into verifying it. If you trust the paying entity, you will not check it too much. If you don’t, you will put effort to make sure it is legit. Up to you, to decide how much you trust LIF and how much effort you want to put into validation.
-- Money is essentially trust between people.
-- And today’s money is used by governments to control you. You must trust them, otherwise your money doesn’t worth anything. This is what governments focus on. Finding more and more ways to control you (marriage, divorce, how to raise your kids,...)
+The Bible's scroll weaving technology makes it impossible to rewrite even a single letter in Bible due to the 3,000 years of rigorous copying and checksumming technology and delivery from father to son. Likewise LIF's woven digital scrolls make it impossible to falsify a declaration placed in a woven scroll.
 
-## How to lift a car with a fin-hair cotton fiber?
-If you wanted to lift a car with a crane, you could attach it with a heavy-duty iron chain. You will need a big, heavy chain.
-If you try instead to use a cotton hair-fin fiber to lift the car, the fiber will snap.
-Even if you connect thousands of fibers together and try to lift a car, it will snap. Because the force on the fibers is not evenly distributed. The shortest fiber will be supporting a much higher proportion of the total load and will snap. And then in a cascading effect, all  the rest of the fibers will snap. One after the other. No matter how hard you try, no two fibers will be of the same length.
-And it is VERY hard to handle SO MANY hair-fin fibers, which renders it effectively useless.
-But when you twist fibers together, magic! The twisting not only keeps the fibers together, but enables the load to be evenly distributed. And you get a VERY strong rope from very delicate cotton fibers. Magic!
-And you can twist again! And Again! Bigger ropes are made from twisting cotton fibers into small yarns, then taking a few of them, and twisting them again to create a rope. And you can take a few of those ropes and twist again to create a bigger rope. This way you can repeat and create rope of any length and strength.
-So twisting a hair-fin delicate fiber can create a powerful rope that is strong and easy to handle. Furthermore, you gain damage resilience. Even if many fibers of the rope are damaged or snap, the rope will still function and keep its total strength. It’s amazing how much damage a rope can sustain over time before it snaps. Yep, you never thought about it, but a simple rope is quite an amazing technology achievement.
-So you could replace a heavy chain, with a cotton twisted rope to lift a car. It will be a much lighter rope compared to the needed heavy-duty iron-made chain.
-How strong a rope can be? Well, they even use it for building cable-stayed bridges.
-And cable-stayed bridges evolved from the historical chain bridges.
-Blockchain is similar. It’s the historical analogy of chain bridges. Blockchain is the first attempt to create distributed secured blocks of information. It works, but it’s cumbersome, slow, expensive and inflexible.
-So LIF, is an attempt to twist small data fibers into all mighty interlocking ropes of data.
-When a link in a chain breaks, the whole chain collapses. So you must put a huge amount of effort into creating super-strong links. And the longer the cable, it becomes exceptionally more difficult. But with LIF, even if some data is lost, the system can overcome it and confirm if a blockchain is valid.
+Just as different content can be published on the Internet for different uses, the LIF network does not form an opinion, or express a position about the famous declarations that appear in it. You, the users, determine what will appear in it, without censorship.
 
-## How to “twist” data?
-Each peer writes signed sequential JSONs to a block. When the block is full, the peer close it and starts a new block. This creates a personal blockchain.
-When the peer closes a block, he sends to another peer a signed JSON that contains the HASH of the last block (the one he closed). That tiny JSON is inserted into the peer’s current open block. The peer as well sends from time to time, a signed JSON with the HASH of this last (closed) block.
-This process of peers saving signed HASH of their last block on another peer, is called “twisting data”. It’s not duplication of data, we just send a tiny HASH. But it is enough to guarantee that no party will “cheat” and insert information with a fake timestamp or alter a closed block. If a peer fakes a block, it will not match the signed HASH that the other peer saved in his block. Any attempt to “cheat” will be detected and that peer will not be trusted.
-This data “twisting” is just a proof for the existence of such blocks in a specific time frame (it is not the block data itself).
-This way, it is possible to map changes to data between different peers by traversing all the chain of blocks and decide the order of the transactions (if someone fakes a transaction, the HASH will not match and you will detect it)
-In most cases, it will be possible to determine the order of transactions. For the cases there will be a conflict, the conflict resolution algorithm (CRA) will be used to decide.
-Data “twisting” doesn’t occur only between two peers, but all over the network. Each peer “twists” it’s signed blocks with multiple other peers, which in turn “twist” with others. This mutl “twisting” across the network, effectively creates a blockchain (a block that no one can alter and all agree it is correctness, ie, network consensus is achieved!) .
-This is similar to how a rope is constructed from twisting fibers. Each fiber by itself is weak, but twisting them together, creates a structure stronger than iron chains! So instead of twisting fibers, LIF “twists” data.
+Technology will allow people to declare and publish anything publicly, in an unequivocal and unchangeable way:}
 
-## How is LIF distributed / duplicated  across peers?
-We use the “you scratch my back and I'll scratch yours” method for P2P data distribution
-A peer keeps a ledger of signed JSONs. It is just a sequential list of JSONs signed by the peer private key and stored in an internal database. Each JSON includes a timestamp.
-The signed JSONs are kept inside blocks (eg. each block contains 1MB of information). When a block is full, the peer will close it and open a new block.
-For example, the ledger may contain a list of all your bank transactions. This is important information, and you want to have a backup.
-To backup you data, you want to duplicate (distribute) and save a copy on another peer.
-So you contact a near-by peer (the problem of finding a peer in a P2P network was already solved by many other P2P protocols and is explained later on). For now, we assume we found another peer.
-The problem now is how to “convince” the other peer, to waste storage and keep a copy for you. Easy. You offer the other peer to save his data on your storage. So if you save 5MB of data on another peer, in exchange, you will store 5MB of data on your storage. A classical “you scratch my back and I'll scratch yours” case.
-If the data is important for you, you will store it in multiple peers.
-The other party might not be honest and may decide to delete the data without letting you know. The solution is to periodically “ask” the other peer some questions that will prove that he has a copy (ie, ask him to run some calculation on the data to prove he has it, like calculate checksum with a specific algorithm). If at some point you find out that the peer didn’t keep a copy of your data, you simply delete his data. The other peer might be honest, but unreliable. He might be offline for long periods of time so you decide to delete his data and find another peer.
-You may want your data to be kept in more places, you can periodically check how many copies exist, and if needed, ask more peers to keep copies.
-Some peers might specialize and be interested in keeping only a specific kind of data. A bank might only be willing to keep financial transactions, while another might only be willing to keep video-related stuff. Those specialized (and bigger) peers will be called notary, and they store information for many peers, which in turn may store their data in bigger notaries.
-Probably over time, the bigger notaries will only communicate directly with other big notaries and will not accept saving data of individuals. But because you will be saving your data to medium size notaries, and they use a bigger one, your data will eventually be copied to other places (if you keep personal todo list, there will not be that many copies, but if you keep monetary transactions, there will be MANY parties that will want to have a copy).
-And you may also use different peers for different tasks. By default you will share your data with 5 peers, but for some critical stuff (eg. financial transactions), you will ask some established notary financial peer to keep a copy of your data.
+- It will not be possible to delete the publication. (Prevention of censorshipr
 
-## Design principles
-As soon as there was digital data, there was a need to store it. File systems was the first bug jump in handlig big perstient data. Once you had data, you needed to a way to access itefficiently and remotly. SQL-based databases was another big jump forward.
-But SQL truned out to be slow and limitting. When your schema is hard coded in the table, it makes the system slow, complex and unfexible. It's very hard to fix stuff over time and you are stuck with obsolete system. 
-So MongoDB evolved. Where there is no static schema. You can throw in any data in any format, and it is up to the application to decide in run time how to "look" at the data.
-LIF is a similar approach to access and manipulate IPFS/blockchains.
-In LIF, anyone can throw any data to the network, no validation is done at the insertion point. Data is validated only when it actually used, and it is up to the data consumer to verify and validate the data. This approach to blockchain, completely changes the game. With current technology, any transcation, or chage to the blockcahin is slow and expensive (and get more expensive over time with the inflation of the currency. You need to pay increasing amouns of mining fees). With LIF, any transcation is super fast and without cost. We deffer the validation to the moment where data is actually used, and it is up the to the data consumer to validate it. 
-For each data-type used in LIF, there is a verfiy function, that is agreed by all, on the way to check if data si legit. Each application in LIF, can define any type of verify function. This flexibiity enables using LIF for almost any application and the protocol can evolve over time.
+- It will not be possible to change the publication. (Prevention of distortion)
 
-The key principlas:
-- Evolution (follow [Hola's DNA](https://hola.org/dna)
-- Designed for the masses (ease of use & fast)
-- Accessible with a browser
-- Anyone can push any data to the network
-- Data is never lost
-- Data is verifyed when used (not at inseretion point)
-- There is a HUGE incentives for the participants to know the most accurate status of the data
+- It will not be possible to publish in retrospect. (Prevention of time stamp forgery).
 
-## LIF Development Plan - From single mongo to a distributed one
-- Let's assume that there is only one LIF user and it is implemented with a local mongo server, and he use his browser to access it
-  He can store any data (json) and publish it with a verified signature. If he install a web server , he can publish it to the world. Anyone can view it and they can be sure that the user published that data (because he signed it; no one can fake his signature, using private/pulbic keys)
-- If the system is useful and another user (your friend) decides to use LIF and install his own server, and if you are doing some interaction together, then you will be interested in his data (eg. you use it to track expense/payments). 
-- How difficult is it to sync those two servers? Easy. Each user just needs to copy the other's JSON to his own server. It is just a simple copy of JSON (no complex merge. each one just writes his own JSONs. So you just need to copy the others)
-- LIF is now useful for those two users,and  more users are starting to use LIF (because you tell your friends) and different users interact with each other. You could still sync all the mongos, but you may not want to. You are just interested in the JSONs of the ones you interact with (and probably only the ones that are relevant for you and the other parties). So your server just sync the JSONs from all the parties you interact with it and only for transactions you care about (eg. he sent me money)
-- As LIF becomes more important to you (or your biz), you want to have a copy in a safe place. On the other hand, if more users are using LIF, there will be incentive for some organization to offer replication of local mongos and share it to the world. So if you are a small biz that uses LIF, you may want to replicate it to several places (eg. in US, Europe and Japan). let's call him "aggregator" (he may replicate JSON from thousand of users). 
-- another way to look at those "aggregators", is as a "notary" service. you use it as a service to write the JSON at a safe place (and it can be later used as a proof).
-- As more and more users start using LIF, there will be evolution of super notaries, that aggregate json of smaller notaries. Until eventually there will be some huge notaries (eg. Amazon, google, Akami etc). Note, you as well are small notary of your own transactions and the ones you interact with.
-- So as the network grows, and there are more and more interactions between users, and more and more aggregation of notaries, there is a big chance that your JSON will be found in many places.
-Eg. Let's assume you use LIF coins and you have interaction with a freelancer, both you and him will have copies of the transactions between you too. And both of you will publish it to some notaries. The freelancer may be working with an accountant and a lawyer, and they also will have copies of the freelancer transaction (and your transactions with the freelancer). They all save copies to some other notaries which in turn save it to some big ones. This way, your JSON will be propagated across the network and there will be many copies of it. Not only the transaction, but also supporting transactions (eg. receipts).
+- There will be certainty about the identity of the advertiser (can not be disputed that you are you)
 
-## How can you verify a transaction with LIF?
-- the key concept is that there are many copies of the transaction with many verified timestamps along the way from many notaries. and You can use those copies and timestamp to retrospectively rebuild a complete chain of logs of the transaction so you can verify it. You can construct a log that describes the complete history of that origin JSON (and may take time, but it is possible. All is public)
-- As example, let's first assume we have two PCs connected to each other and you connect wireshark on one of the network interfaces and capture all the TCP/IP packets that pass along the way. if you do it, you can retrospectively  follow the TPC/IP packets, recreate the tcp stream and know for 100% what traffic was sent, which connections, stream etc.
-- This RETROSPECTIVE review of the packets, is the key point for verification and trust in LIF. In the LIF network, each JSON is spread all over the network and you can use all the JSONs, and recreate chain of events to decide if a transaction happen, by whom and when. 
-- Can someone change your JSON? NO. Only you can sign your JSON.
-- Can someone change the order of your JSONs? NO, anyone can either have a copy or not.
-- Each user publishes a signed JSON sequentely (ie with timestamp). You can trust that this JSON was generated by a specific user. But you cannot trust the timestamp (i.e. order).
-  a user may fake and sign a fake timestamp). One of the options is that you may want to include in your important JSONs (eg. money transfer), some time stamps from trusted notary services. eg, you may ask your bank to sign a your json with timestamp and use that timestamp for the transaction. 
-- so how do you verify a transaction? in retrospective. when you want to check if a transaction is legit, you check all the available JSON and backtrace that transaction. Because there are copies in many places, you will be able to recreate it with high probability. you may be missing some JSONs, but usually each real transaction has indirect copies (eg, if you make a payment, there will be a record in the accounting, and you can use that timestamp to put a min/max time frame for your transaction). the information may not be complete, so at current time, the transaction might be considered valid. But over time, as more json are published and smarter verification checks evolve, you can improve your verification function. You will be able to decide if the transaction is valid or not. and it is up to you to decide if to trust it or not and how many checks and effort you want to put into it (for small transaction little, for buying a house alot)
-- as the usage of LIF increases, there will be some special services that evolve, to decide for you if a transaction is valid or not. and those services will gain trust over time. if for example, they will do a lousy job and verify transactions that they weren't supposed to verify, it will be found. because anyone can run the verification and publish that that service was wrong here. over time, there will be services you will gain more and more trust and you can just use those services instead of verifying yourself.
-- so at start, you may not be able to trust LIF, but over time, with evolution, it will become more and more trusted. And each party has a huge incentive to be trusted and trust the system.
-- there might be some cases where it will not be able to decide a conflict (I said I paid you, you claim I didn't). Those cases will be rare as the LIF network grows (because almost always you can recreate the history). And for those case, we will define some rules to resolve conflicts (eg. the JSON that has the maximum number of copies, the first to arrive a reputed notary, or other).  Similar things happen when a Football match ends with an even score, and you have rounds of direct-kicks (Pendel) to decide the winner.
-- One way to look at that, is that every user is a blockchain. if you don't put effort into publishing it to some reliable notaries, it's your problem. it will not get to anywhere and you may lose it. you need to put effort into making sure it arrives with some big blockchains.
 
-## What is ink/paper?
-Analogy of the real world to show effort. When you write a note to your friend, you will just use a piece of paper and a pen. If you want to show more effort, you may buy a special gift card. For money, governments use very expensive paper and ink.
-In LIF, ink/paper analogy is computational power. You solve a difficult puzzle to show you spent CPU time on it.
+In contrast to the traditional media that concentrates all its power and dictates the public agenda; in distributed media there are thousands of writers, hundreds of points of view. In decentralized media no group or elite will be able to decide that they want to hide information, or perform gross manipulations of reality.
 
-## How to handle spammers?
-in LIF,  bad nodes that send fake JSON (spammers), will hurt themself, because no one will trust them over time. As time passes, everyone can agree who is spammer. In retrospect, you can know who the spammer is, by going backwards and checking all his JSONs. Then some companies will start building lists of peers with bad reputation so you can easily block. or with good reputation so you can believe to that publisher.
+The result: a world where history cannot be rewritten, or the truth shelved!
 
-How to convert existing http services to LIF?
-There will be many channels with different topics. Every user will listen to the channel he is interested in.
-Some channels will be very efficient for small json, and some channels for videos.
+## LIF - Liberty Independence Freedom
+LIF is a completely new technology, offering a revolutionary direction and correction, of the limitations that exist in today's Internet and blockchain technologies. This is a Peer-to-Peer (P2P) Independent and Unopinionated network to incentivize trust between people. The technology will let every man declare and publicize anything to the whole public, in a way that no collective can modify, block or fake, and will provide trustable proof for declarant and timestamp.
 
-## How to implement Crypto currency with LIF?
-Crypto currency involved two main parts: mining new coins, and keeping ledger of transactions to decide who is the owner of the coins
-For mining, no need to invent new algorithms. Just copy an implementation from Bitcoin, Etherium or other. There will probably be multiple crypto currencies implementations over LIF. We call this writing notes with an expensive ink/paper.
-For the ledger of transactions, ie blockchain, we will just use the built “data twisting” feature of LIF. The initial owner is the one that has proof of work (expensive ink/paper), and the rest of the transactions (I paid you) is guaranteed in LIF, so no need for a explicit and expensive network-consensus blockchain. It’s built-in.
+LIF works like in real life. Within a short time, trust will be established in the truthfulness of the content of others' declarations, and for example merchants, who initially examined each other carefully, will later feel confident to operate within the network. As the belief in the immunity of declarations to rewrite is formed, trust will emerge, and the gate to a free economy and abundance will open. Preventing rewrites prevents fraudsters from retrospectively changing history and evading responsibility for their declarations.
 
-## How can anyone issue his own money?
-Anyone can issue his own coins. It’s value depends on the trust of others.
-For example, a group of poker players may decide to track poker game results using LIF to track who owns money to other players. As an alternative to notes. 
+## What makes LIF unique?
+How did the miracle happen, when millions of copies of the Torah scroll of the Jewish people were distributed all over the world, copied manually from generation to generation and 2000 years later, when the exiles from Yemen returned from Warsaw and America - the Torah scrolls in their hands remained the same?
 
-## How to implement email systems with LIF?
-Derry writes email (JSON) to LIF email channel.  Eden listen to the email channel. Eden will receive emails only from the users in his contacts.
-Eden will publish that he ignores emails from unknown sources. 
-if someone unknown really wants to send email to derry, he can still do it but he will have to use an expensive pen/paper (ie to invest computational power and solve a puzzle to provide it )
-this will get rid of spam problem. someone that really wants to contact you will have to spend some "money".
-your email will be encrypted with PGP, so no one can read them..
+How did it happen that a copy of the book of Isaiah from 2000 years ago, stored in the Qumran caves, was found to be identical to the one found in the Bible today?
 
-## How to implement file sharing with LIF?
-You publish JSON with BLOB that includes checksum of the video chunks. If you want to watch the video, you need to get the checksums, and then download the chunks using bittorrenttorrent/ipfs/other
+In order for the Torah to exist forever, and to be accurately transmitted, so that its data can not be distorted, rewritten or erased in retrospective content - not by any man, king, group or force - the Israelites created the first miraculous technology of its kind: interwoven declaration scrolls. This creates a scroll of scrolls, which are interwoven with other scroll of scrolls. Those again are woven into scrolls of scrolls of scrolls… repeated until all scrolls are woven into one single "mega scroll". The weaving locks the declarations in the scrolls, and provides them eternal durability. The people repeated the act of copying, storing, and distributing the copies over and over again, in order to unite the "Megillah Megillah" in the first woven mega scroll - the Torah, and later also the Jewish Bible, which survived over 3000 years in its entirety! Over 1.2MB of data! No other ancient dataset of this gigantic size survived perfectly byte-by-byte so years, but for the people of eternity it worked!
 
-## How to validate a blockchain?
-XXX: TODO
-The main parts are retrospective review of the data and publication of the functions.
-In today’s blockchain technology, you must resolve all conflicts and agree on the transaction before closing the block, and achieving network consensus. With LIF, you can defer this validation to later on. 
+LIF imitates this ancient method in the modern computing world. Just like biological imitation engineering: Modern aircraft wing designs imitate bird wings.
 
-## How to resolve conflicts (Conflict Resolution Algorithm)?
-XXX TODO
+LIF is re-implementing this technology, with modern computing: scrolling, ink, scrolling, authentication and time stamping for their digital counterparts: digital scrolls, digital ink (suitable for digital wallet), digital scrolling that opens with inter-scrolling, time stamp by time proof. All in order to ensure that the declarations published in LIF will not be demolished, corrupted or deleted - in fact, LIF guarantees the eternity of the Torah for every declaration that is published in it.
 
-## How to find other peers?
-XXX TODO - there are P2P protocols that already solved this problem (eg. DHT)
+## What is the difference between LIF and Blockchain?
+Blockchain was the first to create a trusted and eternal public database. It works, but has huge problems that prevent it to be able to host "the Internet". Blockchains are extremely slow, because every transaction declared requires reaching a consensus of all network members, on the truths of the facts within the declaration. This is their "legal system", which is decided by PoW methods (and other blockchains by PoS method and other decision methods). Legal systems are notoriously slow and expensive, and it is common that an argument over a dollar, ends up costing judicial time and legal expenses of thousands of dollars. In Bitcoin for example, like any legal system, the process of reaching a consensus and a decision involves the work of hundreds of thousands of mining computer "judges", working hard for 10 minutes (up to even an hour!) to decide who the true single owner of a specific dollar. Blockchains today consume 0.6% of the global electricity - more electricity than Argentina!
 
-## How to query for data?
-XXX TODO:
-We will have several indexes to find transactions per subject (eg. financial, dns, etc)
-Need way to find blocks of specific person
+Therefore it is not useful and cannot be effectively implemented for other uses and applications, other than currency (which, too, the masses cannot use due to the high operating fees for each operation).
 
-## What is the difference between Notary Peer and other Peers?
-XXX TODO:
+Blockchain is a democracy, in which one strives to reach the consensus of the majority, that is, a dictatorship at the end of which the majority imposes its beliefs on the minority. Any majority of more than 50% can prevent you from entering data, or even changing the rules of the network.
 
-## How does LIF work underneath?
-XXX TODO:
+The LIF network deals with freedom. Anyone can make declarations (money transfers, and equally uploading live videos of cute cats…). LIF only makes sure, with the help of the intertwined declaration scrolls method of the Bible - that no one will be able to change the data of your declarations and your signature.
 
-## Use cases
-- **Social Apps:** If you ever used Facebook, you know how annoying, misleading and wrong are the Fact-checkers (Ugh!). Imagine that Facebook data was saved on LIF and anyone could have developed a Facebook-reader application to show the data. A few users would like to have today's censored (fact-checkers) kind of application. Parents may decide to have an app to hide adult content, while free pepole will choose one that doesn't censoer. Up to you. Remeber Parler that was brought down and all data was erased - It coud never happen with LIF!
-- **Crypto currency:** Today, your money is not realy yours (if you could really call FIAT money "money"...). What if you could use a currency which is not fake (like all government money). What if you could issue your own money? What if no one could "steal" your money. With LIF, it is possible!
-- **Voting system:** Do you trust "Big Brother" votings? Have you ever waching a TV show where the audience votes, and you were sure the the production faked the votes? Are you sure your country voting is legit? Some in the US aren't.... A voting system leverging on the LIF protocaol CAN be trusted by all!
-- **DNS:** Today, it's very easy to block and censore any site. In fact, all the countries in the world are doing it all the time. With LIF, you can create a site that can never be taken down.
-- **Online Passport:**
-- Any any application that rely on trust between 2 pepole or more
+Question: If anyone can declare anything - how can I trust the person who declares that he handed me 10 coins, that indeed these coins were his?
+
+Answer: "Buyer beware": the recipient accepting the digital asset must validate the transaction is valid before accepting the digital asset as valid payment. It is the responsibility of the recipient of the virtual coins to make sure that they are not counterfeit. In the physical world this responsibility is now expressed in checking banknotes to make sure they are not counterfeit when purchasing products in a store, and in the Bible in weighing the silver coins when purchasing a tomb cave.
+
+In LIF, the recipient of the coins must check the historical chain of money transfer declarations in the financial scrolls, and make sure that everything is in order in the chain of transfer of ownership of the coins from the moment they are created until today. If the chain of ownership is proper in the eyes of the buyer, then he will believe the declaration of transfer of the coins, and will agree to give an asset, product or service in return. But if he does not believe and thinks that the coins are not owned by the seller - the buyer will simply ignore the declaration of transfer of coins. The responsibility for review lies with the beneficiary of the declaration, and not with the declarant or a judicial decision-making system.
+
+LIF is independent, unopinionated. The system is not judgmental and does not try to reach a consensus among users, or a decision. The system leaves the decision to each and every user according to his worldview and does not perform a judgment process of the validity of the data.
+
+Just as the attempts to falsify the books of the Bible were retaliated against by the wisdom of the masses, so too the decision on the validity and credibility of the data in the LIF will be made retrospectively by the users of the data. , And whoever is exposed to the data, will decide according to his understanding and beliefs, whether to trust you or not. The LIF network is a platform that will not waste energy for verification and voting processes as in the blockchain. The limitations that exist in today's Internet and blockchain technologies.
+
+## LIF development technical details
+LIF is a P2P protocol developed in open source, distributed and censorship-resistant, with JS API to read and write JSON declarations to be stored in scrolls, and distributed and woven with peer scrolls. The code will run on the browser and NodeJS.
+
+This project will be evolutionary and will be run according to the DNA principles created by Derry Shribman, which were the foundation for the success of Hola, Luminati, WebSpark.
+
+In computer communication networks, peer-to-peer network (Peer to Peer or P2P for short), is a communication network in which each of the ends, functions both as a customer and as a server, and each of the ends is able to initiate or end a call and provide or demand services.
+
+Colleagues make available to other network participants some of their resources, such as processing power, disk storage, or network bandwidth, without the need for central coordination by servers or stable hosts. In return, they gain access to their files on other users' computers.
+
+The network functions in a decentralized manner, without the need for mediation or dependence on any major factor. Fellows are participants with equal rights and equal abilities in implementation.
 
 ## Current state of LIF
 
@@ -226,17 +108,7 @@ If you want to modify - no problem!
 
 ## Get involved
 
-We are just starting up, and you are invited to join!
-
-## Related technologies:
-LIF is based on **AMAZING*** ideas from many open source projects. To name a few:
-- [IPFS](https://raw.githubusercontent.com/ipfs/ipfs/)
-- [MongoDB](https://github.com/mongodb/)
-- [Namecoin](https://www.namecoin.org/)
-- [Ethernium](https://github.com/ethereum)
-- [BitCoin](https://github.com/bitcoin)
-- [MongoDB](https://github.com/mongodb/)
-- [GIT](https://github.com/git)
+We are just starting up, and you are invited to join@lif.zone
 
 ## Installation
 
