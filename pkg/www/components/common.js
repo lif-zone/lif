@@ -96,7 +96,8 @@ export class Footer extends Component {
 	    <h3>{t('common:help_h')}</h3>
 	    <div className="text-xl">
 	      <Trans t={t} i18nKey='common:help_p'/>
-	      <div className="float-right">
+	      <div>
+		<a href="mailto:join@lif.zone">join@lif.zone</a>
 		<bdo dir="ltr">
 		  <a href="https://github.com/lif-zone/lif"
 		    className="text-white hover:text-white items-center text-lg
@@ -106,9 +107,6 @@ export class Footer extends Component {
 		    GitHub
 		  </a>
 		</bdo>
-	      </div>
-	      <div>
-		<a href="mailto:join@lif.zone">join@lif.zone</a>
 	      </div>
 	    </div>
 	    <Contact_us t={t}/>
