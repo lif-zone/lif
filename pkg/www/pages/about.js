@@ -14,8 +14,7 @@ export default function Home(){
     return (
       <Layout>
         <div className="max-w-6xl mx-auto px-6">
-          <h3 className="pb-6">{t('title')}</h3>
-	  <div className="max-w-3xl">
+	  <div className="max-w-3xl pt-3">
 	    <Video num={1}/>
 	  </div>
           <div>

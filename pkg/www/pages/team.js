@@ -13,11 +13,8 @@ export default function Home(){
     const {t} = useTranslation('team');
     return (
       <Layout>
-	<div className="max-w-6xl mx-auto p-6">
-	  <h3>{t('title')}</h3>
-        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
-          sm:grid-cols-2 p-6 pt-0 pb-0">
+          sm:grid-cols-2 p-6 pt-3 pb-0">
           <div id="derry">
             <p><img src="/img/derry.jpg" className="w-100"/></p>
             <h3>{t('derry_h')}</h3>
