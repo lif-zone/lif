@@ -131,14 +131,14 @@ export default function Home(){
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
           sm:grid-cols-2 px-6 mt-6">
           <div className="mb-6">
-            <Link href="/team"><a className="text-lif-main">
+            <Link href="/team#derry"><a className="text-lif-main">
 	      <p><img src="/img/derry.jpg" className="w-100"/></p>
 	      <h3 className="pt-2">{t('derry_h')}</h3>
 	      <p>{t('derry_p')}</p>
             </a></Link>
           </div>
           <div className="mb-6">
-            <Link href="/team"><a className="text-lif-main">
+            <Link href="/team#moshe"><a className="text-lif-main">
 	      <p><img src="/img/moshe.jpg" className="w-100"/></p>
 	      <h3 className="pt-2">{t('moshe_h')}</h3>
 	      <p>{t('moshe_p')}</p>
