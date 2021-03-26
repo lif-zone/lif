@@ -111,14 +111,20 @@ export default function Home(){
 	    <p><Trans t={t} i18nKey='sec2_box'/></p>
           </div>
 	</div>
-	<div className="max-w-6xl mx-auto px-6 mt-6">
-          <bdo dir="ltr">
-	    <p><Link href="/about"><a>{t('link')}</a></Link></p>
-          </bdo>
-	  <p><Link href="/about#sec2"><a>{t('link2')}</a></Link></p>
-	  <p><Link href="/about#sec3"><a>{t('link3')}</a></Link></p>
-	  <p><Link href="/about#sec4"><a>{t('link4')}</a></Link></p>
-	  <p><Link href="/team"><a>{t('link5')}</a></Link></p>
+	<div className="max-w-6xl mx-auto px-6 mt-6 grid sm:grid-cols-2 mt-10">
+	  <div>
+            <p>{t('scroll_desc')}</p>
+	    <img src="/img/scroll.jpg" style={{width: '30rem'}}/>
+	  </div>
+	  <div className="max-w-6xl mx-auto px-6">
+	    <bdo dir="ltr">
+	      <p><Link href="/about"><a>{t('link')}</a></Link></p>
+	    </bdo>
+	    <p><Link href="/about#sec2"><a>{t('link2')}</a></Link></p>
+	    <p><Link href="/about#sec3"><a>{t('link3')}</a></Link></p>
+	    <p><Link href="/about#sec4"><a>{t('link4')}</a></Link></p>
+	    <p><Link href="/team"><a>{t('link5')}</a></Link></p>
+	  </div>
 	</div>
       </div>
       <Footer contact_us={true} t={t}/>
