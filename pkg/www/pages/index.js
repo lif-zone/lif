@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
-import {Footer, Video, Contact_us} from '../components/common.js';
+import {Footer, Video, Contact_us, Primary_button} from '../components/common.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
@@ -34,9 +34,16 @@ const Home_first = ()=>{
           <Video num={0}/>
 	</div>
         <div className="px-6">
-	  <div className="mt-6">
-	    <p><Link href="#contact_us"><a>{t('common:want_to_reg')}</a></Link></p>
-	    <p><Link href="#contact_us"><a>{t('common:want_to_help')}</a></Link></p>
+	  <div className="mt-6" style={{lineHeight: '4rem'}}>
+            <span className="pe-3"><Link href="/about">
+	      <a><Primary_button>{t('faq')}</Primary_button>
+	    </a></Link></span>
+            <span className="pe-3"><Link href="/team">
+	      <a><Primary_button>{t('team')}</Primary_button>
+	    </a></Link></span>
+            <span className="pe-3"><Link href="/#contact_us">
+	      <a><Primary_button>{t('join')}</Primary_button>
+	    </a></Link></span>
 	  </div>
 	</div>
       </div>
