@@ -8,11 +8,7 @@ import {use_app_context} from '../utils/context.js';
 import {use_outside_alerter} from '../utils/react.js';
 import {useCookies} from 'react-cookie';
 import {useRouter} from 'next/router';
-import ReactGA from 'react-ga';
 import {useTranslation} from 'next-i18next';
-
-// XXX: move to proper init section
-ReactGA.initialize('G-94G7HR3TVG');
 
 const classes = {
     popup_link: `font-semibold text-gray-500 text-opacity-75
@@ -25,7 +21,7 @@ const select_lang = (l, router, setCookie)=>{
   setCookie('NEXT_LOCALE', l);
   router.push(router.route, router.route, {locale: l});
 };
- 
+
 const Lang_selector = ()=>{
     const setCookie = useCookies([])[1];
     const {locale, locales} = useRouter();
@@ -95,15 +91,19 @@ const Header_small = ()=>{
       </bdo>;
 };
 
+let google_analytics = `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-94G7HR3TVG');`;
+
 export default function Layout({children}){
-  useEffect(function mount(){
-    // XXX: mv to right place to track page navigation
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  });
   const {direction} = use_app_context();
   return (
     <div dir={direction||'ltr'} className="min-h-screen">
       <Head>
+        <script async
+          src="https://www.googletagmanager.com/gtag/js?id=G-94G7HR3TVG"/>
+        <script dangerouslySetInnerHTML={{__html: google_analytics}} />
         <meta charSet="UTF-8"/>
         <title>LIF - Liberty Independence Freedom - חירות עצמאות חופש
         </title>
