@@ -102,7 +102,7 @@ export default function Layout({children}){
   });
   const {direction} = use_app_context();
   return (
-    <div dir={direction||'ltr'}>
+    <div dir={direction||'ltr'} className="min-h-screen">
       <Head>
         <meta charSet="UTF-8"/>
         <title>LIF - Liberty Independence Freedom - חירות עצמאות חופש
@@ -115,7 +115,7 @@ export default function Layout({children}){
 	  'height=device-height, initial-scale=1.0, minimum-scale=1.0'}/>
       </Head>
       <Header_small/>
-      <div>{children}</div>
+      {children}
     </div>
   );
 }
