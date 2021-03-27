@@ -49,7 +49,7 @@ services:
       - mongoku
     command: npm run start:www_dev
     ports:
-      - 3100:80
+      - 3100:3100
     volumes:
       - ./:/usr/src/www/
       - /usr/src/www/node_modules
