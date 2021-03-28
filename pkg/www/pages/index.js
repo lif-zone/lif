@@ -50,6 +50,7 @@ export const getStaticProps = ({locale})=>etask(function*(){
     return {props};
 });
 
+// XXX: implement contact us popup and move to common.js
 class Modal extends Component {
   state = {closed: true};
   render(){
