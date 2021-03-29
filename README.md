@@ -191,6 +191,9 @@ $ code
 // to install vim plugin: View --> Extensions
 // search for vim, select and install it
 // restart VisualStudio 
+// go to File --> Prefrences --> Settings
+// click on json icon to edit the setting (3rd icon on top-right) and add
+"vim.useSystemClipboard": true
 
 ## Development Process
 
