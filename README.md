@@ -179,6 +179,18 @@ $ docker-compose up -d www_dev
 
 The site will be running at [http://localhost:3100](http://localhost:3100).
 
+## Install Visual Studio
+Download deb file from https://code.visualstudio.com/download
+```
+// change deb file name to the one you downloaded
+$ sudo dpkg -i code_1.54.3-1615806378_amd64.deb
+// to start Visual Studio
+$ code
+// select from welcome screen "clone repository..."
+// set github: https://github.com/lif-zone/lif.git
+// to install vim plugin: View --> Extensions
+// search for vim, select and install it
+
 ## Development Process
 
 SOON...
@@ -194,4 +206,5 @@ SOON...
 ## FAQ
 
 SOON...
+
 
