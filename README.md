@@ -190,6 +190,7 @@ $ code
 // set github: https://github.com/lif-zone/lif.git
 // to install vim plugin: View --> Extensions
 // search for vim, select and install it
+// restart VisualStudio 
 
 ## Development Process
 
