@@ -8,10 +8,10 @@ module.exports = {
         // localeDetection: true,
     },
     localePath: path.resolve('./pkg/www/public/locales/'),
-    localeExtension: 'json',
+    localeExtension: 'json6',
     serializeConfig: false,
     backend: {
-        loadPath: './pkg/www/public/locales/{{lng}}/{{ns}}.json',
+        loadPath: './pkg/www/public/locales/{{lng}}/{{ns}}.json6',
         parse: function(data, path){
             try {
                 return json6.parse(data);
