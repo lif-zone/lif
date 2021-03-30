@@ -76,7 +76,7 @@ export default function Home(){
     <Layout title={t('title')} desc={t('title2')}
       image={direction=='rtl' ?
 	'https://lif.zone/img/hah.jpg' :
-	'https://lif.zone/img/lif.jpg'}>
+	'https://lif.zone/img/lif_logo.jpg'}>
       <Home_first/>
       <div>
 	<div className="max-w-6xl mx-auto px-6">
