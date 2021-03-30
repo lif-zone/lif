@@ -96,8 +96,9 @@ let google_analytics = `window.dataLayer = window.dataLayer || [];
   gtag('js', new Date());
   gtag('config', 'G-94G7HR3TVG');`;
 
-export default function Layout({children}){
+export default function Layout({title, children}){
   const {direction} = use_app_context();
+  title = title || 'LIF - Liberty Independence Freedom - חירות עצמאות חופש';
   return (
     <div dir={direction||'ltr'} className="min-h-screen">
       <Head>
@@ -105,9 +106,8 @@ export default function Layout({children}){
           src="https://www.googletagmanager.com/gtag/js?id=G-94G7HR3TVG"/>
         <script dangerouslySetInnerHTML={{__html: google_analytics}} />
         <meta charSet="UTF-8"/>
-        <title>LIF - Liberty Independence Freedom - חירות עצמאות חופש</title>
-        <meta property="og:title"
-	  content="LIF - Liberty Independence Freedom - חירות עצמאות חופש"/>
+        <title>{title}</title>
+        <meta property="og:title" content={title}/>
         <meta property="og:url" content="https://lif.zone"/>
         <link rel="icon" href="/img/favicon.svg"/>
         <link rel="stylesheet" type="text/css"
