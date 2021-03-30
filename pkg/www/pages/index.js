@@ -106,7 +106,7 @@ export default function Home(){
 	  <p><Trans t={t} i18nKey='sec2_p8'/></p>
 	  <Trans t={t} i18nKey='sec2_p9'/>
           {t('sec2_p10')!='' &&
-	  <p><Trans t={t} i18nKey='sec2_p10'/>}</p>}
+	  <p><Trans t={t} i18nKey='sec2_p10'/></p>}
 	  {t('sec2_p11')!='' &&
 	  <Trans t={t} i18nKey='sec2_p11'/>}
 	  {t('sec2_p12')!='' &&
