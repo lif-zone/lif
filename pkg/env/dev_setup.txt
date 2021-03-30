@@ -82,10 +82,9 @@ ubuntu 20 On VirtualBox 6.1 on Windows
   $ git config --global user.email "xxderry@gmail.com"
   $ git config --global credential.helper 'store'
 
-Running apps aliases
---------------------
-- Chrome alias: gc
-- GVIM alias: g
+Running apps
+------------
+- Chrome: google-chrome </dev/null 1>&0 2>&0
 
 vimrc sw=2
 tw=80
