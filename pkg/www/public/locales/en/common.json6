@@ -1,26 +1,26 @@
 {
-   en_he_link: "עברית",
-   help_h: `Want to take part in creating LIF?`,
-   help_p: `<p>LIF is in the very early stages of formation. We are still
-       defining the main parts of the network, how it will work and the API.
-       We're just getting started, and you're welcome to join!</p>
-       <p>If you are an entrepreneur and start-up person, who wants us to
-       share with you ideas for startups that can be developed on the LIF
-       network, contact us!</p><p>If you are a startupist, investor and
-       venture capitalist, programmer, techie, product manager, graphic
-       designer, production person, photographer, translator and more and
-       think you can join LIF's Freedom Startup, contact us!</p>
-       <p>If you are intellectuals, freedom activists, opinion leaders,
-       ideologues, strategists, PR and media, technical reporters and more
-       - who want to help build LIF and spread the idea, contact us!</p>`,
-   "contact_us": "Contact us",
-   "name": "Name",
-   "email": "Email",
-   "phone": "Phone",
-   "send": "Send",
-   "what_i_can_do": "What do I want to do? (Free text box)",
-   "thank_you_will_get_back_to_you_soon": "Thank you. We will contact you soon.",
-   "thank_you_error": "There was a problem. Please reach us at join@lif.zone",
-   "want_to_help": "Take part creating LIF!",
-   "want_to_reg": "Be the first to use LIF!"
+en_he_link: `עברית`,
+help_h: `Want to take part in creating LIF?`,
+help_p: `<p>LIF is in the very early stages of formation. We are still
+defining the main parts of the network, how it will work and the API.
+We're just getting started, and you're welcome to join!</p>
+<p>If you are an entrepreneur and start-up person, who wants us to
+share with you ideas for startups that can be developed on the LIF
+network, contact us!</p><p>If you are a startupist, investor and
+venture capitalist, programmer, techie, product manager, graphic
+designer, production person, photographer, translator and more and
+think you can join LIF's Freedom Startup, contact us!</p>
+<p>If you are intellectuals, freedom activists, opinion leaders,
+ideologues, strategists, PR and media, technical reporters and more
+- who want to help build LIF and spread the idea, contact us!</p>`,
+contact_us: `Contact us`,
+name: `Name`,
+email: `Email`,
+phone: `Phone`,
+send: `Send`,
+what_i_can_do: `What do I want to do? (Free text box)`,
+thank_you_will_get_back_to_you_soon: `Thank you. We will contact you soon.`,
+thank_you_error: `There was a problem. Please reach us at join@lif.zone`,
+want_to_help: `Take part creating LIF!`,
+want_to_reg: `Be the first to use LIF!`
 }
