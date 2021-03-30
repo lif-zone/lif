@@ -12,15 +12,16 @@ export const getStaticProps = ({locale})=>etask(function*(){
 export default function Home(){
     const {t} = useTranslation('about', 'common');
     return (
-      <Layout>
+      <Layout title={t('title')} desc={t('title2')}
+        image="https://lif.zone/img/moshe.jpg">
         <div className="max-w-6xl mx-auto px-6">
+          <h3>{t('title')}</h3>
 	  <div className="max-w-3xl pt-3">
 	    <Video num={1}/>
 	  </div>
+          <h3>{t('title2')}</h3>
           <div>
-            <bdo dir="ltr">
-  	      <h3><Trans t={t} i18nKey="sec_h"/></h3>
-            </bdo>
+	    <h3><Trans t={t} i18nKey="sec_h"/></h3>
 	    <p><Trans t={t} i18nKey="sec_p"/></p>
 	    <p><Trans t={t} i18nKey="sec_p2"/></p>
 	  </div>

@@ -96,11 +96,11 @@ let google_analytics = `window.dataLayer = window.dataLayer || [];
   gtag('js', new Date());
   gtag('config', 'G-94G7HR3TVG');`;
 
-export default function Layout({title, children, path}){
+export default function Layout({title, children, desc, image}){
   const {direction} = use_app_context();
   title = title || 'LIF - Liberty Independence Freedom - חירות עצמאות חופש';
-  let url = 'https://lif.zone'+(typeof location!='undefined' ?
-    location.pathname : path ? path : '/');
+  const router = useRouter();
+  let url = 'https://lif.zone/'+router.locale+router.pathname;
   return (
     <div dir={direction||'ltr'} className="min-h-screen">
       <Head>
@@ -110,7 +110,9 @@ export default function Layout({title, children, path}){
         <meta charSet="UTF-8"/>
         <title>{title}</title>
         <meta property="og:title" content={title}/>
+        <meta property="og:description" content={desc}/>
         <meta property="og:url" content={url}/>
+        <meta property="og:image" content={image}/>
         <link rel="icon" href="/img/favicon.svg"/>
         <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800"/>

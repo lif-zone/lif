@@ -12,9 +12,13 @@ export const getStaticProps = ({locale})=>etask(function*(){
 export default function Home(){
     const {t} = useTranslation('team');
     return (
-      <Layout>
+      <Layout title={t('title')} desc={t('title2')}
+        image="https://lif.zone/img/moshe.jpg">
+        <div className="max-w-6xl mx-auto sm:gap-x-12 p-6 pb-0">
+          <h3>{t('title')}</h3>
+        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
-          sm:grid-cols-2 p-6 pb-0">
+          sm:grid-cols-2 px-6 py-0 ">
           <div id="derry">
             <p><img src="/img/derry.jpg" className="w-100 pt-10"/></p>
             <h3>{t('derry_h')}</h3>
@@ -31,6 +35,12 @@ export default function Home(){
 	    <p>{t('moshe_p2')}</p>
 	    <p>{t('moshe_p3')}</p>
           </div>
+        </div>
+        <div className="max-w-6xl mx-auto sm:gap-x-12 p-6 pb-0">
+          <h3>{t('title2')}</h3>
+        </div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:gap-x-12
+          sm:grid-cols-2 px-6 py-0 ">
           <div id="lior">
             <p><img src="/img/lior.jpg" className="w-100 pt-10"/></p>
             <h3>{t('lior_h')}</h3>

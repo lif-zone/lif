@@ -5,6 +5,7 @@ import {Footer, Video, Contact_us, Primary_button} from '../components/common.js
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
+import {use_app_context} from '../utils/context.js';
 
 const Home_first = ()=>{
     const {t} = useTranslation('homepage')
@@ -70,8 +71,12 @@ class Modal extends Component {
 
 export default function Home(){
   const {t} = useTranslation('homepage', 'common');
+  const {direction} = use_app_context();
   return (
-    <Layout>
+    <Layout title={t('title')} desc={t('title2')}
+      image={direction=='rtl' ?
+	'https://lif.zone/img/hah.png' :
+	'https://lif.zone/img/lif.png'}>
       <Home_first/>
       <div>
 	<div className="max-w-6xl mx-auto px-6">
@@ -99,7 +104,7 @@ export default function Home(){
 	  <p><Trans t={t} i18nKey='sec2_p6'/></p>
 	  <p><Trans t={t} i18nKey='sec2_p7'/></p>
 	  <p><Trans t={t} i18nKey='sec2_p8'/></p>
-	  <p><Trans t={t} i18nKey='sec2_p9'/></p>
+	  <Trans t={t} i18nKey='sec2_p9'/>
           {t('sec2_p10')!='' &&
 	  <p><Trans t={t} i18nKey='sec2_p10'/>}</p>}
 	  {t('sec2_p11')!='' &&
@@ -120,9 +125,7 @@ export default function Home(){
             </a></Link>
 	  </div>
 	  <div className="max-w-6xl">
-	    <bdo dir="ltr">
-	      <p><Link href="/about"><a>{t('link')}</a></Link></p>
-	    </bdo>
+	    <p><Link href="/about"><a>{t('link')}</a></Link></p>
 	    <p><Link href="/about#sec2"><a>{t('link2')}</a></Link></p>
 	    <p><Link href="/about#sec3"><a>{t('link3')}</a></Link></p>
 	    <p><Link href="/about#sec4"><a>{t('link4')}</a></Link></p>
