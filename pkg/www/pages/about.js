@@ -19,9 +19,8 @@ export default function Home(){
 	  <div className="max-w-3xl pt-3">
 	    <Video num={1}/>
 	  </div>
-          <h3>{t('title2')}</h3>
           <div>
-	    <h3><Trans t={t} i18nKey="sec_h"/></h3>
+	    <h3>{t('title2')}</h3>
 	    <Trans t={t} i18nKey="sec_p"/>
            {t('sec_p2')!='' && <p><Trans t={t} i18nKey="sec_p2"/></p>}
 	  </div>
