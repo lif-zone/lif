@@ -114,6 +114,7 @@ export default function Layout({title, children, desc, image}){
         <meta property="og:url" content={url}/>
         <meta property="og:image" content={image}/>
         <meta property="og:type" content="website"/>
+        <meta property="og:updated_time" content="2021-03-30T14:38:00-00:00"/>
         <link rel="icon" href="/img/favicon.svg"/>
         <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800"/>
