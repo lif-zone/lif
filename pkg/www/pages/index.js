@@ -5,7 +5,6 @@ import {Footer, Video, Contact_us, Primary_button} from '../components/common.js
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
-import {use_app_context} from '../utils/context.js';
 
 const Home_first = ()=>{
     const {t} = useTranslation('homepage')
@@ -71,12 +70,9 @@ class Modal extends Component {
 
 export default function Home(){
   const {t} = useTranslation('homepage', 'common');
-  const {direction} = use_app_context();
   return (
     <Layout title={t('title')} desc={t('title2')}
-      image={direction=='rtl' ?
-	'https://lif.zone/img/hah.jpg' :
-	'https://lif.zone/img/lif_logo.jpg'}>
+      image="https://lif.zone/img/lif_logo.jpg">
       <Home_first/>
       <div>
 	<div className="max-w-6xl mx-auto px-6">
