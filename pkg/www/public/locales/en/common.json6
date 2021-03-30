@@ -22,5 +22,5 @@ what_i_can_do: `What do I want to do? (Free text box)`,
 thank_you_will_get_back_to_you_soon: `Thank you. We will contact you soon.`,
 thank_you_error: `There was a problem. Please reach us at join@lif.zone`,
 want_to_help: `Take part creating LIF!`,
-want_to_reg: `Be the first to use LIF!`
+want_to_reg: `Be the first to use LIF!`,
 }
