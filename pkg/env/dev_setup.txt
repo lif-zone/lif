@@ -2,13 +2,6 @@ git quickstart
 --------------
 - Checkout
   $ git clone https://github.com/lif-zone/lif.git
-- Prepare diff tool:
-  git config --global diff.tool gvimdiff
-  git config --global merge.tool gvimdiff
-- Prepare 'write access'
-  git config --global user.name xderry
-  git config --global user.email "xxderry@gmail.com"
-  git config --global credential.helper 'store'
 - modification steps
   before modifing, get your checkout up-to-date
   $ git pull
@@ -22,13 +15,15 @@ git quickstart
   $ git difftool
   $ git mergetool
 
-NodeJS setup
-------------
+LIF www setup
+-------------
 - Installation
-  # npm install
+  ~/lif$ npm install
 - To run the server locally
-  # npm run start:www_dev
-  after that, you can access it locally on http://localhost
+  ~/lif$ npm run start:www_dev
+  after that, you can access it locally on http://localhost:3100
+  first time it will take ~20 seconds to load the page (since it needs to
+  build the webpack)
 
 GVIM
 ----
@@ -46,13 +41,22 @@ ubuntu 20 On VirtualBox 6.1 on Windows
   Networt -> Adapter -> Attached to: NAT
 - Power on the VM:
   login ubuntu pass ubuntu
+- Ubuntu settings: disable screen saver:
+  Settings -> Privacy -> Screen Lock:
+  Blank Screen Delay: Never
+  Automatic Screen Lock: OFF
+  Lock Screen on Suspend: OFF
+- Install packages
+  $ sudo bash
+  # apt update
+  # apt install virtualbox-guest-dkms
+  and restart the VM
   open terminal (UI)
   $ sudo bash
   # apt update
   # apt install virtualbox-guest-dkms
   and restart the VM
-  # apt install vim-gtk git
-  # apt install gcc make perl
+  # apt install vim-gtk git gcc make perl npm nodejs eslint curl net-tools
   # adduser derry
   log in as derry
   $ add ~/.bashrc_derry
@@ -62,4 +66,29 @@ ubuntu 20 On VirtualBox 6.1 on Windows
   Blank Screen Delay: Never
   Automatic Screen Lock: OFF
   Lock Screen on Suspend: OFF
+- Install Chrome
+  dpkg -i google-chrome-stable_current_amd64.deb
+- Installing NodeJS 14
+  $ curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+  $ sudo apt-get install -y nodejs
+- VIM setup
+  $ cp vimrc ~/.vimrc
+- GIT setup
+  Prepare diff tool:
+  $ git config --global diff.tool gvimdiff
+  $ git config --global merge.tool gvimdiff
+  Prepare 'write access'
+  $ git config --global user.name xderry
+  $ git config --global user.email "xxderry@gmail.com"
+  $ git config --global credential.helper 'store'
+
+Running apps aliases
+--------------------
+- Chrome alias: gc
+- GVIM alias: g
+
+vimrc sw=2
+tw=80
+color col 80
+nowrap
 
