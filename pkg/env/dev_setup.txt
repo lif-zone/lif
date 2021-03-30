@@ -34,6 +34,7 @@ GVIM
 ----
 - setup:
   $ cp vimrc ~/.vimrc
+- hebrew editing: CTRL-H flips LTR<->RTL
 
 ubuntu 20 On VirtualBox 6.1 on Windows
 --------------------------------------
