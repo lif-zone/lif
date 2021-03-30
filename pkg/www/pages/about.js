@@ -22,8 +22,8 @@ export default function Home(){
           <h3>{t('title2')}</h3>
           <div>
 	    <h3><Trans t={t} i18nKey="sec_h"/></h3>
-	    <p><Trans t={t} i18nKey="sec_p"/></p>
-	    <p><Trans t={t} i18nKey="sec_p2"/></p>
+	    <Trans t={t} i18nKey="sec_p"/>
+           {t('sec_p2')!='' && <p><Trans t={t} i18nKey="sec_p2"/></p>}
 	  </div>
           <div id="sec2">
 	    <h3><Trans t={t} i18nKey="sec2_h"/></h3>
