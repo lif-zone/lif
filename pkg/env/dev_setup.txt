@@ -1,0 +1,64 @@
+git quickstart
+--------------
+- Checkout
+  $ git clone https://github.com/lif-zone/lif.git
+- Prepare diff tool:
+  git config --global diff.tool gvimdiff
+  git config --global merge.tool gvimdiff
+- Prepare 'write access'
+  git config --global user.name xderry
+  git config --global user.email "xxderry@gmail.com"
+  git config --global credential.helper 'store'
+- modification steps
+  before modifing, get your checkout up-to-date
+  $ git pull
+  to commit locally, and then push to server:
+  $ git commit -a
+  $ git push
+- diff vs local
+  $ git diff
+  $ git diff --merge-base
+  use gvimdiff:
+  $ git difftool
+  $ git mergetool
+
+NodeJS setup
+------------
+- Installation
+  # npm install
+- To run the server locally
+  # npm run start:www_dev
+  after that, you can access it locally on http://localhost
+
+GVIM
+----
+- setup:
+  $ cp vimrc ~/.vimrc
+
+ubuntu 20 On VirtualBox 6.1 on Windows
+--------------------------------------
+- install VirtualBox 6.1 (I have 6.1.16)
+  https://www.linuxvmimages.com/images/ubuntu-2004/#ubuntu-20042-lts
+- unzip, and then double-click to create out of it the image
+- VM settings of the image:
+  General -> Advanced -> Clipboard: bidir. Drag&Drop: bidir
+  Networt -> Adapter -> Attached to: NAT
+- Power on the VM:
+  login ubuntu pass ubuntu
+  open terminal (UI)
+  $ sudo bash
+  # apt update
+  # apt install virtualbox-guest-dkms
+  and restart the VM
+  # apt install vim-gtk git
+  # apt install gcc make perl
+  # adduser derry
+  log in as derry
+  $ add ~/.bashrc_derry
+  # vi /etc/group :%s/.ubuntu/\0,derry/gc (add derry to sudo admin group)
+- Ubuntu settings: disable screen saver:
+  Settings -> Privacy -> Screen Lock:
+  Blank Screen Delay: Never
+  Automatic Screen Lock: OFF
+  Lock Screen on Suspend: OFF
+

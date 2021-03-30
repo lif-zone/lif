@@ -1,0 +1,8 @@
+function Rightleft_flip()
+  if &rightleft
+    :set norightleft
+  else
+    :set rightleft
+  endif
+endfunction
+map <C-h> :call Rightleft_flip()<CR>
