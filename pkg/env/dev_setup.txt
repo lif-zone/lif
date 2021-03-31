@@ -14,6 +14,8 @@ git quickstart
   use gvimdiff:
   $ git difftool
   $ git mergetool
+- bring back deleted files ('cvs up' equivalent):
+  git restore file.js
 
 LIF www setup
 -------------
