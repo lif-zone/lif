@@ -44,8 +44,8 @@ to prevent declarations appended after scroll closing.
 Every declaration
 includes in its signature calculation the signature on the previous declaration
 in the scroll, to prevent new declarations inserted mid scroll.`,
-sec_p4: `Storage, duplication, and distribution of the copies is incentivized by
-"Save mine and I will save yours". For every GB of scroll storage, the user
+sec_p4: `Storage, duplication, and distribution of the copies is incentivized
+by "Save mine and I will save yours". For every GB of scroll storage, the user
 allocates 10GB storage for saving copies and distributing scrolls of other LIF
 users.
 Each user allocates part of his storage to help other users preserve,
@@ -158,7 +158,8 @@ you)
 </p>`,
 sec2_p12: `In contrast to the traditional media that concentrates
 all its power and dictates the public agenda;
-in distributed media there are thousands of writers, hundreds of points of view.
+in distributed media there are thousands of writers, hundreds of points of
+view.
 In decentralized media no group or elite will be able to decide that they
 want to hide information, or perform gross manipulations of reality.`,
 sec2_box: `The result: a world where history cannot be rewritten, or the truth
