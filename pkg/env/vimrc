@@ -30,4 +30,12 @@ fun Mark_error(enable_80)
 endfun
 au BufWinEnter *.{txt,js,json,json6} call Mark_error(1)
 au BufWinEnter *.html call Mark_error(0)
+hi javaScriptStringT guifg=DarkBlue
+se sw=2
+
+fun Debug_syntax()
+  for id in synstack(line("."), col("."))
+    echo synIDattr(id, "name")
+  endfor
+endfun
 
