@@ -15,6 +15,10 @@
   $ git mergetool
 - bring back deleted files ('cvs up' equivalent):
   git restore file.js
+- change git diff not to use "more"
+  $ git config --global diff.tool tkdiff
+  $ git config --global diff.tool diff
+- git configuration is saved in ~/.gitconfig
 
 ## LIF www setup
 - Installation
