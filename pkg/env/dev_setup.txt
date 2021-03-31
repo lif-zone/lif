@@ -86,8 +86,3 @@ Running apps
 ------------
 - Chrome: google-chrome </dev/null 1>&0 2>&0
 
-vimrc sw=2
-tw=80
-color col 80
-nowrap
-
