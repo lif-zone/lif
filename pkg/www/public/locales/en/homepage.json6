@@ -45,7 +45,8 @@ Every declaration
 includes in its signature calculation the signature on the previous declaration
 in the scroll, to prevent new declarations inserted mid scroll.`,
 sec_p4: `Storage, duplication, and distribution of the copies is incentivized
-by "Save mine and I will save yours". For every GB of scroll storage, the user
+by "Save mine and I will save yours".
+For every GB of scroll storage, the user
 allocates 10GB storage for saving copies and distributing scrolls of other LIF
 users.
 Each user allocates part of his storage to help other users preserve,
@@ -90,7 +91,8 @@ sec_p7: ``,
 sec_p8: ``,
 sec_p9: ``,
 sec2_h: `When there is no truth there is no trust`,
-sec2_p: `We live in an age of silence. Any declaration that is not considered
+sec2_p: `We live in an age of silence.
+Any declaration that is not considered
 politically correct and that does not reconcile with the progressive worldview
 that manages the public discourse at a high level, is silenced and shelved.
 There is no longer room for a variety of opinions.
@@ -144,15 +146,16 @@ sec2_p10: `Technology will allow people to declare and publish anything
 publicly, in an unequivocal and unchangeable way:`,
 sec2_p11: `
 <p>
-- It will not be possible to delete the publication. (Prevention
-of censorshipr</p>
+- It will not be possible to delete the publication.
+(Prevention of censorshipr</p>
 <p>
 - It will not be possible to change the publication.
 (Prevention of distortion)
 </p>
 <p>
 - It will not be possible to publish in
-retrospect. (Prevention of time stamp forgery).</p><p>- There will be certainty
+retrospect. (Prevention of time stamp forgery).</p>
+<p>- There will be certainty
 about the identity of the advertiser (can not be disputed that you are
 you)
 </p>`,
