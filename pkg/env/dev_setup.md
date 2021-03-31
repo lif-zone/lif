@@ -1,5 +1,4 @@
-git quickstart
---------------
+## git quickstart
 - Checkout
   $ git clone https://github.com/lif-zone/lif.git
 - modification steps
@@ -17,8 +16,7 @@ git quickstart
 - bring back deleted files ('cvs up' equivalent):
   git restore file.js
 
-LIF www setup
--------------
+## LIF www setup
 - Installation
   ~/lif$ npm install
 - To run the server locally
@@ -27,14 +25,12 @@ LIF www setup
   first time it will take ~20 seconds to load the page (since it needs to
   build the webpack)
 
-GVIM
-----
+## GVIM
 - setup:
   $ cp vimrc ~/.vimrc
 - hebrew editing: CTRL-H flips LTR<->RTL
 
-ubuntu 20 On VirtualBox 6.1 on Windows
---------------------------------------
+## ubuntu 20 On VirtualBox 6.1 on Windows
 - install VirtualBox 6.1 (I have 6.1.16)
   https://www.linuxvmimages.com/images/ubuntu-2004/#ubuntu-20042-lts
 - unzip, and then double-click to create out of it the image
@@ -84,7 +80,6 @@ ubuntu 20 On VirtualBox 6.1 on Windows
   $ git config --global user.email "xxderry@gmail.com"
   $ git config --global credential.helper 'store'
 
-Running apps
-------------
+## Running apps
 - Chrome: google-chrome </dev/null 1>&0 2>&0
 
