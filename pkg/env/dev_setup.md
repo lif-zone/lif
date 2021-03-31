@@ -46,19 +46,19 @@
   Lock Screen on Suspend: OFF
 - Install packages
   $ sudo bash
-  # apt update
-  # apt install virtualbox-guest-dkms
+  $ apt update
+  $ apt install virtualbox-guest-dkms
   and restart the VM
   open terminal (UI)
   $ sudo bash
-  # apt update
-  # apt install virtualbox-guest-dkms
+  $ apt update
+  $ apt install virtualbox-guest-dkms
   and restart the VM
-  # apt install vim-gtk git gcc make perl npm nodejs eslint curl net-tools
-  # adduser derry
+  $ apt install vim-gtk git gcc make perl npm nodejs eslint curl net-tools
+  $ adduser derry
   log in as derry
   $ add ~/.bashrc_derry
-  # vi /etc/group :%s/.ubuntu/\0,derry/gc (add derry to sudo admin group)
+  $ vi /etc/group :%s/.ubuntu/\0,derry/gc (add derry to sudo admin group)
 - Ubuntu settings: disable screen saver:
   Settings -> Privacy -> Screen Lock:
   Blank Screen Delay: Never
