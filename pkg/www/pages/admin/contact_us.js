@@ -61,7 +61,7 @@ const download_csv = (data, file_name)=>{
     document.body.appendChild(a);
     a.style = 'display: none';
     let str = csv.to_str(data);
-    let blob = new Blob([str], {type: 'octet/stream'});
+    let blob = new Blob(['\ufeff', str], {type: 'octet/stream'});
     let burl = window.URL.createObjectURL(blob);
     a.href = burl;
     a.download = file_name;
