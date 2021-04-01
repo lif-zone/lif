@@ -25,7 +25,7 @@ export async function getServerSideProps(context){
 
 const Table_row = ({ts, name, email, phone, freetext})=>{
     return <tr className="text-sm">
-          <td className="border border-emerald-500 align-top">
+          <td className="border border-emerald-500 align-top whitespace-pre">
             {ts}</td>
           <td className="border border-emerald-500 align-top">{name}</td>
           <td className="border border-emerald-500 align-top">
