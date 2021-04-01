@@ -59,8 +59,8 @@ E.union_with = function(fn /* [o1, [o2, [...]]]*/){
         for (var key in args[i])
         {
             var arg = args[i];
-            res[key] = res.hasOwnProperty(key) ? fn(res[key], arg[key])
-                : arg[key];
+            res[key] = res.prototype.hasOwnProperty.call(key) ? fn(res[key],
+              arg[key]) : arg[key];
         }
     }
     return res;
@@ -209,7 +209,7 @@ E.freeze_deep = function(obj){
     {
         for (var prop in obj)
         {
-            if (obj.hasOwnProperty(prop))
+            if (obj.prototype.hasOwnProperty.call(prop))
                 E.freeze_deep(obj[prop]);
         }
     }
@@ -389,7 +389,7 @@ E.clone_inplace = function(dst, src){
             dst[k] = src[k];
         for (k in dst)
         {
-            if (!src.hasOwnProperty(k))
+            if (!src.prototype.hasOwnProperty.call(k))
                 delete dst[k];
         }
     }
