@@ -8,7 +8,7 @@ git quickstart
   to commit locally, and then push to server:
   $ git commit -a
   $ git push
-- diff vs local 
+- diff vs local
   $ git diff
   $ git diff --merge-base
   use gvimdiff:
@@ -19,6 +19,7 @@ git quickstart
 - change git diff not to use "more"
   $ git config --global diff.tool diff
   $ git config --global diff.tool diff
+  $ git config --global core.pager cat
 - git configuration is saved in ~/.gitconfig
 
 LIF www setup
