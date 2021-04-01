@@ -3,7 +3,6 @@
 var is_node = typeof module=='object' && module.exports && module.children;
 if (!is_node)
     require('./config.js');
-var array = require('./array.js');
 var date = require('./date.js');
 var zutil = require('./util.js');
 var sprintf = require('./sprintf.js');
@@ -29,7 +28,7 @@ var L = E.L = {
 var perr_pending = [];
 // inverted
 var LINV = E.LINV = {};
-for (var k in L)
+for (let k in L)
     LINV[L[k]] = k;
 
 ['debug', 'info', 'notice', 'warn', 'err', 'crit'].forEach(function(l){
@@ -239,18 +238,10 @@ _zerr = function(level, args){
 E._zerr = _zerr;
 
 E.zexit = function(args){
-    var stack;
     if (err_has_stack(args))
-    {
-        stack = args.stack;
         __zerr(L.CRIT, [E.e2s(args)]);
-    }
     else
-    {
-        var e = new Error();
-        stack = e.stack;
         __zerr(L.CRIT, arguments);
-    }
     if ((args&&args.code)!='ERR_ASSERTION')
         console.error('zerr.zexit was called', new Error().stack);
     E.flush();
@@ -360,7 +351,7 @@ var perr_transport = function(id, info, opt){
     return post(zescape.uri(E.conf.url_perr+'/perr', qs), data);
 };
 
-var perr = function(perr_orig, pending){
+var perr = function(orig, pending){
     while (pending.length)
         perr_transport.apply(null, pending.shift());
     // set the zerr.perr stub to send to the clog server
