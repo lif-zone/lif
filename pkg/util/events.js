@@ -19,10 +19,10 @@ function EventEmitter(){ this._events = {}; }
  */
 EventEmitter.prototype.listeners = function listeners(name){
     var events = this._events && this._events[name] || [];
-    var length = events.length, listeners = [], event;
-    for (var i = 0; i<length; event = events[++i])
-        listeners.push(events[i].fn);
-    return listeners;
+    var length = events.length, _listeners = [];
+    for (var i = 0; i<length; ++)
+        _listeners.push(events[i].fn);
+    return _listeners;
 };
 
 /**

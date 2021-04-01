@@ -19,8 +19,8 @@ let init_client = ()=>etask(function*(){
 });
 
 E.get_collection = coll_name=>etask(function*(){
-    const client = yield init_client();
-    const database = client.db('db');
+    const _client = yield init_client();
+    const database = _client.db('db');
     return database.collection(coll_name);
 });
 
