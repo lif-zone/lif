@@ -26,6 +26,11 @@ git quickstart
   https://git-scm.com/docs/diff-config
 - git configuration is saved in ~/.gitconfig
 
+lint
+----
+$ eslint <filename>
+$ eslint .
+
 LIF www setup
 -------------
 - Installation
