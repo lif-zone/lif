@@ -72,22 +72,21 @@
 
     table {
     @apply table border-separate border-gray-200 align-middle text-left bg-gray-200 rounded;
+    }
+    table caption {
+    @apply p-3;
+    }
 
-        caption {
-        @apply p-3;
-        }
+    table thead tr th {
+    @apply py-2 px-4;
+    }
 
-        thead tr th {
-        @apply py-2 px-4;
-        }
+    table tbody tr td {
+    @apply py-2 px-4;
+    }
 
-        tbody tr td {
-        @apply py-2 px-4;
-        }
-
-        tfoot tr th {
-        @apply py-2 px-4;
-        }
+    table tfoot tr th {
+    @apply py-2 px-4;
     }
 
     input, textarea {
