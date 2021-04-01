@@ -22,6 +22,8 @@ git quickstart
   $ git config --global core.pager cat
   $ git config --global merge.context 0
   $ git config --global diff.context 0
+- git diff config options:
+  https://git-scm.com/docs/diff-config
 - git configuration is saved in ~/.gitconfig
 
 LIF www setup
