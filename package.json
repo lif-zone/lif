@@ -5,7 +5,8 @@
     "start:server": "pm2 start pkg/server/server.js --no-daemon",
     "start:www_dev": "next dev pkg/www/ --port=3100",
     "start:www_build": "next build pkg/www/",
-    "start:www": "next build pkg/www/ && next start pkg/www/ --port=80"
+    "start:www": "next build pkg/www/ && next start pkg/www/ --port=80",
+    "test": "mocha pkg/util/test.js"
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
@@ -34,6 +35,7 @@
     "tailwindcss": "^2.0.3",
     "tailwindcss-rtl": "^0.7.3",
     "babel-eslint": "10.1.0",
-    "eslint": "7.22.0"
+    "eslint": "7.22.0",
+    "mocha": "8.3.2"
   }
 }
