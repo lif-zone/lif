@@ -16,10 +16,12 @@ git quickstart
   $ git mergetool
 - bring back deleted files ('cvs up' equivalent):
   git restore file.js
-- change git diff not to use "more"
+- change git diff not to use "more" and use no context for diff
   $ git config --global diff.tool diff
   $ git config --global diff.tool diff
   $ git config --global core.pager cat
+  $ git config --global merge.context 0
+  $ git config --global diff.context 0
 - git configuration is saved in ~/.gitconfig
 
 LIF www setup
