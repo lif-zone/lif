@@ -93,3 +93,10 @@ Running apps
 ------------
 - Chrome: google-chrome </dev/null 1>&0 2>&0
 
+Install Visual Studio
+----------------------
+- download deb file from https://code.visualstudio.com/download and run:
+```
+$ sudo dpkg -i code_1.54.3-1615806378_amd64.deb
+- to start Visual Studio
+$ code
