@@ -20,7 +20,7 @@ function EventEmitter(){ this._events = {}; }
 EventEmitter.prototype.listeners = function listeners(name){
     var events = this._events && this._events[name] || [];
     var length = events.length, _listeners = [];
-    for (var i = 0; i<length; ++)
+    for (var i = 0; i<length; i++)
         _listeners.push(events[i].fn);
     return _listeners;
 };
