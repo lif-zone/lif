@@ -6,6 +6,9 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
 
+const faq_url = 'https://docs.google.com/document/d/'+
+    '1nQoDXB4f1kiayTTBz72DfpU4SRX3aPWeSWXZt9A4UwQ';
+
 const Home_first = ()=>{
     const {t} = useTranslation('homepage')
     return (
@@ -31,8 +34,11 @@ const Home_first = ()=>{
         <div className="px-6">
 	  <div className="mt-6" style={{lineHeight: '4rem'}}>
             <span className="pe-3"><Link href="/about">
-	      <a><Primary_button>{t('faq')}</Primary_button>
+	      <a><Primary_button>{t('about')}</Primary_button>
 	    </a></Link></span>
+            <span className="pe-3">
+	      <a href={faq_url}><Primary_button>{t('faq')}</Primary_button></a>
+            </span>
             <span className="pe-3"><Link href="/team">
 	      <a><Primary_button>{t('team')}</Primary_button>
 	    </a></Link></span>
