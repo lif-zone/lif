@@ -27,10 +27,17 @@ module.exports = {
   },
   async redirects(){
     return [{
-      source: '/faq',
+      source: '/en/faq',
+      destination: 'https://docs.google.com/document/d/'+
+       '1tkTka-vapUyiO4svCNwdwPBAZ7k6SAMjMsP9Jukff7g/edit',
+      statusCode: 302,
+      locale: false,
+    }, {
+      source: '/he/faq',
       destination: 'https://docs.google.com/document/d/'+
         '1nQoDXB4f1kiayTTBz72DfpU4SRX3aPWeSWXZt9A4UwQ/edit',
       statusCode: 302,
-    }];
+      locale: false,
+    }]
   },
 };

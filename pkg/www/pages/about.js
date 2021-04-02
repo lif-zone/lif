@@ -1,5 +1,6 @@
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
+import Link from 'next/link';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {Trans, useTranslation} from 'next-i18next';
 import {Primary_button, Footer, Video} from '../components/common.js';
@@ -21,7 +22,9 @@ export default function Home(){
 	  </div>
 	  <div className="max-w-3xl pt-6">
 	  </div>
-            <a href="/faq"><Primary_button>{t('faq')}</Primary_button></a>
+            <Link href="/faq">
+              <a><Primary_button>{t('faq')}</Primary_button></a>
+            </Link>
           <div>
 	    <h3>{t('title2')}</h3>
 	    <Trans t={t} i18nKey="sec_p"/>

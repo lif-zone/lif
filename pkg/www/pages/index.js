@@ -33,7 +33,9 @@ const Home_first = ()=>{
 	      <a><Primary_button>{t('about')}</Primary_button>
 	    </a></Link></span>
             <span className="pe-3">
-	      <a href="/faq"><Primary_button>{t('faq')}</Primary_button></a>
+	      <Link href="/faq">
+                <a><Primary_button>{t('faq')}</Primary_button></a>
+              </Link>
             </span>
             <span className="pe-3"><Link href="/team">
 	      <a><Primary_button>{t('team')}</Primary_button>
