@@ -4,9 +4,6 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {Trans, useTranslation} from 'next-i18next';
 import {Primary_button, Footer, Video} from '../components/common.js';
 
-const faq_url = 'https://docs.google.com/document/d/'+
-    '1nQoDXB4f1kiayTTBz72DfpU4SRX3aPWeSWXZt9A4UwQ';
-
 export const getStaticProps = ({locale})=>etask(function*(){
     const props = yield serverSideTranslations(locale, ['common', 'about']);
     return {props};
@@ -24,7 +21,7 @@ export default function Home(){
 	  </div>
 	  <div className="max-w-3xl pt-6">
 	  </div>
-            <a href={faq_url}><Primary_button>{t('faq')}</Primary_button></a>
+            <a href="/faq"><Primary_button>{t('faq')}</Primary_button></a>
           <div>
 	    <h3>{t('title2')}</h3>
 	    <Trans t={t} i18nKey="sec_p"/>
