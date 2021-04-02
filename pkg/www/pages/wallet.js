@@ -1,6 +1,5 @@
 'use strict'; /*jslint node:true, browser:true, react: true*/
 import cn from 'classnames';
-import {useEffect, useState} from 'react';
 import Layout from '../components/layout.js';
 import Icon_plus from '../public/img/icon_plus.svg';
 import Icon_login from '../public/img/icon_login.svg';

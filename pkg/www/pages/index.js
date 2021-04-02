@@ -1,13 +1,12 @@
-import {Component} from 'react';
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
-import {Footer, Video, Contact_us, Primary_button} from '../components/common.js';
+import {Footer, Video, Primary_button} from '../components/common.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import {Trans, useTranslation} from 'next-i18next';
 
 const Home_first = ()=>{
-    const {t} = useTranslation('homepage')
+    const {t} = useTranslation('homepage');
     return (
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2">
         <div className="text-center mb-8 text-start md:pt-4 sm:pe-10">
@@ -52,24 +51,6 @@ export const getStaticProps = ({locale})=>etask(function*(){
     const props = yield serverSideTranslations(locale, ['common', 'homepage']);
     return {props};
 });
-
-// XXX: implement contact us popup and move to common.js
-class Modal extends Component {
-  state = {closed: true};
-  render(){
-    const {t} = this.props;
-    const {closed} = this.state;
-    if (closed)
-      return <span/>;
-    return <div className="bg-red-200 fixed w-full h-full z-10i">
-      <p>XXX</p>
-        <Contact_us t={t}/>
-      <p onClick={this.close}>YYY</p>
-    </div>;
-  }
-  close = ()=>this.setState({closed: true});
-  show = ()=>this.setState({closed: false});
-}
 
 export default function Home(){
   const {t} = useTranslation('homepage', 'common');

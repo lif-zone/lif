@@ -1,7 +1,7 @@
 import etask from '../../util/etask.js';
 import Layout from '../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
-import {Trans, useTranslation} from 'next-i18next';
+import {useTranslation} from 'next-i18next';
 import {Footer} from '../components/common.js';
 
 export const getStaticProps = ({locale})=>etask(function*(){

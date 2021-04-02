@@ -1,59 +1,13 @@
-import cn from 'classnames';
-import {useRef, useState, useEffect} from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import Icon_lang from '../public/img/icon_lang.svg';
 import Github from '../public/img/github.svg';
 import {use_app_context} from '../utils/context.js';
-import {use_outside_alerter} from '../utils/react.js';
 import {useCookies} from 'react-cookie';
 import {useRouter} from 'next/router';
 import {useTranslation} from 'next-i18next';
 
-const classes = {
-    popup_link: `font-semibold text-gray-500 text-opacity-75
-        hover:text-opacity-100`,
-};
-
-const full_lang = {en: 'English', he: 'עברית'};
-
 const select_lang = (l, router, setCookie)=>{
   setCookie('NEXT_LOCALE', l);
   router.push(router.route, router.route, {locale: l});
-};
-
-const Lang_selector = ()=>{
-    const setCookie = useCookies([])[1];
-    const {locale, locales} = useRouter();
-    const [opened, set_opened] = useState();
-    const toggle = ()=>set_opened(!opened);
-    const wrapper_ref = useRef(null);
-    use_outside_alerter(wrapper_ref, ()=>set_opened(false));
-    const button_class = cn(`flex flex-row items-center transition-colors
-        cursor-pointer hover:text-gray-700`,
-        opened ? 'text-gray-500' : 'text-gray-400');
-    const router = useRouter();
-    return <div ref={wrapper_ref}>
-          <span className={button_class} onClick={toggle}>
-            <Icon_lang className="me-1"/> {locale.toUpperCase()}
-          </span>
-          <div className={cn(opened ? 'flex' : 'hidden', `absolute z-10
-              bg-white mt-2 shadow-2xl rounded-lg`)}>
-            <div className="px-2 text-gray-400 text-base">
-              <div className="px-4 pt-4 pb-3">
-                <div className="text-xs mb-3 tracking-widest">Language</div>
-                {locales.map(l=><div className="my-2" key={l}>
-                      <a onClick={()=>select_lang(l, router, setCookie)}
-                        className={cn(classes.popup_link,
-                          locale==l && 'font-bold')}>
-                        {full_lang[l]||l.toUpperCase()}
-                      </a>
-                    </div>)
-		}
-              </div>
-            </div>
-          </div>
-        </div>;
 };
 
 const Header_small = ()=>{
@@ -61,7 +15,7 @@ const Header_small = ()=>{
     const router = useRouter();
     const {t} = useTranslation('common');
     const {direction} = use_app_context();
-    const rtl = direction=='rtl'
+    const rtl = direction=='rtl';
     return <bdo dir="ltr">
       <header className="p-6 text-sm lg:text-base">
         <div>

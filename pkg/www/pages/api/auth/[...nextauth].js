@@ -26,8 +26,7 @@ const options = {
                     // the JWT
                     return user;
                 }
-                else
-                    return null;
+                return null;
             },
         }),
     ],

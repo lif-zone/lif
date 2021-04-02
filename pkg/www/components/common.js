@@ -5,7 +5,6 @@ import {use_app_context} from '../utils/context.js';
 import axios from 'axios';
 import {Trans} from 'next-i18next';
 import Github2 from '../public/img/github2.svg';
-import Link from 'next/link';
 import Player from '@vimeo/player';
 
 export const Primary_button = ({children, arrow, onClick})=>{
@@ -44,10 +43,12 @@ export class Contact_us extends Component {
       {mode=='error' ? <p>{t('common:thank_you_error')}</p> : undefined}
       {mode=='sent' ?
 	<div>
-	  <p className="py-8">{t('common:thank_you_will_get_back_to_you_soon')}</p>
-            <Primary_button onClick={this.on_click}>
-	      {t('common:contact_us')}
-	    </Primary_button>
+	  <p className="py-8">
+            {t('common:thank_you_will_get_back_to_you_soon')}
+          </p>
+          <Primary_button onClick={this.on_click}>
+	    {t('common:contact_us')}
+	  </Primary_button>
 	</div>
 	: undefined
       }
@@ -100,9 +101,9 @@ export class Footer extends Component {
 		<div>
 		  <a href="mailto:join@lif.zone">join@lif.zone</a>
 		    <a href="https://github.com/lif-zone/lif"
-		      className="text-white hover:text-white items-center text-lg
-			opacity-70 transition-opacity hover:opacity-100 ms-2
-			me-5">
+		      className="text-white hover:text-white items-center
+                        text-lg opacity-70 transition-opacity
+                        hover:opacity-100 ms-2 me-5">
 		      <Github2 className="mt-1 inline-block fill-current"/>
 		      GitHub
 		    </a>
