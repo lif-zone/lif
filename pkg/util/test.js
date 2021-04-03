@@ -29,7 +29,9 @@ sesom@lif
 Q. how to find sesom@lif?
 - using an index 'by domain' service
 - an index service will read all scroll and maitain index of all the uri
-  of a domain
+  of a domain. the index will keep checksum for each uri.
+- LIF provide (TBD) api to locate any checksum (eg. similar to bittorent
+  way of locating files  by checksum)
 */
     });
   });
