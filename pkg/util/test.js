@@ -22,8 +22,7 @@ it('http_site', function(){
 /*
 Q. how to access sesom@lif?
 1. through http gateway https://sesom.lif.zone/
-2. through LIF wallet. a LIF wallet is a LIF client and it understand
-sesom@lif
+2. through LIF client
 
 Q. how to find sesom@lif?
 - using an index 'by domain' service
