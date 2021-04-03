@@ -27,8 +27,9 @@ Q. how to access sesom@lif?
 sesom@lif
 
 Q. how to find sesom@lif?
-- using an index by domain service
-- an index service will build domain index by reading all the scrolls
+- using an index 'by domain' service
+- an index service will read all scroll and maitain index of all the uri
+  of a domain
 */
     });
   });
