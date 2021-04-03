@@ -1,26 +1,25 @@
 'use strict';
 const LIF = require('./lif.js');
+const Scroll = LIF.Scroll;
 
-var assert = require('assert');
 describe('Scroll', function(){
   describe('api', function(){
-    it('basic', function(){
-      let s = LIF.Scroll.create();
-      // XXX: temporary hack, use sinon to control time
-      Date.now = function(){ return 100; };
-      // XXX: create example of lif.zone on LIF
-      s.declare({type: 'contract', text: 'Hello LIF'});
-      s.declare({type: 'vote', text: 'Hello LIF'});
-      s.write({type: text: 'And you?'});
-      s.close();
-      assert.deepEqual(s.lines, [
-        {sig: 1234, json: {ts: 100, type: 'scroll', sub_type: 'start',
-          text: 'Hello LIF'}},
-        {sig: 1234, json: {ts: 100, type: 'scroll', sub_type: 'line',
-          text: 'I am a free man'}},
-        {sig: 1234, json: {ts: 100, type: 'scroll', sub_type: 'close',
-          text: 'And you?'}}
-      ]);
+    it('http_site', function(){
+      // XXX sesom: create/load LIF.Wallet
+      let god = Scroll.create();
+      god.declare({type: 'scroll', faith: 'sesom', tag: 'faith'});
+      god.declare({type: 'faith', type_on: 'http',
+        def: {file_ext: {'.jpg': {'content-type': 'image/jpeg'}}}});
+      god.declare({type: 'faith', type_on: 'http',
+        def: {uri: {'/index.html': {homepage: true}}}});
+      god.declare({type: 'domain', domain: 'sesom@lif'});
+      let s = Scroll.create();
+      s.declare({type: 'scroll', faith: 'sesom', tag: 'http'});
+      s.declare({type: 'http', domain: 'sesom@lif', uri: '/index.html',
+        content: `<html><body><img src="lif://sesom@lif/sesom.jpg"/>
+          </body></html>`});
+      s.declare({type: 'http', domain: 'sesom@lif', uri: '/sesom.jpg',
+        blob: 'XXX'});
     });
   });
 });
