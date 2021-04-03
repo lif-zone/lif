@@ -5,13 +5,6 @@ const Scroll = LIF.Scroll;
 describe('Scroll', function(){
 it('http_site', function(){
   // XXX: create/load LIF.Wallet
-  let god = Scroll.create();
-  god.declare({type: 'scroll', faith: 'john', tag: 'faith'});
-  god.declare({type: 'faith', type_on: 'http',
-    def: {file_ext: {'.jpg': {'content-type': 'image/jpeg'}}}});
-  god.declare({type: 'faith', type_on: 'http',
-    def: {uri: {'/index.html': {homepage: true}}}});
-  god.declare({type: 'domain', domain: 'john@lif'});
   let s = Scroll.create();
   s.declare({type: 'scroll', faith: 'john', tag: 'http'});
   s.declare({type: 'http', domain: 'john@lif', uri: '/index.html',
@@ -19,6 +12,13 @@ it('http_site', function(){
       </body></html>`});
   s.declare({type: 'http', domain: 'john@lif', uri: '/john.jpg',
     blob: 'XXX'});
+  let god = Scroll.create();
+  god.declare({type: 'scroll', faith: 'john', tag: 'faith'});
+  god.declare({type: 'faith', type_on: 'http',
+    def: {file_ext: {'.jpg': {'content-type': 'image/jpeg'}}}});
+  god.declare({type: 'faith', type_on: 'http',
+    def: {uri: {'/index.html': {homepage: true}}}});
+  god.declare({type: 'domain', domain: 'john@lif'});
 /*
 Q. how to access john@lif?
 1. through http gateway https://john.lif.zone/
