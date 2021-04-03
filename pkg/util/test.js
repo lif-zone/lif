@@ -6,9 +6,9 @@ describe('Scroll', function(){
 it('http_site', function(){
   // XXX: create/load LIF.Wallet
   let s = Scroll.create();
-  s.declare({type: 'scroll', faith: 'john', tag: 'http'});
-  s.declare({type: 'http', domain: 'john@lif', uri: '/index.html',
-    content: `<html><body><img src="lif://john@lif/john.jpg"/>
+  s.declare({type: 'scroll', faith: 'derry', tag: 'http'});
+  s.declare({type: 'http', domain: 'lior@lif', uri: '/index.html',
+    content: `<html><body><img src="lif://lior@lif/lior.jpg"/>
       </body></html>`});
   s.declare({type: 'http', domain: 'john@lif', uri: '/john.jpg',
     blob: 'XXX'});
