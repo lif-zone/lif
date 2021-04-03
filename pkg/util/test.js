@@ -20,6 +20,16 @@ describe('Scroll', function(){
           </body></html>`});
       s.declare({type: 'http', domain: 'sesom@lif', uri: '/sesom.jpg',
         blob: 'XXX'});
+/*
+Q. how to access sesom@lif?
+1. through http gateway https://sesom.lif.zone/
+2. through LIF wallet. a LIF wallet is a LIF client and it understand
+sesom@lif
+
+Q. how to find sesom@lif?
+- using an index by domain service
+- an index service will build domain index by reading all the scrolls
+*/
     });
   });
 });
