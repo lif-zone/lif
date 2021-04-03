@@ -98,8 +98,8 @@ The network functions in a decentralized manner, without the need for mediation 
 
 ### Target supported browsers
 - Android chrome
-- IOS safari
-- OSX safari
+- IOS Safari
+- OSX Safari
 - Windows Chrome
 - Windows Edge
 
