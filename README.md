@@ -96,6 +96,13 @@ Colleagues make available to other network participants some of their resources,
 
 The network functions in a decentralized manner, without the need for mediation or dependence on any major factor. Fellows are participants with equal rights and equal abilities in implementation.
 
+### Target supported browsers
+- Android chrome
+- IOS safari
+- OSX safari
+- Windows Chrome
+- Windows Edge
+
 ## Current state of LIF
 
 LIF is at the **VERY** early stage of conception. We are just starting up. We are still defining the main parts
