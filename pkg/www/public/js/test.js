@@ -1,11 +1,16 @@
 // chrome://flags/#unsafely-treat-insecure-origin-as-secure
-console.log('register serviceWorker');
-const sw = navigator.serviceWorker.register(`/js/test_sw.js`);
-async function init(){
-  await sw;
-  console.log('fetch /js/test.js');
-  fetch('/js/test.js');
-}
+let sw;
+window.addEventListener('load', function() {
+  console.log('register serviceWorker');
+  sw = navigator.serviceWorker.register(`/js/test_sw.js`, {scope: '/js/'})
+  .then(function(reg){
+    console.log('serviceWorker registered %o', reg);
+    console.log('fetch /js/test.js');
+    fetch('/js/test.js');
+   }).catch(function(err){ console.log('serviceWorker err %o', err); });
+});
 
-setTimeout(init, 1000);
+navigator.serviceWorker.addEventListener('message', evt=>{
+  console.log('XXX message %o', evt);
+});
 
