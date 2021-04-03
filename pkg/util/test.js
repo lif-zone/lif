@@ -1,8 +1,6 @@
 'use strict';
 const LIF = require('./lif.js');
 
-// XXX arik: check max size of indexdb of browser (service worker)
-
 var assert = require('assert');
 describe('Scroll', function(){
   describe('api', function(){
