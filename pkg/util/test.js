@@ -8,10 +8,7 @@ describe('Scroll', function(){
       let s = LIF.Scroll.create();
       // XXX: temporary hack, use sinon to control time
       Date.now = function(){ return 100; };
-      // in declare set ts+sig + and use previous sig
-      // create example for voting for best practice
-      // every example need to educate person on how to use it
-      // focus first on order (so that one declaration signed the previous one
+      // XXX: create example of lif.zone on LIF
       s.declare({type: 'contract', text: 'Hello LIF'});
       s.declare({type: 'vote', text: 'Hello LIF'});
       s.write({type: text: 'And you?'});
