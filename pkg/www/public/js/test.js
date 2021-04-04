@@ -2,7 +2,7 @@
 let sw;
 window.addEventListener('load', function() {
   console.log('register serviceWorker');
-  sw = navigator.serviceWorker.register(`/test_sw.js`, {scope: '/js/'})
+  sw = navigator.serviceWorker.register(`/test_sw.js`)
   .then(function(reg){
     console.log('serviceWorker /js/ registered %o', reg);
     console.log('fetch /js/test.js');

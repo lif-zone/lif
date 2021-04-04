@@ -4,6 +4,7 @@
   "scripts": {
     "start:server": "pm2 start pkg/server/server.js --no-daemon",
     "start:www_dev": "next dev pkg/www/ --port=3100",
+    "start:www_dev80": "next dev pkg/www/ --port=80",
     "start:www_build": "next build pkg/www/",
     "start:www": "next build pkg/www/ && next start pkg/www/ --port=80",
     "test": "mocha pkg/util/test.js"

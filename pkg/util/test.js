@@ -5,6 +5,7 @@ const Scroll = LIF.Scroll;
 describe('Scroll', function(){
 it('http_site', function(){
   // XXX: create/load LIF.Wallet
+  // XXX: 1. use real names 2. check if we can use lif://
   let s = Scroll.create();
   s.declare({type: 'scroll', faith: 'derry', tag: 'http'});
   s.declare({type: 'http', domain: 'lior@lif', uri: '/index.html',
