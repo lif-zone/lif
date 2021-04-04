@@ -10,7 +10,3 @@ window.addEventListener('load', function() {
    }).catch(function(err){ console.log('serviceWorker err %o', err); });
 });
 
-navigator.serviceWorker.addEventListener('message', evt=>{
-  console.log('XXX message %o', evt);
-});
-

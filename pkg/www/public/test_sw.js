@@ -5,7 +5,6 @@ self.addEventListener('activate', evt =>{
 });
 
 self.addEventListener('fetch', evt=>{
-  console.log('XXX fetch3');
   const {request} = evt;
   const {url, method, headers} = request;
   console.log('test_sw fetch %s %s %o %o', method, url, headers, request);
