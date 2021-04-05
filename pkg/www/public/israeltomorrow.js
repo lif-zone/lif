@@ -13,13 +13,23 @@ document.head.appendChild(script);
 
 var it_global_on_click;
 (function(){
+
+function valid_email(email){
+  var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 function on_click(){
+  var el = document.querySelector('#__it_email');
+  var email = ''+el.value;
+  if (!valid_email(email))
+    return console.error('invaldi email %s', email);
   document.querySelector('#__register_popup').remove();
 }
 it_global_on_click = on_click;
 
 function show_popup(){
-  let div = document.createElement('dib');
+  var div = document.createElement('dib');
   div.id='__register_popup';
   div.style = `
     width: 100%; height: 100%; position: fixed; lef: 0; top: 0;
@@ -64,8 +74,10 @@ function show_popup(){
             ישראל מחר פתוח לכולם, <nobr>ללא תשלום</nobr>
           </div>
           <div style="text-align: left;">
-            <input type="email" class="__it_email" placeholder="אימייל"/>
-            <button onClick="it_global_on_click()" class="__it_email_send"><span>כניסה</span></button>
+            <input id=__it_email type="email" class="__it_email"
+              placeholder="אימייל"/>
+            <button onClick="it_global_on_click()"
+              class="__it_email_send"><span>כניסה</span></button>
           </div>
         </div>
         <div style="flex-grow: 1;"></div>
