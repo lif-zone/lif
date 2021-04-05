@@ -1,6 +1,5 @@
 // chrome://flags/#unsafely-treat-insecure-origin-as-secure
-let sw;
-window.addEventListener('load', function() {
+window.addEventListener('load', function(){
   console.log('register serviceWorker');
   sw = navigator.serviceWorker.register(`/test_sw.js`)
   .then(function(reg){

@@ -8,7 +8,6 @@ self.addEventListener('fetch', evt=>{
   const {request} = evt;
   const {url, method, headers} = request;
   console.log('test_sw fetch %s %s %o %o', method, url, headers, request);
-  //return null;
 });
 
 self.addEventListener('install', function(evt){
