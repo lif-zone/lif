@@ -11,7 +11,7 @@ document.head.appendChild(script);
 // hover effect on button
 // loggins to review conversation
 
-var it_global_on_click;
+var it_email_on_click, it_email_on_key_press;
 (function(){
 
 function valid_email(email){
@@ -23,10 +23,21 @@ function on_click(){
   var el = document.querySelector('#__it_email');
   var email = ''+el.value;
   if (!valid_email(email))
+  {
+    var warn = document.querySelector('#__it_email_warn');
+    warn.style.visibility = 'visible';
     return console.error('invaldi email %s', email);
+  }
   document.querySelector('#__register_popup').remove();
 }
-it_global_on_click = on_click;
+it_email_on_click = on_click;
+
+function on_key_press(){
+  console.log('XXX on_key_press');
+  var warn = document.querySelector('#__it_email_warn');
+  warn.style.visibility = 'hidden';
+}
+it_email_on_key_press = on_key_press;
 
 function show_popup(){
   var div = document.createElement('dib');
@@ -75,9 +86,18 @@ function show_popup(){
           </div>
           <div style="text-align: left;">
             <input id=__it_email type="email" class="__it_email"
-              placeholder="אימייל"/>
-            <button onClick="it_global_on_click()"
-              class="__it_email_send"><span>כניסה</span></button>
+              onKeyPress="it_email_on_key_press()" placeholder="אימייל"/>
+            <div style="display: flex; max-width: 40rem;">
+              <div id=__it_email_warn
+                style="flex-grow: 1; color: #ff9900; font-size: 1.6rem;
+                font-weight: bold; text-align: right; line-height: 130%;
+                padding-top: 0.2rem; visibility: hidden;">
+                כדי לקבל גישה לאתר יש לרשום את האימייל שלך
+              </div>
+              <div style="width: 2rem;"></div>
+              <button onClick="it_email_on_click()"
+                class="__it_email_send"><span>כניסה</span></button>
+            </div>
           </div>
         </div>
         <div style="flex-grow: 1;"></div>
