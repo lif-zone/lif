@@ -40,7 +40,7 @@ function show_popup(){
       .__it_title {color: #0F1543; font-size: 2.5rem;
         padding-bottom: 3rem; padding-top: 1rem;}
     </style>
-    <div style="width: 100%; max-width: 100rem; background-color: white;
+    <div style="width: 100%; max-width: 50rem; background-color: white;
       border-radius: 1rem; border: 0.25rem solid #ffb200; padding: 2rem;
       padding-bottom: 4rem">
       <img style="width:16.9rem; height:13rem;"
