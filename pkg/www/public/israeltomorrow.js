@@ -35,11 +35,10 @@ function show_popup(){
         padding-right: 2rem;
         border: none;
         background-color: #ffb200;
-        margin-left: 2rem;
-        margin-right: 2rem;
+        margin-top: 2rem;
       }
       .__it_title {color: #0F1543; font-size: 2.5rem;
-        padding-bottom: 3rem; padding-top: 3rem;}
+        padding-bottom: 3rem; padding-top: 1rem;}
     </style>
     <div style="width: 100%; max-width: 100rem; background-color: white;
       border-radius: 1rem; border: 0.25rem solid #ffb200; padding: 2rem;
@@ -50,13 +49,11 @@ function show_popup(){
         <div style="flex-grow: 1;"></div>
         <div>
           <div class="__it_title">
-            ישראל מחר פתוח לכולם, ללא תשלום
+            ישראל מחר פתוח לכולם, <nobr>ללא תשלום</nobr>
           </div>
-          <div style="display: flex;">
-            <div style="display: flex;">
-              <input type="email" class="__it_email" placeholder="אימייל"/>
-              <button onClick="it_global_on_click()" class="__it_email_send"><span>כניסה</span></button>
-            </div>
+          <div style="text-align: left;">
+            <input type="email" class="__it_email" placeholder="אימייל"/>
+            <button onClick="it_global_on_click()" class="__it_email_send"><span>כניסה</span></button>
           </div>
         </div>
         <div style="flex-grow: 1;"></div>
