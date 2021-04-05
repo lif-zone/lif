@@ -4,10 +4,10 @@ script.src  = 'http://localhost/israeltomorrow.js';
 document.head.appendChild(script);
 */
 // TODO:
-// Check email is valid format
-// Click outside should show error and not close dialog
-// Show this dialog only once. once use entered email, store it in storage
-// Save to lif db and to israeltomorrow db
+// + heck email is valid format
+// + click outside should show error and not close dialog
+// show this dialog only once. once use entered email, store it in storage
+// save to lif db and to israeltomorrow db
 // hover effect on button
 // loggins to review conversation
 
@@ -19,16 +19,20 @@ function valid_email(email){
   return re.test(String(email).toLowerCase());
 }
 
+function popup_on_click(){ on_click(); }
+
 function on_click(){
   var el = document.querySelector('#__it_email');
+  if (!el)
+    return;
   var email = ''+el.value;
   if (!valid_email(email))
   {
     var warn = document.querySelector('#__it_email_warn');
     warn.style.visibility = 'visible';
-    return console.error('invaldi email %s', email);
+    return;
   }
-  document.querySelector('#__register_popup').remove();
+  document.querySelector('#__it_register_popup').remove();
 }
 it_email_on_click = on_click;
 
@@ -41,7 +45,8 @@ it_email_on_key_press = on_key_press;
 
 function show_popup(){
   var div = document.createElement('dib');
-  div.id='__register_popup';
+  div.id='__it_register_popup';
+  div.onclick = popup_on_click;
   div.style = `
     width: 100%; height: 100%; position: fixed; lef: 0; top: 0;
     z-index: 99999999; background-color: #cccccccc;
