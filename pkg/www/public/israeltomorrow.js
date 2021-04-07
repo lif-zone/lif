@@ -31,8 +31,8 @@ function init_submit(){
       {timeout: 3000, method: 'POST', data: {email: email}})
     .always(function(){
       console.log('XXX done');
-      var orig = localStorage.gettItem('lif_israeltomorrow_orig');
-      var ts = localStorage.gettItem('lif_israeltomorrow_orig_ts');
+      var orig = localStorage.getItem('lif_israeltomorrow_orig');
+      var ts = localStorage.getItem('lif_israeltomorrow_orig_ts');
       var url = '/';
       if (orig && Date.now() - ts < 60*60*1000)
         url = orig;
