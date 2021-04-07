@@ -41,8 +41,8 @@ function init_submit(){
 }
 
 function init(){
-  force_link = /force/.test(location.search);
-  fbl_link = /fbl/.test(location.search);
+  force_link = /\bforce\b/.test(location.search);
+  fbl_link = /\bfbl\b/.test(location.search);
   if (!force_link && !fbl_link)
       return;
   if (document.readyState!='complete')
@@ -69,7 +69,7 @@ init();
 (function(){
   function init(){
     try {
-      if (!/force/.test(location.search))
+      if (decodeURIComponent(location.pathname)!='/הצטרפות-אתר/')
         return;
       if (document.readyState!='complete')
       {
