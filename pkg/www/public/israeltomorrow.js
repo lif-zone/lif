@@ -43,7 +43,7 @@ function init_submit(){
 function init(){
   force_link = /force/.test(location.search);
   fbl_link = /fbl/.test(location.search);
-  if (!force_link && !fbl)
+  if (!force_link && !fbl_link)
       return;
   if (document.readyState!='complete')
     window.onload = function(){ init(); };
