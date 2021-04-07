@@ -56,7 +56,7 @@ function init(){
       return init_submit();
   }
   console.log('israeltomorrow email');
-  if (localStorage.setItem('lif_israeltomorrow_email'))
+  if (localStorage.getItem('lif_israeltomorrow_email'))
   {
     console.log('israeltomorrow already registered email');
     return;
