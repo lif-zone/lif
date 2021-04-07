@@ -5,12 +5,15 @@ document.head.appendChild(script);
 */
 (function(){
 
+var fbl_link, force_link;
+
 function is_logged_in(){
   return document.body.classList.contains('logged-in'); }
 
 function do_redirect(){
   var url = 'https://israeltomorrow.co.il/'+
-    '%D7%94%D7%A6%D7%98%D7%A8%D7%A4%D7%95%D7%AA-%D7%90%D7%AA%D7%A8/?force';
+    '%D7%94%D7%A6%D7%98%D7%A8%D7%A4%D7%95%D7%AA-%D7%90%D7%AA%D7%A8/?'+
+    (fbl_link ? 'fbl' : 'force');
   localStorage.setItem('lif_israeltomorrow_orig', location.href);
   localStorage.setItem('lif_israeltomorrow_orig_ts', Date.now());
   location.href = url;
@@ -38,14 +41,15 @@ function init_submit(){
 }
 
 function init(){
-  if (!/force/.test(location.search))
+  force_link = /force/.test(location.search);
+  fbl_link = /fbl/.test(location.search);
+  if (!force_link && !fbl)
       return;
   if (document.readyState!='complete')
     window.onload = function(){ init(); };
   if (is_logged_in())
     return console.log('skip, user logged in');
-  if (decodeURIComponent(location.pathname)=='/הצטרפות-אתר/' &&
-      /force/.test(location.search))
+  if (decodeURIComponent(location.pathname)=='/הצטרפות-אתר/')
   {
       console.log('israeltomorrow submit page');
       return init_submit();
