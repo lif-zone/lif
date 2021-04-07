@@ -23,6 +23,15 @@ module.exports = {
           }
         ],
       },
+      {
+        source: '/api/israeltomorrow_save_email',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: 'https://israeltomorrow.co.il',
+          }
+        ],
+      },
     ];
   },
   async redirects(){
@@ -38,6 +47,6 @@ module.exports = {
         '1nQoDXB4f1kiayTTBz72DfpU4SRX3aPWeSWXZt9A4UwQ/edit',
       statusCode: 302,
       locale: false,
-    }]
+    }];
   },
 };
