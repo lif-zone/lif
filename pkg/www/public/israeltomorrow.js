@@ -45,6 +45,8 @@ function init_submit(){
 function init(){
   if (!/debug=1/.test(location.search))
       return;
+  if (document.readyState!='complete')
+    window.onload = function(){ init(); };
   if (is_logged_in())
     return console.log('skip, user logged in');
   if (decodeURIComponent(location.pathname)=='/הצטרפות-אתר/' &&
