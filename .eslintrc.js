@@ -76,10 +76,10 @@ module.exports = {
         'space-before-blocks': ['error', {functions: 'never',
             keywords: 'never', classes: 'always'}],
         'no-whitespace-before-property': 'error',
-        quotes: ['error', 'single', {
+        /* quotes: ['error', 'single', {
             avoidEscape: true,
             allowTemplateLiterals: true,
-        }],
+        }], */
         semi: ['error', 'always'],
         'space-before-function-paren': 'off',
         'space-in-parens': 'error',
