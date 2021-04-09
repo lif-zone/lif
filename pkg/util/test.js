@@ -2,8 +2,8 @@
 const LIF = require('./lif.js');
 const Scroll = LIF.Scroll;
 
-describe('Scroll', function(){
 it('http_site', function(){
+  return; // XXX: old code, rewrite according to design
   // XXX: create/load LIF.Wallet
   // XXX: 1. use real names 2. check if we can use lif://
   let s = Scroll.create();
@@ -20,17 +20,5 @@ it('http_site', function(){
   god.declare({type: 'faith', type_on: 'http',
     def: {uri: {'/index.html': {homepage: true}}}});
   god.declare({type: 'domain', domain: 'john@lif'});
-/*
-Q. how to access john@lif?
-1. through http gateway https://john.lif.zone/
-2. through LIF client
-
-Q. how to find john@lif?
-- using an index 'by domain' service
-- an index service will read all scroll and maitain index of all the uri
-  of a domain. the index will keep checksum for each uri.
-- LIF provide (TBD) api to locate any checksum (eg. similar to bittorent
-  way of locating files  by checksum)
-*/
 });
 });
