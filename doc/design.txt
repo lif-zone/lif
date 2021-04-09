@@ -6,13 +6,47 @@ Declaration:
 - a block of 29K:
   meta: {blob: {sz: 29442, cs: "eu83eu"}, idx: 4,
     ts: "2021-01-30 13:49:11.494", prev_sig: prev_sig}
-  data: {http: {uri: "/", domain: "derry.lif.zone"}}
+  data: {http: {domain: "derry.lif.zone", uri: "/"}}
   blob: 29K...
 - an inline block of 11 bytes:
   meta: {blob: {data: "hello world"}, idx: 29, ts: } // default {enc: 'utf8'}
-  data: {http: {uri: "/", domain: "derry.lif.zone"}}
+  data: {http: {domain: "derry.lif.zone", uri: "/"}}
   no blob
 
 wallet.lif.zone: the <iframe> like Social login/paypal for in-site wallet.
 
+
+function derry_pub(uri, html){
+  let http = {domain: "derry.lif.zone", uri: uri};
+  if (uri.endsWith('.jpg'))
+    http.content_type = 'image/jpeg';
+  Scroll.decl({http}, html);
+}
+
+- I deploy my web site in one JS line
+  derry_pub("/", `<html><head><script src="//lif.zone/lif.js" /></head><body>
+      Welcome to Derry's site
+    </body></html>`);
+- and add my picture:
+  derry_pub("/derry.jpg", ByteArray(...));
+  derry_pub("/", `<html><head><script src="//lif.zone/lif.js" /></head><body>
+      Welcome to Derry's site
+      <img src='derry.jpg'>
+    </body></html>`);
+- Writing data: our first form
+  derry_pub("/jquery.js", ByteArray());
+  derry_pub("/", `<html><head><script src="//lif.zone/lif.js" /></head><body>
+      <script src='/jquery.js' />
+      Welcome to Derry's site
+      <img src='derry.jpg'>
+      Your email: <input id=email>
+      How can you help us: <input id=how>
+      <button id=join_lif>
+    </body></html>`);
+  derry_pub("/home.js",
+    $('#join_lif').on('click', Scroll.write({http_post: {
+      lif_join: {email: $('#email').value,
+      How can you help us: <input name=how>
+      <button id=join_lif>
+    </body></html>`);
 
