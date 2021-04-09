@@ -1,0 +1,18 @@
+
+File <=> Scroll
+Byte <=> Decl
+
+Declaration:
+- a block of 29K:
+  meta: {blob: {sz: 29442, cs: "eu83eu"}, idx: 4,
+    ts: "2021-01-30 13:49:11.494", prev_sig: prev_sig}
+  data: {http: {uri: "/", domain: "derry.lif.zone"}}
+  blob: 29K...
+- an inline block of 11 bytes:
+  meta: {blob: {data: "hello world"}, idx: 29, ts: } // default {enc: 'utf8'}
+  data: {http: {uri: "/", domain: "derry.lif.zone"}}
+  no blob
+
+wallet.lif.zone: the <iframe> like Social login/paypal for in-site wallet.
+
+
