@@ -1,6 +1,6 @@
 
-File <=> Scroll
-Byte <=> Decl
+File <=> Scroll <=> IndexedDB db
+Byte <=> Decl <=> document (in a collection)
 
 Declaration:
 - a block of 29K:
@@ -49,4 +49,5 @@ function derry_pub(uri, html){
       How can you help us: <input name=how>
       <button id=join_lif>
     </body></html>`);
+
 
