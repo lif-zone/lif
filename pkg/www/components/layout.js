@@ -31,7 +31,7 @@ const Header_small = ()=>{
 	    </a>
 	    <div className="px-4">
              <a onClick={()=>select_lang(rtl ? 'en' : 'he', router, setCookie)}
-	       className="text-lif-main">
+	       className="text-lif-main text-lg">
 	       {t('en_he_link')}
               </a>
             </div>
