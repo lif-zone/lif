@@ -15,6 +15,7 @@ const Scroll_form = ({update_cb})=>{
             return;
         await db_provider.add_scroll(name);
         await update_cb();
+        set_name('');
     };
     useEffect(()=>{
         set_error(null);
@@ -23,8 +24,7 @@ const Scroll_form = ({update_cb})=>{
         if (!/^[0-9a-z_]+$/i.test(name))
             set_error('invalid name');
     }, [name]);
-    return <form className="grid grid-cols-1 gap-2"
-      onSubmit={submit}>
+    return <form className="grid grid-cols-1 gap-2 mb-8" onSubmit={submit}>
       <label className="block">
         <span className="text-gray-700">Scroll name</span>
         <input type="text" className="mt-1 block w-full rounded-md

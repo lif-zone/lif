@@ -25,6 +25,7 @@ const Declaration_form = ({scroll, keypair, update_cb})=>{
             return;
         await scroll.decl(keypair, data_json);
         await update_cb();
+        set_data_input('');
     };
     useEffect(()=>{
         set_error(null);
@@ -37,8 +38,7 @@ const Declaration_form = ({scroll, keypair, update_cb})=>{
             set_error(''+e);
         }
     }, [data_input]);
-    return <form className="grid grid-cols-1 gap-2"
-      onSubmit={submit}>
+    return <form className="grid grid-cols-1 gap-2 mb-8" onSubmit={submit}>
       <label className="block">
         <span className="text-gray-700">Data JSON</span>
         <textarea
@@ -58,7 +58,7 @@ const Declaration_form = ({scroll, keypair, update_cb})=>{
 const minify_str = str=>{
     if (str.lenght<20)
         return;
-    return str.slice(0, 10)+'...'+str.slice(-10);
+    return str.slice(0, 16)+'...'+str.slice(-16);
 };
 
 const Declaration = decl=>{
@@ -68,10 +68,9 @@ const Declaration = decl=>{
         obj.meta.public_key = minify_str(obj.meta.public_key);
         return JSON.stringify(obj, null, 4);
     };
-    return <div className="rounded-lg shadow-lg bg-gray-100 p-5 mb-4
-          cursor-pointer">
+    return <div className="rounded-lg shadow-lg bg-gray-100 p-5 mb-4">
           <div className="text-gray-500 text-sm mt-2">
-            ts {date.to_sql(decl.meta.ts)}
+            {date.to_sql(decl.meta.ts)}
           </div>
           <div className="text-sm whitespace-pre">
             {decl2str()}
