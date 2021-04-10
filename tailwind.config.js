@@ -20,6 +20,7 @@ module.exports = {
     variants: {
       extend: {
         translate: ['responsive', 'group-hover'],
+        opacity: ['disabled'],
       },
     },
     plugins: [

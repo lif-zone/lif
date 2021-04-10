@@ -1,6 +1,7 @@
 // LICENSE_CODE LIF
 'use strict';
 import etask from './etask.js';
+import zutil from './util.js';
 
 const ALGORITHM = 'RSA-PSS', HASH = 'SHA-256';
 let E = {};
@@ -15,7 +16,7 @@ const str_to_key = str=>etask(function*(){
     }
 });
 
-const key_to_str = key=>etask(function*(){
+export const key_to_str = key=>etask(function*(){
     try {
         const jwk = yield window.crypto.subtle.exportKey('jwk', key);
         return JSON.stringify(jwk);
@@ -40,6 +41,14 @@ export const import_keys = ()=>etask(function*(){
     if (!public_key || !private_key)
         return;
     return {public_key, private_key};
+});
+
+export const sign = (buf, private_key)=>etask(function*(){
+    try {
+        const signature = yield window.crypto.subtle.sign(
+            {name: ALGORITHM, saltLength: 128}, private_key, buf);
+        return zutil.buf2hex(signature);
+    } catch(e){ console.error(e); }
 });
 
 export const generate_keys = ()=>etask(function*(){

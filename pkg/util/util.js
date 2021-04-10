@@ -540,4 +540,25 @@ E.flatten_obj = function(obj){
     return res;
 };
 
+
+E.buf2hex = buf=>{
+    return Array.prototype.map.call(new Uint8Array(buf),
+        x=>('00'+x.toString(16)).slice(-2)).join('');
+};
+
+E.hex2buf = hex=>{
+    let view = new Uint8Array(hex.length/2);
+    for (let i = 0; i<hex.length; i+=2)
+        view[i>>1] = parseInt(hex.substring(i, i+2), 16);
+    return view.buffer;
+};
+
+E.str2ab = str=>{
+    const buf = new ArrayBuffer(str.length);
+    const buf_view = new Uint8Array(buf);
+    for (let i = 0; i<str.length; i++)
+        buf_view[i] = str.charCodeAt(i);
+    return buf;
+};
+
 return E; }());
