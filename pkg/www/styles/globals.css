@@ -1,7 +1,7 @@
 @tailwind base;
 
 @layer base {
-    body { @apply font-body text-lif-main subpixel-antialiased; }
+    body { @apply font-body text-lif-main subpixel-antialiased text-lg; }
     header { @apply flex justify-between; }
     a { @apply cursor-pointer no-underline text-lif-blue-darkened; }
     * { @apply leading-normal; }
@@ -32,10 +32,6 @@
 
     p {
     @apply py-1 text-lg;
-    }
-
-    div {
-    @apply text-lg;
     }
 
     hr {
