@@ -64,8 +64,10 @@ const minify_str = str=>{
 const Declaration = decl=>{
     const decl2str = ()=>{
         let obj = zutil.clone_deep(decl);
-        obj.sig = minify_str(obj.sig);
-        obj.meta.public_key = minify_str(obj.meta.public_key);
+        if (obj.sig)
+            obj.sig = minify_str(obj.sig);
+        if (obj.meta && obj.meta.public_key)
+            obj.meta.public_key = minify_str(obj.meta.public_key);
         return JSON.stringify(obj, null, 4);
     };
     return <div className="rounded-lg shadow-lg bg-gray-100 p-5 mb-4">
