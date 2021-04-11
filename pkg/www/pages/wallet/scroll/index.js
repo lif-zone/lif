@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Layout from '../../../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import date from '../../../../util/date.js';
-import db_provider from '../../../../core/db_provider_stub.js';
+import db_provider from '../../../../core/db_provider_indexeddb.js';
 
 const Scroll_form = ({update_cb})=>{
     const [name, set_name] = useState('');
@@ -48,12 +48,12 @@ const Scroll = ({name, length, updated_at, created_at})=>{
             <div className="inline text-xl font-bold">{name}</div>{' '}
             {length} declarations
           </div>
-          <div className="text-gray-500 text-sm mt-2">
-            created {date.to_sql(created_at)}
-          </div>
-          <div className="text-gray-500 text-sm">
-            updated {date.to_sql(updated_at)}
-          </div>
+          {created_at && <div className="text-gray-500 text-sm mt-2">
+              created {date.to_sql(created_at)}
+            </div>}
+          {updated_at && <div className="text-gray-500 text-sm">
+              updated {date.to_sql(updated_at)}
+            </div>}
         </div>
       </Link>;
 };

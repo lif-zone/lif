@@ -23,6 +23,11 @@ E.connect = sid=>{
             // XXX: use 'query'
             return lines;
         },
+        count(query){
+            // XXX: use 'query'
+            console.log('XXX db_provider_local.find_all count', sid, query);
+            return lines.length;
+        }
         insert(declaration){
             console.log('XXX db_provider_local.insert stub', sid, declaration);
             lines.push(declaration);
@@ -41,9 +46,11 @@ E.connect = sid=>{
         unlock(handle){
             console.log('XXX db_provider_local.unlock stub', sid, handle);
         },
+        close(handle){},
     };
 };
 
+// for wallet UI only
 E.get_all_scrolls = ()=>{
     console.log('XXX db_provider_local.get_all_scrolls stub');
     let scrolls = [];
@@ -56,6 +63,7 @@ E.get_all_scrolls = ()=>{
     return scrolls;
 };
 
+// for wallet UI only
 E.add_scroll = sid=>{
     if (DB[sid])
         return;
