@@ -1,6 +1,6 @@
 // LICENSE_CODE LIF
 'use strict';
-import zutil from './util.js';
+import zutil from '../util/util.js';
 import {sign, key_to_str} from './wallet.js';
 
 let E = {};

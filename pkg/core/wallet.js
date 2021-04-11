@@ -1,7 +1,7 @@
 // LICENSE_CODE LIF
 'use strict';
-import etask from './etask.js';
-import zutil from './util.js';
+import etask from '../util/etask.js';
+import zutil from '../util/util.js';
 
 const ALGORITHM = 'RSA-PSS', HASH = 'SHA-256';
 let E = {};

@@ -6,9 +6,9 @@ import Layout from '../../../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import date from '../../../../util/date.js';
 import zutil from '../../../../util/util.js';
-import Scroll from '../../../../util/scroll.js';
-import db_provider from '../../../../util/db_provider_stub.js';
-import {import_keys} from '../../../../util/wallet.js';
+import Scroll from '../../../../core/scroll.js';
+import db_provider from '../../../../core/db_provider_stub.js';
+import {import_keys} from '../../../../core/wallet.js';
 
 export const getServerSideProps = async ({locale})=>{
     const props = await serverSideTranslations(locale, ['common']);

@@ -7,7 +7,7 @@ import Icon_plus from '../../public/img/icon_plus.svg';
 import Icon_login from '../../public/img/icon_login.svg';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {use_app_context} from '../../utils/context.js';
-import {import_keys, generate_and_store_keys} from '../../../util/wallet.js';
+import {import_keys, generate_and_store_keys} from '../../../core/wallet.js';
 
 export const getStaticProps = async ({locale})=>{
     const props = await serverSideTranslations(locale, ['common']);

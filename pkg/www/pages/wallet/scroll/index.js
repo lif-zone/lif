@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Layout from '../../../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import date from '../../../../util/date.js';
-import db_provider from '../../../../util/db_provider_stub.js';
+import db_provider from '../../../../core/db_provider_stub.js';
 
 const Scroll_form = ({update_cb})=>{
     const [name, set_name] = useState('');

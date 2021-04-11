@@ -1,7 +1,7 @@
 'use strict'; /*jslint node:true, browser:true, react: true*/
 import Layout from '../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
-import LIF from '../../util/lif.js';
+import LIF from '../../core/lif.js';
 
 export const getStaticProps = async ({locale})=>{
     const props = await serverSideTranslations(locale, ['common']);
