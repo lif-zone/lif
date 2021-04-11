@@ -14,26 +14,32 @@ E.connect = sid=>{
     let idx = 0;
     console.log('XXX db_provider_local.connect stub');
     return {
-        find_one: query=>{
+        find_one(query){
             console.log('XXX db_provider_local.find_one stub', sid, query);
             // XXX: use 'query'
             return lines[0];
         },
-        find_all: query=>{
+        find_all(query){
             console.log('XXX db_provider_local.find_all stub', sid, query);
             // XXX: use 'query'
             return lines;
         },
-        insert: declaration=>{
+        insert(declaration){
             console.log('XXX db_provider_local.insert stub', sid, declaration);
             lines.push(declaration);
             DB[sid].updated_at = new Date();
         },
-        lock: ()=>{
-            console.log('XXX db_provider_local.lock stub', sid);
-            return {idx: ++idx};
+        async get_last_decl(){
+            return lines[lines.length-1];
         },
-        unlock: handle=>{
+        async lock(){
+            console.log('XXX db_provider_local.lock stub', sid);
+            const last_decl = await this.get_last_decl();
+            const prev_sign = last_decl && last_decl.sig;
+            const idx = last_decl ? last_decl.meta.idx+1 : 1;
+            return {idx, prev_sign};
+        },
+        unlock(handle){
             console.log('XXX db_provider_local.unlock stub', sid, handle);
         },
     };
