@@ -2,6 +2,7 @@
 import {useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
+import JSON6 from 'json-6';
 import Layout from '../../../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import date from '../../../../util/date.js';
@@ -32,7 +33,7 @@ const Declaration_form = ({scroll, keypair, update_cb})=>{
         set_data_json(null);
         try {
             if (data_input)
-                set_data_json(JSON.parse(data_input));
+                set_data_json(JSON6.parse(data_input));
         } catch(e){
             set_error(''+e);
         }
