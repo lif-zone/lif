@@ -17,7 +17,7 @@ export const getServerSideProps = async ({locale})=>{
 
 const Declaration_form = ({scroll, keypair, update_cb})=>{
     const [data_input, set_data_input] = useState();
-    const [data_json, set_data_json] = useState({});
+    const [data_json, set_data_json] = useState(null);
     const [error, set_error] = useState();
     const submit = async event=>{
         event.preventDefault();
@@ -29,11 +29,10 @@ const Declaration_form = ({scroll, keypair, update_cb})=>{
     };
     useEffect(()=>{
         set_error(null);
+        set_data_json(null);
         try {
             if (data_input)
                 set_data_json(JSON.parse(data_input));
-            else
-                set_data_json({});
         } catch(e){
             set_error(''+e);
         }
@@ -50,7 +49,8 @@ const Declaration_form = ({scroll, keypair, update_cb})=>{
       </label>
       {error && <div className="text-sm text-red-800">{error}</div>}
       <button type="submit" className="bg-blue-600 w-32 disabled:opacity-50
-          hover:bg-blue-800 text-white py-1 px-4 rounded" disabled={!!error}>
+          hover:bg-blue-800 text-white py-1 px-4 rounded"
+          disabled={!!error || !data_json}>
           Declare</button>
     </form>;
 };
@@ -68,6 +68,8 @@ const Declaration = decl=>{
             obj.sig = minify_str(obj.sig);
         if (obj.meta && obj.meta.public_key)
             obj.meta.public_key = minify_str(obj.meta.public_key);
+        if (obj.meta && obj.meta.prev_sign)
+            obj.meta.prev_sign = minify_str(obj.meta.prev_sign);
         return JSON.stringify(obj, null, 4);
     };
     return <div className="rounded-lg shadow-lg bg-gray-100 p-5 mb-4">
