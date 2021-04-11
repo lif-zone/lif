@@ -45,7 +45,7 @@ E.connect = async sid=>{
         async lock(){
             const last_decl = await this.get_last_decl();
             const prev_sig = last_decl && last_decl.sig;
-            const idx = last_decl ? last_decl.meta.idx+1 : 1;
+            const idx = last_decl ? last_decl.meta.idx+1 : 0;
             return {idx, prev_sig};
         },
         unlock(handle){},
