@@ -1,6 +1,7 @@
 // LICENSE_CODE LIF
 'use strict';
 import zutil from '../util/util.js';
+import date from '../util/date.js';
 import {sign, key_to_str} from './wallet.js';
 
 let E = {};
@@ -37,7 +38,7 @@ E.open = async (impl, sid)=>{
 
 E.ts = function(){
   // XXX: need monotonic and high precision
-  return Date.now();
+  return date.to_sql_ms();
 };
 
 export default E;
