@@ -11,7 +11,6 @@ E.connect = sid=>{
             updated_at: new Date()};
     }
     let lines = DB[sid].documents;
-    let idx = 0;
     console.log('XXX db_provider_local.connect stub');
     return {
         find_one(query){
