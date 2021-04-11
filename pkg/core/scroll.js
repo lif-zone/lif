@@ -11,8 +11,8 @@ class Scroll {
         this.sid = sid;
     }
     async decl(keypair, data, blob){
-        const idx = await this.conn.lock();
-        const meta = {idx, ts: E.ts(),
+        const {idx, prev_sig} = await this.conn.lock();
+        const meta = {idx, ts: E.ts(), prev_sig,
             public_key: await key_to_str(keypair.public_key)};
         if (blob) // XXX: use base64 instead
             meta.blob = zutil.buf2hex(blob);

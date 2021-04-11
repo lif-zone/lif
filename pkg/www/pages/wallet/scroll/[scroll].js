@@ -68,8 +68,8 @@ const Declaration = decl=>{
             obj.sig = minify_str(obj.sig);
         if (obj.meta && obj.meta.public_key)
             obj.meta.public_key = minify_str(obj.meta.public_key);
-        if (obj.meta && obj.meta.prev_sign)
-            obj.meta.prev_sign = minify_str(obj.meta.prev_sign);
+        if (obj.meta && obj.meta.prev_sig)
+            obj.meta.prev_sig = minify_str(obj.meta.prev_sig);
         return JSON.stringify(obj, null, 4);
     };
     return <div className="rounded-lg shadow-lg bg-gray-100 p-5 mb-4">
