@@ -61,7 +61,10 @@ function init(){
   if (!force_link && !fbl_link)
       return;
   if (document.readyState!='complete')
+  {
     window.onload = function(){ init(); };
+    return;
+  }
   log_visit('new');
   if (is_logged_in())
   {
