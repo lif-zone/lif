@@ -22,9 +22,16 @@ module.exports = {
             value: 'public, max-age=9999999999, must-revalidate',
           }
         ],
-      },
-      {
+      }, {
         source: '/api/israeltomorrow_save_email',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: 'https://israeltomorrow.co.il',
+          }
+        ],
+      }, {
+        source: '/api/israeltomorrow_log_visit',
         headers: [
           {
             key: 'Access-Control-Allow-Origin',

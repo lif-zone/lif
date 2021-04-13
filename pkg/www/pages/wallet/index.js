@@ -55,7 +55,7 @@ export default function Wallet(){
   const [has_keys, set_has_keys] = useState();
   const router = useRouter();
   const check_keys = async ()=>{
-      set_has_keys(!!(await import_keys()));
+      set_has_keys(!!await import_keys());
   };
   useEffect(()=>{
       check_keys();

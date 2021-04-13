@@ -109,3 +109,10 @@ Install Visual Studio
 $ sudo dpkg -i code_1.54.3-1615806378_amd64.deb
 - to start Visual Studio
 $ code
+
+Working with docker
+-------------------
+- rebuild and install new npms
+  $ docker-compose up --build --renew-anon-volume www_dev
+- start containers
+  $ docker-compose up -d www_dev

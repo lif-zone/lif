@@ -33,6 +33,14 @@ E.find_one = (coll_name, selector, sort)=>etask(function*(){
     return yield collection.findOne(selector, opt);
 });
 
+E.update_one = (coll_name, selector, val, opt)=>etask(function*(){
+    const collection = yield E.get_collection(coll_name);
+    selector = selector||{};
+    val = val||{};
+    opt = opt||{};
+    return yield collection.updateOne(selector, val, opt);
+});
+
 E.find_all = (coll_name, selector, opt)=>etask(function*(){
     const collection = yield E.get_collection(coll_name);
     selector = selector||{};
