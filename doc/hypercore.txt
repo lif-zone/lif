@@ -1,0 +1,17 @@
+- getting started with hypercore
+  https://hypercore-protocol.org/guides/walkthroughs/creating-and-sharing-hypercores/
+  - create/write to hypercore
+    https://github.com/hypercore-protocol/walkthroughs/blob/main/hypercore/step-1.js
+  - relicate hypercore
+    https://github.com/hypercore-protocol/walkthroughs/blob/main/hypercore/step-2.js
+- workshop to write p2p index/search from the basics up to a db
+  (it is split into 15 problems/solutions starting from append-only-logs)
+  https://github.com/hypercore-protocol/p2p-indexing-and-search
+  - start at problem #0
+    https://github.com/hypercore-protocol/p2p-indexing-and-search/blob/main/problems/00.md
+- install hyperspace source:
+  $ git clone https://github.com/hypercore-protocol/hypercore.git
+- install hyperspace
+  $ sudo npm install -g hyperspace
+- install hyperspace cli
+  $ sudo npm install -g @hyperspace/cli
