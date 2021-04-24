@@ -27,3 +27,7 @@ hypercore main modules:
 - https://github.com/hypercore-protocol/corestore-networker
 - https://github.com/RangerMauve/hyperswarm-web
 
+webtorrent examples:
+- demo: https://jimmywarting.github.io/webtorrent-server-browser/
+- https://github.com/jimmywarting/webtorrent-server-browser
+- https://github.com/xuset/planktos
