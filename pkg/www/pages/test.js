@@ -36,26 +36,27 @@ let hypercore_test = async ()=>{
 };
 
 export default function Scroll_page(){
-  const router = useRouter();
+  let h = typeof window==='object' && /hypercore/.test(window.location.search);
+  console.log('XXX h %s', h);
   let content = null;
   useEffect(()=>{
-      if (router.query.hypercore)
-          hypercore_test();
-      else
-      {
-          register_sw();
-          content = <div>
-            <script src="/js/hyper-sdk-bundle.js"/>
-            <script src='/js/test.js'/>
-          </div>
-      }
+    if (h)
+        hypercore_test();
+    else
+    {
+        register_sw();
+        content = <div>
+          <script src="/js/hyper-sdk-bundle.js"/>
+          <script src='/js/test.js'/>
+        </div>
+    }
   }, []);
   return (
     <Layout>
       {content}
       <div className="px-3">
-        <h3>Test: {router.query.hypercore ? 'hypercore' : 'serviceWorker'}</h3>
-        {router.query.hypercore ?
+        <h3>Test: {h ? 'hypercore' : 'serviceWorker'}</h3>
+        {h ?
           <a href='test'>serviceWorker test</a>
         :
           <a href='test?hypercore=1'>hypercore test</a>
