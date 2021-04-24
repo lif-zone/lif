@@ -15,3 +15,15 @@
   $ sudo npm install -g hyperspace
 - install hyperspace cli
   $ sudo npm install -g @hyperspace/cli
+
+sdk:
+- https://github.com/datproject/sdk
+
+hypercore main modules:
+- https://github.com/hypercore-protocol/docs
+- https://github.com/hypercore-protocol/hypercore
+- https://github.com/hypercore-protocol/hypercore-protocol
+- https://github.com/hyperswarm/hyperswarm
+- https://github.com/hypercore-protocol/corestore-networker
+- https://github.com/RangerMauve/hyperswarm-web
+
