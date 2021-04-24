@@ -16,6 +16,7 @@ let register_sw = ()=>{
 };
 
 let hypercore_test = async ()=>{
+    console.log('hypercore_test');
     let db = rai('dbname');
     let feed = hypercore(filename=>{
         return db(filename);
@@ -39,12 +40,10 @@ export default function Scroll_page(){
   let content = null;
   useEffect(()=>{
       if (router.query.hypercore)
-      {
           hypercore_test();
-          register_sw();
-      }
       else
       {
+          register_sw();
           content = <div>
             <script src="/js/hyper-sdk-bundle.js"/>
             <script src='/js/test.js'/>
@@ -55,7 +54,12 @@ export default function Scroll_page(){
     <Layout>
       {content}
       <div className="px-3">
-        <h3>Test</h3>
+        <h3>Test: {router.query.hypercore ? 'hypercore' : 'serviceWorker'}</h3>
+        {router.query.hypercore ?
+          <a href='test'>serviceWorker test</a>
+        :
+          <a href='test?hypercore=1'>hypercore test</a>
+        }
       </div>
     </Layout>
   );
