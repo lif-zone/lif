@@ -7,7 +7,8 @@ import {useTranslation} from 'next-i18next';
 
 const select_lang = (l, router, setCookie)=>{
   setCookie('NEXT_LOCALE', l);
-  router.push(router.route, router.route, {locale: l});
+  router.push(`/${l}${router.asPath}`, `/${l}${router.asPath}`,
+      {locale: false});
 };
 
 const Header_small = ()=>{
