@@ -561,4 +561,10 @@ E.str2ab = str=>{
     return buf;
 };
 
+E.minify_str = str=>{
+    if (str.lenght<20)
+        return;
+    return str.slice(0, 16)+'...'+str.slice(-16);
+};
+
 return E; }());

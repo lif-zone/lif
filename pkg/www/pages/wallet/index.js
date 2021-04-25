@@ -54,8 +54,8 @@ const Create_wallet_btn = ({has_keys, on_click})=>{
 export default function Wallet(){
   const [has_keys, set_has_keys] = useState();
   const router = useRouter();
-  const check_keys = async ()=>{
-      set_has_keys(!!await import_keys());
+  const check_keys = ()=>{
+      set_has_keys(!!import_keys());
   };
   useEffect(()=>{
       check_keys();
@@ -63,16 +63,16 @@ export default function Wallet(){
   const login_cb = ()=>{
       router.push('/wallet/scroll');
   };
-  const create_cb = async ()=>{
+  const create_cb = ()=>{
       if (has_keys && !window.confirm('Are you sure you want to replace your '+
         'local keypair with a new one?'))
       {
           return;
       }
-      await generate_and_store_keys();
+      generate_and_store_keys();
       if (has_keys)
           return login_cb();
-      await check_keys();
+      check_keys();
   };
   return (
     <Layout>

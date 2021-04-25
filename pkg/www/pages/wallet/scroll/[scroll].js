@@ -8,7 +8,6 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import date from '../../../../util/date.js';
 import zutil from '../../../../util/util.js';
 import Scroll from '../../../../core/scroll.js';
-import db_provider from '../../../../core/db_provider_indexeddb.js';
 import {import_keys} from '../../../../core/wallet.js';
 
 export const getServerSideProps = async ({locale})=>{
@@ -16,24 +15,24 @@ export const getServerSideProps = async ({locale})=>{
     return {props};
 };
 
-const Declaration_form = ({scroll, keypair, update_cb})=>{
+const Declaration_form = ({scroll, update_cb})=>{
     const [data_input, set_data_input] = useState();
-    const [data_json, set_data_json] = useState(null);
+    const [data, set_data] = useState(null);
     const [error, set_error] = useState();
     const submit = async event=>{
         event.preventDefault();
         if (error)
             return;
-        await scroll.decl(keypair, data_json);
+        await scroll.decl(data);
         await update_cb();
         set_data_input('');
     };
     useEffect(()=>{
         set_error(null);
-        set_data_json(null);
+        set_data(null);
         try {
             if (data_input)
-                set_data_json(JSON6.parse(data_input));
+                set_data(JSON6.parse(data_input));
         } catch(e){
             set_error(''+e);
         }
@@ -51,26 +50,22 @@ const Declaration_form = ({scroll, keypair, update_cb})=>{
       {error && <div className="text-sm text-red-800">{error}</div>}
       <button type="submit" className="bg-blue-600 w-32 disabled:opacity-50
           hover:bg-blue-800 text-white py-1 px-4 rounded"
-          disabled={!!error || !data_json}>
+          disabled={!!error || !data}>
           Declare</button>
     </form>;
-};
-
-const minify_str = str=>{
-    if (str.lenght<20)
-        return;
-    return str.slice(0, 16)+'...'+str.slice(-16);
 };
 
 const Declaration = decl=>{
     const decl2str = ()=>{
         let obj = zutil.clone_deep(decl);
         if (obj.sig)
-            obj.sig = minify_str(obj.sig);
+            obj.sig = zutil.minify_str(obj.sig);
         if (obj.meta && obj.meta.public_key)
-            obj.meta.public_key = minify_str(obj.meta.public_key);
+            obj.meta.public_key = zutil.minify_str(obj.meta.public_key);
         if (obj.meta && obj.meta.prev_sig)
-            obj.meta.prev_sig = minify_str(obj.meta.prev_sig);
+            obj.meta.prev_sig = zutil.minify_str(obj.meta.prev_sig);
+        if (obj.data && obj.data.author && obj.data.author.sig)
+            obj.data.author.sig = zutil.minify_str(obj.data.author.sig);
         return JSON.stringify(obj, null, 4);
     };
     return <div className="rounded-lg shadow-lg bg-gray-100 p-5 mb-4">
@@ -88,13 +83,12 @@ export default function Declarations(){
   const sid = router.query.scroll;
   const [declarations, set_declarations] = useState([]);
   const [scroll, set_scroll] = useState();
-  const [keypair, set_keypair] = useState();
+  const [error, set_error] = useState(null);
   useEffect(()=>{
       (async ()=>{
           const _keypair = await import_keys();
           if (!_keypair)
               return router.push('/wallet');
-          set_keypair(_keypair);
       })();
   }, []);
   const load_declarations = async _scroll=>{
@@ -105,23 +99,30 @@ export default function Declarations(){
       (async ()=>{
           if (scroll)
               scroll.close();
-          const _scroll = await Scroll.open(db_provider, sid);
+          const keypair = Scroll.find_my_scroll_keypair(sid);
+          if (!keypair)
+              return set_error('Missing scroll keys in localStorage');
+          const _scroll = await Scroll.open_write(keypair);
           set_scroll(_scroll);
           await load_declarations(_scroll);
       })();
   }, [sid]);
+  const first_decl = declarations[0];
+  let scroll_name = zutil.get(first_decl, 'data.author.name');
   return (
     <Layout>
       <div className="max-w-xl mx-auto px-3">
         <Link href="/wallet/scroll">← back to scrolls</Link>
         <div className="text-center mb-5">
-          <h1><b>{sid}</b> declarations</h1>
+          <h1><b>{scroll_name}</b> declarations</h1>
           <div className="text-base text-gray-500 font-semibold leading-5">
-            Todo: Short explanation
+            public key {zutil.minify_str(sid)}
           </div>
         </div>
-        {keypair && scroll && <Declaration_form scroll={scroll}
-            keypair={keypair} update_cb={()=>load_declarations(scroll)}/>}
+        {error && <div className="text-center text-sm text-red-800">
+          {error}</div>}
+        {scroll && <Declaration_form scroll={scroll}
+            update_cb={()=>load_declarations(scroll)}/>}
         {declarations.map((decl, i)=><Declaration key={i} {...decl}/>)}
       </div>
     </Layout>

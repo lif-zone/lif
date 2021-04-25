@@ -20,6 +20,8 @@
     "classnames": "^2.2.6",
     "express": "^4.17.1",
     "hypercore": "^9.9.1",
+    "hypercore-crypto": "^2.3.0",
+    "hypercore-promisifier": "^1.1.0",
     "idb": "^6.0.0",
     "json-6": "^1.1.1",
     "mongodb": "^3.6.4",

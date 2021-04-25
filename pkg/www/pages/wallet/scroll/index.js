@@ -4,16 +4,18 @@ import Link from 'next/link';
 import Layout from '../../../components/layout.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import date from '../../../../util/date.js';
-import db_provider from '../../../../core/db_provider_indexeddb.js';
+import zutil from '../../../../util/util.js';
+import Scroll from '../../../../core/scroll.js';
+import {import_keys} from '../../../../core/wallet.js';
 
-const Scroll_form = ({update_cb})=>{
+const Scroll_form = ({update_cb, keypair})=>{
     const [name, set_name] = useState('');
     const [error, set_error] = useState();
     const submit = async event=>{
         event.preventDefault();
         if (!name || error)
             return;
-        await db_provider.add_scroll(name);
+        await Scroll.create(name, import_keys());
         await update_cb();
         set_name('');
     };
@@ -40,13 +42,16 @@ const Scroll_form = ({update_cb})=>{
     </form>;
 };
 
-const Scroll = ({name, length, updated_at, created_at})=>{
-    return <Link href={`/wallet/scroll/${encodeURIComponent(name)}`}>
+const Scroll_el = ({name, public_key, length, updated_at, created_at})=>{
+    return <Link href={`/wallet/scroll/${encodeURIComponent(public_key)}`}>
         <div className="rounded-lg shadow-lg bg-gray-100 p-5 mb-4
           cursor-pointer group">
           <div className="text-lg group-hover:underline">
             <div className="inline text-xl font-bold">{name}</div>{' '}
             {length} declarations
+          </div>
+          <div className="text-gray-500 text-sm">
+            public key {zutil.minify_str(public_key)}
           </div>
           {created_at && <div className="text-gray-500 text-sm mt-2">
               created {date.to_sql(created_at)}
@@ -66,7 +71,7 @@ export const getStaticProps = async ({locale})=>{
 export default function Scrolls(){
   const [scrolls, set_scrolls] = useState([]);
   let load_scrolls = async ()=>{
-      set_scrolls(await db_provider.get_all_scrolls());
+      set_scrolls(await Scroll.get_all_scrolls());
   };
   useEffect(()=>{
       load_scrolls();
@@ -81,7 +86,7 @@ export default function Scrolls(){
           </div>
         </div>
         {<Scroll_form update_cb={()=>load_scrolls()}/>}
-        {scrolls.map((scroll, i)=><Scroll key={i} {...scroll}/>)}
+        {scrolls.map((scroll, i)=><Scroll_el key={i} {...scroll}/>)}
       </div>
     </Layout>
   );
