@@ -94,11 +94,13 @@ const Declaration = decl=>{
             obj.meta.blob = zutil.minify_str(obj.meta.blob, 40);
         if (obj.data && obj.data.author && obj.data.author.sig)
             obj.data.author.sig = zutil.minify_str(obj.data.author.sig);
+        if (obj.data && obj.data.author && obj.data.author.pub)
+            obj.data.author.pub = zutil.minify_str(obj.data.author.pub);
         return JSON6.stringify(obj, null, 4);
     };
     return <div className="rounded-lg shadow-lg bg-gray-100 p-5 mb-4">
-          <div className="text-gray-500 text-sm mt-2">
-            {date.to_sql(decl.meta.ts)}
+          <div className="text-gray-500 text-xs mt-2">
+            <b>[{decl.meta.idx}]</b> {date.to_sql(decl.meta.ts)}
           </div>
           <div className="text-sm whitespace-pre">
             {decl2str()}
