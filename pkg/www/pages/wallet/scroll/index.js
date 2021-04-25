@@ -51,7 +51,7 @@ const Scroll_el = ({name, public_key, length, updated_at, created_at})=>{
             {length} declarations
           </div>
           <div className="text-gray-500 text-sm">
-            public key {zutil.minify_str(public_key)}
+            {public_key}
           </div>
           {created_at && <div className="text-gray-500 text-sm mt-2">
               created {date.to_sql(created_at)}

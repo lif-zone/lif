@@ -561,10 +561,12 @@ E.str2ab = str=>{
     return buf;
 };
 
-E.minify_str = str=>{
-    if (str.lenght<20)
+E.minify_str = (str, max)=>{
+    max = max||32;
+    if (str.lenght<max)
         return;
-    return str.slice(0, 16)+'...'+str.slice(-16);
+    return str.slice(0, max/2)+'…'+str.slice(-max/2)+
+        ` (${str.length} chars)`;
 };
 
 return E; }());

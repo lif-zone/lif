@@ -14,10 +14,12 @@ class Scroll {
         this.feed = feed;
     }
     async decl(data, blob){
-        const meta = {idx: this.feed.length, ts: E.ts()};
-        if (blob) // XXX: use base64 instead?
-            meta.blob = blob.toString('hex');
-        await this.feed.append({meta, data});
+        const decl = {meta: {idx: this.feed.length, ts: E.ts()}};
+        if (data)
+            decl.data = data;
+        if (blob)
+            decl.meta.blob = blob;
+        await this.feed.append(decl);
     }
     async get(index){
         return await this.feed.get(index);
@@ -118,6 +120,7 @@ E.open_read = async public_key=>{
 
 E.create = async (name, wallet_keypair)=>{
     const {publicKey: public_key, secretKey: private_key} = crypto.keyPair();
+    let master_scroll = await E.open_write(wallet_keypair);
     let scroll = await E.open_write({public_key, private_key});
     let name_sig = sign(Buffer.from(name), wallet_keypair.private_key);
     let first_decl = {
