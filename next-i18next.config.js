@@ -3,7 +3,7 @@ const json6 = require('json-6');
 
 module.exports = {
     i18n: {
-        defaultLocale: 'he',
+        defaultLocale: 'en',
         locales: ['he', 'en'],
         // localeDetection: true,
     },
