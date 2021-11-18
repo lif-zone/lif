@@ -1,2 +1,2 @@
-apt install npm
-npm install -g hyperspace
+sudo apt install npm
+sudo npm install -g hyperspace
