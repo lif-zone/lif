@@ -22,6 +22,7 @@
     "hypercore": "^9.9.1",
     "hypercore-crypto": "^2.3.0",
     "hypercore-promisifier": "^1.1.0",
+    "hyperspace": "^3.19.0",
     "idb": "^6.0.0",
     "json-6": "^1.1.1",
     "mongodb": "^3.6.4",
