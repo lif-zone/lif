@@ -1,2 +1,10 @@
 sudo apt install npm
 sudo npm install -g hyperspace
+sudo apt update
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+sudo apt install net-tools
+sudo hyperspace --host 172.31.11.223 --port 1235  -s 'peer_data'
+
+
