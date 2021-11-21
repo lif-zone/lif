@@ -23,6 +23,7 @@
     "hypercore-crypto": "^2.3.0",
     "hypercore-promisifier": "^1.1.0",
     "hyperspace": "^3.19.0",
+    "dat-sdk": "^2.8.1",
     "idb": "^6.0.0",
     "json-6": "^1.1.1",
     "mongodb": "^3.6.4",
@@ -30,13 +31,14 @@
     "next": "10.0.7",
     "next-auth": "^3.13.3",
     "next-i18next": "^8.1.0",
-    "random-access-idb": "github:random-access-storage/random-access-idb",
+    "random-access-idb": "^1.2.1",
     "react": "17.0.1",
     "react-cookie": "^4.0.3",
     "react-dom": "17.0.1",
     "react-ga": "3.3.0",
     "uint64be": "^3.0.0",
-    "varint": "^6.0.0"
+    "varint": "^6.0.0",
+    "qs": "^6.10.1"
   },
   "devDependencies": {
     "eslint-plugin-react": "7.22.0",
