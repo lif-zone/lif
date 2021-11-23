@@ -8,6 +8,11 @@ module.exports = {
           issuer: {test: /\.jsx?$/},
           use: ['@svgr/webpack'],
       });
+      if (!isServer)
+      {
+        config.target = 'web';
+        config.resolve.alias.hyperswarm = 'hyperswarm-web';
+      }
       return config;
   },
   i18n,

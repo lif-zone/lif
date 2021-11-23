@@ -22,6 +22,7 @@
     "hypercore": "^9.9.1",
     "hypercore-crypto": "^2.3.0",
     "hypercore-promisifier": "^1.1.0",
+    "hyperswarm-web": "^2.1.1",
     "hyperspace": "^3.19.0",
     "dat-sdk": "^2.8.1",
     "idb": "^6.0.0",
