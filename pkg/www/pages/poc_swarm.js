@@ -6,6 +6,10 @@ const Hyperswarm = require('hyperswarm-web');
 const date = require('../../util/date.js');
 const sprintf = require('../../util/sprintf.js');
 
+const WSS1 = 'wss://geut-webrtc-signal-v3.herokuapp.com';
+const WSS2 = 'wss://signal.dat-web.eu';
+const WSS3 = 'wss://geut-webrtc-signal-v3.glitch.me';
+
 let console_log = [], MAX_LOG = 10000;
 // XXX: move to generic place
 if (typeof window=='object')
@@ -28,6 +32,7 @@ if (typeof window=='object')
 
 export default class Swarm extends Component {
   state = {peer_name: ''+parseInt(Math.random()*100000)};
+  wss = WSS1;
   _log = [];
   log(s){
     this._log.push(date.to_sql_ms()+' '+s);
@@ -35,8 +40,13 @@ export default class Swarm extends Component {
     this.setState({force_render: Date.now()});
   }
   async start_swarm(){
-    let conn_id = 0;
-    const swarm_web = Hyperswarm();
+    let conn_id = 0, wss = this.wss;
+    // XXX allow to select from UI
+    // wss://signal.dat-web.eu, wss://geut-webrtc-signal-v3.glitch.me
+    this.log('swarm bootstrap '+(wss ? wss :
+      'default: '+WSS1+', '+WSS2+', '+WSS3));
+    const swarm_web = Hyperswarm({
+      bootstrap: wss ? [wss] : undefined});
     swarm_web.on('connection', (socket, info)=>{
       conn_id++;
       let id = conn_id;
@@ -51,6 +61,7 @@ export default class Swarm extends Component {
     this.log('join swarm');
     swarm_web.join(topic, {announce: true, lookup: true});
   }
+  on_wss = e=>(this.wss = e.target.value);
   on_click = ()=>this.start_swarm();
   on_peer_name = e=>this.setState({peer_name: e.target.value});
   on_copy_log = ()=>navigator.clipboard.writeText(
@@ -71,6 +82,12 @@ export default class Swarm extends Component {
           <DebugButton render_content={this.render_debug}/>
           <h1>Hypercore Swarm</h1>
           <input value={peer_name} onChange={this.on_peer_name}/>
+          <select onChange={this.on_wss}>
+            <option value={WSS1}>{WSS1}</option>
+            <option value={WSS2}>{WSS2}</option>
+            <option value={WSS3}>{WSS3}</option>
+            <option value=''>Default</option>
+          </select>
           <button onClick={this.on_click}>Join Swarm</button>
           <pre style={{fontSize: '13px'}}>{this._log.join('\n')}</pre>
         </div>
