@@ -14,6 +14,7 @@ let console_log = [], MAX_LOG = 10000;
 // XXX: move to generic place
 if (typeof window=='object')
 {
+  localStorage.debug = '*';
   window.console_log = console_log;
   function overload(o){
     let fn = o.fn, args = Array.from(o.args);
