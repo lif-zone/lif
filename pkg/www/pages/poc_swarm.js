@@ -12,8 +12,6 @@ const date = require('../../util/date.js');
 export default class Swarm extends Component {
   state = {peer_name: ''+parseInt(Math.random()*100000)};
   _log = [];
-  componentDidMount(){
-  }
   log(s){
     this._log.unshift(s);
     console.log(s);
@@ -23,19 +21,18 @@ export default class Swarm extends Component {
     let conn_id = 0;
     const swarm_web = Hyperswarm();
     swarm_web.on('connection', (socket, info)=>{
-     conn_id++;
-     let id = conn_id;
-     this.log(date.to_sql_ms()+' conn #'+id+': NEW  type '+info.type+' peer '+
-       JSON.stringify(info.peer));
+      conn_id++;
+      let id = conn_id;
+      this.log(date.to_sql_ms()+' conn #'+id+': NEW  type '+info.type+' peer '+
+        JSON.stringify(info.peer));
       socket.on('data', data=>{
         this.log(date.to_sql_ms()+' conn #'+id+': GOT_DATA '+data.toString());
       });
-     socket.write(date.to_sql_ms()+ ' hello from '+this.state.peer_name);
-    })
-
-    const topic = Buffer.alloc(32).fill('hello world')
+      socket.write(date.to_sql_ms()+ ' hello from '+this.state.peer_name);
+    });
+    const topic = Buffer.alloc(32).fill('hello world');
     this.log(date.to_sql_ms()+' join swarm');
-    swarm_web.join(topic, {announce: true, lookup: true})
+    swarm_web.join(topic, {announce: true, lookup: true});
   }
   on_click = ()=>this.start_swarm();
   on_peer_name = e=>this.setState({peer_name: e.target.value});
