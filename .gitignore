@@ -1,5 +1,6 @@
 *.swp
 *.swo
 *.swn
+package-lock.json
 **/node_modules
 **/.next
