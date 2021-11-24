@@ -121,7 +121,7 @@ E.parse_fast = function(fmt){
         else if (match = /^%%/.exec(_fmt))
             f += 'out += "%";\n';
         else if ((match =
-            /^%(?:([1-9]\d*)\$|\(([^\)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?(')?([bcdefoOsuxX])/
+            /^%(?:([1-9]\d*)\$|\(([^\)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?(')?([bcCdefoOsuxX])/
             .exec(_fmt)))
         {
             var positional = match[1], keyword = match[2], sign = match[3];
@@ -170,6 +170,7 @@ E.parse_fast = function(fmt){
             {
             case 'b': f += 'arg_s = arg.toString(2);\n'; break;
             case 'c': f += 'arg_s = String.fromCharCode(arg);\n'; break;
+            case 'C': f += 'arg_s = ""\n'; break;
             case 'd':
                 f += 'arg = sprintf.to_int(arg); arg_s = ""+arg;\n';
                 if (thousand_grouping)
@@ -239,7 +240,7 @@ E.parse_slow = function(fmt){
             else if (match = /^%%/.exec(_fmt))
                 f(function(){ return out += '%'; });
             else if ((match =
-                /^%(?:([1-9]\d*)\$|\(([^\)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?(')?([bcdefoOsuxX])/
+                /^%(?:([1-9]\d*)\$|\(([^\)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?(')?([bcCdefoOsuxX])/
                 .exec(_fmt)))
             {
                 var positional = match[1], keyword = match[2], sign = match[3];
@@ -300,6 +301,9 @@ E.parse_slow = function(fmt){
                 case 'b': f(function(){ arg_s = arg.toString(2); }); break;
                 case 'c':
                       f(function(){ arg_s = String.fromCharCode(arg); });
+                      break;
+                case 'C':
+                      f(function(){ arg_s = ''; });
                       break;
                 case 'd':
                     f(function(){
