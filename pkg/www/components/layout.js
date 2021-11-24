@@ -59,6 +59,7 @@ export default function Layout({title, children, desc, image}){
   return (
     <div dir={direction||'ltr'} className="min-h-screen">
       <Head>
+        <script src="/js/console_overload.js"/>
         <script async
           src="https://www.googletagmanager.com/gtag/js?id=G-94G7HR3TVG"/>
         <script dangerouslySetInnerHTML={{__html: google_analytics}} />
