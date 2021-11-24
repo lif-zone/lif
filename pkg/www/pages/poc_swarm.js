@@ -1,11 +1,7 @@
 'use strict'; /*jslint node:true, browser:true, react: true*/
 import Layout from '../components/layout.js';
 import {Component} from 'react';
-import hypercore from 'hypercore';
-import crypto from 'hypercore-crypto';
-import {toPromises} from 'hypercore-promisifier';
-import rai from 'random-access-idb';
-import JSON6 from 'json-6';
+import {DebugButton} from '../components/common.js';
 const Hyperswarm = require('hyperswarm-web');
 const date = require('../../util/date.js');
 
@@ -36,11 +32,18 @@ export default class Swarm extends Component {
   }
   on_click = ()=>this.start_swarm();
   on_peer_name = e=>this.setState({peer_name: e.target.value});
+  render_debug = ()=>{
+    return <div>
+      Log:
+      <pre style={{fontSize: '13px'}}>{this._log.join('\n')}</pre>
+    </div>;
+  }
   render(){
     let {peer_name} = this.state;
     return (
       <Layout>
         <div className="px-3">
+          <DebugButton render_content={this.render_debug}/>
           <h1>Hypercore Swarm</h1>
           <input value={peer_name} onChange={this.on_peer_name}/>
           <button onClick={this.on_click}>Join Swarm</button>

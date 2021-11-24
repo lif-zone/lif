@@ -173,4 +173,30 @@ export class Video extends Component {
   };
 }
 
+export class DebugPopup extends Component {
+  render(){
+    let {on_close, render_content} = this.props;
+    return <div style={{overflow: 'scroll', position: 'absolute',
+      backgroundColor: '#eee', padding: '5px', top: 10, left: 10, right: 10,
+      bottom: 10}}>
+      <button onClick={on_close} style={{backgroundColor: '#777',
+        position: 'absolute', right: 0, padding: '5px'}}>X</button>
+      {render_content()}
+    </div>;
+  }
+}
+
+export class DebugButton extends Component {
+  state = {show_popup: false};
+  on_click = ()=>this.setState({show_popup: !this.state.show_popup});
+  on_close = ()=>this.setState({show_popup: false});
+  render(){
+    let {show_popup} = this.state;
+    return <div>
+      <button onClick={this.on_click}>DEBUG</button>
+      {show_popup && <DebugPopup on_close={this.on_close}
+      render_content={this.props.render_content}/>}
+    </div>;
+  }
+}
 
