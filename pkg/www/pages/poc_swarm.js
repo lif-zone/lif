@@ -9,6 +9,17 @@ const sprintf = require('../../util/sprintf.js');
 const WSS1 = 'wss://geut-webrtc-signal-v3.herokuapp.com';
 const WSS2 = 'wss://signal.dat-web.eu';
 const WSS3 = 'wss://geut-webrtc-signal-v3.glitch.me';
+const WSS_BAD1 = 'wss://glitch.me';
+const WSS_BAD2 = 'wss://xxx.glitch.me';
+
+// XXX move out of here
+function toHex(buff){
+  if (typeof buff=='string')
+    return buff;
+  if (Buffer.isBuffer(buff))
+    return buff.toString('hex')
+  throw new Error('Cannot convert the buffer to hex: ', buff)
+}
 
 let console_log = [], MAX_LOG = 10000;
 // XXX: move to generic place
@@ -29,6 +40,9 @@ if (typeof window=='object')
   }
   window.console_overload = {debug: overload, info: overload,
     log: overload, warn: overload, error: overload};
+  window._lif_log_cb = function(o){
+    console.log('*** %s %s %s %o', o.comp, o.step, o.desc, o);
+  }
 }
 
 export default class Swarm extends Component {
@@ -58,7 +72,7 @@ export default class Swarm extends Component {
       });
       socket.write(date.to_sql_ms()+ ' hello from '+this.state.peer_name);
     });
-    const topic = Buffer.alloc(32).fill('hello world');
+    const topic = Buffer.alloc(32).fill('lif_topic_test_32_bytes_buffer__');
     this.log('join swarm');
     swarm_web.join(topic, {announce: true, lookup: true});
   }
@@ -88,6 +102,8 @@ export default class Swarm extends Component {
             <option value={WSS2}>{WSS2}</option>
             <option value={WSS3}>{WSS3}</option>
             <option value=''>Default</option>
+            <option value={WSS_BAD1}>BAD {WSS_BAD1}</option>
+            <option value={WSS_BAD2}>BAD {WSS_BAD2}</option>
           </select>
           <button onClick={this.on_click}>Join Swarm</button>
           <pre style={{fontSize: '13px'}}>{this._log.join('\n')}</pre>
