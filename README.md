@@ -108,11 +108,6 @@ The network functions in a decentralized manner, without the need for mediation 
 LIF is at the **VERY** early stage of conception. We are just starting up. We are still defining the main parts
 of the network, how it will work and the API. We plan to come up with initial POC in a few weeks.
 
-## License
-
-**LIF License** - Why do you beeieve you need one?! Liberty, Independence, Freedom!
-If you want to modify - no problem!
-
 ## Get involved
 
 We are just starting up, and you are invited to join@lif.zone
