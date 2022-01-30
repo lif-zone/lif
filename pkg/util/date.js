@@ -1,4 +1,3 @@
-// LICENSE_CODE ZON ISC
 'use strict'; /*jslint node:true, browser:true*/
 var is_node = typeof module=='object' && module.exports && module.children;
 var E = module.exports = date_get;

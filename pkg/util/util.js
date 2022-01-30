@@ -1,4 +1,3 @@
-// LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, br*/
 (function(){
 var node_util;

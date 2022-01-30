@@ -1,4 +1,3 @@
-// LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, node_ios, be_ff*/
 var is_node = typeof module=='object' && module.exports && module.children;
 if (is_node)

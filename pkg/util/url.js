@@ -1,4 +1,3 @@
-// LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, br*/
 var is_node = typeof module=='object' && module.exports && module.children;
 var qs = is_node && require('querystring');

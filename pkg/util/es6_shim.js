@@ -1,4 +1,3 @@
-// LICENSE_CODE ZON ISC
 'use strict'; /*jslint node:true, browser:true, -W103*/
 (function(){
 var define;

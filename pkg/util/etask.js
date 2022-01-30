@@ -1,4 +1,3 @@
-// LICENSE_CODE ZON ISC
 'use strict'; /*jslint node:true, browser:true, es6: true*/
 (function(){
 var zerr, assert;

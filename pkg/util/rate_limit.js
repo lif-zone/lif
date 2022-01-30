@@ -1,4 +1,3 @@
-// LICENSE_CODE ZON ISC
 'use strict'; /*zlint node, br*/
 var E = module.exports = rate_limit;
 

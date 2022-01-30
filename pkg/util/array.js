@@ -1,4 +1,3 @@
-// LICENSE_CODE ZON ISC
 'use strict'; /*jslint node:true, browser:true*/
 (function(){
 var E = module.exports;
