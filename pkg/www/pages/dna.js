@@ -5,6 +5,33 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {Trans, useTranslation} from 'next-i18next';
 import {Primary_button, Footer, Video} from '../components/common.js';
 
+const NL = '\n';
+// XXX: mv to css
+const page_style=<style jsx>{`
+h1 {padding-top: 1.2rem; padding-bottom: 0.5rem;}
+h2 {padding-top: 1.2rem; padding-bottom: 0.2rem;}
+h3 {padding-top: 1.2rem; padding-bottom: 0.1rem;}
+p {padding-top: 0.1rem; padding-bottom: 0.1rem}
+ul {padding-top: 0.1rem; padding-bottom: 0.1rem; margin: 0;}
+li {list-style-position: outside; margin-left: 1rem;}
+.bad, [cat=bad] {background-color: rgba(255,0,0,0.1);
+  border-color: rgba(255,0,0,0.7);}
+.ok,[cat=ok] {background-color: rgba(0,255,0,0.1);
+    border-color: rgba(48,48,48,0.7);}
+.good,[cat=good] {background-color: rgba(0,255,0,0.1);
+  border-color: rgba(0,255,0,0.7);}
+.better,[cat=better] {background-color: rgba(0,255,0,0.25);
+    border-color: rgba(0,255,0,0.7);}
+.ok,[cat=ok],.good,[cat=good],.better,[cat=better],.bad,[cat=bad] {
+  padding: 4px; margin-bottom: 10px; border-width: 0 3px;
+  border-style: solid; border-radius: 4px; position: relative;}
+
+th, td {border: 1px solid black; border-collapse: collapse;}
+table {background-color: transparent;}
+table {border-spacing: 0; border-collapse: collapse;}
+pre {overflow: auto;}
+`}</style>;
+
 export const getStaticProps = ({locale})=>etask(function*(){
     const props = yield serverSideTranslations(locale, ['common', 'about']);
     return {props};
@@ -13,10 +40,13 @@ export const getStaticProps = ({locale})=>etask(function*(){
 export default function Home(){
     const {t} = useTranslation('about', 'common');
     return (
-      <Layout title={t('title')} desc={t('title2')}
-        image="https://lif.zone/img/moshe.jpg">
+      <Layout title={t('title')} desc={t('title2')}>
+{page_style}
+<div className="max-w-6xl mx-auto px-6 pb-10">
+
 <h1>The DNA</h1>
 <div>XXX - Add missing header</div>
+<div>XXX - Fix From: and new line in sections</div>
 <h1 id="dna" text="DNA">DNA-like culture</h1>
 <p>
   <b>Continuously learning and evolving</b><br/>
@@ -33,7 +63,7 @@ export default function Home(){
 <p>
   The DNA is our shared memory of how to do things right, so work according to
   that DNA. If you find a way to improve on our DNA, share that with
-  <a href="mailto:dna@hola-org.com">dna@hola-org.com</a> and influence change in our DNA.
+  {' '}<a href="mailto:dna@hola-org.com">dna@hola-org.com</a> and influence change in our DNA.
 </p>
 <ul>
   <li>with yourself</li>
@@ -56,7 +86,7 @@ export default function Home(){
   Email consistency, just like source code consistency, helps handle large
   amounts of email efficiently in our team.<br/>
   That's why we keep our email styling consistent with our
-  <a href="/dna/comm#email"> email style guide</a>, and look out for unwritten
+  {' '}<a href="/dna/comm#email"> email style guide</a>, and look out for unwritten
   conventions in the way <a href="/dna/dict#veteran"> Veterans</a> communicate in
   the company, and follow their style.
 </p>
@@ -73,9 +103,9 @@ export default function Home(){
 <p>
   When we do a task which is not standardized, we find out how it was done
   previously by others. We also provide you with
-  <a href="/dna/basics"> general knowledge</a> you need to have while doing
+  {' '}<a href="/dna/basics"> general knowledge</a> you need to have while doing
   specific roles in Hola. If more information is needed,
-  <a href="/dna#individual-mindful-google"> ask Google</a>.
+  {' '}<a href="/dna#individual-mindful-google"> ask Google</a>.
 </p>
 
 <h3 id="dna-learn-defacto" text="De-facto standards">Learn from unwritten de
@@ -91,7 +121,7 @@ export default function Home(){
 <h3 id="dna-learn-imitate" text="Imitate">Learn by imitation</h3>
 <p>
   Imitation is a very powerful learning tool. Look at the highly productive
-  <a href="/dna/dict#veteran"> veterans</a> in the company, and try to imitate
+  {' '}<a href="/dna/dict#veteran"> veterans</a> in the company, and try to imitate
   their working habits, large and small.<br/>
   If you choose to imitate the veterans who better fit your character and style
   of work, you will quickly improve your efficiency and productivity.
@@ -119,7 +149,7 @@ export default function Home(){
   no longer in use, as well as 'future use' code that was never used.<br/>
   If 'future use' code is still unused, with no signs of anyone working on it
   for the past two weeks, why is it still there? We either
-  <a href="#immediate"> release it</a> or remove it from our source code. We
+  {' '}<a href="#immediate"> release it</a> or remove it from our source code. We
   don't accumulate things that may be useful someday; either use them
   now or forget about them.
 </p>
@@ -131,7 +161,7 @@ export default function Home(){
   We constantly evolve, improving our services, features, and products - we do
   everything we can to bring them significant value as they are our most
   valuable asset.<br/>
-  <a href="http://smartbusinesstrends.com/why-it-is-essential-to-put-customers-first-and-how-organizations-do-it/"> Why it is essential to put customers first</a>
+  {' '}<a href="http://smartbusinesstrends.com/why-it-is-essential-to-put-customers-first-and-how-organizations-do-it/"> Why it is essential to put customers first</a>
 </p>
 
 <h2 id="dna-mindfulness" text="Mindfulness">Mindfulness: think before you act</h2>
@@ -172,9 +202,9 @@ export default function Home(){
   We look for people who share similar values to ours: They are pros,
   ambitious, they love to <a href="#action-gtd"> get stuff done</a>,
   love to <a href="#dna-learn"> learn</a> and love
-  <a href="#individual-p2p"> working with similar such people</a>.
+  {' '}<a href="#individual-p2p"> working with similar such people</a>.
   They are also smart, and
-  <a href="#incremental-pragmatic"> masters of their domain</a>.
+  {' '}<a href="#incremental-pragmatic"> masters of their domain</a>.
   Having these types of 'stars' in every position makes it a pleasure
   to work together.
   We typically need to interview 250 people to find someone like you.
@@ -207,7 +237,7 @@ export default function Home(){
   our professional team.
   The <b><a href="/dna/bootcamp"> 3 week Hola bootcamp</a></b>
   is your first step from candidate to
-  <a href="/dna/dict#noob"> Hola Noob</a>,
+  {' '}<a href="/dna/dict#noob"> Hola Noob</a>,
   where your <a href="/dna/dict#mentor"> mentor</a> will guide you to success.
   You will learn the workflows, start with simple tasks and move up to mini
   projects.
@@ -219,8 +249,8 @@ export default function Home(){
   The tasks will get deeper into our technology as you advance.<br/>
   We will provide you with a list of things to review prior to bootcamp,
   including: information about the company,
-  <a href="/dna/dict#products"> products</a>,
-  <a href="/dna"> DNA</a>, <a href="/dna/dict#coding"> coding conventions</a>,
+  {' '}<a href="/dna/dict#products"> products</a>,
+  {' '}<a href="/dna"> DNA</a>, <a href="/dna/dict#coding"> coding conventions</a>,
   basic tools and methods of work, and access to your mentor for any
   questions you may have in advance.
 </p>
@@ -229,7 +259,7 @@ export default function Home(){
 <p>
   Congratulations on successfully completing the bootcamp! You are now on your
   journey from <a href="/dna/dict#noob"> Hola Noob</a> to
-  <a href="/dna/dict#veteran"> Hola Veteran</a>. The goal of this process is for
+  {' '}<a href="/dna/dict#veteran"> Hola Veteran</a>. The goal of this process is for
   you to evolve from someone who <b>can</b> be part of the pro team, to
   someone who <b>is</b> an integral part of the team. Here's the process
   you'll be going through:
@@ -244,7 +274,7 @@ export default function Home(){
     have <a href="/dna/dict#review-sync"> code reviews</a>
     for most of your commits, while in some cases you will be approved to
     commit
-    <a href="/dna/dict#review-async"> without a pre-commit review session</a> -
+    {' '}<a href="/dna/dict#review-async"> without a pre-commit review session</a> -
     your code will only be reviewed after the commit, and sometimes even only
     after deployment.
   </li>
@@ -285,11 +315,11 @@ export default function Home(){
 <h1 id="transparent" text="Transparent">Transparent</h1>
 <p>
   <b>We communicate
-    <a href="#transparent-open">openly</a>,
-    <a href="#transparent-clarity">clearly</a>,
-    <a href="#truthful">truthfully</a>
-    and with
-    <a href="#transparent-precise">precision</a>
+    {' '}<a href="#transparent-open">openly</a>,
+    {' '}<a href="#transparent-clarity">clearly</a>,
+    {' '}<a href="#truthful">truthfully</a>
+    {' '}and with
+    {' '}<a href="#transparent-precise">precision</a>
   </b>
   <br/>
   Open knowledge facilitates free information exchange, allowing us to learn
@@ -304,11 +334,11 @@ export default function Home(){
   Except for compensation packages, all work-related information
   is open to everyone at Hola;
   from source codes and
-  <a href="/dna/dict#online">working hours</a>,
+  {' '}<a href="/dna/dict#online">working hours</a>,
   to
-  <a href="/dna/dict#daily">project status and reports</a>,
+  {' '}<a href="/dna/dict#daily">project status and reports</a>,
   and
-  <a href="/dna/dict#version_plan">future plans</a>.
+  {' '}<a href="/dna/dict#version_plan">future plans</a>.
 </p>
 
 <h3 id="transparent-open-bcc" text="Avoid BCC">Avoid BCC in emails</h3>
@@ -513,7 +543,7 @@ export default function Home(){
 <h3 id="transparent-precise-data" text="Data & facts">Provide data, facts and
   specific use-cases</h3>
 <p>
-  <a href="http://www.wallstreetandtech.com/compliance/in-god-we-trust-all-others-bring-data/a/d-id/1268616">
+  {' '}<a href="http://www.wallstreetandtech.com/compliance/in-god-we-trust-all-others-bring-data/a/d-id/1268616">
     In God We Trust. All others bring Data</a>
   <br/>
   The decisions we make are based on real world data.
@@ -522,7 +552,7 @@ export default function Home(){
   and why we are trying to solve it.
   We focus on real issues, not on theoretical problems or rare use-cases.
   This principle is called
-  <a href="https://en.wikipedia.org/wiki/Genchi_Genbutsu">Genchi
+  {' '}<a href="https://en.wikipedia.org/wiki/Genchi_Genbutsu">Genchi
     Genbutsu ("go and see")</a> in Toyota Production System.<br/>
   We try to make <a href="#dna-mindfulness">mindful</a> rational decisions,
   based on real world data, facts and use cases.
@@ -572,19 +602,19 @@ export default function Home(){
   Stand up for your beliefs: dispute tasks that you
   believe are wrong or can be improved, even if its from the CEO!<br/>
   But, this should not come at the expense of
-  <a href="#action-gtd">getting things done (GTD)</a>.<br/>
+  {' '}<a href="#action-gtd">getting things done (GTD)</a>.<br/>
   How to dispute while <a href="#action-gtd">staying productive</a>:
 </p>
 <ul>
   <li>Give your negative feedback immediately</li>
   <li>
     Before you express your objection,
-    <a href="#transparent-precise-gossip">think deeply</a>
+    {' '}<a href="#transparent-precise-gossip">think deeply</a>
     - to make sure your objection has sound reasoning.
   </li>
   <li>
     Be <a href="#transparent-precise-specific">specific</a> and
-    <a href="#transparent-precise-accurate">accurate</a> in your reasoning.
+    {' '}<a href="#transparent-precise-accurate">accurate</a> in your reasoning.
   </li>
   <li>
     Try to in the meantime implement what you partially agree upon, or
@@ -601,11 +631,11 @@ export default function Home(){
 <p>
   <b>We do things immediately, so that we can evolve and improve faster</b><br/>
   A startup's engine for creating better products is a constant
-  <a href="http://theleanstartup.com/principles">Learn-Build-Measure</a> loop.
+  {' '}<a href="http://theleanstartup.com/principles">Learn-Build-Measure</a> loop.
   It's unlikely to succeed on the first try; so we iterate on the product
   until it's fit.
   The more responsive we are, the faster our products will
-  <a href="#incremental">evolve and improve</a>.
+  {' '}<a href="#incremental">evolve and improve</a>.
 </p>
 
 <h2 id="immediate-smalltasks" text="Small tasks">Do small tasks immediately</h2>
@@ -638,7 +668,7 @@ export default function Home(){
   Email responsiveness and never losing an email (forgetting to respond)
   is critical for efficient and reliable email communication with our peers.
   So we strictly follow the
-  <a href="/dna/comm#email">email handling guidelines</a>, that include rules
+  {' '}<a href="/dna/comm#email">email handling guidelines</a>, that include rules
   such as:
 </p>
 <ul>
@@ -670,7 +700,7 @@ export default function Home(){
     <td>
       Do it immediately, to avoid the overhead of postponing and reopening the
       task later and
-      <a href="/dna/comm#email-reply-done">respond to the requester</a>.
+      {' '}<a href="/dna/comm#email-reply-done">respond to the requester</a>.
     </td>
   </tr>
   <tr>
@@ -697,7 +727,7 @@ export default function Home(){
   </tr>
 </table>
 <p>
-  <a href="#truthful-change">It's OK to change a schedule</a> if other tasks come
+  {' '}<a href="#truthful-change">It's OK to change a schedule</a> if other tasks come
   up or take longer than expected, but we update the requester with the new
   schedule.
 </p>
@@ -705,7 +735,7 @@ export default function Home(){
 <h2 id="immediate-answer" text="Immediate Answers">Immediate Answers</h2>
 <p>
   Discussions with questions left unanswered
-  <a href="#action">lead to other discussions</a>. To end discussions with
+  {' '}<a href="#action">lead to other discussions</a>. To end discussions with
   results, all questions should be answered, even if the answer is an
   estimation. Estimations allow us to proceed with the discussion and take
   action. The actions can be adjusted later with the accurate answers.
@@ -724,7 +754,7 @@ export default function Home(){
   When asked to do a task, provide the requester with an ETA. This helps
   the requester plan his other activities.<br/>
   If you see you will not be able to meet the original ETA,
-  <a href="#truthful-change">it's OK to change it</a>,  but update the
+  {' '}<a href="#truthful-change">it's OK to change it</a>,  but update the
   requester with a new ETA as soon as you know you will miss the original one.
 </p>
 <div cat="bad">
@@ -778,14 +808,14 @@ export default function Home(){
 </p>
 <ul>
   <li>
-    <a href="#incremental-task-split">Split up</a>
+    {' '}<a href="#incremental-task-split">Split up</a>
     the feature into as many committable subtasks as you can, so that each
     subtask gets its own incremental feedback early.
   </li>
   <li>
     Done some initial UI?
     Even if the feature is not working,
-    <a href="/dna/comm#email-reply-feedback">send a screenshot or animated GIF</a>
+    {' '}<a href="/dna/comm#email-reply-feedback">send a screenshot or animated GIF</a>
     to demonstrate how it will look, to get early UI feedback.
   </li>
   <li>
@@ -810,14 +840,14 @@ export default function Home(){
 <p>
   "A good plan violently executed now is better than a perfect plan
   executed next week"
-  <a href="http://www.brainyquote.com/quotes/authors/g/george_s_patton.html">
+  {' '}<a href="http://www.brainyquote.com/quotes/authors/g/george_s_patton.html">
     George S. Patton</a>
   <br/>
   Getting things DONE has a very high value. It solves the problem, and allows
   learning which additional improvement iterations are required.<br/>
   PERFECT is the biggest single enemy of DONE: trying to do a task perfectly
   will in most cases prevent us from completing it.
-  <a href="http://blogstatic.freemake.com/wp-content/uploads/2013/04/facebook-sign-at-office.png">Sign
+  {' '}<a href="http://blogstatic.freemake.com/wp-content/uploads/2013/04/facebook-sign-at-office.png">Sign
     at Facebook</a><br/>
   <img src="/img/done_is_better.png"/>
 </p>
@@ -834,7 +864,7 @@ export default function Home(){
 <p>
   Moving fast ultimately will be why we succeed.<br/>
   Yes - we break things while moving fast, but we fix it even faster!
-  <a href="http://blogstatic.freemake.com/wp-content/uploads/2013/04/facebook-sign-at-office.png">Sign
+  {' '}<a href="http://blogstatic.freemake.com/wp-content/uploads/2013/04/facebook-sign-at-office.png">Sign
     at Facebook</a><br/>
   <img src="/img/move_fast.jpg"/>
 </p>
@@ -855,7 +885,7 @@ export default function Home(){
   a quick doc was written up in a couple of hours, with many naively stated
   points, and 'please contribute more here' types of ideas.
   That document was uploaded to our website under
-  <a href="/dna">http://hola-org.com/dna</a> for everyone to see,
+  {' '}<a href="/dna">http://hola-org.com/dna</a> for everyone to see,
   immediately and transparently.
   From that point on, many people read and improved, erased, and added to make
   this document better with every iteration.
@@ -893,13 +923,13 @@ export default function Home(){
   We make sure every day we personally get some task (big or small) completely
   DONE: do a commit, close a deal, solve a real problem...<br/>
   Even if it looks like a small progress, it will ensure your incremental
-  <a href="#individual">contribution</a>.
+  {' '}<a href="#individual">contribution</a>.
 </p>
 
 <h2 id="incremental-nobranches" text="No branches">No branches</h2>
 <p>
   At Hola we deliberately avoid branches as a means of improving
-  <a href="#transparent">transparency</a>.<br/>
+  {' '}<a href="#transparent">transparency</a>.<br/>
   Branches hurt transparency, because there is no single shared view of all the
   info, since lots of info gets hidden into many branches that are not viewable
   in a plain simple view. For example: try viewing videojs project in GitHub
@@ -908,8 +938,8 @@ export default function Home(){
   possible features of videojs & its branches (forks) would be easily available
   to all.<br/>
   Branches contradict two other core DNA values:
-  <a href="#incremental">incremental</a> and
-  <a href="#immediate">immediate</a>:
+  {' '}<a href="#incremental">incremental</a> and
+  {' '}<a href="#immediate">immediate</a>:
 </p>
 <ul>
   <li><b>Immediate</b>: We do continuous deployment, so commits are (nearly)
@@ -936,7 +966,7 @@ export default function Home(){
 <h2 id="action-gtd" text="Get things done">Get things done</h2>
 <p>
   See David Allen's
-  <a href="http://gettingthingsdone.com">Getting Things Done</a>
+  {' '}<a href="http://gettingthingsdone.com">Getting Things Done</a>
   (<a href="https://hamberg.no/gtd/">online introduction</a>)
   system:
   every commitment should be clarified until it is actionable, any project can
@@ -981,7 +1011,7 @@ export default function Home(){
   always turned up in the end to be a waste of time.
   Actions based on future theoretical issues are called at Hola 'over engineering'.
   By handling only today's problems, we place our trust in
-  <a href="#incremental">evolution</a> to guide us to a successful future.
+  {' '}<a href="#incremental">evolution</a> to guide us to a successful future.
 </p>
 
 <h2 id="action-research" text="Research by delivery">Research by delivery</h2>
@@ -1001,7 +1031,7 @@ export default function Home(){
   </li>
   <li>
     Want to research on whether to create a new product? Just create an
-    <a href="/dna/dict#mvp">MVP</a>, release it, and learn from the reactions
+    {' '}<a href="/dna/dict#mvp">MVP</a>, release it, and learn from the reactions
     of the customers.
   </li>
   <li>
@@ -1037,7 +1067,7 @@ export default function Home(){
 
 <h2 id="action-do" text="Do, don't talk">Do, don't talk</h2>
 <p>
-  <a href="https://www.youtube.com/watch?v=DZXlhSgq7us">"When you have to shoot,
+  {' '}<a href="https://www.youtube.com/watch?v=DZXlhSgq7us">"When you have to shoot,
     shoot - don't talk"</a><br/>
   Hola'ers are <b><a href="#action-gtd">doers</a></b>, not <b>talkers</b>.
   Actions, not words.<br/>
@@ -1215,9 +1245,9 @@ export default function Home(){
   into one discussion to respect your colleagues' time.<br/>
   Before asking colleagues questions, try to find the answer yourself.
   You will find that in many cases, reading the source code,
-  <a href="#individual-mindful-grep">grep</a>,
-  <a href="#individual-mindful-google">google</a> and our
-  <a href="http://web.hola-org.com">Intranet</a> are your friends.<br/>
+  {' '}<a href="#individual-mindful-grep">grep</a>,
+  {' '}<a href="#individual-mindful-google">google</a> and our
+  {' '}<a href="http://web.hola-org.com">Intranet</a> are your friends.<br/>
   For example: Don't ask a fellow engineer "What is David's mobile number?" -
   look it up in the <a href="http://web.hola-org.com/users">contact list</a>.<br/>
 </p>
@@ -1226,7 +1256,7 @@ export default function Home(){
   google that for you</h3>
 <p>
   We avoid asking our peers questions we can ask Google:
-  <a href="http://lmgtfy.com/">Let me google that for you</a>
+  {' '}<a href="http://lmgtfy.com/">Let me google that for you</a>
 </p>
 
 <h3 id="individual-mindful-grep" text="Let me grep that for you">Let me
@@ -1236,7 +1266,7 @@ export default function Home(){
   grep is an amazing at answering questions about our source code.
   The right grep can immediately give great answers.<br/>
   We made it even easier to grep by our usability wrapper above it:
-  <a href="/dna/dict#rgrep">rgrep</a>!<br/>
+  {' '}<a href="/dna/dict#rgrep">rgrep</a>!<br/>
   If you can grep, grep - don't ask!
 </p>
 
@@ -1246,22 +1276,22 @@ export default function Home(){
   We optimize emails we write for making them simple to understand and act on
   for the other side. We take time to write the email carefully and review and
   modify before sending out, to make sure we are
-  <a href="#individual-mindful">mindful of our co-workers' time</a>.
+  {' '}<a href="#individual-mindful">mindful of our co-workers' time</a>.
 </p>
-<xmp cat="bad">
-  check out this interesting article:
+<pre cat="bad">
+  check out this interesting article:{NL}
   https://www.smashingmagazine.com/2016/04/html5-media-source-extensions-bringing-production-video-web/"
-</xmp>
+</pre>
 <p>
   This email would require all readers to open the article, even if the article
   does not concern or interest them, and the message's wording does not focus
   the readers on what is interesting about the article.
 </p>
-<xmp cat="good">
+<pre cat="good">
   FYI: this article explains well for those who don't yet know enough about
-  MSE technology:
+  MSE technology:{NL}
   https://www.smashingmagazine.com/2016/04/html5-media-source-extensions-bringing-production-video-web/"
-</xmp>
+</pre>
 <p>
   Don't have the time to write a great email? Better not to write it at all.
 </p>
@@ -1486,7 +1516,7 @@ export default function Home(){
     Was that effective? no! The product did not change - products are built
     from code, not spreadsheets, emails and presentations.
     It was even counter-productive:
-    <a href="#individual-mindful">it wasted time of his 10 peers</a>!
+    {' '}<a href="#individual-mindful">it wasted time of his 10 peers</a>!
   </li>
   <li>
     Consider an employee who saw his relative use a Hola product with
@@ -1565,7 +1595,7 @@ export default function Home(){
   set of its own issues. The old DB may also have features we rely on,
   which are unsupported by the new DB.
   At Hola, we always try to look at the big picture, and we prefer
-  <a href="#incremental">evolution</a> where possible, instead of
+  {' '}<a href="#incremental">evolution</a> where possible, instead of
   'out with the old, in with the new'; namely, evolution instead of revolution.
   Back to the DB example, many times a small configuration change, patch,
   or schema change can solve performance issues, being a quick
@@ -1610,20 +1640,20 @@ export default function Home(){
 </p>
 <ul>
   <li>
-    <a href="/dna/comm#email">Email</a>:
-    <a href="/dna/comm#email-minimal-recipients">Minimal recipients</a>,
-    <a href="/dna/comm#email-signature-short">Minimal signature</a>,
-    <a href="/dna/comm#email-new-greeting">Avoid greetings</a>,
-    <a href="/dna/comm#email-reply-one">Single line emails where possible</a>
+    {' '}<a href="/dna/comm#email">Email</a>:
+    {' '}<a href="/dna/comm#email-minimal-recipients">Minimal recipients</a>,
+    {' '}<a href="/dna/comm#email-signature-short">Minimal signature</a>,
+    {' '}<a href="/dna/comm#email-new-greeting">Avoid greetings</a>,
+    {' '}<a href="/dna/comm#email-reply-one">Single line emails where possible</a>
   </li>
   <li>
-    <a href="/dna/js_code#overview-minimal">Code minimalism and condensity</a>:
+    {' '}<a href="/dna/js_code#overview-minimal">Code minimalism and condensity</a>:
     removing every possible redundant token, spacing, comment, unless
     it's really needed. Choosing short concise names.
     Always favoring shorter code.
   </li>
   <li>
-    <a href="#incremental-mvp">Minimal Viable Product</a>:
+    {' '}<a href="#incremental-mvp">Minimal Viable Product</a>:
     implement minimal features to create a viable product.
   </li>
   <li><a href="#action-do-meeting">Meet only if needed</a></li>
@@ -1632,10 +1662,10 @@ export default function Home(){
 <h2 id="effective-email" text="Email">Email</h2>
 <p>
   Email is a mission-critical tool for us - that's why we prepared
-  <a href="/dna/comm#email">very detailed strict guidelines</a> on how emails
+  {' '}<a href="/dna/comm#email">very detailed strict guidelines</a> on how emails
   should be written, sent, received, and handled.<br/>
   Here are some highlights from our
-  <a href="/dna/comm#email">Email guidelines</a>:
+  {' '}<a href="/dna/comm#email">Email guidelines</a>:
 </p>
 <ul>
   <li><a href="http://fortune.com/2014/09/25/googles-eric-schmidt-has-these-9-rules-for-emailing">Eric
@@ -1695,12 +1725,12 @@ export default function Home(){
   Add control with payment plan options: $5 a month, $25 for 6 months, $45 for
   1 year. Also emphasize that the 1 year option saves 20%.
 </div>
-<xmp cat="good">
-  Select payment plan
-  (o) $5  monthly
-  ( ) $25 every 6 month
+<pre cat="good">
+  Select payment plan{NL}
+  (o) $5  monthly{NL}
+  ( ) $25 every 6 month{NL}
   ( ) $45 a year (save 20%!)
-</xmp>
+</pre>
 
 <h1 id="autonomous" text="Autonomous and responsible">Autonomous and responsible
 </h1>
@@ -1720,7 +1750,7 @@ export default function Home(){
 
 <h2 id="autonomous-responsible" text="Responsible">Responsible</h2>
 <p>
-  <a href="http://blog.cleancoder.com/uncle-bob/2015/10/05/WattsLine54.html">
+  {' '}<a href="http://blog.cleancoder.com/uncle-bob/2015/10/05/WattsLine54.html">
   Take responsibility and ownership</a> for the problems and solve them on
   your own.
   Responsibility means that you are going ahead with a change and seeing it
@@ -1836,7 +1866,7 @@ export default function Home(){
   We seek truth: What does the user really want? What is the
   best way to solve a problem? How can we make our customers happy?<br/>
   When facing these questions, we put workplace politics and
-  <a href="#individual-craftsmanship-egolessness">personal egos</a>
+  {' '}<a href="#individual-craftsmanship-egolessness">personal egos</a>
   aside, and focus on the search for the best, most truthful, and
   correct answers.<br/>
   We believe that seeking the real truth will contribute to make better
@@ -1846,7 +1876,7 @@ export default function Home(){
 <h2 id="truthful-mistakes" text="Pride in mistakes">Pride in mistakes</h2>
 <p>
   Everyone makes mistakes, especially
-  <a href="#action-gtd">people who get a lot done</a>.<br/>
+  {' '}<a href="#action-gtd">people who get a lot done</a>.<br/>
   Therefore, we're constantly on the look for our own mistakes. Once we detect
   and fix them, we are on a better trajectory, personally and as a group.
   Finding our own mistakes is an "AHA!" moment. We take pride in it, and we
@@ -1905,9 +1935,9 @@ export default function Home(){
   not only this specific type of problem, but also of many other, related
   problems.<br/>
   This is originally based on Toyota's
-  <a href="https://en.wikipedia.org/wiki/5_Whys">Ask "Why?" 5 times</a>,
+  {' '}<a href="https://en.wikipedia.org/wiki/5_Whys">Ask "Why?" 5 times</a>,
   but adapted to our <a href="#action">action-oriented</a> DNA of
-  <a href="#individual-owner-complain">'solving' rather than 'complaining'</a>.
+  {' '}<a href="#individual-owner-complain">'solving' rather than 'complaining'</a>.
   <br/>
   We have in place many systems and procedures to prevent mistakes and to
   catch them once they happen - all built as solutions for past mistakes. If a
@@ -1920,16 +1950,16 @@ export default function Home(){
 <ul>
   <li>linter: will trap bugs even before you first run the code</li>
   <li>unittest: will trap bugs before commit, or in the
-    <a href="/dna/dict#bat">BAT</a></li>
+    {' '}<a href="/dna/dict#bat">BAT</a></li>
   <li>test procedures: will trap problems before release, in the deploy
     stage</li>
   <li>
-    <a href="/dna/dict#zcounter">zcounters</a>: will trap after deploy, but will
+    {' '}<a href="/dna/dict#zcounter">zcounters</a>: will trap after deploy, but will
     minimize the impact, by alerting - thus it will quickly be reverted.
   </li>
   <li>procedures: modifying a procedure in a way that will better trap new
     kind of mistakes. Such as the developer
-    <a href="#autonomous-responsible-workflow">workflow procedure</a> that we
+    {' '}<a href="#autonomous-responsible-workflow">workflow procedure</a> that we
     modify constantly to help trap more and more different kinds of common
     mistakes.<br/>
     The <a href="/dna/comm#email">email procedure</a> was also written as
@@ -1992,8 +2022,8 @@ export default function Home(){
     feedback to all concerns. Then,</li>
   <li>
     Invest 1-2 hours to deeply understand the problem,
-    <a href="#action-gtd">provide a solution</a> and
-    <a href="#transparent">report to all concerns</a> about your findings,
+    {' '}<a href="#action-gtd">provide a solution</a> and
+    {' '}<a href="#transparent">report to all concerns</a> about your findings,
     solution and execution
   </li>
 </ul>
@@ -2179,9 +2209,9 @@ export default function Home(){
   In case a mistake was identified, you wil be asked not only to fix this
   specific one but also taking all required actions preventing others from
   doing the same mistake again (e.g. executing
-  <a href="#truthful-mistakes-5solutions">5 solutions</a> report).<br/>
+  {' '}<a href="#truthful-mistakes-5solutions">5 solutions</a> report).<br/>
   Check our email conventions to see how to
-  <a href="/dna/comm#email-reply-why">answer a why email</a>.
+  {' '}<a href="/dna/comm#email-reply-why">answer a why email</a>.
 </p>
 
 <h3 id="truthful-mistakes-cleanup" text="Clean up yourself">Clean up yourself</h3>
@@ -2189,7 +2219,7 @@ export default function Home(){
   Sometimes our peers discover our mistakes. In such cases we should be
   thankful for the time and effort they spent on finding mistakes.
   As part of good peer relationship, and
-  <a href="#individual-mindful">honoring our peer's time</a>, we try to
+  {' '}<a href="#individual-mindful">honoring our peer's time</a>, we try to
   acknowledge the mistake as quickly as possible and "clean up the mess"
   ourselves - releasing our peer from any further involvement:
 </p>
@@ -2223,7 +2253,7 @@ export default function Home(){
   </li>
   <li>
     Prepare by yourself, on your own initiative, a
-    <a href="#truthful-mistakes-5solutions">5 solutions</a> report.
+    {' '}<a href="#truthful-mistakes-5solutions">5 solutions</a> report.
     This gives your peer additional confidence that you carried out an
     extensive fix of the root cause of the mistake he found, and keeps his
     mind at rest.
@@ -2315,7 +2345,7 @@ export default function Home(){
 
 <h2 id="truthful-change" text="Changing our mind">Proud of changing our mind</h2>
 <p>
-  <a href="http://wiki.lesswrong.com/wiki/Litany_of_Tarski">Litany of Tarski</a>:
+  {' '}<a href="http://wiki.lesswrong.com/wiki/Litany_of_Tarski">Litany of Tarski</a>:
 </p>
 <div class="ok">
   If the sky is blue - I desire to believe that the sky is blue<br/>
@@ -2358,6 +2388,6 @@ export default function Home(){
   and it will cause our customers to stream less and us to make less revenues.
 </div>
 
-      </Layout>
+</div></Layout>
     );
 }
