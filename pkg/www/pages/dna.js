@@ -2033,166 +2033,166 @@ export default function Home(){
   Solutions' process description:
 </p>
 <div class="email" cat="good">
-  From: arik
-  To: niv
-  Subject: crit system did not work
-
-  Hi,
-
-  Yesterday Nir did a commit and didn't check it out.
-  No CRIT jumped and no one noticed till I saw it today (screenshot enclosed).
-
-  What was done on it?
-
-  Arik
+  From: arik<br/>
+  To: niv<br/>
+  Subject: crit system did not work<br/>
+<br/>
+Hi,<br/>
+<br/>
+Yesterday Nir did a commit and didn't check it out.<br/>
+No CRIT jumped and no one noticed till I saw it today (screenshot enclosed).<br/>
+<br/>
+What was done on it?<br/>
+<br/>
+Arik<br/>
 </div>
 <div class="email" cat="bad">
-  From: niv
-  To: arik
-  Subject: crit system did not work
-
-  Hi,
-
-  Sorry, my bad.
-
-  Niv
-</div>
-
-<div class="email" cat="bad">
-  From: niv
-  To: arik
-  Subject: crit system did not work
-
-  Hi,
-
-  Sorry, will not happen again.
-
-  Niv
+  From: niv<br/>
+  To: arik<br/>
+  Subject: crit system did not work<br/>
+<br/>
+Hi,<br/>
+<br/>
+Sorry, my bad.<br/>
+<br/>
+Niv
 </div>
 
 <div class="email" cat="bad">
-  From: niv
-  To: arik
-  Subject: crit system did not work
-
-  Hi,
-
-  It is because of Yuval's code, talk with him.
-
-  Niv
+  From: niv<br/>
+  To: arik<br/>
+  Subject: crit system did not work<br/>
+<br/>
+Hi,<br/>
+<br/>
+Sorry, will not happen again.<br/>
+<br/>
+Niv
 </div>
 
 <div class="email" cat="bad">
-  From: niv
-  To: arik
-  Subject: crit system did not work
+  From: niv<br/>
+  To: arik<br/>
+  Subject: crit system did not work<br/>
+<br/>
+Hi,<br/>
+<br/>
+It is because of Yuval's code, talk with him.<br/>
+<br/>
+Niv
+</div>
 
-  Hi,
-
-  You are looking who to blame. I worked and sometime when you work, things are
-  broken.
-
-  Niv
+<div class="email" cat="bad">
+  From: niv<br/>
+  To: arik<br/>
+  Subject: crit system did not work<br/>
+<br/>
+Hi,<br/>
+<br/>
+You are looking who to blame. I worked and sometime when you work, things are<br/>
+broken.<br/>
+<br/>
+Niv
 </div>
 
 <div class="email" cat="good">
-  From: niv
-  To: arik
-  Subject: crit system did not work
-
-  Hi,
-
-  Here is my 5 solutions:
-
-  - Why the crit was not seen?
-
-    cdn_bytes' crit_min and crit_max were not adjusted per customer traffic
-    behavior but set globally.
-
-    Solution: Will go over all cdn_bytes limits and set it according to
-    their customer's traffic behavior.
-
-  - Do we have other metrics which are set the same?
-
-    Yes! origin_downloaded_bytes, zone_init and many more.
-
-    Solution: Will go over all other important metrics and set it according to
-    their customer's traffic behavior.
-
-  - If this metric was set correctly, was it handled correctly by our critical
-    procedures?
-
-    No! Deploy would have avoided it since the website actually worked as
-    expected.
-
-    Solution: Add to the 'Handle' procedure instructions to check pattern and
-    verify it looks the same.
-
-  I'm starting the cdn_bytes adjustments - I'll report once finished.
-  I'll come over to verify the list of important metrics to adjust as well.
-  'Handle' procedure will be adjusted by the end of the day.
-
-  Niv
-
-  | From: arik
-  | To: niv
-  | Subject: crit system did not work
-  |
-  | Hi,
-  |
-  | Yesterday Nir did a commit and didn't check it out.
-  | No CRIT jumped and no one noticed till I saw it today.
-  |
-  | What was done on it?
-  | Consider have 5 solutions on this incident.
-  |
-  | Arik
+  From: niv<br/>
+  To: arik<br/>
+  Subject: crit system did not work<br/>
+<br/>
+Hi,<br/>
+<br/>
+Here is my 5 solutions:<br/>
+<br/>
+- Why the crit was not seen?<br/>
+<br/>
+cdn_bytes' crit_min and crit_max were not adjusted per customer traffic<br/>
+behavior but set globally.<br/>
+<br/>
+Solution: Will go over all cdn_bytes limits and set it according to<br/>
+their customer's traffic behavior.<br/>
+<br/>
+- Do we have other metrics which are set the same?<br/>
+<br/>
+Yes! origin_downloaded_bytes, zone_init and many more.<br/>
+<br/>
+Solution: Will go over all other important metrics and set it according to<br/>
+their customer's traffic behavior.<br/>
+<br/>
+- If this metric was set correctly, was it handled correctly by our critical<br/>
+procedures?<br/>
+<br/>
+No! Deploy would have avoided it since the website actually worked as<br/>
+expected.<br/>
+<br/>
+Solution: Add to the 'Handle' procedure instructions to check pattern and<br/>
+verify it looks the same.<br/>
+<br/>
+I'm starting the cdn_bytes adjustments - I'll report once finished.<br/>
+I'll come over to verify the list of important metrics to adjust as well.<br/>
+'Handle' procedure will be adjusted by the end of the day.<br/>
+<br/>
+Niv<br/>
+<br/>
+| From: arik<br/>
+| To: niv<br/>
+| Subject: crit system did not work<br/>
+|<br/>
+| Hi,<br/>
+|<br/>
+| Yesterday Nir did a commit and didn't check it out.<br/>
+| No CRIT jumped and no one noticed till I saw it today.<br/>
+|<br/>
+| What was done on it?<br/>
+| Consider have 5 solutions on this incident.<br/>
+|<br/>
+| Arik
 </div>
 <div class="email" cat="good">
-  From: niv
-  To: arik
-  Subject: crit system did not work
-
-  | - Why the crit was not seen?
-  |
-  |  cdn_bytes' crit_min and crit_max were not adjusted per customer traffic
-  |  behavior but set globally.
-  |
-  |  Solution: Will go over all cdn_bytes limits and set it according to
-  |  their customer's traffic behavior.
-
-  Done.
-  Continuing with the procedure.
+  From: niv<br/>
+  To: arik<br/>
+  Subject: crit system did not work<br/>
+<br/>
+| - Why the crit was not seen?<br/>
+|<br/>
+|  cdn_bytes' crit_min and crit_max were not adjusted per customer traffic<br/>
+|  behavior but set globally.<br/>
+|<br/>
+|  Solution: Will go over all cdn_bytes limits and set it according to<br/>
+|  their customer's traffic behavior.<br/>
+<br/>
+Done.<br/>
+Continuing with the procedure.
 </div>
 <div class="email" cat="good">
-  From: niv
-  To: arik
-  Subject: crit system did not work
-
-  | - If this metric was set correctly, was it handled correctly by our critical
-  |   procedures?
-  |
-  | No! Deploy would have avoided it since the website actually worked as
-  | expected.
-  |
-  | Solution: Add to the 'Handle' procedure instructions to check pattern and
-  | verify it looks the same.
-
-  Done.
-  Continuing with all other metrics.
+  From: niv<br/>
+  To: arik<br/>
+  Subject: crit system did not work<br/>
+<br/>
+| - If this metric was set correctly, was it handled correctly by our critical<br/>
+|   procedures?<br/>
+|<br/>
+| No! Deploy would have avoided it since the website actually worked as<br/>
+| expected.<br/>
+|<br/>
+| Solution: Add to the 'Handle' procedure instructions to check pattern and<br/>
+| verify it looks the same.<br/>
+<br/>
+Done.<br/>
+Continuing with all other metrics.
 </div>
 <div class="email" cat="good">
-  From: niv
-  To: arik
-  Subject: crit system did not work
-
-  Hi,
-
-  All other metrics were set.
-  Below is a link to my commit:
-  http://web.hola-org.com/cvs/zon/pkg/system/db/monitor_rules.js?r1=1.11&r2=1.12
-
-  Niv
+  From: niv<br/>
+  To: arik<br/>
+  Subject: crit system did not work<br/>
+<br/>
+Hi,<br/>
+<br/>
+All other metrics were set.<br/>
+Below is a link to my commit:<br/>
+http://web.hola-org.com/cvs/zon/pkg/system/db/monitor_rules.js?r1=1.11&r2=1.12<br/>
+<br/>
+Niv
 </div>
 <p>
   This thorough handling of a problem will not only fix the specific problem
