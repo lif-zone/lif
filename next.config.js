@@ -59,6 +59,21 @@ module.exports = {
         '1nQoDXB4f1kiayTTBz72DfpU4SRX3aPWeSWXZt9A4UwQ/edit',
       statusCode: 302,
       locale: false,
+    }, {
+      source: '/en/dna',
+      destination: 'https://lif.zone/dna',
+      statusCode: 302,
+      locale: false,
+    }, {
+      source: '/he/dna',
+      destination: 'https://lif.zone/dna',
+      statusCode: 302,
+      locale: false,
+    }, {
+      source: '/dna',
+      destination: 'https://lif.zone/dna',
+      statusCode: 302,
+      locale: false,
     }];
   },
 };
