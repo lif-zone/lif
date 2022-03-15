@@ -32,7 +32,7 @@ export default class Feed extends Component {
     let feed = qs_o.feed;
     let key_pair = get_feed_key_pair(feed);
     await this.setState({feed, key_pair});
-    console.log('XXX key_pair %o', key_pair);
+    console.log('key_pair %o', key_pair);
     this.resync();
   }
   on_change = async e=>{
@@ -41,14 +41,14 @@ export default class Feed extends Component {
   on_append = async()=>{
     let v = this.state.value, val;
     let key_pair = this.state.key_pair;
-    console.log('XXX on_append %s', v);
+    console.log('on_append %s', v);
     try { val = JSON6.parse(v); }
     catch(err){ console.error(err); }
     if (!val)
       this.setState({error: 'invalid json6'});
     else
       this.setState({error: null, val});
-    console.log('XXX on_append val %o', val);
+    console.log('on_append val %o', val);
     let idb = rai('lif_feed_'+key_pair.public_hex);
     let feed = toPromises(hypercore(filename=>idb(filename),
       str_to_key(key_pair.public_hex), {valueEncoding: 'json',
@@ -70,7 +70,7 @@ export default class Feed extends Component {
     for (let i=0; i<feed.length; i++)
         data.push(await feed.get(i));
     this.setState({data});
-    console.log('XXX len %s', feed.length);
+    console.log('len %s', feed.length);
   }
   render(){
     let {feed, key_pair, input_error, data} = this.state;
