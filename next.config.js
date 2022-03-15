@@ -61,17 +61,17 @@ module.exports = {
       locale: false,
     }, {
       source: '/en/dna',
-      destination: 'https://lif.zone/dna',
+      destination: 'https://hola-org.com/dna',
       statusCode: 302,
       locale: false,
     }, {
       source: '/he/dna',
-      destination: 'https://lif.zone/dna',
+      destination: 'https://hola-org.com/dna',
       statusCode: 302,
       locale: false,
     }, {
       source: '/dna',
-      destination: 'https://lif.zone/dna',
+      destination: 'https://hola-org.com/dna',
       statusCode: 302,
       locale: false,
     }];
