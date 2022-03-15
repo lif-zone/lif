@@ -56,7 +56,7 @@ export default function Home(){
 	    <p><Trans t={t} i18nKey="sec4_p"/></p>
 	    <p>
         <Trans t={t} i18nKey="sec4_p2" components={[
-	        <a href='https://hola.org/dna'>, </a>,
+	        <a href='https://hola-org.com/dna'>, </a>,
 	        <a href='https://holaspark.com/dna'>, </a>,
 	        <a href='https://holacdn.com/dna'>, </a>,
 	        <a href='https://holavpn.com/dna'>, </a>,
