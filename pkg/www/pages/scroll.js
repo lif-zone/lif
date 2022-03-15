@@ -13,7 +13,7 @@ export default function Scroll_page(){
   s.write({sub_type: 'start', text: 'Hello LIF'});
   s.write({text: 'I am a free man'});
   s.write({sub_type: 'close', text: 'And you?'});
-  console.log('XXX scroll %s', s.str());
+  console.log('scroll %s', s.str());
   s.close();
   return (
     <Layout>
