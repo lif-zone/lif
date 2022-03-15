@@ -59,7 +59,7 @@ export default function Home(){
 	        <a href='https://hola.org/dna'>, </a>,
 	        <a href='https://holaspark.com/dna'>, </a>,
 	        <a href='https://holacdn.com/dna'>, </a>,
-	        <a href='https://holavpn.com/dna'>, </a>/>,
+	        <a href='https://holavpn.com/dna'>, </a>,
 	        <a href='https://luminati.io/dna'>, </a>]}/>
       </p>
 	    <p><Trans t={t} i18nKey="sec4_p3"/></p>
