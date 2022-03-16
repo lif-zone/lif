@@ -5,28 +5,30 @@ import {Primary_button, Footer, Video} from '../components/common.js';
 const NL = '\n';
 // XXX: mv to css
 const page_style=<style>{`
-h1 {padding-top: 1.2rem; padding-bottom: 0.5rem;}
-h2 {padding-top: 1.2rem; padding-bottom: 0.2rem;}
-h3 {padding-top: 1.2rem; padding-bottom: 0.1rem;}
-p {padding-top: 0.1rem; padding-bottom: 0.1rem}
-ul {padding-top: 0.1rem; padding-bottom: 0.1rem; margin: 0;}
-li {list-style-position: outside; margin-left: 1rem;}
-.bad, [cat=bad] {background-color: rgba(255,0,0,0.1);
+.dna-page h1 {padding-top: 1.2rem; padding-bottom: 0.5rem;}
+.dna-page h2 {padding-top: 1.2rem; padding-bottom: 0.2rem;}
+.dna-page h3 {padding-top: 1.2rem; padding-bottom: 0.1rem;}
+.dna-page p {padding-top: 0.1rem; padding-bottom: 0.1rem}
+.dna-page ul {padding-top: 0.1rem; padding-bottom: 0.1rem; margin: 0;}
+.dna-page li {list-style-position: outside; margin-left: 1rem;}
+.dna-page .bad, .dna-page [cat=bad] {background-color: rgba(255,0,0,0.1);
   border-color: rgba(255,0,0,0.7);}
-.ok,[cat=ok] {background-color: rgba(0,255,0,0.1);
-    border-color: rgba(48,48,48,0.7);}
-.good,[cat=good] {background-color: rgba(0,255,0,0.1);
+.dna-page .ok, .dna-page[cat=ok] {background-color: rgba(0,255,0,0.1);
+  border-color: rgba(48,48,48,0.7);}
+.dna-page .good, .dna-page [cat=good] {background-color: rgba(0,255,0,0.1);
   border-color: rgba(0,255,0,0.7);}
-.better,[cat=better] {background-color: rgba(0,255,0,0.25);
-    border-color: rgba(0,255,0,0.7);}
-.ok,[cat=ok],.good,[cat=good],.better,[cat=better],.bad,[cat=bad] {
+.dna-page .better, .dna-page [cat=better]{
+  background-color: rgba(0,255,0,0.25); border-color: rgba(0,255,0,0.7);}
+.dna-page .ok,[cat=ok], .dna-page .good, .dna-page [cat=good],
+  .dna-page .better, .dna-page [cat=better], .dna-page .bad,
+  .dna-page [cat=bad] {
   padding: 4px; margin-bottom: 10px; border-width: 0 3px;
   border-style: solid; border-radius: 4px; position: relative;}
-
-th, td {border: 1px solid black; border-collapse: collapse;}
-table {background-color: transparent;}
-table {border-spacing: 0; border-collapse: collapse;}
-pre {overflow: auto;}
+.dna-page th, .dna-page td {border: 1px solid black;
+  border-collapse: collapse;}
+.dna-page table {background-color: transparent;}
+.dna-page table {border-spacing: 0; border-collapse: collapse;}
+.dna-page pre {overflow: auto;}
 `}</style>;
 
 export const H1 = ({children, id})=>{
@@ -39,13 +41,17 @@ export const H3 = ({children, id})=>{
 export default function DNA(){
   let current;
   useEffect(()=>{
-    let hash = location.hash;
+    let hash = location.hash, timer, timer2;
     if (hash && current!=hash){
       current = hash;
+      clearTimeout(timer);
+      clearTimeout(timer2);
       let id = hash.replace('#', '');
-      let element = document.getElementById(id);
-      if (element){
-        element.scrollIntoView({behavior: 'smooth'});
+      let el = document.getElementById(id);
+      if (el){
+        el.scrollIntoView({behavior: 'smooth'});
+        timer = setTimeout(()=>el.scrollIntoView(), 100);
+        timer2 = setTimeout(()=>el.scrollIntoView(), 250);
         current = hash;
       }
     }
@@ -53,7 +59,7 @@ export default function DNA(){
   return (
     <Layout title='LIF DNA' desc='LIF DNA'>
 {page_style}
-<div className="max-w-6xl mx-auto px-6 pb-10">
+<div className="dna-page max-w-6xl mx-auto px-6 pb-10">
 
 <h1>The DNA</h1>
 <div>XXX - Add missing header</div>
