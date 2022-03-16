@@ -37,6 +37,13 @@ export const getStaticProps = ({locale})=>etask(function*(){
     return {props};
 });
 
+export const H1 = ({children, id})=>{
+  return <h1><a id={id} href={'#'+id}>{children}</a></h1>; };
+export const H2 = ({children, id})=>{
+  return <h2><a id={id} href={'#'+id}>{children}</a></h2>; };
+export const H3 = ({children, id})=>{
+  return <h3><a id={id} href={'#'+id}>{children}</a></h3>; };
+
 export default function Home(){
     const {t} = useTranslation('about', 'common');
     return (
@@ -47,7 +54,7 @@ export default function Home(){
 <h1>The DNA</h1>
 <div>XXX - Add missing header</div>
 <div>XXX - Fix From: and new line in sections</div>
-<h1 id="dna" text="DNA">DNA-like culture</h1>
+<H1 id="dna" text="DNA">DNA-like culture</H1>
 <p>
   <b>Continuously learning and evolving</b><br/>
   Creating great products that will impact every person in the world
@@ -59,7 +66,7 @@ export default function Home(){
   memory for how to do things right.
 </p>
 
-<h2 id="dna-consistent" text="Consistent">Be consistent</h2>
+<H2 id="dna-consistent" text="Consistent">Be consistent</H2>
 <p>
   The DNA is our shared memory of how to do things right, so work according to
   that DNA. If you find a way to improve on our DNA, share that with
@@ -73,7 +80,7 @@ export default function Home(){
   <li>with the industry, if no Hola internal method exists</li>
 </ul>
 
-<h3 id="dna-consistent-code" text="Code style">Code style</h3>
+<H3 id="dna-consistent-code" text="Code style">Code style</H3>
 <p>
   We are highly pedantic in keeping our codebase perfectly
   consistent with our <a href="/dna/dict#coding">coding conventions</a>.
@@ -81,7 +88,7 @@ export default function Home(){
   current codebase style as a guide.
 </p>
 
-<h3 id="dna-consistent-email" text="Email style">Email style</h3>
+<H3 id="dna-consistent-email" text="Email style">Email style</H3>
 <p>
   Email consistency, just like source code consistency, helps handle large
   amounts of email efficiently in our team.<br/>
@@ -91,7 +98,7 @@ export default function Home(){
   the company, and follow their style.
 </p>
 
-<h3 id="dna-consistent-create" text="Create procedures">Create procedures</h3>
+<H3 id="dna-consistent-create" text="Create procedures">Create procedures</H3>
 <p>
   When we do something new, or something un-documented, we improve our
   consistency by creating a procedure.
@@ -99,7 +106,7 @@ export default function Home(){
   this task is carried out.
 </p>
 
-<h2 id="dna-learn" text="Learn">Learn</h2>
+<H2 id="dna-learn" text="Learn">Learn</H2>
 <p>
   When we do a task which is not standardized, we find out how it was done
   previously by others. We also provide you with
@@ -108,8 +115,8 @@ export default function Home(){
   {' '}<a href="/dna#individual-mindful-google"> ask Google</a>.
 </p>
 
-<h3 id="dna-learn-defacto" text="De-facto standards">Learn from unwritten de
-  facto standards</h3>
+<H3 id="dna-learn-defacto" text="De-facto standards">Learn from unwritten de
+  facto standards</H3>
 <p>
   If you are doing a task which is not standardized, look how it was done
   before.<br/>
@@ -118,7 +125,7 @@ export default function Home(){
   by others, and learning from them.
 </p>
 
-<h3 id="dna-learn-imitate" text="Imitate">Learn by imitation</h3>
+<H3 id="dna-learn-imitate" text="Imitate">Learn by imitation</H3>
 <p>
   Imitation is a very powerful learning tool. Look at the highly productive
   {' '}<a href="/dna/dict#veteran"> veterans</a> in the company, and try to imitate
@@ -127,14 +134,14 @@ export default function Home(){
   of work, you will quickly improve your efficiency and productivity.
 </p>
 
-<h2 id="dna-teach" text="Teach">Teach</h2>
+<H2 id="dna-teach" text="Teach">Teach</H2>
 <p>
   Be an enthusiastic agent of the DNA - spread the word, refer to it in your
   communication, ensure that your daily activities are in line with our DNA, teach others about the
   DNA, and help new employees get to know the DNA.
 </p>
 
-<h2 id="dna-obsolete" text="Obsolete">Kill obsolete features</h2>
+<H2 id="dna-obsolete" text="Obsolete">Kill obsolete features</H2>
 <p>
   Old features keep us behind. They prevent us from moving fast into the
   future.<br/>
@@ -154,7 +161,7 @@ export default function Home(){
   now or forget about them.
 </p>
 
-<h2 id="dna-users" text="Users first">Our users come first</h2>
+<H2 id="dna-users" text="Users first">Our users come first</H2>
 <p>
   Our users and customers are the reason for our existence. We try to
   constantly understand their needs, find out their pain points and solve them.
@@ -164,7 +171,7 @@ export default function Home(){
   {' '}<a href="http://smartbusinesstrends.com/why-it-is-essential-to-put-customers-first-and-how-organizations-do-it/"> Why it is essential to put customers first</a>
 </p>
 
-<h2 id="dna-mindfulness" text="Mindfulness">Mindfulness: think before you act</h2>
+<H2 id="dna-mindfulness" text="Mindfulness">Mindfulness: think before you act</H2>
 <p>
   We strive to be unswervingly self-aware, which facilitates being intentional
   about how we act, what we do, and how to constantly improve.<br/>
@@ -180,8 +187,8 @@ export default function Home(){
   a negative outcome - we cannot avoid them repeating.
 </p>
 
-<h3 id="dna-mindfulness-hacks" text="Hacks">Even hacks should be well thought
-  of</h3>
+<H3 id="dna-mindfulness-hacks" text="Hacks">Even hacks should be well thought
+  of</H3>
 <p>
   Even hacks should be well thought of in advance. Especially hacks!<br/>
   Hacks are a very powerful tool of quickly solving real problems, and
@@ -191,13 +198,13 @@ export default function Home(){
   than its value.
 </p>
 
-<h2 id="dna-team" text="Team">We are a professional team</h2>
+<H2 id="dna-team" text="Team">We are a professional team</H2>
 <p>
   We're a team - like a pro sports team, not a kid's recreational team.
   Hola hires and develops smartly, so we have stars in every position.
 </p>
 
-<h3 id="dna-team-members" text="Members">Who we recruit to join the team</h3>
+<H3 id="dna-team-members" text="Members">Who we recruit to join the team</H3>
 <p>
   We look for people who share similar values to ours: They are pros,
   ambitious, they love to <a href="#action-gtd"> get stuff done</a>,
@@ -229,7 +236,7 @@ export default function Home(){
   They later also had a great influence in improving and evolving our DNA.
 </p>
 
-<h3 id="dna-team-bootcamp" text="Bootcamp">Joining the team - Bootcamp</h3>
+<H3 id="dna-team-bootcamp" text="Bootcamp">Joining the team - Bootcamp</H3>
 <p>
   Congratulations on being selected to join the team!
   Professionals like you are rare, and are what excites the rest of the
@@ -255,7 +262,7 @@ export default function Home(){
   questions you may have in advance.
 </p>
 
-<h3 id="dna-team-veteran" text="Veteran">Becoming a team veteran</h3>
+<H3 id="dna-team-veteran" text="Veteran">Becoming a team veteran</H3>
 <p>
   Congratulations on successfully completing the bootcamp! You are now on your
   journey from <a href="/dna/dict#noob"> Hola Noob</a> to
@@ -312,7 +319,7 @@ export default function Home(){
   Hola developer Veterans are typically not let go from Hola.
 </p>
 
-<h1 id="transparent" text="Transparent">Transparent</h1>
+<H1 id="transparent" text="Transparent">Transparent</H1>
 <p>
   <b>We communicate
     {' '}<a href="#transparent-open">openly</a>,
@@ -329,7 +336,7 @@ export default function Home(){
   - unless there is a compelling reason not to.
 </p>
 
-<h2 id="transparent-open" text="Open">All open, no secrets</h2>
+<H2 id="transparent-open" text="Open">All open, no secrets</H2>
 <p>
   Except for compensation packages, all work-related information
   is open to everyone at Hola;
@@ -341,14 +348,14 @@ export default function Home(){
   {' '}<a href="/dna/dict#version_plan">future plans</a>.
 </p>
 
-<h3 id="transparent-open-bcc" text="Avoid BCC">Avoid BCC in emails</h3>
+<H3 id="transparent-open-bcc" text="Avoid BCC">Avoid BCC in emails</H3>
 <p>
   Try to avoid adding BCC (blind copy) recipients - it is usually a sign of
   non-transparency.
 </p>
 
-<h3 id="transparency-open-blackbox" text="No black-boxes">No black-boxes:
-  Share all info!</h3>
+<H3 id="transparency-open-blackbox" text="No black-boxes">No black-boxes:
+  Share all info!</H3>
 <p>
   We each provide clear information on areas of responsibility and expertise,
   our current tasks and activities. We do so, to allow anyone to get the full
@@ -402,7 +409,7 @@ export default function Home(){
   significant.
 </div>
 
-<h2 id="transparent-privacy">Privacy</h2>
+<H2 id="transparent-privacy">Privacy</H2>
 <p>
   Information is open to everyone at Hola. This transparency is provided to
   allow you to get your work done without requiring permissions, which slow you
@@ -413,15 +420,15 @@ export default function Home(){
   immediate termination and additional consequences.
 </p>
 
-<h2 id="transparent-clarity" text="Communication">Communication should focus on
-  clarity, not politeness</h2>
+<H2 id="transparent-clarity" text="Communication">Communication should focus on
+  clarity, not politeness</H2>
 <p>
   It's important for us to communicate clearly, delivering direct feedback.
   Critiques allow for self-improvement.
   Political correctness prohibits conveying messages successfully.
 </p>
 
-<h3 id="transparent-clarity-feedback">Feedback</h3>
+<H3 id="transparent-clarity-feedback">Feedback</H3>
 <p>
   We provide direct feedback. People who are not accustomed to it, may consider
   it blunt and possibly even hurtful. Remember that this is not a reflection
@@ -459,7 +466,7 @@ export default function Home(){
   You should check all relevant sites on production after deploy.
 </div>
 
-<h2 id="transparent-precise" text="Precise">Be precise, clear, and specific</h2>
+<H2 id="transparent-precise" text="Precise">Be precise, clear, and specific</H2>
 <p>
   Be exact in your communication; avoid vagueness and jargon. If you are too
   generic, you leave too much space to ambiguity; specific communication
@@ -468,7 +475,7 @@ export default function Home(){
   all-out effort for handling a difficult issue.
 </p>
 
-<h3 id="transparent-precise-specific" text="Specific">Specific</h3>
+<H3 id="transparent-precise-specific" text="Specific">Specific</H3>
 <p>
   We communicate precisely, with specific details:
 </p>
@@ -534,14 +541,14 @@ export default function Home(){
   This email is more precise and specific, resulting in better communication.
 </p>
 
-<h3 id="transparent-precise-accurate" text="Accurate">Accurate</h3>
+<H3 id="transparent-precise-accurate" text="Accurate">Accurate</H3>
 <p>
   Explain your idea accurately and get to the point;
   your messages should be supported by good reasoning.
 </p>
 
-<h3 id="transparent-precise-data" text="Data & facts">Provide data, facts and
-  specific use-cases</h3>
+<H3 id="transparent-precise-data" text="Data & facts">Provide data, facts and
+  specific use-cases</H3>
 <p>
   {' '}<a href="http://www.wallstreetandtech.com/compliance/in-god-we-trust-all-others-bring-data/a/d-id/1268616">
     In God We Trust. All others bring Data</a>
@@ -587,8 +594,8 @@ export default function Home(){
   passed the healthy questioning.
 </p>
 
-<h3 id="transparent-precise-gossip" text="Deep thinking">
-  Think - don't brainstorm</h3>
+<H3 id="transparent-precise-gossip" text="Deep thinking">
+  Think - don't brainstorm</H3>
 <p>
   Think deeply about the subject, form a viewpoint,
   and present it as an actionable plan.
@@ -596,8 +603,8 @@ export default function Home(){
   Brainstorming is the opposite of constructive thinking.
 </p>
 
-<h3 id="transparent-precise-disagree" text="Disagree - yet execute">
-  Dispute if you don't agree; yet focus on getting things done</h3>
+<H3 id="transparent-precise-disagree" text="Disagree - yet execute">
+  Dispute if you don't agree; yet focus on getting things done</H3>
 <p>
   Stand up for your beliefs: dispute tasks that you
   believe are wrong or can be improved, even if its from the CEO!<br/>
@@ -627,7 +634,7 @@ export default function Home(){
   </li>
 </ul>
 
-<h1 id="immediate" text="Immediate">Immediate</h1>
+<H1 id="immediate" text="Immediate">Immediate</H1>
 <p>
   <b>We do things immediately, so that we can evolve and improve faster</b><br/>
   A startup's engine for creating better products is a constant
@@ -638,14 +645,14 @@ export default function Home(){
   {' '}<a href="#incremental">evolve and improve</a>.
 </p>
 
-<h2 id="immediate-smalltasks" text="Small tasks">Do small tasks immediately</h2>
+<H2 id="immediate-smalltasks" text="Small tasks">Do small tasks immediately</H2>
 <p>
   We do quick tasks immediately, even when they're not particularly important,
   to avoid the overhead of prioritizing and of reopening their context.
 </p>
 
-<h2 id="immediate-delegation" text="Delegating small tasks">Do small tasks
-  yourself - don't delegate</h2>
+<H2 id="immediate-delegation" text="Delegating small tasks">Do small tasks
+  yourself - don't delegate</H2>
 <p>
   Quick tasks are not worth delegating.
   The communication and management involved in the delegation process take
@@ -655,7 +662,7 @@ export default function Home(){
   help the sender learn how to fix it himself.
 </p>
 
-<h2 id="immediate-decide" text="Decide fast">Decide fast</h2>
+<H2 id="immediate-decide" text="Decide fast">Decide fast</H2>
 <p>
   We discard promptly new ideas that appear to be flawed, and adopt brilliant
   ideas as soon as possible.
@@ -663,7 +670,7 @@ export default function Home(){
   it brilliant after a short discussion, we put it on hold or discard it.
 </p>
 
-<h2 id="immediate-inbox" text="Inbox">Manage your inbox</h2>
+<H2 id="immediate-inbox" text="Inbox">Manage your inbox</H2>
 <p>
   Email responsiveness and never losing an email (forgetting to respond)
   is critical for efficient and reliable email communication with our peers.
@@ -682,8 +689,8 @@ export default function Home(){
   </li>
 </ul>
 
-<h2 id="immediate-priorities" text="Task priority">Prioritizing incoming
-  tasks</h2>
+<H2 id="immediate-priorities" text="Task priority">Prioritizing incoming
+  tasks</H2>
 <p>
   What's a small task and what's not?<br/>
   When to act immediately and when to postpone?<br/>
@@ -732,7 +739,7 @@ export default function Home(){
   schedule.
 </p>
 
-<h2 id="immediate-answer" text="Immediate Answers">Immediate Answers</h2>
+<H2 id="immediate-answer" text="Immediate Answers">Immediate Answers</H2>
 <p>
   Discussions with questions left unanswered
   {' '}<a href="#action">lead to other discussions</a>. To end discussions with
@@ -749,7 +756,7 @@ export default function Home(){
   A: About 1K.
 </div>
 
-<h2 id="provide-eta" text="Provide ETA">Provide ETA</h2>
+<H2 id="provide-eta" text="Provide ETA">Provide ETA</H2>
 <p>
   When asked to do a task, provide the requester with an ETA. This helps
   the requester plan his other activities.<br/>
@@ -767,7 +774,7 @@ export default function Home(){
 </div>
 
 
-<h1 id="incremental" text="Incremental">Incremental and evolutionary</h1>
+<H1 id="incremental" text="Incremental">Incremental and evolutionary</H1>
 <p>
   <b>We split large tasks into small tasks that give immediate value, so that
   we can make quick incremental improvements</b><br/>
@@ -778,7 +785,7 @@ export default function Home(){
   that you should release very early, and make incremental improvements.
 </p>
 
-<h2 id="incremental-mvp" text="MVP">Minimal Viable Product (MVP)</h2>
+<H2 id="incremental-mvp" text="MVP">Minimal Viable Product (MVP)</H2>
 <p>
   When you work on a product, feature, document, graphic design
   or any form of delivery
@@ -788,8 +795,8 @@ export default function Home(){
   it quickly (hours?) and then iterate on improving it.
 </p>
 
-<h2 id="incremental-experiment" text="Rapid experimentation">Rapid
-  experimentation</h2>
+<H2 id="incremental-experiment" text="Rapid experimentation">Rapid
+  experimentation</H2>
 <p>
   Fast evolution requires rapid experimentation.<br/>
   We love experimenting with new ideas/features/technologies/solutions.
@@ -800,7 +807,7 @@ export default function Home(){
   We love cheap experiments that can lead to high outcomes.
 </p>
 
-<h2 id="incremental-feedback" text="Fast feedback loop">Fast feedback loop</h2>
+<H2 id="incremental-feedback" text="Fast feedback loop">Fast feedback loop</H2>
 <p>
   Fast feedback loop reduces the time it takes to build a feature as originally
   intended, by getting the feedback on a wrong direction early on, before
@@ -835,8 +842,8 @@ export default function Home(){
   immediately.
 </p>
 
-<h2 id="incremental-done" text="DONE, not PERFECT">DONE is better than
-  PERFECT</h2>
+<H2 id="incremental-done" text="DONE, not PERFECT">DONE is better than
+  PERFECT</H2>
 <p>
   "A good plan violently executed now is better than a perfect plan
   executed next week"
@@ -852,15 +859,15 @@ export default function Home(){
   <img src="/img/done_is_better.png"/>
 </p>
 
-<h2 id="incremental-pragmatic" text="Pragmatic Craftsmanship">Pragmatic
-  Craftsmanship</h2>
+<H2 id="incremental-pragmatic" text="Pragmatic Craftsmanship">Pragmatic
+  Craftsmanship</H2>
 <p>
   We take pride in our work, and invest time to produce a quality outcome.
   However, we also take pride in continual progress and moving fast,
   so we make sure not to take craftsmanship too far before shipping.
 </p>
 
-<h2 id="incremental-fast" text="Fast">Move fast and break things</h2>
+<H2 id="incremental-fast" text="Fast">Move fast and break things</H2>
 <p>
   Moving fast ultimately will be why we succeed.<br/>
   Yes - we break things while moving fast, but we fix it even faster!
@@ -869,13 +876,13 @@ export default function Home(){
   <img src="/img/move_fast.jpg"/>
 </p>
 
-<h2 id="incremental-little_better">Little better every day</h2>
+<H2 id="incremental-little_better">Little better every day</H2>
 <p>
   Do only a little better every day, and you are 37x better by the end of the
   year.<br/>
   <img src="/img/little_better.jpg"/>
 </p>
-<h2 id="incremental-task" text="Tasks">Incremental task handling</h2>
+<H2 id="incremental-task" text="Tasks">Incremental task handling</H2>
 <p>
   When starting a new task, we break it down to smaller tasks that can be
   released on their own, and can bring value on their own.
@@ -892,8 +899,8 @@ export default function Home(){
   Even today, it is still work in progress...
 </p>
 
-<h3 id="incremental-task-results" text="Immediate results">Give immediate partial
-  results/response/value</h3>
+<H3 id="incremental-task-results" text="Immediate results">Give immediate partial
+  results/response/value</H3>
 <p>
   Often, a question or call to action may be stuck in your inbox for a
   long time because you are not sure of the complete answer, and do not have
@@ -904,7 +911,7 @@ export default function Home(){
   to make progress).
 </p>
 
-<h3 id="incremental-task-split" text="Split">Split up large tasks</h3>
+<H3 id="incremental-task-split" text="Split">Split up large tasks</H3>
 <p>
   Split up large tasks into smaller tasks that give immediate value even before
   the large task is completed. Example: When developing a large new feature
@@ -917,8 +924,8 @@ export default function Home(){
   code will be added to the codebase and some progress will be made.
 </p>
 
-<h3 id="incremental-task-everyday" text="DONE every day">Get something small DONE
-  every single day</h3>
+<H3 id="incremental-task-everyday" text="DONE every day">Get something small DONE
+  every single day</H3>
 <p>
   We make sure every day we personally get some task (big or small) completely
   DONE: do a commit, close a deal, solve a real problem...<br/>
@@ -926,7 +933,7 @@ export default function Home(){
   {' '}<a href="#individual">contribution</a>.
 </p>
 
-<h2 id="incremental-nobranches" text="No branches">No branches</h2>
+<H2 id="incremental-nobranches" text="No branches">No branches</H2>
 <p>
   At Hola we deliberately avoid branches as a means of improving
   {' '}<a href="#transparent">transparency</a>.<br/>
@@ -953,7 +960,7 @@ export default function Home(){
   </li>
 </ul>
 
-<h1 id="action" text="Action-oriented">Action-oriented</h1>
+<H1 id="action" text="Action-oriented">Action-oriented</H1>
 <p>
   <b>We choose to solve a problem over stating that one exists. Prefer actions
     over words</b><br/>
@@ -963,7 +970,7 @@ export default function Home(){
   products.
 </p>
 
-<h2 id="action-gtd" text="Get things done">Get things done</h2>
+<H2 id="action-gtd" text="Get things done">Get things done</H2>
 <p>
   See David Allen's
   {' '}<a href="http://gettingthingsdone.com">Getting Things Done</a>
@@ -974,7 +981,7 @@ export default function Home(){
   is a support tool for getting concrete, physical actions done.
 </p>
 
-<h2 id="action-issues" text="Issues">Issues, Problems and Bugs</h2>
+<H2 id="action-issues" text="Issues">Issues, Problems and Bugs</H2>
 <p>
   Problems are everywhere. Anything we see is something that can be improved.
   Every product has an endless number of bugs and points to improve. Many things
@@ -982,7 +989,7 @@ export default function Home(){
   value -- solving the problem does!
 </p>
 
-<h2 id="action-translate" text="Translate">Translate issues solutions</h2>
+<H2 id="action-translate" text="Translate">Translate issues solutions</H2>
 <p>
   Translate issues/opinions/suggestions/problems into actionable solutions.
 </p>
@@ -1001,7 +1008,7 @@ export default function Home(){
   I will create a mockup for an MVP, and test it out.
 </div>
 
-<h2 id="action-reality" text="Reality, not theory">Reality, not theory</h2>
+<H2 id="action-reality" text="Reality, not theory">Reality, not theory</H2>
 <p>
   We focus only on reality: on real customers, real use cases,
   problems that actually happened, and our actions are based
@@ -1014,7 +1021,7 @@ export default function Home(){
   {' '}<a href="#incremental">evolution</a> to guide us to a successful future.
 </p>
 
-<h2 id="action-research" text="Research by delivery">Research by delivery</h2>
+<H2 id="action-research" text="Research by delivery">Research by delivery</H2>
 <p>
   Researching and learning in Hola is always carried out by action, by doing,
   by implementing, by delivery.
@@ -1050,13 +1057,13 @@ export default function Home(){
   the real world.
 </p>
 
-<h2 id="action-solve" text="Solve it">Solve it</h2>
+<H2 id="action-solve" text="Solve it">Solve it</H2>
 <p>
   If you encounter a problem, do not suggest how to solve it - solve
   it!
 </p>
 
-<h3 id="action-solve-done">Make sure it is really solved!</h3>
+<H3 id="action-solve-done">Make sure it is really solved!</H3>
 <p>
   You have resolved a problem or finished a task - great work and well done!<br/>
   However, it is not DONE until you have communicated with your customer
@@ -1065,7 +1072,7 @@ export default function Home(){
   employees), for whom the task was done.
 </p>
 
-<h2 id="action-do" text="Do, don't talk">Do, don't talk</h2>
+<H2 id="action-do" text="Do, don't talk">Do, don't talk</H2>
 <p>
   {' '}<a href="https://www.youtube.com/watch?v=DZXlhSgq7us">"When you have to shoot,
     shoot - don't talk"</a><br/>
@@ -1075,7 +1082,7 @@ export default function Home(){
   coding.
 </p>
 
-<h3 id="action-do-yourself" text="Do yourself">Do yourself</h3>
+<H3 id="action-do-yourself" text="Do yourself">Do yourself</H3>
 <p>
   The best work is done alone, or one on one, not in meetings.
   The only scheduled meetings we have at Hola are the 'all hands' meetings
@@ -1098,7 +1105,7 @@ export default function Home(){
   and better plan.
 </p>
 
-<h3 id="action-do-meeting" text="Avoid meetings">Avoid meetings</h3>
+<H3 id="action-do-meeting" text="Avoid meetings">Avoid meetings</H3>
 <p>
   Meetings are the opposite of doing. When you are hosting a meeting with your
   peers, you are not: writing code, debugging, finding and solving
@@ -1108,8 +1115,8 @@ export default function Home(){
   ad-hoc, over lunch etc. And never set recurring meetings.
 </p>
 
-<h3 id="action-do-discussion" text="Convert discussion into action">Convert
-  discussion into action</h3>
+<H3 id="action-do-discussion" text="Convert discussion into action">Convert
+  discussion into action</H3>
 <p>
   After discussion summarize to your peer the main points you had, which next
   actions needs to be taken, and who is responsible for each action. Actions should
@@ -1118,8 +1125,8 @@ export default function Home(){
   See <a href="#action-gtd">GTD</a>.
 </p>
 
-<h2 id="action-communication" text="Actionable communication">Actionable
-  communication</h2>
+<H2 id="action-communication" text="Actionable communication">Actionable
+  communication</H2>
 <p>
   Our communication is actionable, and the action is preferably for
   ourselves!<br/>
@@ -1138,7 +1145,7 @@ export default function Home(){
   of fixing this issue.
 </div>
 
-<h1 id="individual" text="Individual contributor">Individual contributor</h1>
+<H1 id="individual" text="Individual contributor">Individual contributor</H1>
 <p>
   <b>Those who complete tasks on their own from start to finish create the
     largest impact</b><br/>
@@ -1147,16 +1154,16 @@ export default function Home(){
   his/her time on getting real tasks done.
 </p>
 
-<h2 id="individual-p2p" text="Collective of Peers">Company as a collective of
-  Peers</h2>
+<H2 id="individual-p2p" text="Collective of Peers">Company as a collective of
+  Peers</H2>
 <p>
   Hola is the sum of its employees. Each person brings a real tangible self
   contribution to the final product.<br/>
   Something you can point out proudly to your mother and say "I did that!".
 </p>
 
-<h2 id="individual-p2p-direct" text="Work P2P directly">Work Peer to Peer
-  directly</h2>
+<H2 id="individual-p2p-direct" text="Work P2P directly">Work Peer to Peer
+  directly</H2>
 <p>
   Hola is a P2P company. But not only our products are P2P, so is also our
   daily work method: people in the company work directly with their peers.
@@ -1166,8 +1173,8 @@ export default function Home(){
   No managers needed!
 </p>
 
-<h2 id="individual-solve" text="Solve yourself">
-  Solve yourself, don't create work for others</h2>
+<H2 id="individual-solve" text="Solve yourself">
+  Solve yourself, don't create work for others</H2>
 <p>
   Each of us solves problems and tasks independently, from start to finish.
   If you did some work and passed it on, then just the overhead of
@@ -1176,8 +1183,8 @@ export default function Home(){
   to end on your own, pass it on in its entirety to someone who can.
 </p>
 
-<h3 id="individual-solve-pass" text="Don't pass on subtasks">Don't pass on
-  subtasks</h3>
+<H3 id="individual-solve-pass" text="Don't pass on subtasks">Don't pass on
+  subtasks</H3>
 <p>
   We avoid passing on subtasks - namely, smaller parts of a bigger task - to
   others: it's <a href="#individual-mindful">unfair to your peers</a>
@@ -1192,7 +1199,7 @@ export default function Home(){
   <li>Validating on completion that it was done as originally intended</li>
 </ul>
 
-<h3 id="individual-solve-half" text="No 'half' tasks">No 'half' tasks</h3>
+<H3 id="individual-solve-half" text="No 'half' tasks">No 'half' tasks</H3>
 <p>
   When each of us does a task, we do it end-to-end. No 'half-baked' tasks.
   No 'helper' to clean up after us.
@@ -1220,8 +1227,8 @@ export default function Home(){
   that's why we avoid it.
 </p>
 
-<h2 id="individual-mindful" text="Mindful of coworker's time">Be mindful of
-  your coworker's time</h2>
+<H2 id="individual-mindful" text="Mindful of coworker's time">Be mindful of
+  your coworker's time</H2>
 <p>
   It's easy to feel like you deserve the time of your coworkers.<br/>
   For example, when you're trying to improve a certain aspect of the
@@ -1252,15 +1259,15 @@ export default function Home(){
   look it up in the <a href="http://web.hola-org.com/users">contact list</a>.<br/>
 </p>
 
-<h3 id="individual-mindful-google" text="Let me google that for you">Let me
-  google that for you</h3>
+<H3 id="individual-mindful-google" text="Let me google that for you">Let me
+  google that for you</H3>
 <p>
   We avoid asking our peers questions we can ask Google:
   {' '}<a href="http://lmgtfy.com/">Let me google that for you</a>
 </p>
 
-<h3 id="individual-mindful-grep" text="Let me grep that for you">Let me
-  grep that for you</h3>
+<H3 id="individual-mindful-grep" text="Let me grep that for you">Let me
+  grep that for you</H3>
 <p>
   Just like Google is great at answering questions of public info,
   grep is an amazing at answering questions about our source code.
@@ -1270,8 +1277,8 @@ export default function Home(){
   If you can grep, grep - don't ask!
 </p>
 
-<h3 id="mindful-emails" text="Mindful emails">Writing mindful emails - taking
-  time to save others' time</h3>
+<H3 id="mindful-emails" text="Mindful emails">Writing mindful emails - taking
+  time to save others' time</H3>
 <p>
   We optimize emails we write for making them simple to understand and act on
   for the other side. We take time to write the email carefully and review and
@@ -1296,15 +1303,15 @@ export default function Home(){
   Don't have the time to write a great email? Better not to write it at all.
 </p>
 
-<h2 id="individual-noharm" text="Do no harm">Do no harm</h2>
+<H2 id="individual-noharm" text="Do no harm">Do no harm</H2>
 <p>
   How do we move forward fast? by never going backwards!<br/>
   When every single peer in the company contributes value every single day,
   a lot, or a little, the company as a whole will move forward rapidly.
 </p>
 
-<h3 id="individual-noharm-degrade" text="Avoid degradation">
-  Avoid degradation</h3>
+<H3 id="individual-noharm-degrade" text="Avoid degradation">
+  Avoid degradation</H3>
 <p>
   Implementing a new feature? Trying to fix a bug? Modifying code?
   Improving the installation flow? Suggesting to add a new tool?
@@ -1318,8 +1325,8 @@ export default function Home(){
   <li>Every new tool must not degrade current ease of development.</li>
 </ul>
 
-<h3 id="individual-noharm-peer" text="Wasting peer's time">
-  Wasting peer's time</h3>
+<H3 id="individual-noharm-peer" text="Wasting peer's time">
+  Wasting peer's time</H3>
 <p>
   A great company is combined of individuals who, on the one hand, are super
   productive and contributing on their own, and on the other hand do not set
@@ -1357,7 +1364,7 @@ export default function Home(){
     Don't ask <a href="/dna/dict#veteran">veterans</a> noob's questions.</li>
 </ul>
 
-<h2 id="individual-owner" text="Owner, not Renter">Be an Owner, not a Renter</h2>
+<H2 id="individual-owner" text="Owner, not Renter">Be an Owner, not a Renter</H2>
 <p>
   Revolutions aren't won by paid soldiers; they're won by true believers
   in the cause, patriots.
@@ -1373,17 +1380,17 @@ export default function Home(){
   by monitoring and influencing its progress.<br/>
 </p>
 
-<h3 id="individual-owner-complain" text="Don't complain - solve!">
+<H3 id="individual-owner-complain" text="Don't complain - solve!">
   We don't complain - we solve!
-</h3>
+</H3>
 <p>
   Complaints are words. Solutions are actions. Only actions make a change.<br/>
   Take ownership of problems, don't hope someone else will solve them
   for you.
 </p>
 
-<h2 id="individual-manager" text="Manager? do yourself!">
-  Manager? Do it on your own first!</h2>
+<H2 id="individual-manager" text="Manager? do yourself!">
+  Manager? Do it on your own first!</H2>
 <p>
   If you need to instruct the sales team how to sell the product, first
   sell it yourself.
@@ -1391,8 +1398,8 @@ export default function Home(){
   to give better instructions to others on how it should be done.
 </p>
 
-<h2 id="individual-hire" text="When to hire">
-  When to hire additional people to your team?</h2>
+<H2 id="individual-hire" text="When to hire">
+  When to hire additional people to your team?</H2>
 <p>
   Hire additional person to your team for a specific function only once that
   function is already working well in your team, and you just need one more
@@ -1413,7 +1420,7 @@ export default function Home(){
   the exact requirements of the person to be hired.
 </p>
 
-<h2 id="individual-oncall" text="On-call">On-call</h2>
+<H2 id="individual-oncall" text="On-call">On-call</H2>
 <p>
   Hola is a global company that provides mission-critical services for
   countless customers and users. Therefore, we must ensure a very high level of
@@ -1427,14 +1434,14 @@ export default function Home(){
   day.
 </p>
 
-<h2 id="individual-craftsmanship" text="Craftsmanship">Craftsmanship</h2>
+<H2 id="individual-craftsmanship" text="Craftsmanship">Craftsmanship</H2>
 <p>
   Each of us strives to be the best in our field, and reach perfection,
   make the smartest best possible decisions, and create the best products
   possible.<br/>
 </p>
 
-<h3 id="individual-craftsmanship-egolessness" text="Egolessness">Egolessness</h3>
+<H3 id="individual-craftsmanship-egolessness" text="Egolessness">Egolessness</H3>
 <p>
   Achieving a high level of craftsmanship requires complete egolessness;
   focusing on the search for the 'truth', and understanding that our own ideas
@@ -1444,7 +1451,7 @@ export default function Home(){
   our own idea.
 </p>
 
-<h3 id="individual-craftsmanship-quality" text="Quality">Quality</h3>
+<H3 id="individual-craftsmanship-quality" text="Quality">Quality</H3>
 <p>
   We strive to produce great products. If we see a glitch, we don't just
   refresh the browser's display and sit, self-content, to view the result - we
@@ -1454,8 +1461,8 @@ export default function Home(){
   possible time. Finding and fixing problems early makes our products great.
 </p>
 
-<h2 id="individual-starting" text="Starting out">Starting out at Hola, or in a
-  new role at Hola</h2>
+<H2 id="individual-starting" text="Starting out">Starting out at Hola, or in a
+  new role at Hola</H2>
 <p>
   From a Google VP on starting off on the right foot in a new role:
   "The advice I give to everybody coming in, is whatever your first project is,
@@ -1472,7 +1479,7 @@ export default function Home(){
   who do end up setting themselves up super well."
 </p>
 
-<h2 id="individual-amazing" text="Amazing Team">Amazing Team</h2>
+<H2 id="individual-amazing" text="Amazing Team">Amazing Team</H2>
 <ul>
   <li>The more top talent we have, the more we can accomplish.</li>
   <li>
@@ -1501,7 +1508,7 @@ export default function Home(){
     colleagues.</li>
 </ul>
 
-<h1 id="effective" text="Effective and productive">Effective and productive</h1>
+<H1 id="effective" text="Effective and productive">Effective and productive</H1>
 <p>
   <b>Each of us chooses the tasks that bring the most value, and chooses the
     most productive way to get them done</b><br/>
@@ -1531,7 +1538,7 @@ export default function Home(){
   Work is only effective if it directly changed how we make a better product.
 </p>
 
-<h2 id="effective-productive" text="Productive">Productive</h2>
+<H2 id="effective-productive" text="Productive">Productive</H2>
 <p>
   A good start to measuring our own productivity is whether we were able to
   complete tasks (big or small), deliver and deploy something every single
@@ -1539,7 +1546,7 @@ export default function Home(){
   Delivery and task completion are good signs for productivity.
 </p>
 
-<h3 id="effective-productive-impact" text="Maximize impact">Maximize impact</h3>
+<H3 id="effective-productive-impact" text="Maximize impact">Maximize impact</H3>
 <p>
   As technology workers, we have the opportunity to affect positive change at
   an unprecedented scale and rate.
@@ -1548,7 +1555,7 @@ export default function Home(){
   At Hola we strive to make the most of that opportunity.
 </p>
 
-<h3 id="effective-productive-value" text="Bring value">Bring value</h3>
+<H3 id="effective-productive-value" text="Bring value">Bring value</H3>
 <p>
   Choose tasks that bring great value. Prioritize your tasks based on the
   value they bring.<br/>
@@ -1556,13 +1563,13 @@ export default function Home(){
   Hola's products, do not do this task.
 </p>
 
-<h3 id="effective-productive-capabilities" text="Capabilities">Capabilities</h3>
+<H3 id="effective-productive-capabilities" text="Capabilities">Capabilities</H3>
 <p>
   If a task does not match your capabilities, and someone else can do it
   faster, try to have him take ownership.
 </p>
 
-<h3 id="effective-productive-hours" test="Sane work hours">Sane work hours</h3>
+<H3 id="effective-productive-hours" test="Sane work hours">Sane work hours</H3>
 <p>
   We do not believe in 'crazy startup work' - while the difference between
   10 to 11 hours per day is 10%, the job burnout caused by working this extra
@@ -1584,7 +1591,7 @@ export default function Home(){
   we do care about accomplishing great work.
 </p>
 
-<h2 id="effective-cost" text="Cost effective">Cost effective</h2>
+<H2 id="effective-cost" text="Cost effective">Cost effective</H2>
 <p>
   When suggesting a change/improvement, look for the 'total overall cost'.
   For example, consider our DB has performance problems, and a developer
@@ -1602,8 +1609,8 @@ export default function Home(){
   cost-effective solution to the problem.
 </p>
 
-<h3 id="effective-cost-suggest" text="Negative ROI">Do not suggest to change
-  things that have negative ROI</h3>
+<H3 id="effective-cost-suggest" text="Negative ROI">Do not suggest to change
+  things that have negative ROI</H3>
 <p>
   It's the responsibility of the developer who suggests the change
   to work out the 'total overall cost' of the change, and to validate that
@@ -1613,7 +1620,7 @@ export default function Home(){
   the eventual positive outcome.
 </p>
 
-<h2 id="effective-ssf" text="Short Simple Fast">Short Simple Fast</h2>
+<H2 id="effective-ssf" text="Short Simple Fast">Short Simple Fast</H2>
 <p>
   Rule of thumb when evaluating any action/task/solution/code/document...:
 </p>
@@ -1623,7 +1630,7 @@ export default function Home(){
   <li><a href="#incremental-fast">Fast is better than Slow</a></li>
 </ul>
 
-<h2 id="effective-minimal" text="Minimalism">Minimalism</h2>
+<H2 id="effective-minimal" text="Minimalism">Minimalism</H2>
 <p>
   We love extreme minimalism.
 </p>
@@ -1659,7 +1666,7 @@ export default function Home(){
   <li><a href="#action-do-meeting">Meet only if needed</a></li>
 </ul>
 
-<h2 id="effective-email" text="Email">Email</h2>
+<H2 id="effective-email" text="Email">Email</H2>
 <p>
   Email is a mission-critical tool for us - that's why we prepared
   {' '}<a href="/dna/comm#email">very detailed strict guidelines</a> on how emails
@@ -1684,7 +1691,7 @@ export default function Home(){
   <li><a href="/dna/comm#email-action">Clarify action items</a></li>
 </ul>
 
-<h2 id="effective-important" text="Important discussions">Summarize important discussions</h2>
+<H2 id="effective-important" text="Important discussions">Summarize important discussions</H2>
 <p>
   When action items come up in a discussion with someone, or very important
   information is conveyed - immediately after the discussion send a summary
@@ -1699,7 +1706,7 @@ export default function Home(){
   additional actions this requires, and who else needs to know about it.
 </p>
 
-<h2 id="effective-organized" text="Task organization">Task organization</h2>
+<H2 id="effective-organized" text="Task organization">Task organization</H2>
 <p>
   Don't trust your memory.
   Carry a pad and write things down.
@@ -1709,7 +1716,7 @@ export default function Home(){
   items.
 </p>
 
-<h2 id="effective-example">"By example" design</h2>
+<H2 id="effective-example">"By example" design</H2>
 <p>
   We use specific examples rather than formal specification to define
   tasks and design features: mockups, wireframes, and textual examples.
@@ -1732,8 +1739,8 @@ export default function Home(){
   ( ) $45 a year (save 20%!)
 </pre>
 
-<h1 id="autonomous" text="Autonomous and responsible">Autonomous and responsible
-</h1>
+<H1 id="autonomous" text="Autonomous and responsible">Autonomous and responsible
+</H1>
 <p>
   We love working with people who can manage themselves and their tasks on
   their own.
@@ -1748,7 +1755,7 @@ export default function Home(){
   We find that this is more productive, and more enjoyable for all.
 </p>
 
-<h2 id="autonomous-responsible" text="Responsible">Responsible</h2>
+<H2 id="autonomous-responsible" text="Responsible">Responsible</H2>
 <p>
   {' '}<a href="http://blog.cleancoder.com/uncle-bob/2015/10/05/WattsLine54.html">
   Take responsibility and ownership</a> for the problems and solve them on
@@ -1758,23 +1765,23 @@ export default function Home(){
   the outcome.
 </p>
 
-<h3 id="autonomous-responsible-involved" text="No one gets involved">No need for
-  others to fix</h3>
+<H3 id="autonomous-responsible-involved" text="No one gets involved">No need for
+  others to fix</H3>
 <p>
   A great delivery is one that does not require anyone else to get involved in
   your tasks.
 </p>
 
-<h3 id="autonomous-responsible-check" text="Check your work">Check your work</h3>
+<H3 id="autonomous-responsible-check" text="Check your work">Check your work</H3>
 <p>No one will check your work - so do it well first time</p>
 
-<h3 id="autonomous-responsible-review" text="No code reviews">You review your own
-  code</h3>
+<H3 id="autonomous-responsible-review" text="No code reviews">You review your own
+  code</H3>
 <p>We do not do code reviews (... except for new people, and they must very
   quickly do perfect commits, so we can stop doing their reviews).</p>
 
-<h3 id="autonomous-responsible-workflow" text="Workflow">Workflow: Write, Test,
-  Review, Commit, Build, Deploy, Monitor</h3>
+<H3 id="autonomous-responsible-workflow" text="Workflow">Workflow: Write, Test,
+  Review, Commit, Build, Deploy, Monitor</H3>
 <p>The flow of adding a feature/modification/bugfix is:</p>
 <ul>
   <li><b>Write</b>: fully implemented change consists of
@@ -1816,8 +1823,8 @@ export default function Home(){
   </li>
 </ul>
 
-<h3 id="autonomous-responsible-forget" text="Never 'lose' tasks">Never
-  'lose' emails, tasks & AIs</h3>
+<H3 id="autonomous-responsible-forget" text="Never 'lose' tasks">Never
+  'lose' emails, tasks & AIs</H3>
 <p>
   We are each totally responsible for our own tasks, nobody will follow us
   up.
@@ -1850,8 +1857,8 @@ export default function Home(){
   </li>
 </ul>
 
-<h2 id="autonomous-judgement" text="Judgement over rules">Trust judgement over
-  rules</h2>
+<H2 id="autonomous-judgement" text="Judgement over rules">Trust judgement over
+  rules</H2>
 <p>
   Rather than rely on hard rules that dictate behavior, we give ourselves the
   flexibility to apply judgment at the time a decision is being made.
@@ -1860,7 +1867,7 @@ export default function Home(){
   teammates.
 </p>
 
-<h1 id="truthful" text="Truthful">Truthful</h1>
+<H1 id="truthful" text="Truthful">Truthful</H1>
 <p>
   <b>Communicate, look at problems and evaluate ourselves truthfully</b><br/>
   We seek truth: What does the user really want? What is the
@@ -1873,7 +1880,7 @@ export default function Home(){
   products and a better workplace.
 </p>
 
-<h2 id="truthful-mistakes" text="Pride in mistakes">Pride in mistakes</h2>
+<H2 id="truthful-mistakes" text="Pride in mistakes">Pride in mistakes</H2>
 <p>
   Everyone makes mistakes, especially
   {' '}<a href="#action-gtd">people who get a lot done</a>.<br/>
@@ -1890,8 +1897,8 @@ export default function Home(){
   Mistakes are a great learning opportunity that allows for improvement.
 </p>
 
-<h3 id="truthful-mistakes-correcting" text="Correcting mistakes">Correcting
-  mistakes</h3>
+<H3 id="truthful-mistakes-correcting" text="Correcting mistakes">Correcting
+  mistakes</H3>
 <p>
   Making mistakes is part of the culture of running fast, and we all make
   them.
@@ -1924,8 +1931,8 @@ export default function Home(){
   less broken dishes and even faster possible walking speeds.
 </p>
 
-<h3 id="truthful-mistakes-5solutions" text="5 Solutions">
-  "5 Solutions": Solve problems in 5 ways</h3>
+<H3 id="truthful-mistakes-5solutions" text="5 Solutions">
+  "5 Solutions": Solve problems in 5 ways</H3>
 <p>
   Every problem or mistake that we investigate is a side effect of a bigger,
   deeper problem.<br/>
@@ -2200,7 +2207,7 @@ Niv
   various types.
 </p>
 
-<h3 id="truthful-mistakes-why_email">Answering 'why?'</h3>
+<H3 id="truthful-mistakes-why_email">Answering 'why?'</H3>
 <p>
   Sometimes you will be asked to explain why did you take a certain action.
   Such a process of answering 'why?' give us an opportunity to either enhance
@@ -2214,7 +2221,7 @@ Niv
   {' '}<a href="/dna/comm#email-reply-why">answer a why email</a>.
 </p>
 
-<h3 id="truthful-mistakes-cleanup" text="Clean up yourself">Clean up yourself</h3>
+<H3 id="truthful-mistakes-cleanup" text="Clean up yourself">Clean up yourself</H3>
 <p>
   Sometimes our peers discover our mistakes. In such cases we should be
   thankful for the time and effort they spent on finding mistakes.
@@ -2269,8 +2276,8 @@ Niv
   move on to the next big thing!
 </p>
 
-<h3 id="truthful-mistakes-badnews" text="'bad news'? Learn!">'bad news'? Learn
-  from it!</h3>
+<H3 id="truthful-mistakes-badnews" text="'bad news'? Learn!">'bad news'? Learn
+  from it!</H3>
 <p>
   There is no 'bad news'. News makes us learn.
   Consider that if we've done good so far, and now we know something
@@ -2295,7 +2302,7 @@ Niv
   improve!
 </p>
 
-<h2 id="truthful-trust" text="Trustworthiness">Trustworthiness</h2>
+<H2 id="truthful-trust" text="Trustworthiness">Trustworthiness</H2>
 <p>
   Every company says that trustworthiness is key in its employees.
   But why is it important to us?<br/>
@@ -2321,7 +2328,7 @@ Niv
   change.
 </p>
 
-<h3 id="truthful-trust-debate" text="Debating">Debating</h3>
+<H3 id="truthful-trust-debate" text="Debating">Debating</H3>
 <p>
   It's human nature to try to convince that your position is the right one.
   However, in a productive environment you need to ensure that you are
@@ -2343,7 +2350,7 @@ Niv
   Tilt to that other position with pride!
 </p>
 
-<h2 id="truthful-change" text="Changing our mind">Proud of changing our mind</h2>
+<H2 id="truthful-change" text="Changing our mind">Proud of changing our mind</H2>
 <p>
   {' '}<a href="http://wiki.lesswrong.com/wiki/Litany_of_Tarski">Litany of Tarski</a>:
 </p>
@@ -2364,8 +2371,8 @@ Niv
   fully aware that evolution brings success.
 </p>
 
-<h2 id="truthful-value" text="Customer Value">Choose to bring value to our
-  customers</h2>
+<H2 id="truthful-value" text="Customer Value">Choose to bring value to our
+  customers</H2>
 <p>
   There are various ways for a company to succeed, for example: by doing great
   marketing for mediocre products.<br/>
