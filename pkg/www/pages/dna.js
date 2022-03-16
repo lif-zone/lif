@@ -1,13 +1,10 @@
-import etask from '../../util/etask.js';
+import {useEffect} from 'react';
 import Layout from '../components/layout.js';
-import Link from 'next/link';
-import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
-import {Trans, useTranslation} from 'next-i18next';
 import {Primary_button, Footer, Video} from '../components/common.js';
 
 const NL = '\n';
 // XXX: mv to css
-const page_style=<style jsx>{`
+const page_style=<style>{`
 h1 {padding-top: 1.2rem; padding-bottom: 0.5rem;}
 h2 {padding-top: 1.2rem; padding-bottom: 0.2rem;}
 h3 {padding-top: 1.2rem; padding-bottom: 0.1rem;}
@@ -32,11 +29,6 @@ table {border-spacing: 0; border-collapse: collapse;}
 pre {overflow: auto;}
 `}</style>;
 
-export const getStaticProps = ({locale})=>etask(function*(){
-    const props = yield serverSideTranslations(locale, ['common', 'about']);
-    return {props};
-});
-
 export const H1 = ({children, id})=>{
   return <h1><a id={id} href={'#'+id}>{children}</a></h1>; };
 export const H2 = ({children, id})=>{
@@ -44,10 +36,22 @@ export const H2 = ({children, id})=>{
 export const H3 = ({children, id})=>{
   return <h3><a id={id} href={'#'+id}>{children}</a></h3>; };
 
-export default function Home(){
-    const {t} = useTranslation('about', 'common');
-    return (
-      <Layout title={t('title')} desc={t('title2')}>
+export default function DNA(){
+  let current;
+  useEffect(()=>{
+    let hash = location.hash;
+    if (hash && current!=hash){
+      current = hash;
+      let id = hash.replace('#', '');
+      let element = document.getElementById(id);
+      if (element){
+        element.scrollIntoView({behavior: 'smooth'});
+        current = hash;
+      }
+    }
+  });
+  return (
+    <Layout title='LIF DNA' desc='LIF DNA'>
 {page_style}
 <div className="max-w-6xl mx-auto px-6 pb-10">
 
@@ -271,9 +275,9 @@ export default function Home(){
   someone who <b>is</b> an integral part of the team. Here's the process
   you'll be going through:
 </p>
-<ul class="rank_list">
+<ul className="rank_list">
   <li>
-    <div class="rank_sm rank_noob pull-left"></div>
+    <div className="rank_sm rank_noob pull-left"></div>
     <b><a href="/dna/dict#noob"> Hola Noob</a> (first 3 months)</b>:
     During this period, you will be assigned larger tasks, that will allow you
     to make a significant contribution while actively learning about the
@@ -286,7 +290,7 @@ export default function Home(){
     after deployment.
   </li>
   <li>
-    <div class="rank_sm rank_junior pull-left"></div>
+    <div className="rank_sm rank_junior pull-left"></div>
     <b><a href="/dna/dict#junior"> Hola Junior</a> (first 1 to 2 years)</b>:
     Now you are becoming a major contributor to Hola's
     products, developing specific domain knowledge in fields that are of
@@ -297,7 +301,7 @@ export default function Home(){
     to comments about your commits from other Hola Veterans.
   </li>
   <li>
-    <div class="rank_sm rank_veteran pull-left"></div>
+    <div className="rank_sm rank_veteran pull-left"></div>
     <b><a href="/dna/dict#veteran"> Hola Veteran</a> (after 1 to 2 years)</b>:
     Congratulations! You are now a Hola Veteran - an integral part of
     the Hola Family. You are a major contributor, a knowledge center, and a
@@ -436,7 +440,7 @@ export default function Home(){
   feedback is to allow you to learn. When Steve Jobs was asked about his
   sometimes "harsh" feedback, this was his response:
 </p>
-<div class="good">
+<div className="good">
   When you've got really good people, they know they're really good, and you
   don't have to baby people's egos so much. And what really matters is the
   work. And everybody knows that: That's all that matters is the work.... And
@@ -495,16 +499,16 @@ export default function Home(){
     Save reader's time
     (<a href="#individual-mindful">Mindful of coworker's time</a>)
     - provide a summary:
-    <span class="good">It's a review of the video streaming market</span>
+    <span className="good">It's a review of the video streaming market</span>
   </li>
   <li>
     Point readers to what's interesting in the article:
-    <span class="good">showing that P2P tech is taking off in APAC</span>
+    <span className="good">showing that P2P tech is taking off in APAC</span>
   </li>
   <li>
     Specify actions (<a href="#action">Action-oriented</a>)
     you want them to take:
-    <span class="good">Consider if and when this gets added to
+    <span className="good">Consider if and when this gets added to
       our offering</span>
   </li>
 </ul>
@@ -566,7 +570,7 @@ export default function Home(){
 </p>
 <ul>
   <li>
-    <span class="bad">"Better design"</span>:
+    <span className="bad">"Better design"</span>:
     With such a statement you need concrete
     facts on why is the design better, what exactly does it solve, is
     what it solves really important enough to be solved, how much value
@@ -574,14 +578,14 @@ export default function Home(){
     this design change...
   </li>
   <li>
-    <span class="bad">"Very dangerous code"</span>:
+    <span className="bad">"Very dangerous code"</span>:
     Will it really cause a bug?
     How often? And if it does cause a bug - will the bug not be detected and
     fixed very quickly? How severe would the theoretical damage of such a bug
     be?
   </li>
   <li>
-    <span class="bad">"But what if the user clicked here, and then here?"</span>:
+    <span className="bad">"But what if the user clicked here, and then here?"</span>:
     Give a use case on how and why this could happen.
     Is it really common for the users to do this?
     And if they did, how bad would the negative impact be?
@@ -698,40 +702,42 @@ export default function Home(){
   you are handling:
 </p>
 <table>
-  <tr>
-    <td>Time to complete</td>
-    <td>What to do?</td>
-  </tr>
-  <tr>
-    <td>Up to 10 min.</td>
-    <td>
-      Do it immediately, to avoid the overhead of postponing and reopening the
-      task later and
-      {' '}<a href="/dna/comm#email-reply-done">respond to the requester</a>.
-    </td>
-  </tr>
-  <tr>
-    <td>10-60 min.</td>
-    <td>
-      If possible, try to give immediate partial solution/responses.<br/>
-      Log it in your <a href="/dna/dict#version_plan">version plan</a>
-      and <a href="/dna/comm#email-reply-add_to_vp">respond to the requester</a>
-      that it will be done within the next 1-3 days.<br/>
-      Notify the requester as soon as you complete the task, or if it gets
-      delayed again.
-    </td>
-  </tr>
-  <tr>
-    <td>More than 60 min.</td>
-    <td>
-      If possible, try to give immediate partial solution/responses.<br/>
-      Log it in your <a href="/dna/dict#version_plan">version plan</a>
-      and <a href="/dna/comm#email-reply-add_to_vp">update the requester</a>
-      on when you plan to implement it.<br/>
-      Mark it in your calendar, and update again the requester if you decide to
-      delay once more.
-    </td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>Time to complete</td>
+      <td>What to do?</td>
+    </tr>
+    <tr>
+      <td>Up to 10 min.</td>
+      <td>
+        Do it immediately, to avoid the overhead of postponing and reopening the
+        task later and
+        {' '}<a href="/dna/comm#email-reply-done">respond to the requester</a>.
+      </td>
+    </tr>
+    <tr>
+      <td>10-60 min.</td>
+      <td>
+        If possible, try to give immediate partial solution/responses.<br/>
+        Log it in your <a href="/dna/dict#version_plan">version plan</a>
+        and <a href="/dna/comm#email-reply-add_to_vp">respond to the requester</a>
+        that it will be done within the next 1-3 days.<br/>
+        Notify the requester as soon as you complete the task, or if it gets
+        delayed again.
+      </td>
+    </tr>
+    <tr>
+      <td>More than 60 min.</td>
+      <td>
+        If possible, try to give immediate partial solution/responses.<br/>
+        Log it in your <a href="/dna/dict#version_plan">version plan</a>
+        and <a href="/dna/comm#email-reply-add_to_vp">update the requester</a>
+        on when you plan to implement it.<br/>
+        Mark it in your calendar, and update again the requester if you decide to
+        delay once more.
+      </td>
+    </tr>
+  </tbody>
 </table>
 <p>
   {' '}<a href="#truthful-change">It's OK to change a schedule</a> if other tasks come
@@ -2039,7 +2045,7 @@ export default function Home(){
   'cdn bytes' metric did not notify a critical problem - here is a '5
   Solutions' process description:
 </p>
-<div class="email" cat="good">
+<div className="email" cat="good">
   From: arik<br/>
   To: niv<br/>
   Subject: crit system did not work<br/>
@@ -2053,7 +2059,7 @@ What was done on it?<br/>
 <br/>
 Arik<br/>
 </div>
-<div class="email" cat="bad">
+<div className="email" cat="bad">
   From: niv<br/>
   To: arik<br/>
   Subject: crit system did not work<br/>
@@ -2065,7 +2071,7 @@ Sorry, my bad.<br/>
 Niv
 </div>
 
-<div class="email" cat="bad">
+<div className="email" cat="bad">
   From: niv<br/>
   To: arik<br/>
   Subject: crit system did not work<br/>
@@ -2077,7 +2083,7 @@ Sorry, will not happen again.<br/>
 Niv
 </div>
 
-<div class="email" cat="bad">
+<div className="email" cat="bad">
   From: niv<br/>
   To: arik<br/>
   Subject: crit system did not work<br/>
@@ -2089,7 +2095,7 @@ It is because of Yuval's code, talk with him.<br/>
 Niv
 </div>
 
-<div class="email" cat="bad">
+<div className="email" cat="bad">
   From: niv<br/>
   To: arik<br/>
   Subject: crit system did not work<br/>
@@ -2102,7 +2108,7 @@ broken.<br/>
 Niv
 </div>
 
-<div class="email" cat="good">
+<div className="email" cat="good">
   From: niv<br/>
   To: arik<br/>
   Subject: crit system did not work<br/>
@@ -2155,7 +2161,7 @@ Niv<br/>
 |<br/>
 | Arik
 </div>
-<div class="email" cat="good">
+<div className="email" cat="good">
   From: niv<br/>
   To: arik<br/>
   Subject: crit system did not work<br/>
@@ -2171,7 +2177,7 @@ Niv<br/>
 Done.<br/>
 Continuing with the procedure.
 </div>
-<div class="email" cat="good">
+<div className="email" cat="good">
   From: niv<br/>
   To: arik<br/>
   Subject: crit system did not work<br/>
@@ -2188,7 +2194,7 @@ Continuing with the procedure.
 Done.<br/>
 Continuing with all other metrics.
 </div>
-<div class="email" cat="good">
+<div className="email" cat="good">
   From: niv<br/>
   To: arik<br/>
   Subject: crit system did not work<br/>
@@ -2232,9 +2238,9 @@ Niv
 </p>
 <ul>
   <li>
-    We immediately email: <span class="good">"Thanks. FIXED"</span>
+    We immediately email: <span className="good">"Thanks. FIXED"</span>
     if possible to fix immediately,
-    or <span class="good">"Thanks. Will be fixed by tomorrow"</span>
+    or <span className="good">"Thanks. Will be fixed by tomorrow"</span>
     if the fix takes time
   </li>
   <li>
@@ -2242,13 +2248,13 @@ Niv
     in the codebase, and we <a href="/dna/dict#rgrep">rgrep</a> and fix
     all mistakes of the same class as this one.
     In our email back to our peer we will add
-    <span class="good">
+    <span className="good">
       "I rgrep'ed and found mistakes of this type made by me in 5 other places,
       plus 20 more mistakes of this type made by others, and I FIXED them all".
     </span><br/>
     This will put your peer's mind at rest that you made a thorough fix, not
     a shallow one, thus preventing him from having to send you an email such as
-    <span class="bad">
+    <span className="bad">
       "OK - you fixed this specific bug occurrence, but did you check the
       whole codebase for additional appearances of such a bug?"
     </span>
@@ -2354,7 +2360,7 @@ Niv
 <p>
   {' '}<a href="http://wiki.lesswrong.com/wiki/Litany_of_Tarski">Litany of Tarski</a>:
 </p>
-<div class="ok">
+<div className="ok">
   If the sky is blue - I desire to believe that the sky is blue<br/>
   If the sky is not blue - I desire to believe that the sky is not blue.<br/>
 </div>
