@@ -1,8 +1,9 @@
 import {useEffect} from 'react';
 import Layout from '../components/layout.js';
+import {H1, H2, H3} from '../components/anchor.js';
 import {Primary_button, Footer, Video} from '../components/common.js';
-
 const NL = '\n';
+
 // XXX: mv to css
 const page_style=<style>{`
 .dna-page h1 {padding-top: 1.2rem; padding-bottom: 0.5rem;}
@@ -30,13 +31,6 @@ const page_style=<style>{`
 .dna-page table {border-spacing: 0; border-collapse: collapse;}
 .dna-page pre {overflow: auto;}
 `}</style>;
-
-export const H1 = ({children, id})=>{
-  return <h1><a id={id} href={'#'+id}>{children}</a></h1>; };
-export const H2 = ({children, id})=>{
-  return <h2><a id={id} href={'#'+id}>{children}</a></h2>; };
-export const H3 = ({children, id})=>{
-  return <h3><a id={id} href={'#'+id}>{children}</a></h3>; };
 
 export default function DNA(){
   let current;
