@@ -219,6 +219,4 @@ const page_conent = `
         color: @white;
     }
 </xmp>
-<h1 id=html>HTML</h1>
-<p>TBD</p>
 </div>`;
