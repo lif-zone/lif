@@ -74,7 +74,7 @@ const page_conent = `
           echo "/usr/local/bin"
       }
 
-      install app.sh `install_dir`
+      install app.sh \`install_dir\`
   </xmp>
   <xmp cat=good>
       install_dir()
@@ -96,7 +96,7 @@ const page_conent = `
     }
 
     install_paths
-    for p in "${RA[@]}"; do try_install "$p"; done
+    for p in "\${RA[@]}"; do try_install "$p"; done
 </xmp>
 
 <h2 id=return_multi text="returning multiple string/array values">
@@ -111,7 +111,7 @@ const page_conent = `
     }
 
     install_app
-    try_install "$RS_dir" "${RA_paths[@]}"
+    try_install "$RS_dir" "\${RA_paths[@]}"
 </xmp>
 
 <h2 id=argv_handling text="argv handling">argv handling and usage()</h2>
@@ -123,7 +123,7 @@ const page_conent = `
         echo "usage: ..."
         exit 1
     }
-    while [ "${1:0:1}" = - ]; do
+    while [ "\${1:0:1}" = - ]; do
         case "$1" in
         --option)
             ... set option ...
@@ -206,8 +206,8 @@ const page_conent = `
   <br>
   if you want to use all the parameters, you should use an array:<br>
   <code>cmd=("$@")</code><br>
-  <code>cmd=("${cmd[@]}" "some other text")</code><br>
-  <code>"${cmd[@]}"</code><br>
+  <code>cmd=("\${cmd[@]}" "some other text")</code><br>
+  <code>"\${cmd[@]}"</code><br>
   The above three lines, save the parameters into an array, adds to it
   another<br>
   value and then us it as a bash command.<br>
