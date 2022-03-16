@@ -1,24 +1,37 @@
-<!doctype html>
-<html lang=en>
-  {[it.title bash Basics]}
-  <head>
-    {[include inc/meta.html]}
-    {[include /www/faq/pub/inc/dna_head.html]}
-  </head>
-  <body>
-    <div class=wrap>
-      {[include inc/navbar.html]}
-      <div class=block>
-        <nav class=anchorific></nav>
-        <div class=head>
-          <div class=title>bash Basics</div>
-          <p>
-            <b>Improvements? Suggestions?</b>
-            email <a href=mailto:dna@holaspark.com>dna@holaspark.com</a>
-          </p>
-        </div>
-        <div class=content>
+import * as _jquery from 'jquery';
+import Layout from '../../../components/layout.js';
+import anchorific from '../../../components/anchorific.js';
+import {dna_style} from '../../../components/style.js';
+import {H1, H2, H3} from '../../../components/anchor.js';
+import etask from '../../../../util/etask.js';
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
+const NL = '\n';
+const $ = jquery__WEBPACK_IMPORTED_MODULE_1__;
+anchorific.init($);
 
+export const getStaticProps = ({locale})=>etask(function*(){
+  return {props: yield serverSideTranslations(locale, ['common'])}; });
+
+export default function DNA(){
+  Layout.use_scroll_to_hash($);
+return (
+<Layout title='LIF DNA' desc='Bash Basics' style={dna_style}
+  dir='ltr'>
+<div className="dna-page max-w-6xl mx-auto px-6 pb-10"
+  dangerouslySetInnerHTML={{__html: page_conent}}/>
+</Layout>);
+}
+
+const page_conent = `
+<nav class=anchorific></nav>
+<div class=head>
+  <div class=title>bash Basics</div>
+  <p>
+    <b>Improvements? Suggestions?</b>
+    email <a href=mailto:dna@holaspark.com>dna@holaspark.com</a>
+  </p>
+</div>
+<div class=content>
 <h1 id=basic_help text="Bash basics help">Bash rescue</h1>
 <p>Tips that helps you getting started.</p>
 <p>
@@ -119,7 +132,7 @@
   of files you usually work on</h2>
 <p>
   edit file with names of files you work on, one on a line.<br>
-  then run <code>gvim `cat workset`</code> to load them all into gvim.
+  then run <code>gvim \`cat workset\`</code> to load them all into gvim.
 </p>
 
 <h2 id=techniques-capture_terminal text="Capture all terminal output">
@@ -136,12 +149,4 @@
   now all the output you saw between <code>script</code> and
   <code>exit</code> is in my_output_file
 </p>
-
-        </div>
-      </div>
-    </div>
-  </body>
-  {[include inc/script.html]}
-  {[it.mirror text]}
-  {[include /www/faq/pub/inc/dna_code.html]}
-</html>
+</div>`;
