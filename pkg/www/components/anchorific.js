@@ -2,6 +2,8 @@ const E = {}
 export default E;
 
 E.init = function($){
+  if (typeof window=='undefined')
+    return;
   var Anchorific = {
       init: function(options, elem){
           var _this = this;

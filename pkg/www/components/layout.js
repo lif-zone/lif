@@ -85,7 +85,10 @@ export default function Layout({title, children, desc, image, style, dir}){
     </div>
   );
 }
-Layout.use_scroll_to_hash = function(){
+Layout.use_scroll_to_hash = function($){
+  if (typeof window=='undefined')
+    return;
+  $('.content').anchorific({spyOffset: -10, anchorText: ''});
   let current;
   useEffect(()=>{
     let hash = location.hash, timer, timer2;

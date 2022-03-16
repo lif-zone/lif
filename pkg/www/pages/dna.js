@@ -7,20 +7,14 @@ import etask from '../../util/etask.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {Primary_button, Footer, Video} from '../components/common.js';
 const NL = '\n';
-
-let $ = jquery__WEBPACK_IMPORTED_MODULE_1__;
-if (typeof window!='undefined'){
-  window.$ = $;
-  anchorific.init($);
-}
+const $ = jquery__WEBPACK_IMPORTED_MODULE_1__;
+anchorific.init($);
 
 export const getStaticProps = ({locale})=>etask(function*(){
   return {props: yield serverSideTranslations(locale, ['common'])}; });
 
 export default function DNA(){
-  Layout.use_scroll_to_hash();
-  if (typeof window!='undefined')
-      $('.content').anchorific({spyOffset: -10, anchorText: ''});
+  Layout.use_scroll_to_hash($);
 return (
 <Layout title='LIF DNA' desc='LIF DNA' style={dna_style} dir='ltr'>
 <div className="dna-page max-w-6xl mx-auto px-6 pb-10"
