@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Github from '../public/img/github.svg';
+import {useEffect} from 'react';
 import {use_app_context} from '../utils/context.js';
 import {useCookies} from 'react-cookie';
 import {useRouter} from 'next/router';
@@ -51,8 +52,8 @@ let google_analytics = `window.dataLayer = window.dataLayer || [];
   gtag('js', new Date());
   gtag('config', 'G-94G7HR3TVG');`;
 
-export default function Layout({title, children, desc, image}){
-  const {direction} = use_app_context();
+export default function Layout({title, children, desc, image, style, dir}){
+  var {direction} = dir || use_app_context();
   title = title || 'LIF - Liberty Independence Freedom - חירות עצמאות חופש';
   const router = useRouter();
   let url = 'https://lif.zone/'+router.locale+router.pathname;
@@ -77,9 +78,29 @@ export default function Layout({title, children, desc, image}){
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
         <meta name="viewport" content={'width=device-width, '+
 	  'height=device-height, initial-scale=1.0, minimum-scale=1.0'}/>
+        {style}
       </Head>
       <Header_small/>
       {children}
     </div>
   );
+}
+Layout.use_scroll_to_hash = function(){
+  let current;
+  useEffect(()=>{
+    let hash = location.hash, timer, timer2;
+    if (hash && current!=hash){
+      current = hash;
+      clearTimeout(timer);
+      clearTimeout(timer2);
+      let id = hash.replace('#', '');
+      let el = document.getElementById(id);
+      if (el){
+        el.scrollIntoView({behavior: 'smooth'});
+        timer = setTimeout(()=>el.scrollIntoView(), 100);
+        timer2 = setTimeout(()=>el.scrollIntoView(), 250);
+        current = hash;
+      }
+    }
+  });
 }
