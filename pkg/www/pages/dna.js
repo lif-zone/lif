@@ -2367,4 +2367,4 @@ XXX - missing head and icons
   Let's not do this bandwidth saving feature. Our competitors don't have it,
   and it will cause our customers to stream less and us to make less revenues.
 </div>
-`;
+</div>`;
