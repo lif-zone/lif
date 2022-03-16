@@ -15,7 +15,7 @@ export const getStaticProps = ({locale})=>etask(function*(){
 export default function DNA(){
   Layout.use_scroll_to_hash($);
 return (
-<Layout title='LIF DNA' desc='JS Coding Convention' style={dna_style}
+<Layout title='LIF DNA' desc='Cloud Office' style={dna_style}
   dir='ltr'>
 <div className="dna-page max-w-6xl mx-auto px-6 pb-10"
   dangerouslySetInnerHTML={{__html: page_conent}}/>
