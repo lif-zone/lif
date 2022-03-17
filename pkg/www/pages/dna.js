@@ -1296,7 +1296,7 @@ const page_conent = `
   If you can grep, grep - don't ask!
 </p>
 
-<h3 id=mindful-emails text="Mindful emails">Writing mindful emails - taking
+<h3 id=individual-mindful-emails text="Mindful emails">Writing mindful emails - taking
   time to save others' time</h3>
 <p>
   We optimize emails we write for making them simple to understand and act on
