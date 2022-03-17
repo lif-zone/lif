@@ -32,6 +32,8 @@ export const dna_style=<style>{`
     top: 68px;
     left: -8px;
     font-size: 1rem;
+    overflow: auto;
+    height: 95%;
 }
 
 .anchorific a {
