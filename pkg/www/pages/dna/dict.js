@@ -362,9 +362,7 @@ const page_conent = `
   demonstrating the item or modification you did. Also, mark in it where the
   change is so it will be easy for the other side reviewing it and respond
   quickly.<br>
-  An example of a cropped, tiny marked screenshot:
 </p>
-<p><img src=/www/hola/pub/img/screenshot_example.png></p>
 <p>
   Implementing the above can be done by using applications such as
   <a href=http://www.faststone.org/FSCapturerDownload.htm>FastStone</a> for
