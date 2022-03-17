@@ -1,6 +1,6 @@
 // XXX: mv to css
 export const dna_style=<style>{`
-.dna-page {padding-left: 13rem!important;}
+.dna-page {padding-left: 15rem!important;}
 .dna-page h1 {padding-top: 1.2rem; padding-bottom: 0.5rem;}
 .dna-page h2 {padding-top: 1.2rem; padding-bottom: 0.2rem;}
 .dna-page h3 {padding-top: 1.2rem; padding-bottom: 0.1rem;}
@@ -31,10 +31,13 @@ export const dna_style=<style>{`
     position: fixed;
     top: 68px;
     left: -8px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     overflow: auto;
+    max-width: 15rem;
     height: 95%;
 }
+
+.anchorific li {line-height: 1rem;}
 
 .anchorific a {
     font-family: 'PT Sans','Helvetica Neue','Liberation Sans',sans-serif;
