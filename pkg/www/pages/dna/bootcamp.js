@@ -28,7 +28,7 @@ const page_conent = `
   <div class=title>Bootcamp</div>
   <p><b>Bootcamp 3 week program</b></p>
   <p>Improvements? Suggestions? email
-    <a href=mailto:dna@holaspark.com>dna@holaspark.com</a></p>
+    <a href=mailto:lif.zone.main+dna@gmail.com>lif.zone.main+dna@gmail.com</a></p>
 </div>
 <div class=content>
 <h1 id=rnd>R&D</h1>

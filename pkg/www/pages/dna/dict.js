@@ -36,7 +36,7 @@ const page_conent = `
   </p>
   <p>
     Improvements? Suggestions?
-    email <a href=mailto:dna@holaspark.com>dna@holaspark.com</a>
+    email <a href=mailto:lif.zone.main+dna@gmail.com>lif.zone.main+dna@gmail.com</a>
   </p>
 </div>
 <div class=content>
@@ -320,11 +320,11 @@ const page_conent = `
 </p>
 
 <h1 id=fs text="FS">FS: Central shared filesystem</h1>
-<p><a href=mailto:dna@holaspark.com>text missing: contribution welcome!</a></p>
+<p><a href=mailto:lif.zone.main+dna@gmail.com>text missing: contribution welcome!</a></p>
 
 <h1 id=jungo text="Jungo">Jungo: Our origin: Passion for complex networking
   and a love for Open Source</h1>
-<p><a href=mailto:dna@holaspark.com>text missing: contribution welcome!</a></p>
+<p><a href=mailto:lif.zone.main+dna@gmail.com>text missing: contribution welcome!</a></p>
 
 <h1 id=rgrep text="rgrep">rgrep: recursive grep</h1>
 <p>

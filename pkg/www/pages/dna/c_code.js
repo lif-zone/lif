@@ -27,7 +27,7 @@ const page_conent = `
   <div class=title>C Coding Convention</div>
   <p>
     <b>Improvements? Suggestions?</b>
-    email <a href=mailto:dna@holaspark.com>dna@holaspark.com</a>
+    email <a href=mailto:lif.zone.main+dna@gmail.com>lif.zone.main+dna@gmail.com</a>
   </p>
 </div>
 <div class=content>

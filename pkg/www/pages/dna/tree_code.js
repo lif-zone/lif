@@ -36,7 +36,7 @@ const page_conent = `
   </p>
   <p>
     Improvements? Suggestions?
-    email <a href=mailto:dna@holaspark.com>dna@holaspark.com</a>
+    email <a href=mailto:lif.zone.main+dna@gmail.com>lif.zone.main+dna@gmail.com</a>
   </p>
 </div>
 <div class=content>

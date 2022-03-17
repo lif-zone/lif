@@ -28,7 +28,8 @@ const page_conent = `
   <div class=title>Cloud Office</div>
   <p>
     <b>Improvements? Suggestions?</b>
-    email <a href=mailto:dna@>dna@</a>
+    email <a href=mailto:lif.zone.main+dna@gmail.com>
+      lif.zone.main+dna@gmail.com</a>
   </p>
 </div>
 <div class=content>
