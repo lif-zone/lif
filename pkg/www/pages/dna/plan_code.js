@@ -2,7 +2,6 @@ import * as _jquery from 'jquery';
 import Layout from '../../components/layout.js';
 import anchorific from '../../components/anchorific.js';
 import {dna_style} from '../../components/style.js';
-import {H1, H2, H3} from '../../components/anchor.js';
 import etask from '../../../util/etask.js';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 const NL = '\n';
