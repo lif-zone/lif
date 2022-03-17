@@ -23,7 +23,54 @@ return (
 }
 
 const page_conent = `
-XXX - missing head and icons
+XXX - missing Images
+<div class="head container">
+  <div class=col-lg-6>
+    <h1>Hola DNA</h1>
+    <p>
+      Hola's mission is to make a better Internet using innovative
+      video technology.
+    </p>
+    <p>
+      <b>Why do we need a DNA?</b><br>
+      To have a joint set of guiding values in the decisions each of us
+      makes daily.<br>
+      As individuals, the DNA lets us
+      <a href=#incremental-fast>make decisions fast</a>,
+      <a href=#immediate>without hesitation</a>
+      or <a href=#autonomous-responsible>approval</a>.<br>
+      As an organization, the DNA keeps us learning as a body by
+      defining and improving what we know.
+    </p>
+    <p>
+      <b>How do we keep our DNA alive?</b><br>
+      By constantly trying to align our daily actions to match the
+      DNA.<br>
+      By helping others to work by the DNA.<br>
+      By teaching it to <a href=/dna/dict#noob>Hola newbies</a>.<br>
+    </p>
+    <p>
+      <b>How do we change our DNA?</b><br>
+      Suggest changes to <a
+        href=mailto:dna@hola-org.com>dna@hola-org.com</a>.
+      <br>
+      Make your contribution to the creation and evolution of our Hola
+      DNA.<br>
+      That's how we improve!
+    </p>
+    <p>
+      <b>Our success will be a byproduct of our DNA.</b>
+    </p>
+    <p>
+      DNA of companies we value:
+      <a href=http://zachholman.com/talk/move-fast-break-nothing/>GitHub</a> |
+      <a href=http://www.valvesoftware.com/company/Valve_Handbook_LowRes.pdf>Valve</a> |
+      <a href=http://www.slideshare.net/reed2001/culture-2009>Netflix</a> |
+      <a href=http://asana.com/company>Asana</a> |
+      <a href=https://en.wikipedia.org/wiki/Toyota_Production_System>Toyota</a>
+    </p>
+  </div>
+</div>
 <nav class=anchorific></nav>
 <div class=content>
 <h1 id=dna text="DNA">DNA-like culture</h1>
