@@ -19,8 +19,8 @@ const Header_small = ()=>{
     const {direction} = use_app_context();
     const rtl = direction=='rtl';
     return <bdo dir="ltr">
-      <header className="p-6 text-sm lg:text-base">
-        <div>
+      <header className='p-6 text-sm lg:text-base'>
+        <div className='lif_logo'>
           <a href="/en"><img src="/img/lif.svg" className="h-8"/></a>
         </div>
         {!rtl && <div className="flex-grow"></div>}
