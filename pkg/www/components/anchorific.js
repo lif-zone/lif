@@ -162,6 +162,7 @@ E.init = function($){
     if (!el)
       return;
     set_meta('og:url', location.href);
+    set_meta('og:title', el.innerText);
     set_meta('og:description', el.innerText);
   }
   $.fn.anchorific = function(options){
