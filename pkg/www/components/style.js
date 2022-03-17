@@ -1,5 +1,6 @@
 // XXX: mv to css
 export const dna_style=<style>{`
+.dna-page {padding-left: 13rem!important;}
 .dna-page h1 {padding-top: 1.2rem; padding-bottom: 0.5rem;}
 .dna-page h2 {padding-top: 1.2rem; padding-bottom: 0.2rem;}
 .dna-page h3 {padding-top: 1.2rem; padding-bottom: 0.1rem;}
@@ -23,5 +24,74 @@ export const dna_style=<style>{`
   border-collapse: collapse;}
 .dna-page table {background-color: transparent;}
 .dna-page table {border-spacing: 0; border-collapse: collapse;}
-.dna-page pre {overflow: auto;}
+.dna-page pre, .dna-page xmp {overflow: auto;}
+
+.anchorific {
+    overflow-y: auto;
+    position: fixed;
+    top: 68px;
+    left: -8px;
+    font-size: 1rem;
+}
+
+.anchorific a {
+    font-family: 'PT Sans','Helvetica Neue','Liberation Sans',sans-serif;
+    color: #00b7f1;
+    outline: 3px solid transparent;
+    border: 1px solid transparent
+}
+
+.anchorific a:hover,.anchorific a.anchor-text:hover {
+    background-color: #00b7f1;
+    color: #ffffff;
+    border-color: #00b7f1;
+    text-decoration: none;
+    -moz-box-shadow: #00b7f1 -2px 0 0 1px,#00b7f1 2px 0 0 1px;
+    -webkit-box-shadow: #00b7f1 -2px 0 0 1px,#00b7f1 2px 0 0 1px;
+    box-shadow: #00b7f1 -2px 0 0 1px,#00b7f1 2px 0 0 1px;
+    position: relative;
+    border-radius: .15em
+}
+
+.anchorific a:hover.anchor,.anchorific a.anchor-text:hover.anchor {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.anchorific ul {
+    list-style-type: none;
+    padding-left: 15px!important
+}
+
+.anchorific li ul {
+    list-style-type: none;
+    display: none
+}
+
+.anchorific ul li a {
+    color: #2D404C;
+    display: inline-block;
+    font-weight: normal;
+    text-decoration: none
+}
+
+.anchorific ul li a:hover {
+    color: #ffffff
+}
+
+.anchorific li ul {
+    display: none
+}
+
+.anchorific li.active>a {
+    font-weight: bold
+}
+
+.anchorific li.active>ul {
+    display: block
+}
+
 `}</style>;

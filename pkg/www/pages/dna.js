@@ -17,13 +17,13 @@ export default function DNA(){
   Layout.use_scroll_to_hash($);
 return (
 <Layout title='LIF DNA' desc='LIF DNA' style={dna_style} dir='ltr'>
-<div className="dna-page max-w-6xl mx-auto px-6 pb-10"
+<div className='dna-page max-w-6xl mx-auto px-6 pb-10'
   dangerouslySetInnerHTML={{__html: page_conent}}/>
 </Layout>);
 }
 
 const page_conent = `
-XXX - missing Images
+<div>XXX - missing Images</div>
 <div class="head container">
   <div class=col-lg-6>
     <h1>Hola DNA</h1>
