@@ -25,13 +25,13 @@ const Header_small = ()=>{
         </div>
         {!rtl && <div className="flex-grow"></div>}
         <bdo dir={rtl ? 'rtl' : 'ltr'}>
-	  <div className="flex items-top">
+	  <div className="flex items-top git_icon">
 	    <a href="https://github.com/lif-zone/lif"
 	      className="text-lif-main flex items-top text-lg opacity-70
 	      transition-opacity hover:opacity-100">
 	      <Github className="w-auto"/>
 	    </a>
-	    <div className="px-4">
+	    <div className="px-4 lang_selector">
              <a onClick={()=>select_lang(rtl ? 'en' : 'he', router, setCookie)}
 	       className="text-lif-main text-lg">
 	       {t('en_he_link')}

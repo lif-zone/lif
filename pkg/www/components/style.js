@@ -41,7 +41,6 @@ export const dna_style=<style>{`
 @media only screen and (min-width: 50rem){
   .anchorific {display: block;}
   .dna-page {padding-left: 15rem!important; margin-left: 0!important;}
-  .lif_logo {position: fixed}
 }
 
 .anchorific li {line-height: 1rem;}
