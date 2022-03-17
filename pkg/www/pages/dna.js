@@ -26,10 +26,6 @@ const page_conent = `
   <div class=col-lg-6>
     <h1>LIF DNA</h1>
     <p>
-      Hola's mission is to make a better Internet using innovative
-      video technology.
-    </p>
-    <p>
       <b>Why do we need a DNA?</b><br>
       To have a joint set of guiding values in the decisions each of us
       makes daily.<br>
@@ -45,14 +41,14 @@ const page_conent = `
       By constantly trying to align our daily actions to match the
       DNA.<br>
       By helping others to work by the DNA.<br>
-      By teaching it to <a href=/dna/dict#noob>Hola newbies</a>.<br>
+      By teaching it to <a href=/dna/dict#noob>Newbies</a>.<br>
     </p>
     <p>
       <b>How do we change our DNA?</b><br>
       Suggest changes to <a
         href=mailto:dna@hola-org.com>dna@hola-org.com</a>.
       <br>
-      Make your contribution to the creation and evolution of our Hola
+      Make your contribution to the creation and evolution of our LIF
       DNA.<br>
       That's how we improve!
     </p>
