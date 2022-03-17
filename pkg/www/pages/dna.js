@@ -24,7 +24,7 @@ return (
 const page_conent = `
 <div class="head container">
   <div class=col-lg-6>
-    <h1>Hola DNA</h1>
+    <h1>LIF DNA</h1>
     <p>
       Hola's mission is to make a better Internet using innovative
       video technology.
@@ -319,7 +319,7 @@ const page_conent = `
     <b><a href=/dna/dict#veteran>Hola Veteran</a> (after 1 to 2 years)</b>:
     Congratulations! You are now a Hola Veteran - an integral part of
     the Hola Family. You are a major contributor, a knowledge center, and a
-    person who can help Noobs and Juniors get up to speed on the Hola DNA and
+    person who can help Noobs and Juniors get up to speed on the LIF DNA and
     best practices through <a href=/dna/dict#mentor>mentoring</a>,
     and <a href=/dna/dict#review>code reviews</a>.
     You've made a long way!
