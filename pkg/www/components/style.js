@@ -17,7 +17,7 @@ export const dna_style=<style>{`
   background-color: rgba(0,255,0,0.25); border-color: rgba(0,255,0,0.7);}
 .dna-page .ok,[cat=ok], .dna-page .good, .dna-page [cat=good],
   .dna-page .better, .dna-page [cat=better], .dna-page .bad,
-  .dna-page [cat=bad] {
+  .dna-page [cat=bad] {overflow: auto;
   padding: 4px; margin-bottom: 10px; border-width: 0 3px;
   border-style: solid; border-radius: 4px; position: relative;}
 .dna-page th, .dna-page td {border: 1px solid black;
