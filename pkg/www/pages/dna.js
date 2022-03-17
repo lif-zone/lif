@@ -23,7 +23,6 @@ return (
 }
 
 const page_conent = `
-<div>XXX - missing Images</div>
 <div class="head container">
   <div class=col-lg-6>
     <h1>Hola DNA</h1>
