@@ -1,6 +1,6 @@
 // XXX: mv to css
 export const dna_style=<style>{`
-.dna-page {padding-left: 15rem!important;}
+.dna-page {padding-left: 15rem!important; margin-left: 0!important;}
 .dna-page h1 {padding-top: 1.2rem; padding-bottom: 0.5rem;}
 .dna-page h2 {padding-top: 1.2rem; padding-bottom: 0.2rem;}
 .dna-page h3 {padding-top: 1.2rem; padding-bottom: 0.1rem;}

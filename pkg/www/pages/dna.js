@@ -876,7 +876,7 @@ const page_conent = `
   will in most cases prevent us from completing it.
   <a href=http://blogstatic.freemake.com/wp-content/uploads/2013/04/facebook-sign-at-office.png>Sign
     at Facebook</a><br>
-  <img src='{[MD5_CDN /www/spark/pub/img/done_is_better.png]}'>
+  <img src='img/done_is_better.png'>
 </p>
 
 <h2 id=incremental-pragmatic text="Pragmatic Craftsmanship">Pragmatic
@@ -893,14 +893,14 @@ const page_conent = `
   Yes - we break things while moving fast, but we fix it even faster!
   <a href=http://blogstatic.freemake.com/wp-content/uploads/2013/04/facebook-sign-at-office.png>Sign
     at Facebook</a><br>
-  <img src='{[MD5_CDN /www/spark/pub/img/move_fast.jpg]}'>
+  <img src='img/move_fast.jpg'>
 </p>
 
 <h2 id=incremental-little_better>Little better every day</h2>
 <p>
   Do only a little better every day, and you are 37x better by the end of the
   year.<br>
-  <img src='{[MD5_CDN /www/spark/pub/img/little_better.jpg]}'>
+  <img src='img/little_better.jpg'>
 </p>
 <h2 id=incremental-task text="Tasks">Incremental task handling</h2>
 <p>
