@@ -149,7 +149,24 @@ E.init = function($){
           });
       }
   };
+  function set_meta(prop, val){
+    let sel = 'meta[property='+prop.replace(':', '\\:')+']';
+    if (document.querySelector(sel))
+        document.querySelector(sel).setAttribute('content', val);
+  }
+  function on_hashchange(){
+    var hash = location.hash;
+    if (!hash)
+      return;
+    var el = document.querySelector(hash);
+    if (!el)
+      return;
+    set_meta('og:url', location.href);
+    set_meta('og:description', el.innerText);
+  }
   $.fn.anchorific = function(options){
+      window.addEventListener('hashchange', on_hashchange);
+      on_hashchange();
       return this.each(function(){
           options = options||{};
           if (options.rebuild && $.data(this, 'anchorific'))
