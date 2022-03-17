@@ -29,10 +29,12 @@ const Home_first = ()=>{
 	</div>
         <div className="px-6">
 	  <div className="mt-6" style={{lineHeight: '4rem'}}>
-            <span className="pe-3"><Link href="/about">
-	      <a><Primary_button>{t('about')}</Primary_button>
-	    </a></Link></span>
-            <span className="pe-3">
+      <span className="pe-3">
+        <Link href="/about">
+	        <a><Primary_button>{t('about')}</Primary_button></a>
+        </Link>
+      </span>
+      <span className="pe-3">
 	      <Link href="/faq">
                 <a><Primary_button>{t('faq')}</Primary_button></a>
               </Link>
@@ -43,6 +45,11 @@ const Home_first = ()=>{
             <span className="pe-3"><Link href="/#contact_us">
 	      <a><Primary_button>{t('join')}</Primary_button>
 	    </a></Link></span>
+      <span className="pe-3">
+        <Link href="/dna">
+	        <a><Primary_button>{t('dna')}</Primary_button></a>
+        </Link>
+      </span>
 	  </div>
 	</div>
       </div>
