@@ -46,9 +46,7 @@ const Home_first = ()=>{
 	      <a><Primary_button>{t('join')}</Primary_button>
 	    </a></Link></span>
       <span className="pe-3">
-        <Link href="/dna">
-	        <a><Primary_button>{t('dna')}</Primary_button></a>
-        </Link>
+        <a href='/dna'><Primary_button>{t('dna')}</Primary_button></a>
       </span>
 	  </div>
 	</div>
