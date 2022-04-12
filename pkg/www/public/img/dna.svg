@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 330 280" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="DM Serif Display">@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display%3Aital%2Cwght%400%2C400%3B1%2C400&amp;display=swap);</style>
+    <linearGradient id="color-0" bx:pinned="true">
+      <stop style="stop-color: rgb(57, 55, 104);"/>
+    </linearGradient>
+    <linearGradient id="gradient-1"/>
+  </defs>
+  <path d="M 163.066 97.076 L 163.26 97.076 C 163.132 95.298 163.067 93.501 163.067 91.69 C 163.067 51.043 196.018 18.091 236.666 18.091 C 277.313 18.091 310.265 51.043 310.265 91.69 C 310.265 93.501 310.2 95.298 310.071 97.076 L 310.265 97.076 L 310.265 259.355 L 163.066 259.355 L 163.066 97.076 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); stroke-width: 4px;"/>
+  <path d="M 15.867 97.076 L 16.061 97.076 C 15.933 95.298 15.868 93.501 15.868 91.69 C 15.868 51.043 48.819 18.091 89.467 18.091 C 130.114 18.091 163.066 51.043 163.066 91.69 C 163.066 93.501 163.001 95.298 162.872 97.076 L 163.066 97.076 L 163.066 259.355 L 15.867 259.355 L 15.867 97.076 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); stroke-width: 4px;"/>
+  <text style="fill: url(#color-0); font-family: &quot;Georgia Pro&quot;; font-size: 19.6px; font-weight: 700; letter-spacing: 1.7px; white-space: pre;" transform="matrix(0.730949, 0, 0, 1.464178, -71.028496, -144.388504)"><tspan x="131.933" y="163.819">DNA</tspan><tspan x="131.933" dy="1.3em">​</tspan><tspan>TRANSPARENT</tspan><tspan x="131.933" dy="1.3em">​</tspan><tspan>IMMEDIATE</tspan><tspan x="131.933" dy="1.3em">​</tspan><tspan>INCREMENTAL</tspan><tspan x="131.933" dy="1.3em">​</tspan><tspan>ACTION</tspan><tspan x="131.933" dy="1.3em">​</tspan></text>
+  <text style="font-family: &quot;DM Serif Display&quot;; font-size: 19.6px; font-weight: 700; letter-spacing: 1.7px; white-space: pre; fill: url(#gradient-1);" transform="matrix(0.82647, 0, 0, 1.464178, -12.30001, 14.669205)" x="131.93299865722656" y="163.81900024414062">sdsd</text>
+  <text style="fill: url(#color-0); font-family: &quot;Georgia Pro&quot;; font-size: 19.6px; font-weight: 700; letter-spacing: 1.7px; white-space: pre;" transform="matrix(0.730949, 0, 0, 1.464178, 78.092346, -144.388504)"><tspan x="131.933" y="163.819">INDIVIDUAL</tspan><tspan x="131.933" dy="1.3em">​</tspan><tspan>EFFECTIVE</tspan><tspan x="131.933" dy="1.3em">​</tspan><tspan>AUTONOMOUS</tspan><tspan x="131.933" dy="1.3em">​</tspan><tspan>RESPONSIBLE</tspan><tspan x="131.933" dy="1.3em">​</tspan><tspan>TRUTHFUL</tspan><tspan x="131.933" dy="1.3em">​</tspan></text>
+</svg>

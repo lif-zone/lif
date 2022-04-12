@@ -24,45 +24,44 @@ return (
 const page_conent = `
 <div class="head container">
   <div class=col-lg-6>
-    <h1>LIF DNA</h1>
+    <h1 id=10_commandments>
+      <a href=#10_commandments>The 10 Commandments</a>
+    </h1>
     <p>
-      <b>Why do we need a DNA?</b><br>
-      To have a joint set of guiding values in the decisions each of us
-      makes daily.<br>
-      As individuals, the DNA lets us
-      <a href=#incremental-fast>make decisions fast</a>,
-      <a href=#immediate>without hesitation</a>
-      or <a href=#autonomous-responsible>approval</a>.<br>
-      As an organization, the DNA keeps us learning as a body by
-      defining and improving what we know.
+      <a href=/team>Derry Benjamin Shribman</a>, as a true devoted believer
+      and partcitioner of Moses' Torah, was constantly searching for a way to
+      educate and empower his students and followers with a set of rules to
+      make them better, and allow each one to excel, regardless of his
+      inabilities and lack of talent and experience, from <nobr>"day 1"</nobr>
+      of setting foot in his institutes.
     </p>
     <p>
-      <b>How do we keep our DNA alive?</b><br>
-      By constantly trying to align our daily actions to match the
-      DNA.<br>
-      By helping others to work by the DNA.<br>
-      By teaching it to <a href=/dna/dict#noob>Newbies</a>.<br>
+      The result was a set rules, based and inspired by
+      <b>The 10 Commandments of God</b>, that Moses delivered to humanity.
     </p>
-    <p>
-      <b>How do we change our DNA?</b><br>
-      Suggest changes to <a
-        href=mailto:dna@hola-org.com>dna@hola-org.com</a>.
-      <br>
-      Make your contribution to the creation and evolution of our LIF
-      DNA.<br>
-      That's how we improve!
-    </p>
-    <p>
-      <b>Our success will be a byproduct of our DNA.</b>
-    </p>
-    <p>
-      DNA of companies we value:
-      <a href=http://zachholman.com/talk/move-fast-break-nothing/>GitHub</a> |
-      <a href=http://www.valvesoftware.com/company/Valve_Handbook_LowRes.pdf>Valve</a> |
-      <a href=http://www.slideshare.net/reed2001/culture-2009>Netflix</a> |
-      <a href=http://asana.com/company>Asana</a> |
-      <a href=https://en.wikipedia.org/wiki/Toyota_Production_System>Toyota</a>
-    </p>
+    <div style='align-item: center; display: flex;
+      justify-content: space-between;'>
+      <ul>
+        <li><a href=#dna>DNA</a></li>
+        <li><a href=#transparent>Transparent</a></li>
+        <li><a href=#immediate>Immediate</a></li>
+        <li><a href=#incremental>Incremental</a></li>
+        <li><a href=#action>Action</a></li>
+        <li><a href=#individual>Individual</a></li>
+        <li><a href=#effective>Effective</a></li>
+        <li><a href=#autonomous>Autonomous</a></li>
+        <li><a href=#autonomous-responsible>Responsible</a></li>
+        <li><a href=#truthful>Truthful</a></li>
+      </ul>
+      <div style='align-self: center; text-align: center; padding-left: 2rem'>
+        <img src=/img/jem.svg style='width: 5rem; display: initial'><br>
+        <img src=/img/dna.svg style='width: 15rem; display: initial'>
+      </div>
+    </div>
+    <div style="padding-top: 2rem; padding-bottom: 1rem;">
+      Below you will find the latest interperation of Derry's DNA, as
+      practiced at Hola - Hola's Torah.
+    </div>
   </div>
 </div>
 <nav class=anchorific></nav>
