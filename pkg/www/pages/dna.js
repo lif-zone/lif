@@ -28,10 +28,10 @@ const page_conent = `
       <a href=#10_commandments>The 10 Commandments</a>
     </h1>
     <p>
-      <a href=/team>Derry Benjamin Shribman</a>, as a true devoted believer
-      and partcitioner of Moses' Torah, was constantly searching for a way to
-      educate and empower his students and followers with a set of rules to
-      make them better, and allow each one to excel, regardless of his
+      <a href=/team#derry>Derry Benjamin Shribman</a>, as a true devoted
+      believer and partcitioner of Moses' Torah, was constantly searching for
+      a way to educate and empower his students and followers with a set of
+      rules to make them better, and allow each one to excel, regardless of his
       inabilities and lack of talent and experience, from <nobr>"day 1"</nobr>
       of setting foot in his institutes.
     </p>
