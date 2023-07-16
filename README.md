@@ -88,8 +88,6 @@ Just as the attempts to falsify the books of the Bible were retaliated against b
 ## LIF development technical details
 LIF is a P2P protocol developed in open source, distributed and censorship-resistant, with JS API to read and write JSON declarations to be stored in scrolls, and distributed and woven with peer scrolls. The code will run on the browser and NodeJS.
 
-This project will be evolutionary and will be run according to the DNA principles created by Derry Shribman, which were the foundation for the success of [Hola](https://hola-org.com/dna), [Hola Spark](https://holaspark.com/dna), [HolaCDN](https://holacdn.com/dna), [HolaVPN](https://holavpn.com/dna), [Luminati](https://luminati.io/dna).
-
 In computer communication networks, peer-to-peer network (Peer to Peer or P2P for short), is a communication network in which each of the ends, functions both as a customer and as a server, and each of the ends is able to initiate or end a call and provide or demand services.
 
 Colleagues make available to other network participants some of their resources, such as processing power, disk storage, or network bandwidth, without the need for central coordination by servers or stable hosts. In return, they gain access to their files on other users' computers.

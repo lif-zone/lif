@@ -98,8 +98,6 @@ const page_conent = `
 <ul>
   <li>Deploy - holds all the deploy procedures related to deploying new
     versions of our products and servers</li>
-  <li>CDN/Lum - holds all the CDN/Luminati customers leads and specific
-    procedures executed in this department</li>
   <li>R&D - holds all the R&D training procedures</li>
   <li>IT - holds all the IT installation procedures</li>
   <li>HR - holds all our candidates files</li>

@@ -54,14 +54,6 @@ export default function Home(){
           <div id="sec4">
 	    <h3><Trans t={t} i18nKey="sec4_h"/></h3>
 	    <p><Trans t={t} i18nKey="sec4_p"/></p>
-	    <p>
-        <Trans t={t} i18nKey="sec4_p2" components={[
-	        <a href='https://hola-org.com/dna'>, </a>,
-	        <a href='https://holaspark.com/dna'>, </a>,
-	        <a href='https://holacdn.com/dna'>, </a>,
-	        <a href='https://holavpn.com/dna'>, </a>,
-	        <a href='https://luminati.io/dna'>, </a>]}/>
-      </p>
 	    <p><Trans t={t} i18nKey="sec4_p3"/></p>
 	    <p><Trans t={t} i18nKey="sec4_p4"/></p>
 	    <p><Trans t={t} i18nKey="sec4_p5"/></p>

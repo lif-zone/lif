@@ -23,7 +23,6 @@ export default function Home(){
             <p><img src="/img/derry.jpg" className="w-100 pt-10"/></p>
             <h3>{t('derry_h')}</h3>
 	    <p>{t('derry_p')}</p>
-	    <p>{t('derry_p2')}</p>
 	    <p>{t('derry_p3')}</p>
 	    <p>{t('derry_p4')}</p>
 	    <p>{t('derry_p5')}</p>
